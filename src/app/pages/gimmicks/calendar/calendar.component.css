@@ -1,0 +1,53 @@
+.day {
+  transition: transform 0.2s ease-out;
+}
+
+.day:hover {
+  transform: scale(2, 2);
+}
+
+.bar-shadow {
+  box-shadow: inset 0em 0.2em 0.5em rgb(170, 169, 169);
+}
+
+.self-bg-sky-200 {
+  background-color: rgb(186, 230, 253);
+}
+
+.self-bg-sky-600 {
+  background-color: rgb(2, 132, 199);
+}
+
+.self-border-b-cyan-300 {
+  border-bottom-color: rgb(103, 232, 249);
+}
+
+.self-border-r-cyan-300 {
+  border-right-color: rgb(103, 232, 249);
+}
+
+.self-border-r-cyan-300 {
+  border-right-color: rgb(103, 232, 249);
+}
+
+.self-border-l-cyan-900 {
+  border-left-color: rgb(22, 78, 99);
+}
+
+.self-border-b-blue-600 {
+  border-bottom-color: rgb(37, 99, 235);
+}
+
+.border-b-4 {
+  border-bottom-width: 4px;
+}
+
+.border-4 {
+  border-width: 4px;
+}
+
+.tooltip{
+  background-color: red;
+  margin: 20px;
+  padding: 20px;
+}

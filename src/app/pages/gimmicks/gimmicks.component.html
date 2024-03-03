@@ -1,0 +1,32 @@
+<div class="bg-blue-700 text-gray-300 px-8 flex gap-4">
+  <div class="hover:text-gray-100">
+    <button [routerLink]="['/gimmicks']">Overview</button>
+  </div>
+  <div class="relative group hover:text-gray-100">
+    <button [routerLink]="['map']">Map</button>
+    <div
+      class="absolute bg-blue-200 text-black rounded p-2 mt-2 w-60 hidden group-hover:block z-20 arrow"
+    >
+      <ol class="list-disc text-xs">
+        <li class="ml-4">Google Maps API</li>
+        <li class="ml-4">Search with typeahead</li>
+        <li class="ml-4">Drag and drop</li>
+        <li class="ml-4">Table with sorting, filtering and pagination</li>
+        <li class="ml-4">Resizable element (on small screens)</li>
+        <li class="ml-4">responsiveness</li>
+      </ol>
+    </div>
+  </div>
+  <div class="relative group hover:text-gray-100">
+    <button [routerLink]="['calendar']">Kalender</button>
+    <div
+      class="absolute bg-blue-200 text-black rounded p-2 mt-2 w-60 hidden group-hover:block z-20 arrow"
+    >
+      <ol class="list-disc text-xs">
+            <li class="ml-4">ToDo</li>
+          </ol>
+    </div>
+  </div>
+  
+</div>
+<router-outlet></router-outlet>

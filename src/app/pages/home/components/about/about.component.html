@@ -1,0 +1,78 @@
+<section id="about">
+  <!-- <div id="cv-wrapper" [ngClass]="{ active: cvActivated }">
+    <ng-container *ngIf="cvActivated">
+      <div style="display: flex; justify-content: space-between">
+        <div (click)="toggleCv($event)" class="close-cv-button">
+          <p>X</p>
+        </div>
+        <p>{{ "about.curriculumVitae" | translate }}</p>
+        <div></div>
+      </div>
+      <object
+        *ngIf="translateService.currentLang == 'de'"
+        data="../../assets/CV_DE.pdf"
+        class="embeded-pdf"
+        type="application/pdf"
+      ></object>
+      <object
+        *ngIf="translateService.currentLang == 'en'"
+        data="../../assets/CV_EN.pdf"
+        class="embeded-pdf"
+        type="application/pdf"
+      ></object>
+    </ng-container>
+  </div> -->
+
+  <div class="content">
+    <!-- <h3>{{ "about.aboutMe" | translate }}</h3> -->
+    <div class="flex justify-center relative">
+      <div
+        class="w-32 h-32 sm:w-60 sm:h-60 overflow-hidden rounded-full absolute"
+      >
+        <img src="assets/5x7.webp" />
+        <!-- <div class="cv-button" (click)="toggleCv($event)">CV</div> -->
+      </div>
+    </div>
+
+    <div
+      class="about bg-white rounded-lg p-6 pt-20 sm:pt-40 shadow mt-[64px] sm:mt-[120px]"
+    >
+      <p class="leading-none">
+        {{ "about.text1" | translate }}<br /><br />
+        {{ "about.text2" | translate }}<br /><br />
+        {{ "about.text3" | translate }}<br /><br />
+        {{ "about.text4" | translate }}
+        <a href="https://www.itm-webdesign.com/" target="_blank"
+          >ITM Webdesign</a
+        >
+        {{ "about.text5" | translate }}
+        <a href="https://codext.de/" target="_blank">Codext GmbH</a>.<br />
+        {{ "about.text6" | translate }}<br />
+        {{ "about.text7" | translate }}<br /><br />
+        {{ "about.text8" | translate }}<br /><br />
+        {{ "about.text9" | translate }}<br /><br />
+        {{ "about.text10" | translate }}
+      </p>
+      <div class="flex place-items-center mt-6 gap-4">
+        <img src="/assets/PDF_file_icon.svg.png" width="24" />
+
+        <a
+          *ngIf="translateService.currentLang == 'de'"
+          href="/assets/CV_DE.pdf"
+          ><span>{{ "about.downloadCV" | translate }}</span></a
+        >
+        <a
+          *ngIf="translateService.currentLang == 'en'"
+          href="/assets/CV_EN.pdf"
+          ><span>{{ "about.downloadCV" | translate }}</span></a
+        >
+      </div>
+    </div>
+
+    <div class="button-wrapper">
+      <a href="#skills" class="button text-gray-700">{{
+        "about.mySkills" | translate
+      }}</a>
+    </div>
+  </div>
+</section>

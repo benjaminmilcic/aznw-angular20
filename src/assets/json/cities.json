@@ -1,0 +1,6401 @@
+[
+  {
+    "rang": 1,
+    "name": "Berlin",
+    "federalStateIndex": 0,
+    "federalStateName": "Berlin",
+    "population": 3755251,
+    "link": "/wiki/Berlin",
+    "location": { "lat": 52.52000659999999, "lng": 13.404954 }
+  },
+  {
+    "rang": 2,
+    "name": "Hamburg",
+    "federalStateIndex": 10,
+    "federalStateName": "Hamburg",
+    "population": 1892122,
+    "link": "/wiki/Hamburg",
+    "location": { "lat": 53.5488282, "lng": 9.987170299999999 }
+  },
+  {
+    "rang": 3,
+    "name": "München",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 1512491,
+    "link": "/wiki/M%C3%BCnchen",
+    "location": { "lat": 48.1351253, "lng": 11.5819806 }
+  },
+  {
+    "rang": 4,
+    "name": "Köln",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 1084831,
+    "link": "/wiki/K%C3%B6ln",
+    "location": { "lat": 50.937531, "lng": 6.9602786 }
+  },
+  {
+    "rang": 5,
+    "name": "Frankfurt am Main",
+    "federalStateIndex": 5,
+    "federalStateName": "Hessen",
+    "population": 773068,
+    "link": "/wiki/Frankfurt_am_Main",
+    "location": { "lat": 50.1109221, "lng": 8.6821267 }
+  },
+  {
+    "rang": 6,
+    "name": "Stuttgart",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 632865,
+    "link": "/wiki/Stuttgart",
+    "location": { "lat": 48.7758459, "lng": 9.1829321 }
+  },
+  {
+    "rang": 7,
+    "name": "Düsseldorf",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 629047,
+    "link": "/wiki/D%C3%BCsseldorf",
+    "location": { "lat": 51.2230411, "lng": 6.7824545 }
+  },
+  {
+    "rang": 8,
+    "name": "Leipzig",
+    "federalStateIndex": 13,
+    "federalStateName": "Sachsen",
+    "population": 616093,
+    "link": "/wiki/Leipzig",
+    "location": { "lat": 51.3396955, "lng": 12.3730747 }
+  },
+  {
+    "rang": 9,
+    "name": "Dortmund",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 593317,
+    "link": "/wiki/Dortmund",
+    "location": { "lat": 51.5135872, "lng": 7.465298100000001 }
+  },
+  {
+    "rang": 10,
+    "name": "Essen",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 584580,
+    "link": "/wiki/Essen",
+    "location": { "lat": 51.4556432, "lng": 7.0115552 }
+  },
+  {
+    "rang": 11,
+    "name": "Bremen",
+    "federalStateIndex": 11,
+    "federalStateName": "Bremen",
+    "population": 569396,
+    "link": "/wiki/Bremen",
+    "location": { "lat": 53.07929619999999, "lng": 8.8016937 }
+  },
+  {
+    "rang": 12,
+    "name": "Dresden",
+    "federalStateIndex": 13,
+    "federalStateName": "Sachsen",
+    "population": 563311,
+    "link": "/wiki/Dresden",
+    "location": { "lat": 51.0504088, "lng": 13.7372621 }
+  },
+  {
+    "rang": 13,
+    "name": "Hannover",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 545045,
+    "link": "/wiki/Hannover",
+    "location": { "lat": 52.3758916, "lng": 9.732010400000002 }
+  },
+  {
+    "rang": 14,
+    "name": "Nürnberg",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 523026,
+    "link": "/wiki/N%C3%BCrnberg",
+    "location": { "lat": 49.4521018, "lng": 11.0766654 }
+  },
+  {
+    "rang": 15,
+    "name": "Duisburg",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 502211,
+    "link": "/wiki/Duisburg",
+    "location": { "lat": 51.4344079, "lng": 6.762329299999999 }
+  },
+  {
+    "rang": 16,
+    "name": "Bochum",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 365742,
+    "link": "/wiki/Bochum",
+    "location": { "lat": 51.4818445, "lng": 7.216236299999999 }
+  },
+  {
+    "rang": 17,
+    "name": "Wuppertal",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 358876,
+    "link": "/wiki/Wuppertal",
+    "location": { "lat": 51.2562128, "lng": 7.150763599999999 }
+  },
+  {
+    "rang": 18,
+    "name": "Bielefeld",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 338332,
+    "link": "/wiki/Bielefeld",
+    "location": { "lat": 52.0302285, "lng": 8.532470800000002 }
+  },
+  {
+    "rang": 19,
+    "name": "Bonn",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 336465,
+    "link": "/wiki/Bonn",
+    "location": { "lat": 50.73743, "lng": 7.0982068 }
+  },
+  {
+    "rang": 20,
+    "name": "Münster",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 320946,
+    "link": "/wiki/M%C3%BCnster",
+    "location": { "lat": 51.9606649, "lng": 7.6261347 }
+  },
+  {
+    "rang": 21,
+    "name": "Mannheim",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 315554,
+    "link": "/wiki/Mannheim",
+    "location": { "lat": 49.4874592, "lng": 8.466039499999999 }
+  },
+  {
+    "rang": 22,
+    "name": "Karlsruhe",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 308707,
+    "link": "/wiki/Karlsruhe",
+    "location": { "lat": 49.0068901, "lng": 8.4036527 }
+  },
+  {
+    "rang": 23,
+    "name": "Augsburg",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 301033,
+    "link": "/wiki/Augsburg",
+    "location": { "lat": 48.3705449, "lng": 10.89779 }
+  },
+  {
+    "rang": 24,
+    "name": "Wiesbaden",
+    "federalStateIndex": 5,
+    "federalStateName": "Hessen",
+    "population": 283083,
+    "link": "/wiki/Wiesbaden",
+    "location": { "lat": 50.0782184, "lng": 8.239760799999999 }
+  },
+  {
+    "rang": 25,
+    "name": "Mönchengladbach",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 268465,
+    "link": "/wiki/M%C3%B6nchengladbach",
+    "location": { "lat": 51.1941686, "lng": 6.4315392 }
+  },
+  {
+    "rang": 26,
+    "name": "Gelsenkirchen",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 263000,
+    "link": "/wiki/Gelsenkirchen",
+    "location": { "lat": 51.5187651, "lng": 7.0838411 }
+  },
+  {
+    "rang": 27,
+    "name": "Aachen",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 252136,
+    "link": "/wiki/Aachen",
+    "location": { "lat": 50.7753455, "lng": 6.083886800000001 }
+  },
+  {
+    "rang": 28,
+    "name": "Braunschweig",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 251804,
+    "link": "/wiki/Braunschweig",
+    "location": { "lat": 52.2688736, "lng": 10.5267696 }
+  },
+  {
+    "rang": 29,
+    "name": "Chemnitz",
+    "federalStateIndex": 13,
+    "federalStateName": "Sachsen",
+    "population": 248563,
+    "link": "/wiki/Chemnitz",
+    "location": { "lat": 50.8282222, "lng": 12.9208547 }
+  },
+  {
+    "rang": 30,
+    "name": "Kiel",
+    "federalStateIndex": 14,
+    "federalStateName": "Schleswig-Holstein",
+    "population": 247717,
+    "link": "/wiki/Kiel",
+    "location": { "lat": 54.3232927, "lng": 10.1227652 }
+  },
+  {
+    "rang": 31,
+    "name": "Halle (Saale)",
+    "federalStateIndex": 1,
+    "federalStateName": "Sachsen-Anhalt",
+    "population": 242083,
+    "link": "/wiki/Halle_(Saale)",
+    "location": { "lat": 51.49535669999999, "lng": 11.9662371 }
+  },
+  {
+    "rang": 32,
+    "name": "Magdeburg",
+    "federalStateIndex": 1,
+    "federalStateName": "Sachsen-Anhalt",
+    "population": 239364,
+    "link": "/wiki/Magdeburg",
+    "location": { "lat": 52.1205333, "lng": 11.6276237 }
+  },
+  {
+    "rang": 33,
+    "name": "Freiburg im Breisgau",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 236140,
+    "link": "/wiki/Freiburg_im_Breisgau",
+    "location": { "lat": 47.9990077, "lng": 7.842104299999999 }
+  },
+  {
+    "rang": 34,
+    "name": "Krefeld",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 228426,
+    "link": "/wiki/Krefeld",
+    "location": { "lat": 51.3345409, "lng": 6.565207999999999 }
+  },
+  {
+    "rang": 35,
+    "name": "Mainz",
+    "federalStateIndex": 2,
+    "federalStateName": "Rheinland-Pfalz",
+    "population": 220552,
+    "link": "/wiki/Mainz",
+    "location": { "lat": 49.9928617, "lng": 8.2472526 }
+  },
+  {
+    "rang": 36,
+    "name": "Lübeck",
+    "federalStateIndex": 14,
+    "federalStateName": "Schleswig-Holstein",
+    "population": 218095,
+    "link": "/wiki/L%C3%BCbeck",
+    "location": { "lat": 53.8654673, "lng": 10.6865593 }
+  },
+  {
+    "rang": 37,
+    "name": "Erfurt",
+    "federalStateIndex": 4,
+    "federalStateName": "Thüringen",
+    "population": 214969,
+    "link": "/wiki/Erfurt",
+    "location": { "lat": 50.98476789999999, "lng": 11.0298799 }
+  },
+  {
+    "rang": 38,
+    "name": "Oberhausen",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 210824,
+    "link": "/wiki/Oberhausen",
+    "location": { "lat": 51.4878429, "lng": 6.863308 }
+  },
+  {
+    "rang": 39,
+    "name": "Rostock",
+    "federalStateIndex": 3,
+    "federalStateName": "Mecklenburg-Vorpommern",
+    "population": 209920,
+    "link": "/wiki/Rostock",
+    "location": { "lat": 54.0924406, "lng": 12.0991466 }
+  },
+  {
+    "rang": 40,
+    "name": "Kassel",
+    "federalStateIndex": 5,
+    "federalStateName": "Hessen",
+    "population": 204202,
+    "link": "/wiki/Kassel",
+    "location": { "lat": 51.3127114, "lng": 9.4797461 }
+  },
+  {
+    "rang": 41,
+    "name": "Hagen",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 189783,
+    "link": "/wiki/Hagen",
+    "location": { "lat": 51.3670777, "lng": 7.4632841 }
+  },
+  {
+    "rang": 42,
+    "name": "Potsdam",
+    "federalStateIndex": 9,
+    "federalStateName": "Brandenburg",
+    "population": 185750,
+    "link": "/wiki/Potsdam",
+    "location": { "lat": 52.3905689, "lng": 13.0644729 }
+  },
+  {
+    "rang": 43,
+    "name": "Saarbrücken",
+    "federalStateIndex": 6,
+    "federalStateName": "Saarland",
+    "population": 181959,
+    "link": "/wiki/Saarbr%C3%BCcken",
+    "location": { "lat": 49.2381697, "lng": 6.997547 }
+  },
+  {
+    "rang": 44,
+    "name": "Hamm",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 180849,
+    "link": "/wiki/Hamm",
+    "location": { "lat": 51.6738583, "lng": 7.815981600000001 }
+  },
+  {
+    "rang": 45,
+    "name": "Ludwigshafen am Rhein",
+    "federalStateIndex": 2,
+    "federalStateName": "Rheinland-Pfalz",
+    "population": 174265,
+    "link": "/wiki/Ludwigshafen_am_Rhein",
+    "location": { "lat": 49.4774018, "lng": 8.4447451 }
+  },
+  {
+    "rang": 46,
+    "name": "Oldenburg",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 172830,
+    "link": "/wiki/Oldenburg_(Oldb)",
+    "location": { "lat": 53.1434501, "lng": 8.214552099999999 }
+  },
+  {
+    "rang": 47,
+    "name": "Mülheim an der Ruhr",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 172404,
+    "link": "/wiki/M%C3%BClheim_an_der_Ruhr",
+    "location": { "lat": 51.4185682, "lng": 6.884522599999999 }
+  },
+  {
+    "rang": 48,
+    "name": "Osnabrück",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 167366,
+    "link": "/wiki/Osnabr%C3%BCck",
+    "location": { "lat": 52.2799112, "lng": 8.0471788 }
+  },
+  {
+    "rang": 49,
+    "name": "Leverkusen",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 165748,
+    "link": "/wiki/Leverkusen",
+    "location": { "lat": 51.04592479999999, "lng": 7.0192196 }
+  },
+  {
+    "rang": 50,
+    "name": "Heidelberg",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 162273,
+    "link": "/wiki/Heidelberg",
+    "location": { "lat": 49.3987524, "lng": 8.6724335 }
+  },
+  {
+    "rang": 51,
+    "name": "Darmstadt",
+    "federalStateIndex": 5,
+    "federalStateName": "Hessen",
+    "population": 162243,
+    "link": "/wiki/Darmstadt",
+    "location": { "lat": 49.8728253, "lng": 8.6511929 }
+  },
+  {
+    "rang": 52,
+    "name": "Solingen",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 160643,
+    "link": "/wiki/Solingen",
+    "location": { "lat": 51.1652199, "lng": 7.0671161 }
+  },
+  {
+    "rang": 53,
+    "name": "Regensburg",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 157443,
+    "link": "/wiki/Regensburg",
+    "location": { "lat": 49.0134297, "lng": 12.1016236 }
+  },
+  {
+    "rang": 54,
+    "name": "Herne",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 157368,
+    "link": "/wiki/Herne",
+    "location": { "lat": 51.5368948, "lng": 7.200914699999999 }
+  },
+  {
+    "rang": 55,
+    "name": "Paderborn",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 154755,
+    "link": "/wiki/Paderborn",
+    "location": { "lat": 51.7189205, "lng": 8.757509299999999 }
+  },
+  {
+    "rang": 56,
+    "name": "Neuss",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 154139,
+    "link": "/wiki/Neuss",
+    "location": { "lat": 51.2041968, "lng": 6.6879511 }
+  },
+  {
+    "rang": 57,
+    "name": "Ingolstadt",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 141029,
+    "link": "/wiki/Ingolstadt",
+    "location": { "lat": 48.7667395, "lng": 11.4226498 }
+  },
+  {
+    "rang": 58,
+    "name": "Offenbach am Main",
+    "federalStateIndex": 5,
+    "federalStateName": "Hessen",
+    "population": 134170,
+    "link": "/wiki/Offenbach_am_Main",
+    "location": { "lat": 50.09563620000001, "lng": 8.776084299999999 }
+  },
+  {
+    "rang": 59,
+    "name": "Fürth",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 131433,
+    "link": "/wiki/F%C3%BCrth",
+    "location": { "lat": 49.4771169, "lng": 10.988667 }
+  },
+  {
+    "rang": 60,
+    "name": "Ulm",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 128928,
+    "link": "/wiki/Ulm",
+    "location": { "lat": 48.4010822, "lng": 9.987607599999999 }
+  },
+  {
+    "rang": 61,
+    "name": "Heilbronn",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 128334,
+    "link": "/wiki/Heilbronn",
+    "location": { "lat": 49.1426929, "lng": 9.210879 }
+  },
+  {
+    "rang": 62,
+    "name": "Pforzheim",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 127849,
+    "link": "/wiki/Pforzheim",
+    "location": { "lat": 48.8921862, "lng": 8.6946286 }
+  },
+  {
+    "rang": 63,
+    "name": "Würzburg",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 127810,
+    "link": "/wiki/W%C3%BCrzburg",
+    "location": { "lat": 49.79130439999999, "lng": 9.9533548 }
+  },
+  {
+    "rang": 64,
+    "name": "Wolfsburg",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 125961,
+    "link": "/wiki/Wolfsburg",
+    "location": { "lat": 52.4226503, "lng": 10.7865461 }
+  },
+  {
+    "rang": 65,
+    "name": "Göttingen",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 118946,
+    "link": "/wiki/G%C3%B6ttingen",
+    "location": { "lat": 51.54128040000001, "lng": 9.915803499999999 }
+  },
+  {
+    "rang": 66,
+    "name": "Bottrop",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 118113,
+    "link": "/wiki/Bottrop",
+    "location": { "lat": 51.529086, "lng": 6.9446888 }
+  },
+  {
+    "rang": 67,
+    "name": "Reutlingen",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 117547,
+    "link": "/wiki/Reutlingen",
+    "location": { "lat": 48.4912389, "lng": 9.2046411 }
+  },
+  {
+    "rang": 68,
+    "name": "Erlangen",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 116562,
+    "link": "/wiki/Erlangen",
+    "location": { "lat": 49.5896744, "lng": 11.0119611 }
+  },
+  {
+    "rang": 69,
+    "name": "Bremerhaven",
+    "federalStateIndex": 11,
+    "federalStateName": "Bremen",
+    "population": 115468,
+    "link": "/wiki/Bremerhaven",
+    "location": { "lat": 53.5395845, "lng": 8.5809424 }
+  },
+  {
+    "rang": 70,
+    "name": "Koblenz",
+    "federalStateIndex": 2,
+    "federalStateName": "Rheinland-Pfalz",
+    "population": 115268,
+    "link": "/wiki/Koblenz",
+    "location": { "lat": 50.3569429, "lng": 7.5889959 }
+  },
+  {
+    "rang": 71,
+    "name": "Bergisch Gladbach",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 112712,
+    "link": "/wiki/Bergisch_Gladbach",
+    "location": { "lat": 50.98964789999999, "lng": 7.1229789 }
+  },
+  {
+    "rang": 72,
+    "name": "Remscheid",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 112613,
+    "link": "/wiki/Remscheid",
+    "location": { "lat": 51.1787418, "lng": 7.189696199999998 }
+  },
+  {
+    "rang": 73,
+    "name": "Trier",
+    "federalStateIndex": 2,
+    "federalStateName": "Rheinland-Pfalz",
+    "population": 112195,
+    "link": "/wiki/Trier",
+    "location": { "lat": 49.749992, "lng": 6.6371433 }
+  },
+  {
+    "rang": 74,
+    "name": "Recklinghausen",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 111734,
+    "link": "/wiki/Recklinghausen",
+    "location": { "lat": 51.6117809, "lng": 7.197388500000001 }
+  },
+  {
+    "rang": 75,
+    "name": "Jena",
+    "federalStateIndex": 4,
+    "federalStateName": "Thüringen",
+    "population": 111191,
+    "link": "/wiki/Jena",
+    "location": { "lat": 50.927054, "lng": 11.5892372 }
+  },
+  {
+    "rang": 76,
+    "name": "Moers",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 105287,
+    "link": "/wiki/Moers",
+    "location": { "lat": 51.4516041, "lng": 6.640814799999999 }
+  },
+  {
+    "rang": 77,
+    "name": "Salzgitter",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 104548,
+    "link": "/wiki/Salzgitter",
+    "location": { "lat": 52.13786589999999, "lng": 10.3899126 }
+  },
+  {
+    "rang": 78,
+    "name": "Siegen",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 102560,
+    "link": "/wiki/Siegen",
+    "location": { "lat": 50.8838492, "lng": 8.020959099999999 }
+  },
+  {
+    "rang": 79,
+    "name": "Gütersloh",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 102393,
+    "link": "/wiki/G%C3%BCtersloh",
+    "location": { "lat": 51.9032375, "lng": 8.385753500000002 }
+  },
+  {
+    "rang": 80,
+    "name": "Hildesheim",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 101858,
+    "link": "/wiki/Hildesheim",
+    "location": { "lat": 52.154778, "lng": 9.9579652 }
+  },
+  {
+    "rang": 81,
+    "name": "Hanau",
+    "federalStateIndex": 5,
+    "federalStateName": "Hessen",
+    "population": 101364,
+    "link": "/wiki/Hanau",
+    "location": { "lat": 50.1264123, "lng": 8.9283105 }
+  },
+  {
+    "rang": 82,
+    "name": "Kaiserslautern",
+    "federalStateIndex": 2,
+    "federalStateName": "Rheinland-Pfalz",
+    "population": 101228,
+    "link": "/wiki/Kaiserslautern",
+    "location": { "lat": 49.4400657, "lng": 7.7491265 }
+  },
+  {
+    "rang": 83,
+    "name": "Cottbus",
+    "federalStateIndex": 9,
+    "federalStateName": "Brandenburg",
+    "population": 99515,
+    "link": "/wiki/Cottbus",
+    "location": { "lat": 51.75631079999999, "lng": 14.3328679 }
+  },
+  {
+    "rang": 84,
+    "name": "Schwerin",
+    "federalStateIndex": 3,
+    "federalStateName": "Mecklenburg-Vorpommern",
+    "population": 98596,
+    "link": "/wiki/Schwerin",
+    "location": { "lat": 53.6355022, "lng": 11.4012499 }
+  },
+  {
+    "rang": 85,
+    "name": "Witten",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 95897,
+    "link": "/wiki/Witten",
+    "location": { "lat": 51.4438926, "lng": 7.353197000000001 }
+  },
+  {
+    "rang": 86,
+    "name": "Esslingen am Neckar",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 94941,
+    "link": "/wiki/Esslingen_am_Neckar",
+    "location": { "lat": 48.742178, "lng": 9.3144229 }
+  },
+  {
+    "rang": 87,
+    "name": "Ludwigsburg",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 94157,
+    "link": "/wiki/Ludwigsburg",
+    "location": { "lat": 48.8891149, "lng": 9.1942834 }
+  },
+  {
+    "rang": 88,
+    "name": "Gießen",
+    "federalStateIndex": 5,
+    "federalStateName": "Hessen",
+    "population": 94146,
+    "link": "/wiki/Gie%C3%9Fen",
+    "location": { "lat": 50.5840512, "lng": 8.678403099999999 }
+  },
+  {
+    "rang": 89,
+    "name": "Gera",
+    "federalStateIndex": 4,
+    "federalStateName": "Thüringen",
+    "population": 93634,
+    "link": "/wiki/Gera",
+    "location": { "lat": 50.8850706, "lng": 12.0807203 }
+  },
+  {
+    "rang": 90,
+    "name": "Düren",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 93207,
+    "link": "/wiki/D%C3%BCren",
+    "location": { "lat": 50.8037183, "lng": 6.4793683 }
+  },
+  {
+    "rang": 91,
+    "name": "Tübingen",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 92811,
+    "link": "/wiki/T%C3%BCbingen",
+    "location": { "lat": 48.5216364, "lng": 9.0576448 }
+  },
+  {
+    "rang": 92,
+    "name": "Flensburg",
+    "federalStateIndex": 14,
+    "federalStateName": "Schleswig-Holstein",
+    "population": 92550,
+    "link": "/wiki/Flensburg",
+    "location": { "lat": 54.7937431, "lng": 9.4469964 }
+  },
+  {
+    "rang": 93,
+    "name": "Iserlohn",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 92540,
+    "link": "/wiki/Iserlohn",
+    "location": { "lat": 51.3765096, "lng": 7.6960842 }
+  },
+  {
+    "rang": 94,
+    "name": "Villingen-Schwenningen",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 88213,
+    "link": "/wiki/Villingen-Schwenningen",
+    "location": { "lat": 48.0594021, "lng": 8.4640869 }
+  },
+  {
+    "rang": 95,
+    "name": "Ratingen",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 87388,
+    "link": "/wiki/Ratingen",
+    "location": { "lat": 51.2964148, "lng": 6.8401844 }
+  },
+  {
+    "rang": 96,
+    "name": "Zwickau",
+    "federalStateIndex": 13,
+    "federalStateName": "Sachsen",
+    "population": 87172,
+    "link": "/wiki/Zwickau",
+    "location": { "lat": 50.7069243, "lng": 12.4591138 }
+  },
+  {
+    "rang": 97,
+    "name": "Lünen",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 86868,
+    "link": "/wiki/L%C3%BCnen",
+    "location": { "lat": 51.6104829, "lng": 7.5285074 }
+  },
+  {
+    "rang": 98,
+    "name": "Konstanz",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 85859,
+    "link": "/wiki/Konstanz",
+    "location": { "lat": 47.6779808, "lng": 9.1736741 }
+  },
+  {
+    "rang": 99,
+    "name": "Worms",
+    "federalStateIndex": 2,
+    "federalStateName": "Rheinland-Pfalz",
+    "population": 84646,
+    "link": "/wiki/Worms",
+    "location": { "lat": 49.6341372, "lng": 8.3507182 }
+  },
+  {
+    "rang": 100,
+    "name": "Marl",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 84331,
+    "link": "/wiki/Marl",
+    "location": { "lat": 51.65912340000001, "lng": 7.1060218 }
+  },
+  {
+    "rang": 101,
+    "name": "Minden",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 83076,
+    "link": "/wiki/Minden",
+    "location": { "lat": 52.2923549, "lng": 8.9160539 }
+  },
+  {
+    "rang": 102,
+    "name": "Velbert",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 82445,
+    "link": "/wiki/Velbert",
+    "location": { "lat": 51.33707030000001, "lng": 7.0426775 }
+  },
+  {
+    "rang": 103,
+    "name": "Norderstedt",
+    "federalStateIndex": 14,
+    "federalStateName": "Schleswig-Holstein",
+    "population": 81880,
+    "link": "/wiki/Norderstedt",
+    "location": { "lat": 53.6993066, "lng": 10.0008798 }
+  },
+  {
+    "rang": 104,
+    "name": "Bamberg",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 79935,
+    "link": "/wiki/Bamberg",
+    "location": { "lat": 49.8988135, "lng": 10.9027636 }
+  },
+  {
+    "rang": 105,
+    "name": "Dessau-Roßlau",
+    "federalStateIndex": 1,
+    "federalStateName": "Sachsen-Anhalt",
+    "population": 79655,
+    "link": "/wiki/Dessau-Ro%C3%9Flau",
+    "location": { "lat": 51.84282779999999, "lng": 12.2303935 }
+  },
+  {
+    "rang": 106,
+    "name": "Neumünster",
+    "federalStateIndex": 14,
+    "federalStateName": "Schleswig-Holstein",
+    "population": 79502,
+    "link": "/wiki/Neum%C3%BCnster",
+    "location": { "lat": 54.0729431, "lng": 9.9840158 }
+  },
+  {
+    "rang": 107,
+    "name": "Delmenhorst",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 78385,
+    "link": "/wiki/Delmenhorst",
+    "location": { "lat": 53.0521886, "lng": 8.635593199999999 }
+  },
+  {
+    "rang": 108,
+    "name": "Viersen",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 78208,
+    "link": "/wiki/Viersen",
+    "location": { "lat": 51.2554987, "lng": 6.3965235 }
+  },
+  {
+    "rang": 109,
+    "name": "Rheine",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 77893,
+    "link": "/wiki/Rheine",
+    "location": { "lat": 52.2815691, "lng": 7.443409200000001 }
+  },
+  {
+    "rang": 110,
+    "name": "Marburg",
+    "federalStateIndex": 5,
+    "federalStateName": "Hessen",
+    "population": 77845,
+    "link": "/wiki/Marburg",
+    "location": { "lat": 50.8018843, "lng": 8.7657677 }
+  },
+  {
+    "rang": 111,
+    "name": "Lüneburg",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 76837,
+    "link": "/wiki/L%C3%BCneburg",
+    "location": { "lat": 53.2478704, "lng": 10.4160637 }
+  },
+  {
+    "rang": 112,
+    "name": "Dorsten",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 76720,
+    "link": "/wiki/Dorsten",
+    "location": { "lat": 51.6559681, "lng": 6.964260599999999 }
+  },
+  {
+    "rang": 113,
+    "name": "Troisdorf",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 76251,
+    "link": "/wiki/Troisdorf",
+    "location": { "lat": 50.8177471, "lng": 7.1430246 }
+  },
+  {
+    "rang": 114,
+    "name": "Wilhelmshaven",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 76089,
+    "link": "/wiki/Wilhelmshaven",
+    "location": { "lat": 53.53234029999999, "lng": 8.1068722 }
+  },
+  {
+    "rang": 115,
+    "name": "Gladbeck",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 75889,
+    "link": "/wiki/Gladbeck",
+    "location": { "lat": 51.5706624, "lng": 6.985392099999999 }
+  },
+  {
+    "rang": 116,
+    "name": "Landshut",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 75457,
+    "link": "/wiki/Landshut",
+    "location": { "lat": 48.5441917, "lng": 12.1468532 }
+  },
+  {
+    "rang": 117,
+    "name": "Detmold",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 75089,
+    "link": "/wiki/Detmold",
+    "location": { "lat": 51.9384783, "lng": 8.868637999999999 }
+  },
+  {
+    "rang": 118,
+    "name": "Bayreuth",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 74506,
+    "link": "/wiki/Bayreuth",
+    "location": { "lat": 49.9456399, "lng": 11.5713346 }
+  },
+  {
+    "rang": 119,
+    "name": "Arnsberg",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 74323,
+    "link": "/wiki/Arnsberg",
+    "location": { "lat": 51.4073375, "lng": 8.052771 }
+  },
+  {
+    "rang": 120,
+    "name": "Castrop-Rauxel",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 73795,
+    "link": "/wiki/Castrop-Rauxel",
+    "location": { "lat": 51.5632625, "lng": 7.3150145 }
+  },
+  {
+    "rang": 121,
+    "name": "Brandenburg an der Havel",
+    "federalStateIndex": 9,
+    "federalStateName": "Brandenburg",
+    "population": 73609,
+    "link": "/wiki/Brandenburg_an_der_Havel",
+    "location": { "lat": 52.4125287, "lng": 12.5316444 }
+  },
+  {
+    "rang": 122,
+    "name": "Aschaffenburg",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 72444,
+    "link": "/wiki/Aschaffenburg",
+    "location": { "lat": 49.9806625, "lng": 9.135555400000001 }
+  },
+  {
+    "rang": 123,
+    "name": "Bocholt",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 71930,
+    "link": "/wiki/Bocholt",
+    "location": { "lat": 51.8384277, "lng": 6.6150917 }
+  },
+  {
+    "rang": 124,
+    "name": "Lüdenscheid",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 71865,
+    "link": "/wiki/L%C3%BCdenscheid",
+    "location": { "lat": 51.2191038, "lng": 7.631259999999999 }
+  },
+  {
+    "rang": 125,
+    "name": "Celle",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 70138,
+    "link": "/wiki/Celle",
+    "location": { "lat": 52.6263797, "lng": 10.080865 }
+  },
+  {
+    "rang": 126,
+    "name": "Kempten (Allgäu)",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 70056,
+    "link": "/wiki/Kempten_(Allg%C3%A4u)",
+    "location": { "lat": 47.7285699, "lng": 10.3157835 }
+  },
+  {
+    "rang": 127,
+    "name": "Fulda",
+    "federalStateIndex": 5,
+    "federalStateName": "Hessen",
+    "population": 69968,
+    "link": "/wiki/Fulda",
+    "location": { "lat": 50.5558095, "lng": 9.6808449 }
+  },
+  {
+    "rang": 128,
+    "name": "Lippstadt",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 68890,
+    "link": "/wiki/Lippstadt",
+    "location": { "lat": 51.6712278, "lng": 8.3406481 }
+  },
+  {
+    "rang": 129,
+    "name": "Aalen",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 68816,
+    "link": "/wiki/Aalen",
+    "location": { "lat": 48.8366887, "lng": 10.0971163 }
+  },
+  {
+    "rang": 130,
+    "name": "Dinslaken",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 67762,
+    "link": "/wiki/Dinslaken",
+    "location": { "lat": 51.5674264, "lng": 6.747534 }
+  },
+  {
+    "rang": 131,
+    "name": "Herford",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 67459,
+    "link": "/wiki/Herford",
+    "location": { "lat": 52.1180196, "lng": 8.677477200000002 }
+  },
+  {
+    "rang": 132,
+    "name": "Rüsselsheim am Main",
+    "federalStateIndex": 5,
+    "federalStateName": "Hessen",
+    "population": 67277,
+    "link": "/wiki/R%C3%BCsselsheim_am_Main",
+    "location": { "lat": 49.9887497, "lng": 8.4216976 }
+  },
+  {
+    "rang": 133,
+    "name": "Kerpen",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 67239,
+    "link": "/wiki/Kerpen",
+    "location": { "lat": 50.8747592, "lng": 6.6883728 }
+  },
+  {
+    "rang": 134,
+    "name": "Neuwied",
+    "federalStateIndex": 2,
+    "federalStateName": "Rheinland-Pfalz",
+    "population": 65986,
+    "link": "/wiki/Neuwied",
+    "location": { "lat": 50.4361866, "lng": 7.4664546 }
+  },
+  {
+    "rang": 135,
+    "name": "Weimar",
+    "federalStateIndex": 4,
+    "federalStateName": "Thüringen",
+    "population": 65620,
+    "link": "/wiki/Weimar",
+    "location": { "lat": 50.9794934, "lng": 11.3235439 }
+  },
+  {
+    "rang": 136,
+    "name": "Dormagen",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 65147,
+    "link": "/wiki/Dormagen",
+    "location": { "lat": 51.09368509999999, "lng": 6.828911199999999 }
+  },
+  {
+    "rang": 137,
+    "name": "Sindelfingen",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 64995,
+    "link": "/wiki/Sindelfingen",
+    "location": { "lat": 48.7074558, "lng": 9.0044053 }
+  },
+  {
+    "rang": 138,
+    "name": "Plauen",
+    "federalStateIndex": 13,
+    "federalStateName": "Sachsen",
+    "population": 64763,
+    "link": "/wiki/Plauen",
+    "location": { "lat": 50.4976133, "lng": 12.1368679 }
+  },
+  {
+    "rang": 139,
+    "name": "Grevenbroich",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 64596,
+    "link": "/wiki/Grevenbroich",
+    "location": { "lat": 51.0902094, "lng": 6.585863000000001 }
+  },
+  {
+    "rang": 140,
+    "name": "Rosenheim",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 64403,
+    "link": "/wiki/Rosenheim",
+    "location": { "lat": 47.8571272, "lng": 12.1181047 }
+  },
+  {
+    "rang": 141,
+    "name": "Neubrandenburg",
+    "federalStateIndex": 3,
+    "federalStateName": "Mecklenburg-Vorpommern",
+    "population": 63989,
+    "link": "/wiki/Neubrandenburg",
+    "location": { "lat": 53.5678292, "lng": 13.2779269 }
+  },
+  {
+    "rang": 142,
+    "name": "Friedrichshafen",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 62932,
+    "link": "/wiki/Friedrichshafen",
+    "location": { "lat": 47.65673289999999, "lng": 9.4649538 }
+  },
+  {
+    "rang": 143,
+    "name": "Herten",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 62473,
+    "link": "/wiki/Herten",
+    "location": { "lat": 51.6020534, "lng": 7.1389575 }
+  },
+  {
+    "rang": 144,
+    "name": "Bergheim",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 62376,
+    "link": "/wiki/Bergheim",
+    "location": { "lat": 50.9451945, "lng": 6.6555022 }
+  },
+  {
+    "rang": 145,
+    "name": "Schwäbisch Gmünd",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 62325,
+    "link": "/wiki/Schw%C3%A4bisch_Gm%C3%BCnd",
+    "location": { "lat": 48.7994019, "lng": 9.8045704 }
+  },
+  {
+    "rang": 146,
+    "name": "Offenburg",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 61670,
+    "link": "/wiki/Offenburg",
+    "location": { "lat": 48.473451, "lng": 7.9498017 }
+  },
+  {
+    "rang": 147,
+    "name": "Garbsen",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 61349,
+    "link": "/wiki/Garbsen",
+    "location": { "lat": 52.4272509, "lng": 9.5955146 }
+  },
+  {
+    "rang": 148,
+    "name": "Wesel",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 61330,
+    "link": "/wiki/Wesel",
+    "location": { "lat": 51.6643079, "lng": 6.6295679 }
+  },
+  {
+    "rang": 149,
+    "name": "Neu-Ulm",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 61043,
+    "link": "/wiki/Neu-Ulm",
+    "location": { "lat": 48.38916889999999, "lng": 10.00286 }
+  },
+  {
+    "rang": 150,
+    "name": "Hürth",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 60969,
+    "link": "/wiki/H%C3%BCrth",
+    "location": { "lat": 50.8805932, "lng": 6.8881425 }
+  },
+  {
+    "rang": 151,
+    "name": "Unna",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 60892,
+    "link": "/wiki/Unna",
+    "location": { "lat": 51.5410778, "lng": 7.687836 }
+  },
+  {
+    "rang": 152,
+    "name": "Langenfeld (Rheinland)",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 59783,
+    "link": "/wiki/Langenfeld_(Rheinland)",
+    "location": { "lat": 51.1191898, "lng": 6.951266299999999 }
+  },
+  {
+    "rang": 153,
+    "name": "Euskirchen",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 59772,
+    "link": "/wiki/Euskirchen",
+    "location": { "lat": 50.6574392, "lng": 6.7899945 }
+  },
+  {
+    "rang": 154,
+    "name": "Greifswald",
+    "federalStateIndex": 3,
+    "federalStateName": "Mecklenburg-Vorpommern",
+    "population": 59691,
+    "link": "/wiki/Greifswald",
+    "location": { "lat": 54.08654629999999, "lng": 13.3923414 }
+  },
+  {
+    "rang": 155,
+    "name": "Stralsund",
+    "federalStateIndex": 3,
+    "federalStateName": "Mecklenburg-Vorpommern",
+    "population": 59363,
+    "link": "/wiki/Stralsund",
+    "location": { "lat": 54.30906539999999, "lng": 13.0770347 }
+  },
+  {
+    "rang": 156,
+    "name": "Göppingen",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 59053,
+    "link": "/wiki/G%C3%B6ppingen",
+    "location": { "lat": 48.7054382, "lng": 9.6512491 }
+  },
+  {
+    "rang": 157,
+    "name": "Frankfurt (Oder)",
+    "federalStateIndex": 9,
+    "federalStateName": "Brandenburg",
+    "population": 58230,
+    "link": "/wiki/Frankfurt_(Oder)",
+    "location": { "lat": 52.3472237, "lng": 14.5505673 }
+  },
+  {
+    "rang": 158,
+    "name": "Hameln",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 57905,
+    "link": "/wiki/Hameln",
+    "location": { "lat": 52.1042035, "lng": 9.3616 }
+  },
+  {
+    "rang": 159,
+    "name": "Meerbusch",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 57422,
+    "link": "/wiki/Meerbusch",
+    "location": { "lat": 51.2503512, "lng": 6.690717299999999 }
+  },
+  {
+    "rang": 160,
+    "name": "Baden-Baden",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 57025,
+    "link": "/wiki/Baden-Baden",
+    "location": { "lat": 48.76564, "lng": 8.228524199999999 }
+  },
+  {
+    "rang": 161,
+    "name": "Görlitz",
+    "federalStateIndex": 13,
+    "federalStateName": "Sachsen",
+    "population": 56574,
+    "link": "/wiki/G%C3%B6rlitz",
+    "location": { "lat": 51.1524553, "lng": 14.9688941 }
+  },
+  {
+    "rang": 162,
+    "name": "Lingen (Ems)",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 56542,
+    "link": "/wiki/Lingen_(Ems)",
+    "location": { "lat": 52.5238099, "lng": 7.316981699999999 }
+  },
+  {
+    "rang": 163,
+    "name": "Stolberg (Rheinland)",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 56455,
+    "link": "/wiki/Stolberg_(Rheinland)",
+    "location": { "lat": 50.7730884, "lng": 6.225193399999999 }
+  },
+  {
+    "rang": 164,
+    "name": "Sankt Augustin",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 56369,
+    "link": "/wiki/Sankt_Augustin",
+    "location": { "lat": 50.7694775, "lng": 7.187578599999999 }
+  },
+  {
+    "rang": 165,
+    "name": "Waiblingen",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 56081,
+    "link": "/wiki/Waiblingen",
+    "location": { "lat": 48.8293519, "lng": 9.318573899999999 }
+  },
+  {
+    "rang": 166,
+    "name": "Eschweiler",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 56049,
+    "link": "/wiki/Eschweiler",
+    "location": { "lat": 50.8107322, "lng": 6.263075 }
+  },
+  {
+    "rang": 167,
+    "name": "Hilden",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 55815,
+    "link": "/wiki/Hilden",
+    "location": { "lat": 51.16785669999999, "lng": 6.9352253 }
+  },
+  {
+    "rang": 168,
+    "name": "Pulheim",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 55530,
+    "link": "/wiki/Pulheim",
+    "location": { "lat": 50.9995815, "lng": 6.807685299999999 }
+  },
+  {
+    "rang": 169,
+    "name": "Langenhagen",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 55367,
+    "link": "/wiki/Langenhagen",
+    "location": { "lat": 52.4528001, "lng": 9.7443992 }
+  },
+  {
+    "rang": 170,
+    "name": "Nordhorn",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 55242,
+    "link": "/wiki/Nordhorn",
+    "location": { "lat": 52.4407445, "lng": 7.0648882 }
+  },
+  {
+    "rang": 171,
+    "name": "Bad Homburg vor der Höhe",
+    "federalStateIndex": 5,
+    "federalStateName": "Hessen",
+    "population": 54996,
+    "link": "/wiki/Bad_Homburg_vor_der_H%C3%B6he",
+    "location": { "lat": 50.2284412, "lng": 8.617754999999999 }
+  },
+  {
+    "rang": 172,
+    "name": "Bad Salzuflen",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 54808,
+    "link": "/wiki/Bad_Salzuflen",
+    "location": { "lat": 52.0765185, "lng": 8.755621999999999 }
+  },
+  {
+    "rang": 173,
+    "name": "Schweinfurt",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 54675,
+    "link": "/wiki/Schweinfurt",
+    "location": { "lat": 50.0492047, "lng": 10.2194228 }
+  },
+  {
+    "rang": 174,
+    "name": "Hattingen",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 54637,
+    "link": "/wiki/Hattingen",
+    "location": { "lat": 51.4018117, "lng": 7.1911567 }
+  },
+  {
+    "rang": 175,
+    "name": "Wetzlar",
+    "federalStateIndex": 5,
+    "federalStateName": "Hessen",
+    "population": 54187,
+    "link": "/wiki/Wetzlar",
+    "location": { "lat": 50.5635273, "lng": 8.5002611 }
+  },
+  {
+    "rang": 176,
+    "name": "Neustadt an der Weinstraße",
+    "federalStateIndex": 2,
+    "federalStateName": "Rheinland-Pfalz",
+    "population": 53981,
+    "link": "/wiki/Neustadt_an_der_Weinstra%C3%9Fe",
+    "location": { "lat": 49.3501864, "lng": 8.1486886 }
+  },
+  {
+    "rang": 177,
+    "name": "Passau",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 53907,
+    "link": "/wiki/Passau",
+    "location": { "lat": 48.5667364, "lng": 13.4319466 }
+  },
+  {
+    "rang": 178,
+    "name": "Kleve",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 53388,
+    "link": "/wiki/Kleve",
+    "location": { "lat": 51.78672599999999, "lng": 6.12954 }
+  },
+  {
+    "rang": 179,
+    "name": "Ahlen",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 53348,
+    "link": "/wiki/Ahlen",
+    "location": { "lat": 51.7600942, "lng": 7.8973228 }
+  },
+  {
+    "rang": 180,
+    "name": "Frechen",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 52811,
+    "link": "/wiki/Frechen",
+    "location": { "lat": 50.9122488, "lng": 6.815995699999999 }
+  },
+  {
+    "rang": 181,
+    "name": "Wolfenbüttel",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 52681,
+    "link": "/wiki/Wolfenb%C3%BCttel",
+    "location": { "lat": 52.160443, "lng": 10.5342445 }
+  },
+  {
+    "rang": 182,
+    "name": "Bad Kreuznach",
+    "federalStateIndex": 2,
+    "federalStateName": "Rheinland-Pfalz",
+    "population": 52529,
+    "link": "/wiki/Bad_Kreuznach",
+    "location": { "lat": 49.8440162, "lng": 7.873134599999999 }
+  },
+  {
+    "rang": 183,
+    "name": "Menden (Sauerland)",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 52485,
+    "link": "/wiki/Menden_(Sauerland)",
+    "location": { "lat": 51.4377453, "lng": 7.7953337 }
+  },
+  {
+    "rang": 184,
+    "name": "Ibbenbüren",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 52421,
+    "link": "/wiki/Ibbenb%C3%BCren",
+    "location": { "lat": 52.2767721, "lng": 7.718994700000001 }
+  },
+  {
+    "rang": 185,
+    "name": "Gummersbach",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 52001,
+    "link": "/wiki/Gummersbach",
+    "location": { "lat": 51.0275951, "lng": 7.563750499999999 }
+  },
+  {
+    "rang": 186,
+    "name": "Ravensburg",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 51482,
+    "link": "/wiki/Ravensburg",
+    "location": { "lat": 47.78543579999999, "lng": 9.6103864 }
+  },
+  {
+    "rang": 187,
+    "name": "Böblingen",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 51460,
+    "link": "/wiki/B%C3%B6blingen",
+    "location": { "lat": 48.6845486, "lng": 9.0073513 }
+  },
+  {
+    "rang": 188,
+    "name": "Peine",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 51411,
+    "link": "/wiki/Peine",
+    "location": { "lat": 52.3204095, "lng": 10.243267 }
+  },
+  {
+    "rang": 189,
+    "name": "Speyer",
+    "federalStateIndex": 2,
+    "federalStateName": "Rheinland-Pfalz",
+    "population": 51368,
+    "link": "/wiki/Speyer",
+    "location": { "lat": 49.3172765, "lng": 8.441217199999999 }
+  },
+  {
+    "rang": 190,
+    "name": "Rastatt",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 51310,
+    "link": "/wiki/Rastatt",
+    "location": { "lat": 48.8590212, "lng": 8.2099996 }
+  },
+  {
+    "rang": 191,
+    "name": "Elmshorn",
+    "federalStateIndex": 14,
+    "federalStateName": "Schleswig-Holstein",
+    "population": 50772,
+    "link": "/wiki/Elmshorn",
+    "location": { "lat": 53.7513549, "lng": 9.6632521 }
+  },
+  {
+    "rang": 192,
+    "name": "Emden",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 50535,
+    "link": "/wiki/Emden",
+    "location": { "lat": 53.35940290000001, "lng": 7.2060095 }
+  },
+  {
+    "rang": 193,
+    "name": "Goslar",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 50203,
+    "link": "/wiki/Goslar",
+    "location": { "lat": 51.9059531, "lng": 10.4289963 }
+  },
+  {
+    "rang": 194,
+    "name": "Willich",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 50144,
+    "link": "/wiki/Willich",
+    "location": { "lat": 51.2654601, "lng": 6.544265900000001 }
+  },
+  {
+    "rang": 195,
+    "name": "Heidenheim an der Brenz",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 50025,
+    "link": "/wiki/Heidenheim_an_der_Brenz",
+    "location": { "lat": 48.6785503, "lng": 10.1506915 }
+  },
+  {
+    "rang": 196,
+    "name": "Erftstadt",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 49882,
+    "link": "/wiki/Erftstadt",
+    "location": { "lat": 50.7948075, "lng": 6.7774607 }
+  },
+  {
+    "rang": 197,
+    "name": "Lörrach",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 49876,
+    "link": "/wiki/L%C3%B6rrach",
+    "location": { "lat": 47.6167921, "lng": 7.6691015 }
+  },
+  {
+    "rang": 198,
+    "name": "Gronau (Westf.)",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 49824,
+    "link": "/wiki/Gronau_(Westf.)",
+    "location": { "lat": 52.21280540000001, "lng": 7.0461583 }
+  },
+  {
+    "rang": 199,
+    "name": "Leonberg",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 49512,
+    "link": "/wiki/Leonberg",
+    "location": { "lat": 48.7960447, "lng": 9.0095706 }
+  },
+  {
+    "rang": 200,
+    "name": "Rheda-Wiedenbrück",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 49486,
+    "link": "/wiki/Rheda-Wiedenbr%C3%BCck",
+    "location": { "lat": 51.85460759999999, "lng": 8.2878002 }
+  },
+  {
+    "rang": 201,
+    "name": "Bad Oeynhausen",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 49477,
+    "link": "/wiki/Bad_Oeynhausen",
+    "location": { "lat": 52.2084623, "lng": 8.8009706 }
+  },
+  {
+    "rang": 202,
+    "name": "Singen (Hohentwiel)",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 49441,
+    "link": "/wiki/Singen_(Hohentwiel)",
+    "location": { "lat": 47.7628032, "lng": 8.8380152 }
+  },
+  {
+    "rang": 203,
+    "name": "Freising",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 49339,
+    "link": "/wiki/Freising",
+    "location": { "lat": 48.401454, "lng": 11.7413524 }
+  },
+  {
+    "rang": 204,
+    "name": "Bergkamen",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 49263,
+    "link": "/wiki/Bergkamen",
+    "location": { "lat": 51.6158082, "lng": 7.6429742 }
+  },
+  {
+    "rang": 205,
+    "name": "Straubing",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 49164,
+    "link": "/wiki/Straubing",
+    "location": { "lat": 48.8777333, "lng": 12.5801538 }
+  },
+  {
+    "rang": 206,
+    "name": "Lahr/Schwarzwald",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 49074,
+    "link": "/wiki/Lahr/Schwarzwald",
+    "location": { "lat": 48.33915, "lng": 7.8781487 }
+  },
+  {
+    "rang": 207,
+    "name": "Frankenthal (Pfalz)",
+    "federalStateIndex": 2,
+    "federalStateName": "Rheinland-Pfalz",
+    "population": 49051,
+    "link": "/wiki/Frankenthal_(Pfalz)",
+    "location": { "lat": 49.53770720000001, "lng": 8.3560768 }
+  },
+  {
+    "rang": 208,
+    "name": "Bornheim",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 49025,
+    "link": "/wiki/Bornheim_(Rheinland)",
+    "location": { "lat": 50.759586, "lng": 6.9821412 }
+  },
+  {
+    "rang": 209,
+    "name": "Soest",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 48607,
+    "link": "/wiki/Soest",
+    "location": { "lat": 51.5714188, "lng": 8.110529099999999 }
+  },
+  {
+    "rang": 210,
+    "name": "Cuxhaven",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 48562,
+    "link": "/wiki/Cuxhaven",
+    "location": { "lat": 53.859336, "lng": 8.6879057 }
+  },
+  {
+    "rang": 211,
+    "name": "Stade",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 48353,
+    "link": "/wiki/Stade",
+    "location": { "lat": 53.59286179999999, "lng": 9.4709494 }
+  },
+  {
+    "rang": 212,
+    "name": "Alsdorf",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 48328,
+    "link": "/wiki/Alsdorf",
+    "location": { "lat": 50.87158849999999, "lng": 6.164839199999999 }
+  },
+  {
+    "rang": 213,
+    "name": "Dachau",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 48195,
+    "link": "/wiki/Dachau",
+    "location": { "lat": 48.26315289999999, "lng": 11.4341515 }
+  },
+  {
+    "rang": 214,
+    "name": "Hennef (Sieg)",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 48002,
+    "link": "/wiki/Hennef_(Sieg)",
+    "location": { "lat": 50.7767469, "lng": 7.2801239 }
+  },
+  {
+    "rang": 215,
+    "name": "Oranienburg",
+    "federalStateIndex": 9,
+    "federalStateName": "Brandenburg",
+    "population": 47752,
+    "link": "/wiki/Oranienburg",
+    "location": { "lat": 52.7557351, "lng": 13.2408643 }
+  },
+  {
+    "rang": 216,
+    "name": "Landau in der Pfalz",
+    "federalStateIndex": 2,
+    "federalStateName": "Rheinland-Pfalz",
+    "population": 47610,
+    "link": "/wiki/Landau_in_der_Pfalz",
+    "location": { "lat": 49.19888599999999, "lng": 8.1185622 }
+  },
+  {
+    "rang": 217,
+    "name": "Dülmen",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 47468,
+    "link": "/wiki/D%C3%BClmen",
+    "location": { "lat": 51.830355, "lng": 7.279413399999999 }
+  },
+  {
+    "rang": 218,
+    "name": "Melle",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 47228,
+    "link": "/wiki/Melle",
+    "location": { "lat": 52.2033222, "lng": 8.337266399999999 }
+  },
+  {
+    "rang": 219,
+    "name": "Oberursel (Taunus)",
+    "federalStateIndex": 5,
+    "federalStateName": "Hessen",
+    "population": 47042,
+    "link": "/wiki/Oberursel_(Taunus)",
+    "location": { "lat": 50.2025478, "lng": 8.5770309 }
+  },
+  {
+    "rang": 220,
+    "name": "Herzogenrath",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 46941,
+    "link": "/wiki/Herzogenrath",
+    "location": { "lat": 50.8649918, "lng": 6.091241000000001 }
+  },
+  {
+    "rang": 221,
+    "name": "Neunkirchen",
+    "federalStateIndex": 6,
+    "federalStateName": "Saarland",
+    "population": 46882,
+    "link": "/wiki/Neunkirchen_(Saar)",
+    "location": { "lat": 50.7870784, "lng": 8.006369099999999 }
+  },
+  {
+    "rang": 222,
+    "name": "Schwerte",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 46658,
+    "link": "/wiki/Schwerte",
+    "location": { "lat": 51.4289295, "lng": 7.565631499999999 }
+  },
+  {
+    "rang": 223,
+    "name": "Hof",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 46656,
+    "link": "/wiki/Hof_(Saale)",
+    "location": { "lat": 50.3135391, "lng": 11.9127814 }
+  },
+  {
+    "rang": 224,
+    "name": "Bruchsal",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 46587,
+    "link": "/wiki/Bruchsal",
+    "location": { "lat": 49.1249712, "lng": 8.584410799999999 }
+  },
+  {
+    "rang": 225,
+    "name": "Rodgau",
+    "federalStateIndex": 5,
+    "federalStateName": "Hessen",
+    "population": 46426,
+    "link": "/wiki/Rodgau",
+    "location": { "lat": 50.0012757, "lng": 8.8769235 }
+  },
+  {
+    "rang": 226,
+    "name": "Albstadt",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 46422,
+    "link": "/wiki/Albstadt",
+    "location": { "lat": 48.2137038, "lng": 9.0234259 }
+  },
+  {
+    "rang": 227,
+    "name": "Filderstadt",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 46188,
+    "link": "/wiki/Filderstadt",
+    "location": { "lat": 48.67819739999999, "lng": 9.2161353 }
+  },
+  {
+    "rang": 228,
+    "name": "Bünde",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 46030,
+    "link": "/wiki/B%C3%BCnde",
+    "location": { "lat": 52.1982222, "lng": 8.5832333 }
+  },
+  {
+    "rang": 229,
+    "name": "Gotha",
+    "federalStateIndex": 4,
+    "federalStateName": "Thüringen",
+    "population": 46019,
+    "link": "/wiki/Gotha",
+    "location": { "lat": 50.9474251, "lng": 10.7097574 }
+  },
+  {
+    "rang": 230,
+    "name": "Fellbach",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 45896,
+    "link": "/wiki/Fellbach",
+    "location": { "lat": 48.8215653, "lng": 9.2702944 }
+  },
+  {
+    "rang": 231,
+    "name": "Memmingen",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 45857,
+    "link": "/wiki/Memmingen",
+    "location": { "lat": 47.9837999, "lng": 10.1801883 }
+  },
+  {
+    "rang": 232,
+    "name": "Kaufbeuren",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 45792,
+    "link": "/wiki/Kaufbeuren",
+    "location": { "lat": 47.8830175, "lng": 10.625966 }
+  },
+  {
+    "rang": 233,
+    "name": "Lutherstadt Wittenberg",
+    "federalStateIndex": 1,
+    "federalStateName": "Sachsen-Anhalt",
+    "population": 45535,
+    "link": "/wiki/Lutherstadt_Wittenberg",
+    "location": { "lat": 51.87046429999999, "lng": 12.6411506 }
+  },
+  {
+    "rang": 234,
+    "name": "Weinheim",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 45275,
+    "link": "/wiki/Weinheim",
+    "location": { "lat": 49.544964, "lng": 8.660270299999999 }
+  },
+  {
+    "rang": 235,
+    "name": "Neustadt am Rübenberge",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 45262,
+    "link": "/wiki/Neustadt_am_R%C3%BCbenberge",
+    "location": { "lat": 52.5035855, "lng": 9.4518304 }
+  },
+  {
+    "rang": 236,
+    "name": "Lehrte",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 44823,
+    "link": "/wiki/Lehrte",
+    "location": { "lat": 52.3746255, "lng": 9.9784211 }
+  },
+  {
+    "rang": 237,
+    "name": "Falkensee",
+    "federalStateIndex": 9,
+    "federalStateName": "Brandenburg",
+    "population": 44806,
+    "link": "/wiki/Falkensee",
+    "location": { "lat": 52.562044, "lng": 13.0770003 }
+  },
+  {
+    "rang": 238,
+    "name": "Brühl",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 44804,
+    "link": "/wiki/Br%C3%BChl_(Rheinland)",
+    "location": { "lat": 50.8267554, "lng": 6.8987865 }
+  },
+  {
+    "rang": 239,
+    "name": "Rottenburg am Neckar",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 44653,
+    "link": "/wiki/Rottenburg_am_Neckar",
+    "location": { "lat": 48.4791318, "lng": 8.9409486 }
+  },
+  {
+    "rang": 240,
+    "name": "Pinneberg",
+    "federalStateIndex": 14,
+    "federalStateName": "Schleswig-Holstein",
+    "population": 44279,
+    "link": "/wiki/Pinneberg",
+    "location": { "lat": 53.6633556, "lng": 9.7925675 }
+  },
+  {
+    "rang": 241,
+    "name": "Kaarst",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 44253,
+    "link": "/wiki/Kaarst",
+    "location": { "lat": 51.2241281, "lng": 6.6172049 }
+  },
+  {
+    "rang": 242,
+    "name": "Erkelenz",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 44215,
+    "link": "/wiki/Erkelenz",
+    "location": { "lat": 51.0784539, "lng": 6.315906999999999 }
+  },
+  {
+    "rang": 243,
+    "name": "Wismar",
+    "federalStateIndex": 3,
+    "federalStateName": "Mecklenburg-Vorpommern",
+    "population": 43878,
+    "link": "/wiki/Wismar",
+    "location": { "lat": 53.8879706, "lng": 11.4621371 }
+  },
+  {
+    "rang": 244,
+    "name": "Erkrath",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 43856,
+    "link": "/wiki/Erkrath",
+    "location": { "lat": 51.2213125, "lng": 6.9073473 }
+  },
+  {
+    "rang": 245,
+    "name": "Bietigheim-Bissingen",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 43755,
+    "link": "/wiki/Bietigheim-Bissingen",
+    "location": { "lat": 48.9471605, "lng": 9.1305037 }
+  },
+  {
+    "rang": 246,
+    "name": "Bernau bei Berlin",
+    "federalStateIndex": 9,
+    "federalStateName": "Brandenburg",
+    "population": 43685,
+    "link": "/wiki/Bernau_bei_Berlin",
+    "location": { "lat": 52.6874845, "lng": 13.5672765 }
+  },
+  {
+    "rang": 247,
+    "name": "Gifhorn",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 43625,
+    "link": "/wiki/Gifhorn",
+    "location": { "lat": 52.4809091, "lng": 10.5507829 }
+  },
+  {
+    "rang": 248,
+    "name": "Borken",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 43489,
+    "link": "/wiki/Borken",
+    "location": { "lat": 51.84827139999999, "lng": 6.8594477 }
+  },
+  {
+    "rang": 249,
+    "name": "Heinsberg",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 43476,
+    "link": "/wiki/Heinsberg",
+    "location": { "lat": 51.0600381, "lng": 6.118372900000001 }
+  },
+  {
+    "rang": 250,
+    "name": "Nettetal",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 43095,
+    "link": "/wiki/Nettetal",
+    "location": { "lat": 51.3262794, "lng": 6.272100099999999 }
+  },
+  {
+    "rang": 251,
+    "name": "Kamen",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 43058,
+    "link": "/wiki/Kamen",
+    "location": { "lat": 51.5882752, "lng": 7.6590458 }
+  },
+  {
+    "rang": 252,
+    "name": "Weiden in der Oberpfalz",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 43052,
+    "link": "/wiki/Weiden_in_der_Oberpfalz",
+    "location": { "lat": 49.6743636, "lng": 12.1489337 }
+  },
+  {
+    "rang": 253,
+    "name": "Monheim am Rhein",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 43050,
+    "link": "/wiki/Monheim_am_Rhein",
+    "location": { "lat": 51.0902426, "lng": 6.8919926 }
+  },
+  {
+    "rang": 254,
+    "name": "Aurich",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 42970,
+    "link": "/wiki/Aurich",
+    "location": { "lat": 53.472548, "lng": 7.4833137 }
+  },
+  {
+    "rang": 255,
+    "name": "Laatzen",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 42675,
+    "link": "/wiki/Laatzen",
+    "location": { "lat": 52.3082442, "lng": 9.808619499999999 }
+  },
+  {
+    "rang": 256,
+    "name": "Amberg",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 42534,
+    "link": "/wiki/Amberg",
+    "location": { "lat": 49.4403198, "lng": 11.8633445 }
+  },
+  {
+    "rang": 257,
+    "name": "Seevetal",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 42449,
+    "link": "/wiki/Seevetal",
+    "location": { "lat": 53.3807019, "lng": 10.0300811 }
+  },
+  {
+    "rang": 258,
+    "name": "Eisenach",
+    "federalStateIndex": 4,
+    "federalStateName": "Thüringen",
+    "population": 42408,
+    "link": "/wiki/Eisenach",
+    "location": { "lat": 50.9795715, "lng": 10.3146872 }
+  },
+  {
+    "rang": 259,
+    "name": "Homburg",
+    "federalStateIndex": 6,
+    "federalStateName": "Saarland",
+    "population": 42297,
+    "link": "/wiki/Homburg",
+    "location": { "lat": 49.3295827, "lng": 7.3398428 }
+  },
+  {
+    "rang": 260,
+    "name": "Dreieich",
+    "federalStateIndex": 5,
+    "federalStateName": "Hessen",
+    "population": 42260,
+    "link": "/wiki/Dreieich",
+    "location": { "lat": 50.0294877, "lng": 8.6949231 }
+  },
+  {
+    "rang": 261,
+    "name": "Ansbach",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 42221,
+    "link": "/wiki/Ansbach",
+    "location": { "lat": 49.3004246, "lng": 10.5719357 }
+  },
+  {
+    "rang": 262,
+    "name": "Bensheim",
+    "federalStateIndex": 5,
+    "federalStateName": "Hessen",
+    "population": 42089,
+    "link": "/wiki/Bensheim",
+    "location": { "lat": 49.6861354, "lng": 8.618729600000002 }
+  },
+  {
+    "rang": 263,
+    "name": "Siegburg",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 42049,
+    "link": "/wiki/Siegburg",
+    "location": { "lat": 50.7998473, "lng": 7.2074514 }
+  },
+  {
+    "rang": 264,
+    "name": "Kirchheim unter Teck",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 41907,
+    "link": "/wiki/Kirchheim_unter_Teck",
+    "location": { "lat": 48.6471033, "lng": 9.4519635 }
+  },
+  {
+    "rang": 265,
+    "name": "Schwäbisch Hall",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 41898,
+    "link": "/wiki/Schw%C3%A4bisch_Hall",
+    "location": { "lat": 49.1124645, "lng": 9.7372649 }
+  },
+  {
+    "rang": 266,
+    "name": "Coburg",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 41842,
+    "link": "/wiki/Coburg",
+    "location": { "lat": 50.2612094, "lng": 10.962695 }
+  },
+  {
+    "rang": 267,
+    "name": "Wunstorf",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 41689,
+    "link": "/wiki/Wunstorf",
+    "location": { "lat": 52.4207534, "lng": 9.4432827 }
+  },
+  {
+    "rang": 268,
+    "name": "Königswinter",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 41495,
+    "link": "/wiki/K%C3%B6nigswinter",
+    "location": { "lat": 50.6772453, "lng": 7.1911458 }
+  },
+  {
+    "rang": 269,
+    "name": "Eberswalde",
+    "federalStateIndex": 9,
+    "federalStateName": "Brandenburg",
+    "population": 41461,
+    "link": "/wiki/Eberswalde",
+    "location": { "lat": 52.83713299999999, "lng": 13.7875871 }
+  },
+  {
+    "rang": 270,
+    "name": "Nürtingen",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 41403,
+    "link": "/wiki/N%C3%BCrtingen",
+    "location": { "lat": 48.624421, "lng": 9.3469069 }
+  },
+  {
+    "rang": 271,
+    "name": "Germering",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 41355,
+    "link": "/wiki/Germering",
+    "location": { "lat": 48.13518089999999, "lng": 11.3690889 }
+  },
+  {
+    "rang": 272,
+    "name": "Nordhausen",
+    "federalStateIndex": 4,
+    "federalStateName": "Thüringen",
+    "population": 41339,
+    "link": "/wiki/Nordhausen",
+    "location": { "lat": 51.4983551, "lng": 10.7931122 }
+  },
+  {
+    "rang": 273,
+    "name": "Hückelhoven",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 41301,
+    "link": "/wiki/H%C3%BCckelhoven",
+    "location": { "lat": 51.0532772, "lng": 6.2226357 }
+  },
+  {
+    "rang": 274,
+    "name": "Schwabach",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 41227,
+    "link": "/wiki/Schwabach",
+    "location": { "lat": 49.3288905, "lng": 11.0244827 }
+  },
+  {
+    "rang": 275,
+    "name": "Buxtehude",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 40919,
+    "link": "/wiki/Buxtehude",
+    "location": { "lat": 53.4674857, "lng": 9.6915741 }
+  },
+  {
+    "rang": 276,
+    "name": "Buchholz in der Nordheide",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 40810,
+    "link": "/wiki/Buchholz_in_der_Nordheide",
+    "location": { "lat": 53.3176971, "lng": 9.8694845 }
+  },
+  {
+    "rang": 277,
+    "name": "Neumarkt in der Oberpfalz",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 40808,
+    "link": "/wiki/Neumarkt_in_der_Oberpfalz",
+    "location": { "lat": 49.2772606, "lng": 11.4671996 }
+  },
+  {
+    "rang": 278,
+    "name": "Pirmasens",
+    "federalStateIndex": 2,
+    "federalStateName": "Rheinland-Pfalz",
+    "population": 40682,
+    "link": "/wiki/Pirmasens",
+    "location": { "lat": 49.20155500000001, "lng": 7.600216100000001 }
+  },
+  {
+    "rang": 279,
+    "name": "Lemgo",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 40594,
+    "link": "/wiki/Lemgo",
+    "location": { "lat": 52.0266732, "lng": 8.9018625 }
+  },
+  {
+    "rang": 280,
+    "name": "Freiberg",
+    "federalStateIndex": 13,
+    "federalStateName": "Sachsen",
+    "population": 40485,
+    "link": "/wiki/Freiberg",
+    "location": { "lat": 50.9160943, "lng": 13.3468175 }
+  },
+  {
+    "rang": 281,
+    "name": "Halberstadt",
+    "federalStateIndex": 1,
+    "federalStateName": "Sachsen-Anhalt",
+    "population": 40457,
+    "link": "/wiki/Halberstadt",
+    "location": { "lat": 51.8916475, "lng": 11.0488695 }
+  },
+  {
+    "rang": 282,
+    "name": "Leinfelden-Echterdingen",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 40420,
+    "link": "/wiki/Leinfelden-Echterdingen",
+    "location": { "lat": 48.6936266, "lng": 9.1388246 }
+  },
+  {
+    "rang": 283,
+    "name": "Hofheim am Taunus",
+    "federalStateIndex": 5,
+    "federalStateName": "Hessen",
+    "population": 40371,
+    "link": "/wiki/Hofheim_am_Taunus",
+    "location": { "lat": 50.0841829, "lng": 8.4432295 }
+  },
+  {
+    "rang": 284,
+    "name": "Löhne",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 40265,
+    "link": "/wiki/L%C3%B6hne",
+    "location": { "lat": 52.1941419, "lng": 8.7220862 }
+  },
+  {
+    "rang": 285,
+    "name": "Ahaus",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 40245,
+    "link": "/wiki/Ahaus",
+    "location": { "lat": 52.0825322, "lng": 7.015005700000001 }
+  },
+  {
+    "rang": 286,
+    "name": "Schorndorf",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 40204,
+    "link": "/wiki/Schorndorf",
+    "location": { "lat": 48.8015423, "lng": 9.52962 }
+  },
+  {
+    "rang": 287,
+    "name": "Völklingen",
+    "federalStateIndex": 6,
+    "federalStateName": "Saarland",
+    "population": 40192,
+    "link": "/wiki/V%C3%B6lklingen",
+    "location": { "lat": 49.2556226, "lng": 6.8588948 }
+  },
+  {
+    "rang": 288,
+    "name": "Maintal",
+    "federalStateIndex": 5,
+    "federalStateName": "Hessen",
+    "population": 39815,
+    "link": "/wiki/Maintal",
+    "location": { "lat": 50.14720579999999, "lng": 8.824969099999999 }
+  },
+  {
+    "rang": 289,
+    "name": "Ostfildern",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 39806,
+    "link": "/wiki/Ostfildern",
+    "location": { "lat": 48.7287991, "lng": 9.2585976 }
+  },
+  {
+    "rang": 290,
+    "name": "Ettlingen",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 39699,
+    "link": "/wiki/Ettlingen",
+    "location": { "lat": 48.943208, "lng": 8.3980172 }
+  },
+  {
+    "rang": 291,
+    "name": "Freital",
+    "federalStateIndex": 13,
+    "federalStateName": "Sachsen",
+    "population": 39558,
+    "link": "/wiki/Freital",
+    "location": { "lat": 51.0008667, "lng": 13.6512413 }
+  },
+  {
+    "rang": 292,
+    "name": "Neu-Isenburg",
+    "federalStateIndex": 5,
+    "federalStateName": "Hessen",
+    "population": 39287,
+    "link": "/wiki/Neu-Isenburg",
+    "location": { "lat": 50.0522076, "lng": 8.6952638 }
+  },
+  {
+    "rang": 293,
+    "name": "Niederkassel",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 39281,
+    "link": "/wiki/Niederkassel",
+    "location": { "lat": 50.8153036, "lng": 7.0376711 }
+  },
+  {
+    "rang": 294,
+    "name": "Langen",
+    "federalStateIndex": 5,
+    "federalStateName": "Hessen",
+    "population": 39217,
+    "link": "/wiki/Langen_(Hessen)",
+    "location": { "lat": 49.99146630000001, "lng": 8.6634007 }
+  },
+  {
+    "rang": 295,
+    "name": "Mettmann",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 39134,
+    "link": "/wiki/Mettmann",
+    "location": { "lat": 51.2481156, "lng": 6.975103 }
+  },
+  {
+    "rang": 296,
+    "name": "Ilmenau",
+    "federalStateIndex": 4,
+    "federalStateName": "Thüringen",
+    "population": 39127,
+    "link": "/wiki/Ilmenau",
+    "location": { "lat": 50.6843502, "lng": 10.9254728 }
+  },
+  {
+    "rang": 297,
+    "name": "Stendal",
+    "federalStateIndex": 1,
+    "federalStateName": "Sachsen-Anhalt",
+    "population": 39105,
+    "link": "/wiki/Stendal",
+    "location": { "lat": 52.6041444, "lng": 11.8517729 }
+  },
+  {
+    "rang": 298,
+    "name": "Pirna",
+    "federalStateIndex": 13,
+    "federalStateName": "Sachsen",
+    "population": 39054,
+    "link": "/wiki/Pirna",
+    "location": { "lat": 50.9625175, "lng": 13.9419169 }
+  },
+  {
+    "rang": 299,
+    "name": "Weißenfels",
+    "federalStateIndex": 1,
+    "federalStateName": "Sachsen-Anhalt",
+    "population": 39041,
+    "link": "/wiki/Wei%C3%9Fenfels",
+    "location": { "lat": 51.1987896, "lng": 11.9668979 }
+  },
+  {
+    "rang": 300,
+    "name": "Königs Wusterhausen",
+    "federalStateIndex": 9,
+    "federalStateName": "Brandenburg",
+    "population": 38929,
+    "link": "/wiki/K%C3%B6nigs_Wusterhausen",
+    "location": { "lat": 52.2958906, "lng": 13.6228382 }
+  },
+  {
+    "rang": 301,
+    "name": "Kamp-Lintfort",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 38665,
+    "link": "/wiki/Kamp-Lintfort",
+    "location": { "lat": 51.4957751, "lng": 6.532127699999999 }
+  },
+  {
+    "rang": 302,
+    "name": "Würselen",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 38598,
+    "link": "/wiki/W%C3%BCrselen",
+    "location": { "lat": 50.8216502, "lng": 6.1320672 }
+  },
+  {
+    "rang": 303,
+    "name": "Papenburg",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 38556,
+    "link": "/wiki/Papenburg",
+    "location": { "lat": 53.0726142, "lng": 7.4232678 }
+  },
+  {
+    "rang": 304,
+    "name": "Greven",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 38207,
+    "link": "/wiki/Greven",
+    "location": { "lat": 52.09651789999999, "lng": 7.617109999999999 }
+  },
+  {
+    "rang": 305,
+    "name": "Wesseling",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 38192,
+    "link": "/wiki/Wesseling",
+    "location": { "lat": 50.8255624, "lng": 6.9725385 }
+  },
+  {
+    "rang": 306,
+    "name": "Kehl",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 38154,
+    "link": "/wiki/Kehl",
+    "location": { "lat": 48.5788725, "lng": 7.8160821 }
+  },
+  {
+    "rang": 307,
+    "name": "Bautzen",
+    "federalStateIndex": 13,
+    "federalStateName": "Sachsen",
+    "population": 38140,
+    "link": "/wiki/Bautzen",
+    "location": { "lat": 51.18229299999999, "lng": 14.4237749 }
+  },
+  {
+    "rang": 308,
+    "name": "Haltern am See",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 38117,
+    "link": "/wiki/Haltern_am_See",
+    "location": { "lat": 51.7446414, "lng": 7.1829794 }
+  },
+  {
+    "rang": 309,
+    "name": "Backnang",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 37957,
+    "link": "/wiki/Backnang",
+    "location": { "lat": 48.9471455, "lng": 9.434181299999999 }
+  },
+  {
+    "rang": 310,
+    "name": "Bitterfeld-Wolfen",
+    "federalStateIndex": 1,
+    "federalStateName": "Sachsen-Anhalt",
+    "population": 37894,
+    "link": "/wiki/Bitterfeld-Wolfen",
+    "location": { "lat": 51.6819131, "lng": 12.2615422 }
+  },
+  {
+    "rang": 311,
+    "name": "Fürstenfeldbruck",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 37695,
+    "link": "/wiki/F%C3%BCrstenfeldbruck",
+    "location": { "lat": 48.1739373, "lng": 11.2430079 }
+  },
+  {
+    "rang": 312,
+    "name": "Warendorf",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 37616,
+    "link": "/wiki/Warendorf",
+    "location": { "lat": 51.9514351, "lng": 7.984100100000001 }
+  },
+  {
+    "rang": 313,
+    "name": "Tuttlingen",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 37458,
+    "link": "/wiki/Tuttlingen",
+    "location": { "lat": 47.98233159999999, "lng": 8.8192095 }
+  },
+  {
+    "rang": 314,
+    "name": "Beckum",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 37333,
+    "link": "/wiki/Beckum",
+    "location": { "lat": 51.7561792, "lng": 8.0425504 }
+  },
+  {
+    "rang": 315,
+    "name": "Cloppenburg",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 37056,
+    "link": "/wiki/Cloppenburg",
+    "location": { "lat": 52.844198, "lng": 8.053015799999999 }
+  },
+  {
+    "rang": 316,
+    "name": "Coesfeld",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 37030,
+    "link": "/wiki/Coesfeld",
+    "location": { "lat": 51.9382944, "lng": 7.1675831 }
+  },
+  {
+    "rang": 317,
+    "name": "Suhl",
+    "federalStateIndex": 4,
+    "federalStateName": "Thüringen",
+    "population": 37009,
+    "link": "/wiki/Suhl",
+    "location": { "lat": 50.6076846, "lng": 10.6881255 }
+  },
+  {
+    "rang": 318,
+    "name": "Erding",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 36813,
+    "link": "/wiki/Erding",
+    "location": { "lat": 48.3058389, "lng": 11.9068811 }
+  },
+  {
+    "rang": 319,
+    "name": "Sinsheim",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 36601,
+    "link": "/wiki/Sinsheim",
+    "location": { "lat": 49.2488637, "lng": 8.8884905 }
+  },
+  {
+    "rang": 320,
+    "name": "Porta Westfalica",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 36374,
+    "link": "/wiki/Porta_Westfalica_(Stadt)",
+    "location": { "lat": 52.2253083, "lng": 8.9402185 }
+  },
+  {
+    "rang": 321,
+    "name": "Emsdetten",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 36354,
+    "link": "/wiki/Emsdetten",
+    "location": { "lat": 52.16818929999999, "lng": 7.531058 }
+  },
+  {
+    "rang": 322,
+    "name": "Winsen (Luhe)",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 36295,
+    "link": "/wiki/Winsen_(Luhe)",
+    "location": { "lat": 53.3574436, "lng": 10.2127204 }
+  },
+  {
+    "rang": 323,
+    "name": "Mühlhausen/Thüringen",
+    "federalStateIndex": 4,
+    "federalStateName": "Thüringen",
+    "population": 36226,
+    "link": "/wiki/M%C3%BChlhausen/Th%C3%BCringen",
+    "location": { "lat": 51.2106556, "lng": 10.4659026 }
+  },
+  {
+    "rang": 324,
+    "name": "Voerde (Niederrhein)",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 36196,
+    "link": "/wiki/Voerde_(Niederrhein)",
+    "location": { "lat": 51.6005212, "lng": 6.6544111 }
+  },
+  {
+    "rang": 325,
+    "name": "Meppen",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 36117,
+    "link": "/wiki/Meppen",
+    "location": { "lat": 52.69534789999999, "lng": 7.299400700000001 }
+  },
+  {
+    "rang": 326,
+    "name": "Limburg an der Lahn",
+    "federalStateIndex": 5,
+    "federalStateName": "Hessen",
+    "population": 36053,
+    "link": "/wiki/Limburg_an_der_Lahn",
+    "location": { "lat": 50.3986005, "lng": 8.0795783 }
+  },
+  {
+    "rang": 327,
+    "name": "Ingelheim am Rhein",
+    "federalStateIndex": 2,
+    "federalStateName": "Rheinland-Pfalz",
+    "population": 36002,
+    "link": "/wiki/Ingelheim_am_Rhein",
+    "location": { "lat": 49.9764195, "lng": 8.0560682 }
+  },
+  {
+    "rang": 328,
+    "name": "Crailsheim",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 35760,
+    "link": "/wiki/Crailsheim",
+    "location": { "lat": 49.1337354, "lng": 10.0633573 }
+  },
+  {
+    "rang": 329,
+    "name": "Bad Vilbel",
+    "federalStateIndex": 5,
+    "federalStateName": "Hessen",
+    "population": 35758,
+    "link": "/wiki/Bad_Vilbel",
+    "location": { "lat": 50.18233559999999, "lng": 8.739480499999999 }
+  },
+  {
+    "rang": 330,
+    "name": "Leer",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 35663,
+    "link": "/wiki/Leer_(Ostfriesland)",
+    "location": { "lat": 53.235657, "lng": 7.4679018 }
+  },
+  {
+    "rang": 331,
+    "name": "Lage",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 35423,
+    "link": "/wiki/Lage_(Lippe)",
+    "location": { "lat": 51.9906003, "lng": 8.789587299999999 }
+  },
+  {
+    "rang": 332,
+    "name": "Mörfelden-Walldorf",
+    "federalStateIndex": 5,
+    "federalStateName": "Hessen",
+    "population": 35291,
+    "link": "/wiki/M%C3%B6rfelden-Walldorf",
+    "location": { "lat": 49.980722, "lng": 8.561487 }
+  },
+  {
+    "rang": 333,
+    "name": "Goch",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 35270,
+    "link": "/wiki/Goch",
+    "location": { "lat": 51.679984, "lng": 6.156552200000001 }
+  },
+  {
+    "rang": 334,
+    "name": "St. Ingbert",
+    "federalStateIndex": 6,
+    "federalStateName": "Saarland",
+    "population": 35216,
+    "link": "/wiki/St._Ingbert",
+    "location": { "lat": 49.2774456, "lng": 7.1118995 }
+  },
+  {
+    "rang": 335,
+    "name": "Datteln",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 35191,
+    "link": "/wiki/Datteln",
+    "location": { "lat": 51.6461362, "lng": 7.3348301 }
+  },
+  {
+    "rang": 336,
+    "name": "Deggendorf",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 35172,
+    "link": "/wiki/Deggendorf",
+    "location": { "lat": 48.8414126, "lng": 12.9572212 }
+  },
+  {
+    "rang": 337,
+    "name": "Barsinghausen",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 35156,
+    "link": "/wiki/Barsinghausen",
+    "location": { "lat": 52.30207370000001, "lng": 9.4693993 }
+  },
+  {
+    "rang": 338,
+    "name": "Steinfurt",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 35102,
+    "link": "/wiki/Steinfurt",
+    "location": { "lat": 52.1494785, "lng": 7.336215699999999 }
+  },
+  {
+    "rang": 339,
+    "name": "Balingen",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 34945,
+    "link": "/wiki/Balingen",
+    "location": { "lat": 48.2748206, "lng": 8.8495298 }
+  },
+  {
+    "rang": 340,
+    "name": "Dietzenbach",
+    "federalStateIndex": 5,
+    "federalStateName": "Hessen",
+    "population": 34928,
+    "link": "/wiki/Dietzenbach",
+    "location": { "lat": 50.0172906, "lng": 8.7869609 }
+  },
+  {
+    "rang": 341,
+    "name": "Kempen",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 34841,
+    "link": "/wiki/Kempen",
+    "location": { "lat": 51.36499420000001, "lng": 6.4205309 }
+  },
+  {
+    "rang": 342,
+    "name": "Seelze",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 34742,
+    "link": "/wiki/Seelze",
+    "location": { "lat": 52.3949194, "lng": 9.5939408 }
+  },
+  {
+    "rang": 343,
+    "name": "Wermelskirchen",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 34739,
+    "link": "/wiki/Wermelskirchen",
+    "location": { "lat": 51.1405229, "lng": 7.220952400000001 }
+  },
+  {
+    "rang": 344,
+    "name": "Saarlouis",
+    "federalStateIndex": 6,
+    "federalStateName": "Saarland",
+    "population": 34717,
+    "link": "/wiki/Saarlouis",
+    "location": { "lat": 49.3134606, "lng": 6.752286499999999 }
+  },
+  {
+    "rang": 345,
+    "name": "Wedel",
+    "federalStateIndex": 14,
+    "federalStateName": "Schleswig-Holstein",
+    "population": 34538,
+    "link": "/wiki/Wedel",
+    "location": { "lat": 53.58238129999999, "lng": 9.7137465 }
+  },
+  {
+    "rang": 346,
+    "name": "Viernheim",
+    "federalStateIndex": 5,
+    "federalStateName": "Hessen",
+    "population": 34534,
+    "link": "/wiki/Viernheim",
+    "location": { "lat": 49.5412437, "lng": 8.5784877 }
+  },
+  {
+    "rang": 347,
+    "name": "Zweibrücken",
+    "federalStateIndex": 2,
+    "federalStateName": "Rheinland-Pfalz",
+    "population": 34534,
+    "link": "/wiki/Zweibr%C3%BCcken",
+    "location": { "lat": 49.2450528, "lng": 7.3634022 }
+  },
+  {
+    "rang": 348,
+    "name": "Ahrensburg",
+    "federalStateIndex": 14,
+    "federalStateName": "Schleswig-Holstein",
+    "population": 34509,
+    "link": "/wiki/Ahrensburg",
+    "location": { "lat": 53.6764136, "lng": 10.2378854 }
+  },
+  {
+    "rang": 349,
+    "name": "Merseburg",
+    "federalStateIndex": 1,
+    "federalStateName": "Sachsen-Anhalt",
+    "population": 34335,
+    "link": "/wiki/Merseburg",
+    "location": { "lat": 51.3563278, "lng": 11.9917462 }
+  },
+  {
+    "rang": 350,
+    "name": "Geldern",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 34298,
+    "link": "/wiki/Geldern",
+    "location": { "lat": 51.5204439, "lng": 6.3257902 }
+  },
+  {
+    "rang": 351,
+    "name": "Korschenbroich",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 34187,
+    "link": "/wiki/Korschenbroich",
+    "location": { "lat": 51.1894661, "lng": 6.514404799999999 }
+  },
+  {
+    "rang": 352,
+    "name": "Kornwestheim",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 34130,
+    "link": "/wiki/Kornwestheim",
+    "location": { "lat": 48.86510879999999, "lng": 9.1857957 }
+  },
+  {
+    "rang": 353,
+    "name": "Radebeul",
+    "federalStateIndex": 13,
+    "federalStateName": "Sachsen",
+    "population": 34096,
+    "link": "/wiki/Radebeul",
+    "location": { "lat": 51.1115648, "lng": 13.6493707 }
+  },
+  {
+    "rang": 354,
+    "name": "Hemer",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 34024,
+    "link": "/wiki/Hemer",
+    "location": { "lat": 51.3829741, "lng": 7.7742862 }
+  },
+  {
+    "rang": 355,
+    "name": "Biberach an der Riß",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 34008,
+    "link": "/wiki/Biberach_an_der_Ri%C3%9F",
+    "location": { "lat": 48.0951473, "lng": 9.7901525 }
+  },
+  {
+    "rang": 356,
+    "name": "Stuhr",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 33952,
+    "link": "/wiki/Stuhr",
+    "location": { "lat": 53.0289775, "lng": 8.7361402 }
+  },
+  {
+    "rang": 357,
+    "name": "Uelzen",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 33934,
+    "link": "/wiki/Uelzen",
+    "location": { "lat": 52.9652883, "lng": 10.5573402 }
+  },
+  {
+    "rang": 358,
+    "name": "Vechta",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 33769,
+    "link": "/wiki/Vechta",
+    "location": { "lat": 52.72922519999999, "lng": 8.283876099999999 }
+  },
+  {
+    "rang": 359,
+    "name": "Rheinfelden (Baden)",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 33581,
+    "link": "/wiki/Rheinfelden_(Baden)",
+    "location": { "lat": 47.5608377, "lng": 7.785242800000001 }
+  },
+  {
+    "rang": 360,
+    "name": "Schwedt/Oder",
+    "federalStateIndex": 9,
+    "federalStateName": "Brandenburg",
+    "population": 33524,
+    "link": "/wiki/Schwedt/Oder",
+    "location": { "lat": 53.0624695, "lng": 14.2734639 }
+  },
+  {
+    "rang": 361,
+    "name": "Bad Nauheim",
+    "federalStateIndex": 5,
+    "federalStateName": "Hessen",
+    "population": 33445,
+    "link": "/wiki/Bad_Nauheim",
+    "location": { "lat": 50.3672668, "lng": 8.739391399999999 }
+  },
+  {
+    "rang": 362,
+    "name": "Jülich",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 33158,
+    "link": "/wiki/J%C3%BClich",
+    "location": { "lat": 50.9224226, "lng": 6.3639119 }
+  },
+  {
+    "rang": 363,
+    "name": "Forchheim",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 32972,
+    "link": "/wiki/Forchheim",
+    "location": { "lat": 49.7188374, "lng": 11.0679502 }
+  },
+  {
+    "rang": 364,
+    "name": "Lampertheim",
+    "federalStateIndex": 5,
+    "federalStateName": "Hessen",
+    "population": 32870,
+    "link": "/wiki/Lampertheim",
+    "location": { "lat": 49.59972670000001, "lng": 8.466599 }
+  },
+  {
+    "rang": 365,
+    "name": "Delbrück",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 32774,
+    "link": "/wiki/Delbr%C3%BCck",
+    "location": { "lat": 51.7650575, "lng": 8.5620753 }
+  },
+  {
+    "rang": 366,
+    "name": "Achim",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 32752,
+    "link": "/wiki/Achim_(Landkreis_Verden)",
+    "location": { "lat": 53.0092, "lng": 9.0510401 }
+  },
+  {
+    "rang": 367,
+    "name": "Herrenberg",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 32649,
+    "link": "/wiki/Herrenberg",
+    "location": { "lat": 48.5950369, "lng": 8.8671577 }
+  },
+  {
+    "rang": 368,
+    "name": "Fürstenwalde/Spree",
+    "federalStateIndex": 9,
+    "federalStateName": "Brandenburg",
+    "population": 32646,
+    "link": "/wiki/F%C3%BCrstenwalde/Spree",
+    "location": { "lat": 52.3680179, "lng": 14.0594725 }
+  },
+  {
+    "rang": 369,
+    "name": "Geesthacht",
+    "federalStateIndex": 14,
+    "federalStateName": "Schleswig-Holstein",
+    "population": 32336,
+    "link": "/wiki/Geesthacht",
+    "location": { "lat": 53.4379562, "lng": 10.3611665 }
+  },
+  {
+    "rang": 370,
+    "name": "Naumburg (Saale)",
+    "federalStateIndex": 1,
+    "federalStateName": "Sachsen-Anhalt",
+    "population": 32289,
+    "link": "/wiki/Naumburg_(Saale)",
+    "location": { "lat": 51.1520283, "lng": 11.8142454 }
+  },
+  {
+    "rang": 371,
+    "name": "Bernburg (Saale)",
+    "federalStateIndex": 1,
+    "federalStateName": "Sachsen-Anhalt",
+    "population": 32261,
+    "link": "/wiki/Bernburg_(Saale)",
+    "location": { "lat": 51.7916385, "lng": 11.7400999 }
+  },
+  {
+    "rang": 372,
+    "name": "Itzehoe",
+    "federalStateIndex": 14,
+    "federalStateName": "Schleswig-Holstein",
+    "population": 32258,
+    "link": "/wiki/Itzehoe",
+    "location": { "lat": 53.9317752, "lng": 9.5051475 }
+  },
+  {
+    "rang": 373,
+    "name": "Georgsmarienhütte",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 32190,
+    "link": "/wiki/Georgsmarienh%C3%BCtte",
+    "location": { "lat": 52.2020737, "lng": 8.0491839 }
+  },
+  {
+    "rang": 374,
+    "name": "Bramsche",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 32179,
+    "link": "/wiki/Bramsche",
+    "location": { "lat": 52.4077183, "lng": 8.0015624 }
+  },
+  {
+    "rang": 375,
+    "name": "Nienburg/Weser",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 32126,
+    "link": "/wiki/Nienburg/Weser",
+    "location": { "lat": 52.6380924, "lng": 9.2084155 }
+  },
+  {
+    "rang": 376,
+    "name": "Radolfzell am Bodensee",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 32043,
+    "link": "/wiki/Radolfzell_am_Bodensee",
+    "location": { "lat": 47.745237, "lng": 8.9669098 }
+  },
+  {
+    "rang": 377,
+    "name": "Wernigerode",
+    "federalStateIndex": 1,
+    "federalStateName": "Sachsen-Anhalt",
+    "population": 32024,
+    "link": "/wiki/Wernigerode",
+    "location": { "lat": 51.8368113, "lng": 10.7844266 }
+  },
+  {
+    "rang": 378,
+    "name": "Ganderkesee",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 31939,
+    "link": "/wiki/Ganderkesee",
+    "location": { "lat": 53.0349245, "lng": 8.5426865 }
+  },
+  {
+    "rang": 379,
+    "name": "Oer-Erkenschwick",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 31838,
+    "link": "/wiki/Oer-Erkenschwick",
+    "location": { "lat": 51.6429599, "lng": 7.2594914 }
+  },
+  {
+    "rang": 380,
+    "name": "Weyhe",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 31672,
+    "link": "/wiki/Weyhe",
+    "location": { "lat": 52.9830237, "lng": 8.8505317 }
+  },
+  {
+    "rang": 381,
+    "name": "Emmerich am Rhein",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 31544,
+    "link": "/wiki/Emmerich_am_Rhein",
+    "location": { "lat": 51.8395929, "lng": 6.251730299999999 }
+  },
+  {
+    "rang": 382,
+    "name": "Geestland",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 31507,
+    "link": "/wiki/Geestland",
+    "location": { "lat": 53.60936239999999, "lng": 8.7944026 }
+  },
+  {
+    "rang": 383,
+    "name": "Neuruppin",
+    "federalStateIndex": 9,
+    "federalStateName": "Brandenburg",
+    "population": 31422,
+    "link": "/wiki/Neuruppin",
+    "location": { "lat": 52.9211097, "lng": 12.8002556 }
+  },
+  {
+    "rang": 384,
+    "name": "Hoyerswerda",
+    "federalStateIndex": 13,
+    "federalStateName": "Sachsen",
+    "population": 31356,
+    "link": "/wiki/Hoyerswerda",
+    "location": { "lat": 51.4388605, "lng": 14.2536419 }
+  },
+  {
+    "rang": 385,
+    "name": "Altenburg",
+    "federalStateIndex": 4,
+    "federalStateName": "Thüringen",
+    "population": 31315,
+    "link": "/wiki/Altenburg",
+    "location": { "lat": 50.9931202, "lng": 12.4366572 }
+  },
+  {
+    "rang": 386,
+    "name": "Burgdorf",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 31287,
+    "link": "/wiki/Burgdorf_(Region_Hannover)",
+    "location": { "lat": 52.4470203, "lng": 10.005624 }
+  },
+  {
+    "rang": 387,
+    "name": "Kreuztal",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 31197,
+    "link": "/wiki/Kreuztal",
+    "location": { "lat": 50.9693854, "lng": 7.9923572 }
+  },
+  {
+    "rang": 388,
+    "name": "Rheinberg",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 31150,
+    "link": "/wiki/Rheinberg",
+    "location": { "lat": 51.5460798, "lng": 6.5899097 }
+  },
+  {
+    "rang": 389,
+    "name": "Gevelsberg",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 31097,
+    "link": "/wiki/Gevelsberg",
+    "location": { "lat": 51.3221284, "lng": 7.338331999999999 }
+  },
+  {
+    "rang": 390,
+    "name": "Werl",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 31045,
+    "link": "/wiki/Werl",
+    "location": { "lat": 51.5583773, "lng": 7.9114426 }
+  },
+  {
+    "rang": 391,
+    "name": "Lohmar",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 30846,
+    "link": "/wiki/Lohmar",
+    "location": { "lat": 50.8378015, "lng": 7.212664900000001 }
+  },
+  {
+    "rang": 392,
+    "name": "Walsrode",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 30819,
+    "link": "/wiki/Walsrode",
+    "location": { "lat": 52.861732, "lng": 9.593091600000001 }
+  },
+  {
+    "rang": 393,
+    "name": "Friedberg (Hessen)",
+    "federalStateIndex": 5,
+    "federalStateName": "Hessen",
+    "population": 30818,
+    "link": "/wiki/Friedberg_(Hessen)",
+    "location": { "lat": 50.3308526, "lng": 8.7510993 }
+  },
+  {
+    "rang": 394,
+    "name": "Taunusstein",
+    "federalStateIndex": 5,
+    "federalStateName": "Hessen",
+    "population": 30810,
+    "link": "/wiki/Taunusstein",
+    "location": { "lat": 50.1396151, "lng": 8.149593900000001 }
+  },
+  {
+    "rang": 395,
+    "name": "Weil am Rhein",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 30769,
+    "link": "/wiki/Weil_am_Rhein",
+    "location": { "lat": 47.5934368, "lng": 7.6198121 }
+  },
+  {
+    "rang": 396,
+    "name": "Einbeck",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 30728,
+    "link": "/wiki/Einbeck",
+    "location": { "lat": 51.8205718, "lng": 9.8683087 }
+  },
+  {
+    "rang": 397,
+    "name": "Osterholz-Scharmbeck",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 30659,
+    "link": "/wiki/Osterholz-Scharmbeck",
+    "location": { "lat": 53.2269225, "lng": 8.790036299999999 }
+  },
+  {
+    "rang": 398,
+    "name": "Bad Hersfeld",
+    "federalStateIndex": 5,
+    "federalStateName": "Hessen",
+    "population": 30652,
+    "link": "/wiki/Bad_Hersfeld",
+    "location": { "lat": 50.8701345, "lng": 9.7019675 }
+  },
+  {
+    "rang": 399,
+    "name": "Ennepetal",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 30652,
+    "link": "/wiki/Ennepetal",
+    "location": { "lat": 51.30010919999999, "lng": 7.361342899999999 }
+  },
+  {
+    "rang": 400,
+    "name": "Haan",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 30542,
+    "link": "/wiki/Haan",
+    "location": { "lat": 51.1923262, "lng": 7.0065575 }
+  },
+  {
+    "rang": 401,
+    "name": "Neuburg an der Donau",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 30467,
+    "link": "/wiki/Neuburg_an_der_Donau",
+    "location": { "lat": 48.7302674, "lng": 11.1887693 }
+  },
+  {
+    "rang": 402,
+    "name": "Friedberg",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 30407,
+    "link": "/wiki/Friedberg_(Bayern)",
+    "location": { "lat": 50.3308526, "lng": 8.7510993 }
+  },
+  {
+    "rang": 403,
+    "name": "Schönebeck",
+    "federalStateIndex": 1,
+    "federalStateName": "Sachsen-Anhalt",
+    "population": 30389,
+    "link": "/wiki/Sch%C3%B6nebeck_(Elbe)",
+    "location": { "lat": 52.0091435, "lng": 11.7470481 }
+  },
+  {
+    "rang": 404,
+    "name": "Andernach",
+    "federalStateIndex": 2,
+    "federalStateName": "Rheinland-Pfalz",
+    "population": 30277,
+    "link": "/wiki/Andernach",
+    "location": { "lat": 50.426057, "lng": 7.4086636 }
+  },
+  {
+    "rang": 405,
+    "name": "Gaggenau",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 30250,
+    "link": "/wiki/Gaggenau",
+    "location": { "lat": 48.8035508, "lng": 8.3212584 }
+  },
+  {
+    "rang": 406,
+    "name": "Bretten",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 30073,
+    "link": "/wiki/Bretten",
+    "location": { "lat": 49.0362907, "lng": 8.7010592 }
+  },
+  {
+    "rang": 407,
+    "name": "Merzig",
+    "federalStateIndex": 6,
+    "federalStateName": "Saarland",
+    "population": 30051,
+    "link": "/wiki/Merzig",
+    "location": { "lat": 49.4489588, "lng": 6.6437843 }
+  },
+  {
+    "rang": 408,
+    "name": "Meschede",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 30025,
+    "link": "/wiki/Meschede",
+    "location": { "lat": 51.3511245, "lng": 8.2851304 }
+  },
+  {
+    "rang": 409,
+    "name": "Schwandorf",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 29990,
+    "link": "/wiki/Schwandorf",
+    "location": { "lat": 49.3308876, "lng": 12.1068067 }
+  },
+  {
+    "rang": 410,
+    "name": "Rietberg",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 29919,
+    "link": "/wiki/Rietberg",
+    "location": { "lat": 51.8167441, "lng": 8.434179000000002 }
+  },
+  {
+    "rang": 411,
+    "name": "Wedemark",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 29814,
+    "link": "/wiki/Wedemark",
+    "location": { "lat": 52.5457809, "lng": 9.733644499999999 }
+  },
+  {
+    "rang": 412,
+    "name": "Bad Zwischenahn",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 29803,
+    "link": "/wiki/Bad_Zwischenahn",
+    "location": { "lat": 53.1814401, "lng": 8.009876499999999 }
+  },
+  {
+    "rang": 413,
+    "name": "Rendsburg",
+    "federalStateIndex": 14,
+    "federalStateName": "Schleswig-Holstein",
+    "population": 29743,
+    "link": "/wiki/Rendsburg",
+    "location": { "lat": 54.3080869, "lng": 9.660699300000001 }
+  },
+  {
+    "rang": 414,
+    "name": "Werne",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 29680,
+    "link": "/wiki/Werne",
+    "location": { "lat": 51.665041, "lng": 7.631431000000001 }
+  },
+  {
+    "rang": 415,
+    "name": "Waltrop",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 29644,
+    "link": "/wiki/Waltrop",
+    "location": { "lat": 51.6216271, "lng": 7.403079699999999 }
+  },
+  {
+    "rang": 416,
+    "name": "Oelde",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 29644,
+    "link": "/wiki/Oelde",
+    "location": { "lat": 51.8297412, "lng": 8.1463962 }
+  },
+  {
+    "rang": 417,
+    "name": "Güstrow",
+    "federalStateIndex": 3,
+    "federalStateName": "Mecklenburg-Vorpommern",
+    "population": 29556,
+    "link": "/wiki/G%C3%BCstrow",
+    "location": { "lat": 53.8002129, "lng": 12.1745703 }
+  },
+  {
+    "rang": 418,
+    "name": "Landsberg am Lech",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 29551,
+    "link": "/wiki/Landsberg_am_Lech",
+    "location": { "lat": 48.0464144, "lng": 10.8718015 }
+  },
+  {
+    "rang": 419,
+    "name": "Unterschleißheim",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 29523,
+    "link": "/wiki/Unterschlei%C3%9Fheim",
+    "location": { "lat": 48.28411999999999, "lng": 11.5672 }
+  },
+  {
+    "rang": 420,
+    "name": "Northeim",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 29440,
+    "link": "/wiki/Northeim",
+    "location": { "lat": 51.7013769, "lng": 9.995866000000001 }
+  },
+  {
+    "rang": 421,
+    "name": "Tönisvorst",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 29319,
+    "link": "/wiki/T%C3%B6nisvorst",
+    "location": { "lat": 51.3274683, "lng": 6.443845199999999 }
+  },
+  {
+    "rang": 422,
+    "name": "Vaihingen an der Enz",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 29305,
+    "link": "/wiki/Vaihingen_an_der_Enz",
+    "location": { "lat": 48.9334357, "lng": 8.961208000000001 }
+  },
+  {
+    "rang": 423,
+    "name": "Mühlheim am Main",
+    "federalStateIndex": 5,
+    "federalStateName": "Hessen",
+    "population": 29252,
+    "link": "/wiki/M%C3%BChlheim_am_Main",
+    "location": { "lat": 50.12021679999999, "lng": 8.8382646 }
+  },
+  {
+    "rang": 424,
+    "name": "Winnenden",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 29245,
+    "link": "/wiki/Winnenden",
+    "location": { "lat": 48.8750046, "lng": 9.397142299999999 }
+  },
+  {
+    "rang": 425,
+    "name": "Saalfeld/Saale",
+    "federalStateIndex": 4,
+    "federalStateName": "Thüringen",
+    "population": 29224,
+    "link": "/wiki/Saalfeld/Saale",
+    "location": { "lat": 50.6492736, "lng": 11.3661502 }
+  },
+  {
+    "rang": 426,
+    "name": "Blankenfelde-Mahlow",
+    "federalStateIndex": 9,
+    "federalStateName": "Brandenburg",
+    "population": 29159,
+    "link": "/wiki/Blankenfelde-Mahlow",
+    "location": { "lat": 52.3480918, "lng": 13.4036096 }
+  },
+  {
+    "rang": 427,
+    "name": "Bühl",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 29133,
+    "link": "/wiki/B%C3%BChl",
+    "location": { "lat": 48.6954722, "lng": 8.138060399999999 }
+  },
+  {
+    "rang": 428,
+    "name": "Springe",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 29113,
+    "link": "/wiki/Springe",
+    "location": { "lat": 52.21079049999999, "lng": 9.5531458 }
+  },
+  {
+    "rang": 429,
+    "name": "Kelkheim (Taunus)",
+    "federalStateIndex": 5,
+    "federalStateName": "Hessen",
+    "population": 29112,
+    "link": "/wiki/Kelkheim_(Taunus)",
+    "location": { "lat": 50.13489000000001, "lng": 8.45121 }
+  },
+  {
+    "rang": 430,
+    "name": "Riesa",
+    "federalStateIndex": 13,
+    "federalStateName": "Sachsen",
+    "population": 29076,
+    "link": "/wiki/Riesa",
+    "location": { "lat": 51.3117871, "lng": 13.2677004 }
+  },
+  {
+    "rang": 431,
+    "name": "Meißen",
+    "federalStateIndex": 13,
+    "federalStateName": "Sachsen",
+    "population": 29011,
+    "link": "/wiki/Mei%C3%9Fen",
+    "location": { "lat": 51.1617842, "lng": 13.4976592 }
+  },
+  {
+    "rang": 432,
+    "name": "Rösrath",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 28889,
+    "link": "/wiki/R%C3%B6srath",
+    "location": { "lat": 50.9044746, "lng": 7.183495099999999 }
+  },
+  {
+    "rang": 433,
+    "name": "Emmendingen",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 28856,
+    "link": "/wiki/Emmendingen",
+    "location": { "lat": 48.1216285, "lng": 7.8514309 }
+  },
+  {
+    "rang": 434,
+    "name": "Idar-Oberstein",
+    "federalStateIndex": 2,
+    "federalStateName": "Rheinland-Pfalz",
+    "population": 28851,
+    "link": "/wiki/Idar-Oberstein",
+    "location": { "lat": 49.71452799999999, "lng": 7.3071512 }
+  },
+  {
+    "rang": 435,
+    "name": "Rödermark",
+    "federalStateIndex": 5,
+    "federalStateName": "Hessen",
+    "population": 28834,
+    "link": "/wiki/R%C3%B6dermark",
+    "location": { "lat": 49.9729001, "lng": 8.830189599999999 }
+  },
+  {
+    "rang": 436,
+    "name": "Schwelm",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 28723,
+    "link": "/wiki/Schwelm",
+    "location": { "lat": 51.2882674, "lng": 7.291086 }
+  },
+  {
+    "rang": 437,
+    "name": "Höxter",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 28709,
+    "link": "/wiki/H%C3%B6xter",
+    "location": { "lat": 51.7790274, "lng": 9.3787782 }
+  },
+  {
+    "rang": 438,
+    "name": "Geislingen an der Steige",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 28655,
+    "link": "/wiki/Geislingen_an_der_Steige",
+    "location": { "lat": 48.62151619999999, "lng": 9.8294482 }
+  },
+  {
+    "rang": 439,
+    "name": "Mechernich",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 28567,
+    "link": "/wiki/Mechernich",
+    "location": { "lat": 50.5917044, "lng": 6.653072 }
+  },
+  {
+    "rang": 440,
+    "name": "Reinbek",
+    "federalStateIndex": 14,
+    "federalStateName": "Schleswig-Holstein",
+    "population": 28536,
+    "link": "/wiki/Reinbek",
+    "location": { "lat": 53.5170003, "lng": 10.2443392 }
+  },
+  {
+    "rang": 441,
+    "name": "Hattersheim am Main",
+    "federalStateIndex": 5,
+    "federalStateName": "Hessen",
+    "population": 28528,
+    "link": "/wiki/Hattersheim_am_Main",
+    "location": { "lat": 50.0695728, "lng": 8.487226699999999 }
+  },
+  {
+    "rang": 442,
+    "name": "Verden (Aller)",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 28526,
+    "link": "/wiki/Verden_(Aller)",
+    "location": { "lat": 52.924648, "lng": 9.2280756 }
+  },
+  {
+    "rang": 443,
+    "name": "Ludwigsfelde",
+    "federalStateIndex": 9,
+    "federalStateName": "Brandenburg",
+    "population": 28424,
+    "link": "/wiki/Ludwigsfelde",
+    "location": { "lat": 52.3011439, "lng": 13.261627 }
+  },
+  {
+    "rang": 444,
+    "name": "Baunatal",
+    "federalStateIndex": 5,
+    "federalStateName": "Hessen",
+    "population": 28339,
+    "link": "/wiki/Baunatal",
+    "location": { "lat": 51.2537283, "lng": 9.4146 }
+  },
+  {
+    "rang": 445,
+    "name": "Henstedt-Ulzburg",
+    "federalStateIndex": 14,
+    "federalStateName": "Schleswig-Holstein",
+    "population": 28323,
+    "link": "/wiki/Henstedt-Ulzburg",
+    "location": { "lat": 53.7905005, "lng": 9.9804997 }
+  },
+  {
+    "rang": 446,
+    "name": "Geilenkirchen",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 28252,
+    "link": "/wiki/Geilenkirchen",
+    "location": { "lat": 50.967168, "lng": 6.117458399999999 }
+  },
+  {
+    "rang": 447,
+    "name": "Kevelaer",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 28232,
+    "link": "/wiki/Kevelaer",
+    "location": { "lat": 51.581349, "lng": 6.245757999999999 }
+  },
+  {
+    "rang": 448,
+    "name": "Königsbrunn",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 28231,
+    "link": "/wiki/K%C3%B6nigsbrunn",
+    "location": { "lat": 48.273105, "lng": 10.8894293 }
+  },
+  {
+    "rang": 449,
+    "name": "Grimma",
+    "federalStateIndex": 13,
+    "federalStateName": "Sachsen",
+    "population": 28205,
+    "link": "/wiki/Grimma",
+    "location": { "lat": 51.2364426, "lng": 12.7202313 }
+  },
+  {
+    "rang": 450,
+    "name": "Arnstadt",
+    "federalStateIndex": 4,
+    "federalStateName": "Thüringen",
+    "population": 28124,
+    "link": "/wiki/Arnstadt",
+    "location": { "lat": 50.8354931, "lng": 10.9478015 }
+  },
+  {
+    "rang": 451,
+    "name": "Wegberg",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 28074,
+    "link": "/wiki/Wegberg",
+    "location": { "lat": 51.1423399, "lng": 6.2815922 }
+  },
+  {
+    "rang": 452,
+    "name": "Leichlingen (Rheinland)",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 28048,
+    "link": "/wiki/Leichlingen_(Rheinland)",
+    "location": { "lat": 51.102509, "lng": 7.0096126 }
+  },
+  {
+    "rang": 453,
+    "name": "Zeitz",
+    "federalStateIndex": 1,
+    "federalStateName": "Sachsen-Anhalt",
+    "population": 27976,
+    "link": "/wiki/Zeitz",
+    "location": { "lat": 51.0443266, "lng": 12.1402795 }
+  },
+  {
+    "rang": 454,
+    "name": "Neukirchen-Vluyn",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 27956,
+    "link": "/wiki/Neukirchen-Vluyn",
+    "location": { "lat": 51.4423827, "lng": 6.5537259 }
+  },
+  {
+    "rang": 455,
+    "name": "Olching",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 27927,
+    "link": "/wiki/Olching",
+    "location": { "lat": 48.20706999999999, "lng": 11.3334755 }
+  },
+  {
+    "rang": 456,
+    "name": "Griesheim",
+    "federalStateIndex": 5,
+    "federalStateName": "Hessen",
+    "population": 27837,
+    "link": "/wiki/Griesheim",
+    "location": { "lat": 49.86142599999999, "lng": 8.567644099999999 }
+  },
+  {
+    "rang": 457,
+    "name": "Lohne (Oldenburg)",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 27814,
+    "link": "/wiki/Lohne_(Oldenburg)",
+    "location": { "lat": 52.6505733, "lng": 8.262597999999999 }
+  },
+  {
+    "rang": 458,
+    "name": "Sundern (Sauerland)",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 27741,
+    "link": "/wiki/Sundern_(Sauerland)",
+    "location": { "lat": 51.3254213, "lng": 8.0035148 }
+  },
+  {
+    "rang": 459,
+    "name": "Teltow",
+    "federalStateIndex": 9,
+    "federalStateName": "Brandenburg",
+    "population": 27697,
+    "link": "/wiki/Teltow",
+    "location": { "lat": 52.3975008, "lng": 13.2752586 }
+  },
+  {
+    "rang": 460,
+    "name": "Baesweiler",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 27620,
+    "link": "/wiki/Baesweiler",
+    "location": { "lat": 50.90633649999999, "lng": 6.1825328 }
+  },
+  {
+    "rang": 461,
+    "name": "Wetter (Ruhr)",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 27550,
+    "link": "/wiki/Wetter_(Ruhr)",
+    "location": { "lat": 51.3860225, "lng": 7.3914998 }
+  },
+  {
+    "rang": 462,
+    "name": "Garmisch-Partenkirchen",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 27482,
+    "link": "/wiki/Garmisch-Partenkirchen",
+    "location": { "lat": 47.4919023, "lng": 11.0947806 }
+  },
+  {
+    "rang": 463,
+    "name": "Schloß Holte-Stukenbrock",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 27467,
+    "link": "/wiki/Schlo%C3%9F_Holte-Stukenbrock",
+    "location": { "lat": 51.9027288, "lng": 8.6359771 }
+  },
+  {
+    "rang": 464,
+    "name": "Wangen im Allgäu",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 27411,
+    "link": "/wiki/Wangen_im_Allg%C3%A4u",
+    "location": { "lat": 47.6874999, "lng": 9.8318005 }
+  },
+  {
+    "rang": 465,
+    "name": "Overath",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 27405,
+    "link": "/wiki/Overath",
+    "location": { "lat": 50.93291989999999, "lng": 7.282374099999999 }
+  },
+  {
+    "rang": 466,
+    "name": "Butzbach",
+    "federalStateIndex": 5,
+    "federalStateName": "Hessen",
+    "population": 27402,
+    "link": "/wiki/Butzbach",
+    "location": { "lat": 50.43503579999999, "lng": 8.6688418 }
+  },
+  {
+    "rang": 467,
+    "name": "Strausberg",
+    "federalStateIndex": 9,
+    "federalStateName": "Brandenburg",
+    "population": 27344,
+    "link": "/wiki/Strausberg",
+    "location": { "lat": 52.5659128, "lng": 13.8777546 }
+  },
+  {
+    "rang": 468,
+    "name": "Ehingen (Donau)",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 27276,
+    "link": "/wiki/Ehingen_(Donau)",
+    "location": { "lat": 48.2828352, "lng": 9.726504199999999 }
+  },
+  {
+    "rang": 469,
+    "name": "Hamminkeln",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 27248,
+    "link": "/wiki/Hamminkeln",
+    "location": { "lat": 51.7328603, "lng": 6.595489199999999 }
+  },
+  {
+    "rang": 470,
+    "name": "Leimen",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 27142,
+    "link": "/wiki/Leimen_(Baden)",
+    "location": { "lat": 49.34908979999999, "lng": 8.687885099999999 }
+  },
+  {
+    "rang": 471,
+    "name": "Hohen Neuendorf",
+    "federalStateIndex": 9,
+    "federalStateName": "Brandenburg",
+    "population": 27139,
+    "link": "/wiki/Hohen_Neuendorf",
+    "location": { "lat": 52.6720645, "lng": 13.2786739 }
+  },
+  {
+    "rang": 472,
+    "name": "Rheinbach",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 27102,
+    "link": "/wiki/Rheinbach",
+    "location": { "lat": 50.625307, "lng": 6.9477005 }
+  },
+  {
+    "rang": 473,
+    "name": "Weinstadt",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 27088,
+    "link": "/wiki/Weinstadt",
+    "location": { "lat": 48.8108645, "lng": 9.364447499999999 }
+  },
+  {
+    "rang": 474,
+    "name": "Wiesloch",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 27049,
+    "link": "/wiki/Wiesloch",
+    "location": { "lat": 49.2953714, "lng": 8.6962064 }
+  },
+  {
+    "rang": 475,
+    "name": "Werder (Havel)",
+    "federalStateIndex": 9,
+    "federalStateName": "Brandenburg",
+    "population": 27039,
+    "link": "/wiki/Werder_(Havel)",
+    "location": { "lat": 52.3647941, "lng": 12.8700716 }
+  },
+  {
+    "rang": 476,
+    "name": "Heppenheim (Bergstraße)",
+    "federalStateIndex": 5,
+    "federalStateName": "Hessen",
+    "population": 26946,
+    "link": "/wiki/Heppenheim_(Bergstra%C3%9Fe)",
+    "location": { "lat": 49.6430169, "lng": 8.6675419 }
+  },
+  {
+    "rang": 477,
+    "name": "Pfaffenhofen an der Ilm",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 26943,
+    "link": "/wiki/Pfaffenhofen_an_der_Ilm",
+    "location": { "lat": 48.5274509, "lng": 11.5124179 }
+  },
+  {
+    "rang": 478,
+    "name": "Hennigsdorf",
+    "federalStateIndex": 9,
+    "federalStateName": "Brandenburg",
+    "population": 26728,
+    "link": "/wiki/Hennigsdorf",
+    "location": { "lat": 52.6320478, "lng": 13.2011404 }
+  },
+  {
+    "rang": 479,
+    "name": "Heiligenhaus",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 26681,
+    "link": "/wiki/Heiligenhaus",
+    "location": { "lat": 51.3273148, "lng": 6.965595899999999 }
+  },
+  {
+    "rang": 480,
+    "name": "Bad Neuenahr-Ahrweiler",
+    "federalStateIndex": 2,
+    "federalStateName": "Rheinland-Pfalz",
+    "population": 26669,
+    "link": "/wiki/Bad_Neuenahr-Ahrweiler",
+    "location": { "lat": 50.541815, "lng": 7.1197177 }
+  },
+  {
+    "rang": 481,
+    "name": "Aschersleben",
+    "federalStateIndex": 1,
+    "federalStateName": "Sachsen-Anhalt",
+    "population": 26604,
+    "link": "/wiki/Aschersleben",
+    "location": { "lat": 51.7591297, "lng": 11.4619062 }
+  },
+  {
+    "rang": 482,
+    "name": "Remseck am Neckar",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 26549,
+    "link": "/wiki/Remseck_am_Neckar",
+    "location": { "lat": 48.8766534, "lng": 9.2617893 }
+  },
+  {
+    "rang": 483,
+    "name": "Neckarsulm",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 26495,
+    "link": "/wiki/Neckarsulm",
+    "location": { "lat": 49.1922581, "lng": 9.228708899999999 }
+  },
+  {
+    "rang": 484,
+    "name": "Achern",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 26471,
+    "link": "/wiki/Achern",
+    "location": { "lat": 48.6266194, "lng": 8.0749207 }
+  },
+  {
+    "rang": 485,
+    "name": "Lauf an der Pegnitz",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 26420,
+    "link": "/wiki/Lauf_an_der_Pegnitz",
+    "location": { "lat": 49.5110483, "lng": 11.2780245 }
+  },
+  {
+    "rang": 486,
+    "name": "Groß-Gerau",
+    "federalStateIndex": 5,
+    "federalStateName": "Hessen",
+    "population": 26418,
+    "link": "/wiki/Gro%C3%9F-Gerau",
+    "location": { "lat": 49.9203655, "lng": 8.4847038 }
+  },
+  {
+    "rang": 487,
+    "name": "Mühlacker",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 26394,
+    "link": "/wiki/M%C3%BChlacker",
+    "location": { "lat": 48.948938, "lng": 8.8524245 }
+  },
+  {
+    "rang": 488,
+    "name": "Weiterstadt",
+    "federalStateIndex": 5,
+    "federalStateName": "Hessen",
+    "population": 26322,
+    "link": "/wiki/Weiterstadt",
+    "location": { "lat": 49.8991611, "lng": 8.5991073 }
+  },
+  {
+    "rang": 489,
+    "name": "Bingen am Rhein",
+    "federalStateIndex": 2,
+    "federalStateName": "Rheinland-Pfalz",
+    "population": 26309,
+    "link": "/wiki/Bingen_am_Rhein",
+    "location": { "lat": 49.9667396, "lng": 7.904596000000001 }
+  },
+  {
+    "rang": 490,
+    "name": "Nordenham",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 26308,
+    "link": "/wiki/Nordenham",
+    "location": { "lat": 53.498644, "lng": 8.4923932 }
+  },
+  {
+    "rang": 491,
+    "name": "Zirndorf",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 26234,
+    "link": "/wiki/Zirndorf",
+    "location": { "lat": 49.4428638, "lng": 10.9613504 }
+  },
+  {
+    "rang": 492,
+    "name": "Selm",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 26163,
+    "link": "/wiki/Selm",
+    "location": { "lat": 51.6957181, "lng": 7.467608999999999 }
+  },
+  {
+    "rang": 493,
+    "name": "Bad Honnef",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 26061,
+    "link": "/wiki/Bad_Honnef",
+    "location": { "lat": 50.6426173, "lng": 7.226244599999999 }
+  },
+  {
+    "rang": 494,
+    "name": "Lübbecke",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 26027,
+    "link": "/wiki/L%C3%BCbbecke",
+    "location": { "lat": 52.3097404, "lng": 8.6223098 }
+  },
+  {
+    "rang": 495,
+    "name": "Harsewinkel",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 25999,
+    "link": "/wiki/Harsewinkel",
+    "location": { "lat": 51.96428179999999, "lng": 8.2333679 }
+  },
+  {
+    "rang": 496,
+    "name": "Unterhaching",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 25873,
+    "link": "/wiki/Unterhaching",
+    "location": { "lat": 48.0689177, "lng": 11.6212533 }
+  },
+  {
+    "rang": 497,
+    "name": "Lindau (Bodensee)",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 25846,
+    "link": "/wiki/Lindau_(Bodensee)",
+    "location": { "lat": 47.5534983, "lng": 9.6928605 }
+  },
+  {
+    "rang": 498,
+    "name": "Schleswig",
+    "federalStateIndex": 14,
+    "federalStateName": "Schleswig-Holstein",
+    "population": 25832,
+    "link": "/wiki/Schleswig",
+    "location": { "lat": 54.5249669, "lng": 9.560847599999999 }
+  },
+  {
+    "rang": 499,
+    "name": "Kulmbach",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 25818,
+    "link": "/wiki/Kulmbach",
+    "location": { "lat": 50.1039282, "lng": 11.4448178 }
+  },
+  {
+    "rang": 500,
+    "name": "Helmstedt",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 25779,
+    "link": "/wiki/Helmstedt",
+    "location": { "lat": 52.2272927, "lng": 11.003723 }
+  },
+  {
+    "rang": 501,
+    "name": "Horb am Neckar",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 25752,
+    "link": "/wiki/Horb_am_Neckar",
+    "location": { "lat": 48.442078, "lng": 8.684851199999999 }
+  },
+  {
+    "rang": 502,
+    "name": "Rinteln",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 25721,
+    "link": "/wiki/Rinteln",
+    "location": { "lat": 52.2020461, "lng": 9.0759703 }
+  },
+  {
+    "rang": 503,
+    "name": "Ellwangen (Jagst)",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 25678,
+    "link": "/wiki/Ellwangen_(Jagst)",
+    "location": { "lat": 48.96268329999999, "lng": 10.1301513 }
+  },
+  {
+    "rang": 504,
+    "name": "Friedrichsdorf",
+    "federalStateIndex": 5,
+    "federalStateName": "Hessen",
+    "population": 25662,
+    "link": "/wiki/Friedrichsdorf",
+    "location": { "lat": 50.2538496, "lng": 8.6417409 }
+  },
+  {
+    "rang": 505,
+    "name": "Geretsried",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 25623,
+    "link": "/wiki/Geretsried",
+    "location": { "lat": 47.8552232, "lng": 11.4871747 }
+  },
+  {
+    "rang": 506,
+    "name": "St. Wendel",
+    "federalStateIndex": 6,
+    "federalStateName": "Saarland",
+    "population": 25583,
+    "link": "/wiki/St._Wendel",
+    "location": { "lat": 49.4677707, "lng": 7.169062499999999 }
+  },
+  {
+    "rang": 507,
+    "name": "Idstein",
+    "federalStateIndex": 5,
+    "federalStateName": "Hessen",
+    "population": 25554,
+    "link": "/wiki/Idstein",
+    "location": { "lat": 50.2171726, "lng": 8.265894 }
+  },
+  {
+    "rang": 508,
+    "name": "Vaterstetten",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 25530,
+    "link": "/wiki/Vaterstetten",
+    "location": { "lat": 48.1056613, "lng": 11.7753613 }
+  },
+  {
+    "rang": 509,
+    "name": "Verl",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 25522,
+    "link": "/wiki/Verl",
+    "location": { "lat": 51.8819448, "lng": 8.5061035 }
+  },
+  {
+    "rang": 510,
+    "name": "Rottweil",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 25513,
+    "link": "/wiki/Rottweil",
+    "location": { "lat": 48.1652577, "lng": 8.628453 }
+  },
+  {
+    "rang": 511,
+    "name": "Brilon",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 25511,
+    "link": "/wiki/Brilon",
+    "location": { "lat": 51.3982179, "lng": 8.5749432 }
+  },
+  {
+    "rang": 512,
+    "name": "Sangerhausen",
+    "federalStateIndex": 1,
+    "federalStateName": "Sachsen-Anhalt",
+    "population": 25441,
+    "link": "/wiki/Sangerhausen",
+    "location": { "lat": 51.4725415, "lng": 11.2995045 }
+  },
+  {
+    "rang": 513,
+    "name": "Öhringen",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 25388,
+    "link": "/wiki/%C3%96hringen",
+    "location": { "lat": 49.199931, "lng": 9.5029492 }
+  },
+  {
+    "rang": 514,
+    "name": "Roth",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 25367,
+    "link": "/wiki/Roth",
+    "location": { "lat": 49.2456337, "lng": 11.0911607 }
+  },
+  {
+    "rang": 515,
+    "name": "Lennestadt",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 25352,
+    "link": "/wiki/Lennestadt",
+    "location": { "lat": 51.1037833, "lng": 8.0733266 }
+  },
+  {
+    "rang": 516,
+    "name": "Wiehl",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 25314,
+    "link": "/wiki/Wiehl",
+    "location": { "lat": 50.9487426, "lng": 7.560884799999999 }
+  },
+  {
+    "rang": 517,
+    "name": "Salzkotten",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 25311,
+    "link": "/wiki/Salzkotten",
+    "location": { "lat": 51.6669541, "lng": 8.6010709 }
+  },
+  {
+    "rang": 518,
+    "name": "Obertshausen",
+    "federalStateIndex": 5,
+    "federalStateName": "Hessen",
+    "population": 25307,
+    "link": "/wiki/Obertshausen",
+    "location": { "lat": 50.075119, "lng": 8.8572969 }
+  },
+  {
+    "rang": 519,
+    "name": "Lüdinghausen",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 25259,
+    "link": "/wiki/L%C3%BCdinghausen",
+    "location": { "lat": 51.768214, "lng": 7.446561699999999 }
+  },
+  {
+    "rang": 520,
+    "name": "Weingarten",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 25257,
+    "link": "/wiki/Weingarten_(W%C3%BCrttemberg)",
+    "location": { "lat": 47.8096019, "lng": 9.637983199999999 }
+  },
+  {
+    "rang": 521,
+    "name": "Delitzsch",
+    "federalStateIndex": 13,
+    "federalStateName": "Sachsen",
+    "population": 25244,
+    "link": "/wiki/Delitzsch",
+    "location": { "lat": 51.525574, "lng": 12.3380993 }
+  },
+  {
+    "rang": 522,
+    "name": "Pfungstadt",
+    "federalStateIndex": 5,
+    "federalStateName": "Hessen",
+    "population": 25231,
+    "link": "/wiki/Pfungstadt",
+    "location": { "lat": 49.8028671, "lng": 8.603536199999999 }
+  },
+  {
+    "rang": 523,
+    "name": "Petershagen",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 25222,
+    "link": "/wiki/Petershagen",
+    "location": { "lat": 52.3745951, "lng": 8.9648938 }
+  },
+  {
+    "rang": 524,
+    "name": "Stutensee",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 25204,
+    "link": "/wiki/Stutensee",
+    "location": { "lat": 49.06475529999999, "lng": 8.4695392 }
+  },
+  {
+    "rang": 525,
+    "name": "Norden",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 25179,
+    "link": "/wiki/Norden_(Ostfriesland)",
+    "location": { "lat": 53.59878519999999, "lng": 7.196716 }
+  },
+  {
+    "rang": 526,
+    "name": "Espelkamp",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 25174,
+    "link": "/wiki/Espelkamp",
+    "location": { "lat": 52.3814709, "lng": 8.620970699999999 }
+  },
+  {
+    "rang": 527,
+    "name": "Ditzingen",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 25145,
+    "link": "/wiki/Ditzingen",
+    "location": { "lat": 48.8264662, "lng": 9.067556399999999 }
+  },
+  {
+    "rang": 528,
+    "name": "Köthen (Anhalt)",
+    "federalStateIndex": 1,
+    "federalStateName": "Sachsen-Anhalt",
+    "population": 25116,
+    "link": "/wiki/K%C3%B6then_(Anhalt)",
+    "location": { "lat": 51.7505762, "lng": 11.9802357 }
+  },
+  {
+    "rang": 529,
+    "name": "Olpe",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 25015,
+    "link": "/wiki/Olpe",
+    "location": { "lat": 51.0276975, "lng": 7.843424 }
+  },
+  {
+    "rang": 530,
+    "name": "Plettenberg",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 24954,
+    "link": "/wiki/Plettenberg",
+    "location": { "lat": 51.209623, "lng": 7.8701794 }
+  },
+  {
+    "rang": 531,
+    "name": "Bad Oldesloe",
+    "federalStateIndex": 14,
+    "federalStateName": "Schleswig-Holstein",
+    "population": 24935,
+    "link": "/wiki/Bad_Oldesloe",
+    "location": { "lat": 53.8076269, "lng": 10.3822557 }
+  },
+  {
+    "rang": 532,
+    "name": "Schmallenberg",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 24878,
+    "link": "/wiki/Schmallenberg",
+    "location": { "lat": 51.1526332, "lng": 8.290790099999999 }
+  },
+  {
+    "rang": 533,
+    "name": "Meckenheim",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 24877,
+    "link": "/wiki/Meckenheim_(Rheinland)",
+    "location": { "lat": 50.6258878, "lng": 7.0319507 }
+  },
+  {
+    "rang": 534,
+    "name": "Sprockhövel",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 24838,
+    "link": "/wiki/Sprockh%C3%B6vel",
+    "location": { "lat": 51.3639672, "lng": 7.246912900000001 }
+  },
+  {
+    "rang": 535,
+    "name": "Syke",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 24810,
+    "link": "/wiki/Syke",
+    "location": { "lat": 52.912679, "lng": 8.8181348 }
+  },
+  {
+    "rang": 536,
+    "name": "Zittau",
+    "federalStateIndex": 13,
+    "federalStateName": "Sachsen",
+    "population": 24794,
+    "link": "/wiki/Zittau",
+    "location": { "lat": 50.8999681, "lng": 14.8029971 }
+  },
+  {
+    "rang": 537,
+    "name": "Rudolstadt",
+    "federalStateIndex": 4,
+    "federalStateName": "Thüringen",
+    "population": 24749,
+    "link": "/wiki/Rudolstadt",
+    "location": { "lat": 50.7182972, "lng": 11.3336548 }
+  },
+  {
+    "rang": 538,
+    "name": "Meiningen",
+    "federalStateIndex": 4,
+    "federalStateName": "Thüringen",
+    "population": 24745,
+    "link": "/wiki/Meiningen",
+    "location": { "lat": 50.5739121, "lng": 10.4190128 }
+  },
+  {
+    "rang": 539,
+    "name": "Warstein",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 24647,
+    "link": "/wiki/Warstein",
+    "location": { "lat": 51.4491749, "lng": 8.3557715 }
+  },
+  {
+    "rang": 540,
+    "name": "Waldshut-Tiengen",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 24605,
+    "link": "/wiki/Waldshut-Tiengen",
+    "location": { "lat": 47.6327253, "lng": 8.2719155 }
+  },
+  {
+    "rang": 541,
+    "name": "Rathenow",
+    "federalStateIndex": 9,
+    "federalStateName": "Brandenburg",
+    "population": 24597,
+    "link": "/wiki/Rathenow",
+    "location": { "lat": 52.6045279, "lng": 12.3371251 }
+  },
+  {
+    "rang": 542,
+    "name": "Ronnenberg",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 24570,
+    "link": "/wiki/Ronnenberg",
+    "location": { "lat": 52.31822709999999, "lng": 9.6546151 }
+  },
+  {
+    "rang": 543,
+    "name": "Bad Mergentheim",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 24564,
+    "link": "/wiki/Bad_Mergentheim",
+    "location": { "lat": 49.488537, "lng": 9.7704158 }
+  },
+  {
+    "rang": 544,
+    "name": "Isernhagen",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 24563,
+    "link": "/wiki/Isernhagen",
+    "location": { "lat": 52.4780704, "lng": 9.801697400000002 }
+  },
+  {
+    "rang": 545,
+    "name": "Markkleeberg",
+    "federalStateIndex": 13,
+    "federalStateName": "Sachsen",
+    "population": 24523,
+    "link": "/wiki/Markkleeberg",
+    "location": { "lat": 51.2748681, "lng": 12.3664574 }
+  },
+  {
+    "rang": 546,
+    "name": "Haren (Ems)",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 24498,
+    "link": "/wiki/Haren_(Ems)",
+    "location": { "lat": 52.7941709, "lng": 7.2368366 }
+  },
+  {
+    "rang": 547,
+    "name": "Waldkraiburg",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 24488,
+    "link": "/wiki/Waldkraiburg",
+    "location": { "lat": 48.2086516, "lng": 12.4016363 }
+  },
+  {
+    "rang": 548,
+    "name": "Attendorn",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 24448,
+    "link": "/wiki/Attendorn",
+    "location": { "lat": 51.1313927, "lng": 7.904944299999999 }
+  },
+  {
+    "rang": 549,
+    "name": "Herzogenaurach",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 24404,
+    "link": "/wiki/Herzogenaurach",
+    "location": { "lat": 49.5682987, "lng": 10.8828577 }
+  },
+  {
+    "rang": 550,
+    "name": "Varel",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 24397,
+    "link": "/wiki/Varel",
+    "location": { "lat": 53.3961959, "lng": 8.1368242 }
+  },
+  {
+    "rang": 551,
+    "name": "Bedburg",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 24302,
+    "link": "/wiki/Bedburg",
+    "location": { "lat": 50.989348, "lng": 6.5711524 }
+  },
+  {
+    "rang": 552,
+    "name": "Freudenstadt",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 24301,
+    "link": "/wiki/Freudenstadt",
+    "location": { "lat": 48.4644796, "lng": 8.4179988 }
+  },
+  {
+    "rang": 553,
+    "name": "Staßfurt",
+    "federalStateIndex": 1,
+    "federalStateName": "Sachsen-Anhalt",
+    "population": 24293,
+    "link": "/wiki/Sta%C3%9Ffurt",
+    "location": { "lat": 51.8608995, "lng": 11.5790389 }
+  },
+  {
+    "rang": 554,
+    "name": "Calw",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 24219,
+    "link": "/wiki/Calw",
+    "location": { "lat": 48.7126752, "lng": 8.7425205 }
+  },
+  {
+    "rang": 555,
+    "name": "Übach-Palenberg",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 24215,
+    "link": "/wiki/%C3%9Cbach-Palenberg",
+    "location": { "lat": 50.919128, "lng": 6.1186928 }
+  },
+  {
+    "rang": 556,
+    "name": "Riedstadt",
+    "federalStateIndex": 5,
+    "federalStateName": "Hessen",
+    "population": 24209,
+    "link": "/wiki/Riedstadt",
+    "location": { "lat": 49.8431788, "lng": 8.4671693 }
+  },
+  {
+    "rang": 557,
+    "name": "Sehnde",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 24157,
+    "link": "/wiki/Sehnde",
+    "location": { "lat": 52.3171922, "lng": 9.967276499999999 }
+  },
+  {
+    "rang": 558,
+    "name": "Eisenhüttenstadt",
+    "federalStateIndex": 9,
+    "federalStateName": "Brandenburg",
+    "population": 24125,
+    "link": "/wiki/Eisenh%C3%BCttenstadt",
+    "location": { "lat": 52.1436615, "lng": 14.6419022 }
+  },
+  {
+    "rang": 559,
+    "name": "Wandlitz",
+    "federalStateIndex": 9,
+    "federalStateName": "Brandenburg",
+    "population": 24104,
+    "link": "/wiki/Wandlitz",
+    "location": { "lat": 52.75422, "lng": 13.47277 }
+  },
+  {
+    "rang": 560,
+    "name": "Moormerland",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 24055,
+    "link": "/wiki/Moormerland",
+    "location": { "lat": 53.30760660000001, "lng": 7.4800141 }
+  },
+  {
+    "rang": 561,
+    "name": "Jüchen",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 23940,
+    "link": "/wiki/J%C3%BCchen",
+    "location": { "lat": 51.10074909999999, "lng": 6.5038109 }
+  },
+  {
+    "rang": 562,
+    "name": "Alfter",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 23904,
+    "link": "/wiki/Alfter",
+    "location": { "lat": 50.7380266, "lng": 7.010702299999999 }
+  },
+  {
+    "rang": 563,
+    "name": "Westerstede",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 23854,
+    "link": "/wiki/Westerstede",
+    "location": { "lat": 53.2577806, "lng": 7.9222968 }
+  },
+  {
+    "rang": 564,
+    "name": "Limbach-Oberfrohna",
+    "federalStateIndex": 13,
+    "federalStateName": "Sachsen",
+    "population": 23833,
+    "link": "/wiki/Limbach-Oberfrohna",
+    "location": { "lat": 50.8575662, "lng": 12.7537198 }
+  },
+  {
+    "rang": 565,
+    "name": "Döbeln",
+    "federalStateIndex": 13,
+    "federalStateName": "Sachsen",
+    "population": 23763,
+    "link": "/wiki/D%C3%B6beln",
+    "location": { "lat": 51.1229322, "lng": 13.1167196 }
+  },
+  {
+    "rang": 566,
+    "name": "Starnberg",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 23741,
+    "link": "/wiki/Starnberg",
+    "location": { "lat": 47.9999615, "lng": 11.3390089 }
+  },
+  {
+    "rang": 567,
+    "name": "Husum",
+    "federalStateIndex": 14,
+    "federalStateName": "Schleswig-Holstein",
+    "population": 23735,
+    "link": "/wiki/Husum",
+    "location": { "lat": 54.4855642, "lng": 9.056639600000002 }
+  },
+  {
+    "rang": 568,
+    "name": "Korbach",
+    "federalStateIndex": 5,
+    "federalStateName": "Hessen",
+    "population": 23706,
+    "link": "/wiki/Korbach",
+    "location": { "lat": 51.2774069, "lng": 8.8709876 }
+  },
+  {
+    "rang": 569,
+    "name": "Gelnhausen",
+    "federalStateIndex": 5,
+    "federalStateName": "Hessen",
+    "population": 23679,
+    "link": "/wiki/Gelnhausen",
+    "location": { "lat": 50.2045664, "lng": 9.1863725 }
+  },
+  {
+    "rang": 570,
+    "name": "Salzwedel",
+    "federalStateIndex": 1,
+    "federalStateName": "Sachsen-Anhalt",
+    "population": 23543,
+    "link": "/wiki/Salzwedel",
+    "location": { "lat": 52.84965039999999, "lng": 11.1514876 }
+  },
+  {
+    "rang": 571,
+    "name": "Kaltenkirchen",
+    "federalStateIndex": 14,
+    "federalStateName": "Schleswig-Holstein",
+    "population": 23538,
+    "link": "/wiki/Kaltenkirchen",
+    "location": { "lat": 53.83061319999999, "lng": 9.958594999999999 }
+  },
+  {
+    "rang": 572,
+    "name": "Hann. Münden",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 23530,
+    "link": "/wiki/Hann._M%C3%BCnden",
+    "location": { "lat": 51.419285, "lng": 9.6557588 }
+  },
+  {
+    "rang": 573,
+    "name": "Sonneberg",
+    "federalStateIndex": 4,
+    "federalStateName": "Thüringen",
+    "population": 23507,
+    "link": "/wiki/Sonneberg",
+    "location": { "lat": 50.3601821, "lng": 11.1709899 }
+  },
+  {
+    "rang": 574,
+    "name": "Mosbach",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 23484,
+    "link": "/wiki/Mosbach",
+    "location": { "lat": 49.34891529999999, "lng": 9.1293829 }
+  },
+  {
+    "rang": 575,
+    "name": "Dillenburg",
+    "federalStateIndex": 5,
+    "federalStateName": "Hessen",
+    "population": 23480,
+    "link": "/wiki/Dillenburg",
+    "location": { "lat": 50.7452841, "lng": 8.2807631 }
+  },
+  {
+    "rang": 576,
+    "name": "Senftenberg",
+    "federalStateIndex": 9,
+    "federalStateName": "Brandenburg",
+    "population": 23405,
+    "link": "/wiki/Senftenberg",
+    "location": { "lat": 51.5204143, "lng": 14.0049711 }
+  },
+  {
+    "rang": 577,
+    "name": "Netphen",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 23363,
+    "link": "/wiki/Netphen",
+    "location": { "lat": 50.9150588, "lng": 8.1072664 }
+  },
+  {
+    "rang": 578,
+    "name": "Leutkirch im Allgäu",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 23345,
+    "link": "/wiki/Leutkirch_im_Allg%C3%A4u",
+    "location": { "lat": 47.826741, "lng": 10.0213851 }
+  },
+  {
+    "rang": 579,
+    "name": "Warburg",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 23322,
+    "link": "/wiki/Warburg",
+    "location": { "lat": 51.4899078, "lng": 9.14519 }
+  },
+  {
+    "rang": 580,
+    "name": "Quedlinburg",
+    "federalStateIndex": 1,
+    "federalStateName": "Sachsen-Anhalt",
+    "population": 23313,
+    "link": "/wiki/Quedlinburg",
+    "location": { "lat": 51.7920562, "lng": 11.141448 }
+  },
+  {
+    "rang": 581,
+    "name": "Gersthofen",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 23274,
+    "link": "/wiki/Gersthofen",
+    "location": { "lat": 48.4242503, "lng": 10.876347 }
+  },
+  {
+    "rang": 582,
+    "name": "Wertheim",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 23196,
+    "link": "/wiki/Wertheim",
+    "location": { "lat": 49.7586035, "lng": 9.512851099999999 }
+  },
+  {
+    "rang": 583,
+    "name": "Rastede",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 23180,
+    "link": "/wiki/Rastede",
+    "location": { "lat": 53.24454679999999, "lng": 8.200536099999999 }
+  },
+  {
+    "rang": 584,
+    "name": "Karben",
+    "federalStateIndex": 5,
+    "federalStateName": "Hessen",
+    "population": 23172,
+    "link": "/wiki/Karben",
+    "location": { "lat": 50.2303566, "lng": 8.7736533 }
+  },
+  {
+    "rang": 585,
+    "name": "Bad Soden am Taunus",
+    "federalStateIndex": 5,
+    "federalStateName": "Hessen",
+    "population": 23162,
+    "link": "/wiki/Bad_Soden_am_Taunus",
+    "location": { "lat": 50.1461462, "lng": 8.498569 }
+  },
+  {
+    "rang": 586,
+    "name": "Vreden",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 23161,
+    "link": "/wiki/Vreden",
+    "location": { "lat": 52.03539439999999, "lng": 6.824548699999999 }
+  },
+  {
+    "rang": 587,
+    "name": "Überlingen",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 23098,
+    "link": "/wiki/%C3%9Cberlingen",
+    "location": { "lat": 47.7661746, "lng": 9.1702772 }
+  },
+  {
+    "rang": 588,
+    "name": "Apolda",
+    "federalStateIndex": 4,
+    "federalStateName": "Thüringen",
+    "population": 23072,
+    "link": "/wiki/Apolda",
+    "location": { "lat": 51.0255953, "lng": 11.5111109 }
+  },
+  {
+    "rang": 589,
+    "name": "Weilheim in Oberbayern",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 23056,
+    "link": "/wiki/Weilheim_in_Oberbayern",
+    "location": { "lat": 47.84223670000001, "lng": 11.1427463 }
+  },
+  {
+    "rang": 590,
+    "name": "Bad Kissingen",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 23037,
+    "link": "/wiki/Bad_Kissingen",
+    "location": { "lat": 50.19862089999999, "lng": 10.0755912 }
+  },
+  {
+    "rang": 591,
+    "name": "Bad Salzungen",
+    "federalStateIndex": 4,
+    "federalStateName": "Thüringen",
+    "population": 23013,
+    "link": "/wiki/Bad_Salzungen",
+    "location": { "lat": 50.814786, "lng": 10.2327561 }
+  },
+  {
+    "rang": 592,
+    "name": "Wallenhorst",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 22989,
+    "link": "/wiki/Wallenhorst",
+    "location": { "lat": 52.3491544, "lng": 8.0052769 }
+  },
+  {
+    "rang": 593,
+    "name": "Nagold",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 22985,
+    "link": "/wiki/Nagold",
+    "location": { "lat": 48.5474083, "lng": 8.7234746 }
+  },
+  {
+    "rang": 594,
+    "name": "Lengerich",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 22980,
+    "link": "/wiki/Lengerich_(Westfalen)",
+    "location": { "lat": 52.1822998, "lng": 7.8626385 }
+  },
+  {
+    "rang": 595,
+    "name": "Friesoythe",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 22945,
+    "link": "/wiki/Friesoythe",
+    "location": { "lat": 53.0244916, "lng": 7.8589508 }
+  },
+  {
+    "rang": 596,
+    "name": "Kitzingen",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 22945,
+    "link": "/wiki/Kitzingen",
+    "location": { "lat": 49.7340805, "lng": 10.1473777 }
+  },
+  {
+    "rang": 597,
+    "name": "Edewecht",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 22908,
+    "link": "/wiki/Edewecht",
+    "location": { "lat": 53.1261691, "lng": 7.983006199999998 }
+  },
+  {
+    "rang": 598,
+    "name": "Senden",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 22896,
+    "link": "/wiki/Senden_(Bayern)",
+    "location": { "lat": 48.3255759, "lng": 10.04927 }
+  },
+  {
+    "rang": 599,
+    "name": "Neusäß",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 22872,
+    "link": "/wiki/Neus%C3%A4%C3%9F",
+    "location": { "lat": 48.3944254, "lng": 10.8286573 }
+  },
+  {
+    "rang": 600,
+    "name": "Laupheim",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 22863,
+    "link": "/wiki/Laupheim",
+    "location": { "lat": 48.2303503, "lng": 9.8829174 }
+  },
+  {
+    "rang": 601,
+    "name": "Herdecke",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 22758,
+    "link": "/wiki/Herdecke",
+    "location": { "lat": 51.4031667, "lng": 7.4328376 }
+  },
+  {
+    "rang": 602,
+    "name": "Burg",
+    "federalStateIndex": 1,
+    "federalStateName": "Sachsen-Anhalt",
+    "population": 22689,
+    "link": "/wiki/Burg_(bei_Magdeburg)",
+    "location": { "lat": 52.2709013, "lng": 11.8553502 }
+  },
+  {
+    "rang": 603,
+    "name": "Rotenburg (Wümme)",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 22656,
+    "link": "/wiki/Rotenburg_(W%C3%BCmme)",
+    "location": { "lat": 53.10350760000001, "lng": 9.3970716 }
+  },
+  {
+    "rang": 604,
+    "name": "Stadthagen",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 22643,
+    "link": "/wiki/Stadthagen",
+    "location": { "lat": 52.3230742, "lng": 9.192587 }
+  },
+  {
+    "rang": 605,
+    "name": "Lutherstadt Eisleben",
+    "federalStateIndex": 1,
+    "federalStateName": "Sachsen-Anhalt",
+    "population": 22639,
+    "link": "/wiki/Lutherstadt_Eisleben",
+    "location": { "lat": 51.5195173, "lng": 11.5576749 }
+  },
+  {
+    "rang": 606,
+    "name": "Büdingen",
+    "federalStateIndex": 5,
+    "federalStateName": "Hessen",
+    "population": 22622,
+    "link": "/wiki/B%C3%BCdingen",
+    "location": { "lat": 50.2862963, "lng": 9.111383799999999 }
+  },
+  {
+    "rang": 607,
+    "name": "Haar",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 22555,
+    "link": "/wiki/Haar_(bei_M%C3%BCnchen)",
+    "location": { "lat": 48.1103758, "lng": 11.7321151 }
+  },
+  {
+    "rang": 608,
+    "name": "Metzingen",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 22528,
+    "link": "/wiki/Metzingen",
+    "location": { "lat": 48.5398997, "lng": 9.286406099999999 }
+  },
+  {
+    "rang": 609,
+    "name": "Neu Wulmstorf",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 22450,
+    "link": "/wiki/Neu_Wulmstorf",
+    "location": { "lat": 53.46413709999999, "lng": 9.7911544 }
+  },
+  {
+    "rang": 610,
+    "name": "Donaueschingen",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 22431,
+    "link": "/wiki/Donaueschingen",
+    "location": { "lat": 47.95215229999999, "lng": 8.4979461 }
+  },
+  {
+    "rang": 611,
+    "name": "Ottobrunn",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 22430,
+    "link": "/wiki/Ottobrunn",
+    "location": { "lat": 48.0640543, "lng": 11.6652116 }
+  },
+  {
+    "rang": 612,
+    "name": "Bad Rappenau",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 22356,
+    "link": "/wiki/Bad_Rappenau",
+    "location": { "lat": 49.24016899999999, "lng": 9.1020153 }
+  },
+  {
+    "rang": 613,
+    "name": "Versmold",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 22274,
+    "link": "/wiki/Versmold",
+    "location": { "lat": 52.0412371, "lng": 8.1484011 }
+  },
+  {
+    "rang": 614,
+    "name": "Eppingen",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 22226,
+    "link": "/wiki/Eppingen",
+    "location": { "lat": 49.1379832, "lng": 8.9092339 }
+  },
+  {
+    "rang": 615,
+    "name": "Radevormwald",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 22222,
+    "link": "/wiki/Radevormwald",
+    "location": { "lat": 51.2015995, "lng": 7.3590901 }
+  },
+  {
+    "rang": 616,
+    "name": "Ilsede",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 22206,
+    "link": "/wiki/Ilsede",
+    "location": { "lat": 52.2627337, "lng": 10.1930896 }
+  },
+  {
+    "rang": 617,
+    "name": "Quickborn",
+    "federalStateIndex": 14,
+    "federalStateName": "Schleswig-Holstein",
+    "population": 22165,
+    "link": "/wiki/Quickborn",
+    "location": { "lat": 53.7289353, "lng": 9.9078766 }
+  },
+  {
+    "rang": 618,
+    "name": "Waldkirch",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 22127,
+    "link": "/wiki/Waldkirch",
+    "location": { "lat": 48.0914682, "lng": 7.958646799999999 }
+  },
+  {
+    "rang": 619,
+    "name": "Heide",
+    "federalStateIndex": 14,
+    "federalStateName": "Schleswig-Holstein",
+    "population": 22114,
+    "link": "/wiki/Heide_(Holstein)",
+    "location": { "lat": 54.19517639999999, "lng": 9.1019015 }
+  },
+  {
+    "rang": 620,
+    "name": "Eschborn",
+    "federalStateIndex": 5,
+    "federalStateName": "Hessen",
+    "population": 22070,
+    "link": "/wiki/Eschborn",
+    "location": { "lat": 50.1467469, "lng": 8.561455500000001 }
+  },
+  {
+    "rang": 621,
+    "name": "Karlsfeld",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 22069,
+    "link": "/wiki/Karlsfeld",
+    "location": { "lat": 48.2290733, "lng": 11.4744386 }
+  },
+  {
+    "rang": 622,
+    "name": "Schwetzingen",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 22062,
+    "link": "/wiki/Schwetzingen",
+    "location": { "lat": 49.3852193, "lng": 8.5722445 }
+  },
+  {
+    "rang": 623,
+    "name": "Gardelegen",
+    "federalStateIndex": 1,
+    "federalStateName": "Sachsen-Anhalt",
+    "population": 22054,
+    "link": "/wiki/Gardelegen",
+    "location": { "lat": 52.5268133, "lng": 11.401844 }
+  },
+  {
+    "rang": 624,
+    "name": "Elsdorf",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 22021,
+    "link": "/wiki/Elsdorf_(Rheinland)",
+    "location": { "lat": 50.9392493, "lng": 6.5635008 }
+  },
+  {
+    "rang": 625,
+    "name": "Halle (Westf.)",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 21970,
+    "link": "/wiki/Halle_(Westf.)",
+    "location": { "lat": 52.05889790000001, "lng": 8.3597982 }
+  },
+  {
+    "rang": 626,
+    "name": "Glauchau",
+    "federalStateIndex": 13,
+    "federalStateName": "Sachsen",
+    "population": 21951,
+    "link": "/wiki/Glauchau",
+    "location": { "lat": 50.8187761, "lng": 12.5451713 }
+  },
+  {
+    "rang": 627,
+    "name": "Aichach",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 21908,
+    "link": "/wiki/Aichach",
+    "location": { "lat": 48.4588516, "lng": 11.1328472 }
+  },
+  {
+    "rang": 628,
+    "name": "Sonthofen",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 21859,
+    "link": "/wiki/Sonthofen",
+    "location": { "lat": 47.5161161, "lng": 10.2808617 }
+  },
+  {
+    "rang": 629,
+    "name": "Flörsheim am Main",
+    "federalStateIndex": 5,
+    "federalStateName": "Hessen",
+    "population": 21851,
+    "link": "/wiki/Fl%C3%B6rsheim_am_Main",
+    "location": { "lat": 50.01239959999999, "lng": 8.4217125 }
+  },
+  {
+    "rang": 630,
+    "name": "Soltau",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 21808,
+    "link": "/wiki/Soltau",
+    "location": { "lat": 52.9846914, "lng": 9.842125 }
+  },
+  {
+    "rang": 631,
+    "name": "Eislingen/Fils",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 21745,
+    "link": "/wiki/Eislingen/Fils",
+    "location": { "lat": 48.7023247, "lng": 9.7120357 }
+  },
+  {
+    "rang": 632,
+    "name": "Hockenheim",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 21745,
+    "link": "/wiki/Hockenheim",
+    "location": { "lat": 49.31955199999999, "lng": 8.5498581 }
+  },
+  {
+    "rang": 633,
+    "name": "Bad Harzburg",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 21738,
+    "link": "/wiki/Bad_Harzburg",
+    "location": { "lat": 51.88668879999999, "lng": 10.5522144 }
+  },
+  {
+    "rang": 634,
+    "name": "Mühldorf am Inn",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 21697,
+    "link": "/wiki/M%C3%BChldorf_am_Inn",
+    "location": { "lat": 48.2461124, "lng": 12.5229789 }
+  },
+  {
+    "rang": 635,
+    "name": "Geseke",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 21685,
+    "link": "/wiki/Geseke",
+    "location": { "lat": 51.6393693, "lng": 8.5067607 }
+  },
+  {
+    "rang": 636,
+    "name": "Bad Krozingen",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 21684,
+    "link": "/wiki/Bad_Krozingen",
+    "location": { "lat": 47.9183347, "lng": 7.702876299999999 }
+  },
+  {
+    "rang": 637,
+    "name": "Westoverledingen",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 21678,
+    "link": "/wiki/Westoverledingen",
+    "location": { "lat": 53.1539867, "lng": 7.442007500000001 }
+  },
+  {
+    "rang": 638,
+    "name": "Lindlar",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 21665,
+    "link": "/wiki/Lindlar",
+    "location": { "lat": 51.0188593, "lng": 7.3765504 }
+  },
+  {
+    "rang": 639,
+    "name": "Spremberg",
+    "federalStateIndex": 9,
+    "federalStateName": "Brandenburg",
+    "population": 21585,
+    "link": "/wiki/Spremberg",
+    "location": { "lat": 51.5696303, "lng": 14.376813 }
+  },
+  {
+    "rang": 640,
+    "name": "Xanten",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 21582,
+    "link": "/wiki/Xanten",
+    "location": { "lat": 51.65710809999999, "lng": 6.4486504 }
+  },
+  {
+    "rang": 641,
+    "name": "Seligenstadt",
+    "federalStateIndex": 5,
+    "federalStateName": "Hessen",
+    "population": 21568,
+    "link": "/wiki/Seligenstadt",
+    "location": { "lat": 50.0437013, "lng": 8.9711343 }
+  },
+  {
+    "rang": 642,
+    "name": "Stadtallendorf",
+    "federalStateIndex": 5,
+    "federalStateName": "Hessen",
+    "population": 21552,
+    "link": "/wiki/Stadtallendorf",
+    "location": { "lat": 50.8218537, "lng": 9.020215100000001 }
+  },
+  {
+    "rang": 643,
+    "name": "Zerbst/Anhalt",
+    "federalStateIndex": 1,
+    "federalStateName": "Sachsen-Anhalt",
+    "population": 21519,
+    "link": "/wiki/Zerbst/Anhalt",
+    "location": { "lat": 51.9669481, "lng": 12.0846211 }
+  },
+  {
+    "rang": 644,
+    "name": "Eckernförde",
+    "federalStateIndex": 14,
+    "federalStateName": "Schleswig-Holstein",
+    "population": 21507,
+    "link": "/wiki/Eckernf%C3%B6rde",
+    "location": { "lat": 54.4689457, "lng": 9.838446700000002 }
+  },
+  {
+    "rang": 645,
+    "name": "Günzburg",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 21486,
+    "link": "/wiki/G%C3%BCnzburg",
+    "location": { "lat": 48.45284119999999, "lng": 10.2775127 }
+  },
+  {
+    "rang": 646,
+    "name": "Büren",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 21483,
+    "link": "/wiki/B%C3%BCren_(Westfalen)",
+    "location": { "lat": 51.55092, "lng": 8.5597678 }
+  },
+  {
+    "rang": 647,
+    "name": "Rees",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 21475,
+    "link": "/wiki/Rees",
+    "location": { "lat": 51.7670727, "lng": 6.4015065 }
+  },
+  {
+    "rang": 648,
+    "name": "Osterode am Harz",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 21446,
+    "link": "/wiki/Osterode_am_Harz",
+    "location": { "lat": 51.7293769, "lng": 10.2580311 }
+  },
+  {
+    "rang": 649,
+    "name": "Waghäusel",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 21444,
+    "link": "/wiki/Wagh%C3%A4usel",
+    "location": { "lat": 49.2495336, "lng": 8.5154348 }
+  },
+  {
+    "rang": 650,
+    "name": "Zossen",
+    "federalStateIndex": 9,
+    "federalStateName": "Brandenburg",
+    "population": 21433,
+    "link": "/wiki/Zossen",
+    "location": { "lat": 52.21697469999999, "lng": 13.453792 }
+  },
+  {
+    "rang": 651,
+    "name": "Puchheim",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 21420,
+    "link": "/wiki/Puchheim",
+    "location": { "lat": 48.16322570000001, "lng": 11.3421615 }
+  },
+  {
+    "rang": 652,
+    "name": "Sondershausen",
+    "federalStateIndex": 4,
+    "federalStateName": "Thüringen",
+    "population": 21317,
+    "link": "/wiki/Sondershausen",
+    "location": { "lat": 51.3691898, "lng": 10.8710502 }
+  },
+  {
+    "rang": 653,
+    "name": "Gauting",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 21276,
+    "link": "/wiki/Gauting",
+    "location": { "lat": 48.0696838, "lng": 11.3784087 }
+  },
+  {
+    "rang": 654,
+    "name": "Waren (Müritz)",
+    "federalStateIndex": 3,
+    "federalStateName": "Mecklenburg-Vorpommern",
+    "population": 21267,
+    "link": "/wiki/Waren_(M%C3%BCritz)",
+    "location": { "lat": 53.5161667, "lng": 12.6818562 }
+  },
+  {
+    "rang": 655,
+    "name": "Traunstein",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 21251,
+    "link": "/wiki/Traunstein",
+    "location": { "lat": 47.8677574, "lng": 12.6384037 }
+  },
+  {
+    "rang": 656,
+    "name": "Wildeshausen",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 21154,
+    "link": "/wiki/Wildeshausen",
+    "location": { "lat": 52.891579, "lng": 8.4258585 }
+  },
+  {
+    "rang": 657,
+    "name": "Schramberg",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 21125,
+    "link": "/wiki/Schramberg",
+    "location": { "lat": 48.228146, "lng": 8.3844681 }
+  },
+  {
+    "rang": 658,
+    "name": "Wipperfürth",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 21112,
+    "link": "/wiki/Wipperf%C3%BCrth",
+    "location": { "lat": 51.1180108, "lng": 7.395541700000001 }
+  },
+  {
+    "rang": 659,
+    "name": "Traunreut",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 21102,
+    "link": "/wiki/Traunreut",
+    "location": { "lat": 47.9617026, "lng": 12.5987194 }
+  },
+  {
+    "rang": 660,
+    "name": "Wülfrath",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 21100,
+    "link": "/wiki/W%C3%BClfrath",
+    "location": { "lat": 51.28028399999999, "lng": 7.034960799999999 }
+  },
+  {
+    "rang": 661,
+    "name": "Germersheim",
+    "federalStateIndex": 2,
+    "federalStateName": "Rheinland-Pfalz",
+    "population": 21099,
+    "link": "/wiki/Germersheim",
+    "location": { "lat": 49.2140244, "lng": 8.3668146 }
+  },
+  {
+    "rang": 662,
+    "name": "Groß-Umstadt",
+    "federalStateIndex": 5,
+    "federalStateName": "Hessen",
+    "population": 21028,
+    "link": "/wiki/Gro%C3%9F-Umstadt",
+    "location": { "lat": 49.8701538, "lng": 8.9263447 }
+  },
+  {
+    "rang": 663,
+    "name": "Zülpich",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 21025,
+    "link": "/wiki/Z%C3%BClpich",
+    "location": { "lat": 50.6938699, "lng": 6.6549936 }
+  },
+  {
+    "rang": 664,
+    "name": "Nördlingen",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 21009,
+    "link": "/wiki/N%C3%B6rdlingen",
+    "location": { "lat": 48.8508157, "lng": 10.4894906 }
+  },
+  {
+    "rang": 665,
+    "name": "Mössingen",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 20900,
+    "link": "/wiki/M%C3%B6ssingen",
+    "location": { "lat": 48.40716459999999, "lng": 9.0563024 }
+  },
+  {
+    "rang": 666,
+    "name": "Senden",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 20895,
+    "link": "/wiki/Senden_(Westfalen)",
+    "location": { "lat": 48.3255759, "lng": 10.04927 }
+  },
+  {
+    "rang": 667,
+    "name": "Herborn",
+    "federalStateIndex": 5,
+    "federalStateName": "Hessen",
+    "population": 20894,
+    "link": "/wiki/Herborn",
+    "location": { "lat": 50.6784088, "lng": 8.2997096 }
+  },
+  {
+    "rang": 668,
+    "name": "Panketal",
+    "federalStateIndex": 9,
+    "federalStateName": "Brandenburg",
+    "population": 20854,
+    "link": "/wiki/Panketal",
+    "location": { "lat": 52.6509175, "lng": 13.5407777 }
+  },
+  {
+    "rang": 669,
+    "name": "Luckenwalde",
+    "federalStateIndex": 9,
+    "federalStateName": "Brandenburg",
+    "population": 20839,
+    "link": "/wiki/Luckenwalde",
+    "location": { "lat": 52.0917718, "lng": 13.1738324 }
+  },
+  {
+    "rang": 670,
+    "name": "Bruchköbel",
+    "federalStateIndex": 5,
+    "federalStateName": "Hessen",
+    "population": 20825,
+    "link": "/wiki/Bruchk%C3%B6bel",
+    "location": { "lat": 50.1824581, "lng": 8.9231185 }
+  },
+  {
+    "rang": 671,
+    "name": "Meinerzhagen",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 20812,
+    "link": "/wiki/Meinerzhagen",
+    "location": { "lat": 51.1052543, "lng": 7.650938399999999 }
+  },
+  {
+    "rang": 672,
+    "name": "Stadtlohn",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 20807,
+    "link": "/wiki/Stadtlohn",
+    "location": { "lat": 51.99209090000001, "lng": 6.913797199999999 }
+  },
+  {
+    "rang": 673,
+    "name": "Schortens",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 20797,
+    "link": "/wiki/Schortens",
+    "location": { "lat": 53.53811330000001, "lng": 7.944259100000001 }
+  },
+  {
+    "rang": 674,
+    "name": "Wittmund",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 20773,
+    "link": "/wiki/Wittmund",
+    "location": { "lat": 53.5783573, "lng": 7.779684899999999 }
+  },
+  {
+    "rang": 675,
+    "name": "Hörstel",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 20766,
+    "link": "/wiki/H%C3%B6rstel",
+    "location": { "lat": 52.2958863, "lng": 7.5838639 }
+  },
+  {
+    "rang": 676,
+    "name": "Enger",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 20705,
+    "link": "/wiki/Enger",
+    "location": { "lat": 52.1394002, "lng": 8.5582762 }
+  },
+  {
+    "rang": 677,
+    "name": "Werdau",
+    "federalStateIndex": 13,
+    "federalStateName": "Sachsen",
+    "population": 20702,
+    "link": "/wiki/Werdau",
+    "location": { "lat": 50.7288716, "lng": 12.3751839 }
+  },
+  {
+    "rang": 678,
+    "name": "Nidderau",
+    "federalStateIndex": 5,
+    "federalStateName": "Hessen",
+    "population": 20700,
+    "link": "/wiki/Nidderau",
+    "location": { "lat": 50.2465175, "lng": 8.8830827 }
+  },
+  {
+    "rang": 679,
+    "name": "Steinhagen",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 20671,
+    "link": "/wiki/Steinhagen_(Westfalen)",
+    "location": { "lat": 52.0049441, "lng": 8.415113 }
+  },
+  {
+    "rang": 680,
+    "name": "Schwanewede",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 20661,
+    "link": "/wiki/Schwanewede",
+    "location": { "lat": 53.2231011, "lng": 8.5890076 }
+  },
+  {
+    "rang": 681,
+    "name": "Rheinstetten",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 20659,
+    "link": "/wiki/Rheinstetten",
+    "location": { "lat": 48.9618109, "lng": 8.292246 }
+  },
+  {
+    "rang": 682,
+    "name": "Bad Waldsee",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 20630,
+    "link": "/wiki/Bad_Waldsee",
+    "location": { "lat": 47.9226998, "lng": 9.753282300000002 }
+  },
+  {
+    "rang": 683,
+    "name": "Schifferstadt",
+    "federalStateIndex": 2,
+    "federalStateName": "Rheinland-Pfalz",
+    "population": 20615,
+    "link": "/wiki/Schifferstadt",
+    "location": { "lat": 49.3828647, "lng": 8.376704799999999 }
+  },
+  {
+    "rang": 684,
+    "name": "Dingolfing",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 20607,
+    "link": "/wiki/Dingolfing",
+    "location": { "lat": 48.6289294, "lng": 12.4982109 }
+  },
+  {
+    "rang": 685,
+    "name": "Neufahrn bei Freising",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 20590,
+    "link": "/wiki/Neufahrn_bei_Freising",
+    "location": { "lat": 48.3149823, "lng": 11.6617978 }
+  },
+  {
+    "rang": 686,
+    "name": "Wachtberg",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 20581,
+    "link": "/wiki/Wachtberg",
+    "location": { "lat": 50.6198949, "lng": 7.0869865 }
+  },
+  {
+    "rang": 687,
+    "name": "Fröndenberg/Ruhr",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 20548,
+    "link": "/wiki/Fr%C3%B6ndenberg/Ruhr",
+    "location": { "lat": 51.4731633, "lng": 7.7672578 }
+  },
+  {
+    "rang": 688,
+    "name": "Coswig",
+    "federalStateIndex": 13,
+    "federalStateName": "Sachsen",
+    "population": 20512,
+    "link": "/wiki/Coswig_(Sachsen)",
+    "location": { "lat": 51.130518, "lng": 13.5779228 }
+  },
+  {
+    "rang": 689,
+    "name": "Burgwedel",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 20506,
+    "link": "/wiki/Burgwedel",
+    "location": { "lat": 52.501154, "lng": 9.8974022 }
+  },
+  {
+    "rang": 690,
+    "name": "Uetze",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 20471,
+    "link": "/wiki/Uetze",
+    "location": { "lat": 52.4648432, "lng": 10.2034802 }
+  },
+  {
+    "rang": 691,
+    "name": "Greiz",
+    "federalStateIndex": 4,
+    "federalStateName": "Thüringen",
+    "population": 20397,
+    "link": "/wiki/Greiz",
+    "location": { "lat": 50.6556322, "lng": 12.2021724 }
+  },
+  {
+    "rang": 692,
+    "name": "Haßloch",
+    "federalStateIndex": 2,
+    "federalStateName": "Rheinland-Pfalz",
+    "population": 20387,
+    "link": "/wiki/Ha%C3%9Floch",
+    "location": { "lat": 49.3610149, "lng": 8.2578059 }
+  },
+  {
+    "rang": 693,
+    "name": "Reichenbach im Vogtland",
+    "federalStateIndex": 13,
+    "federalStateName": "Sachsen",
+    "population": 20371,
+    "link": "/wiki/Reichenbach_im_Vogtland",
+    "location": { "lat": 50.6175423, "lng": 12.2990016 }
+  },
+  {
+    "rang": 694,
+    "name": "Kleinmachnow",
+    "federalStateIndex": 9,
+    "federalStateName": "Brandenburg",
+    "population": 20341,
+    "link": "/wiki/Kleinmachnow",
+    "location": { "lat": 52.4079274, "lng": 13.2227111 }
+  },
+  {
+    "rang": 695,
+    "name": "Neustrelitz",
+    "federalStateIndex": 3,
+    "federalStateName": "Mecklenburg-Vorpommern",
+    "population": 20340,
+    "link": "/wiki/Neustrelitz",
+    "location": { "lat": 53.3601147, "lng": 13.0730197 }
+  },
+  {
+    "rang": 696,
+    "name": "Lilienthal",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 20293,
+    "link": "/wiki/Lilienthal",
+    "location": { "lat": 53.14912820000001, "lng": 8.913357399999999 }
+  },
+  {
+    "rang": 697,
+    "name": "Duderstadt",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 20286,
+    "link": "/wiki/Duderstadt",
+    "location": { "lat": 51.5096571, "lng": 10.2535104 }
+  },
+  {
+    "rang": 698,
+    "name": "Bad Schwartau",
+    "federalStateIndex": 14,
+    "federalStateName": "Schleswig-Holstein",
+    "population": 20255,
+    "link": "/wiki/Bad_Schwartau",
+    "location": { "lat": 53.9163386, "lng": 10.6854143 }
+  },
+  {
+    "rang": 699,
+    "name": "Blieskastel",
+    "federalStateIndex": 6,
+    "federalStateName": "Saarland",
+    "population": 20240,
+    "link": "/wiki/Blieskastel",
+    "location": { "lat": 49.2423448, "lng": 7.254632 }
+  },
+  {
+    "rang": 700,
+    "name": "Ochtrup",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 20230,
+    "link": "/wiki/Ochtrup",
+    "location": { "lat": 52.2056952, "lng": 7.1876491 }
+  },
+  {
+    "rang": 701,
+    "name": "Telgte",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 20222,
+    "link": "/wiki/Telgte",
+    "location": { "lat": 51.9826122, "lng": 7.7837602 }
+  },
+  {
+    "rang": 702,
+    "name": "Lichtenfels",
+    "federalStateIndex": 15,
+    "federalStateName": "Bayern",
+    "population": 20217,
+    "link": "/wiki/Lichtenfels_(Oberfranken)",
+    "location": { "lat": 50.1435387, "lng": 11.0555414 }
+  },
+  {
+    "rang": 703,
+    "name": "Schopfheim",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 20163,
+    "link": "/wiki/Schopfheim",
+    "location": { "lat": 47.6518603, "lng": 7.8235713 }
+  },
+  {
+    "rang": 704,
+    "name": "Giengen an der Brenz",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 20133,
+    "link": "/wiki/Giengen_an_der_Brenz",
+    "location": { "lat": 48.6223985, "lng": 10.2391536 }
+  },
+  {
+    "rang": 705,
+    "name": "Kürten",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 20128,
+    "link": "/wiki/K%C3%BCrten",
+    "location": { "lat": 51.0532376, "lng": 7.2634469 }
+  },
+  {
+    "rang": 706,
+    "name": "Holzminden",
+    "federalStateIndex": 7,
+    "federalStateName": "Niedersachsen",
+    "population": 20120,
+    "link": "/wiki/Holzminden",
+    "location": { "lat": 51.8238111, "lng": 9.4558926 }
+  },
+  {
+    "rang": 707,
+    "name": "Leinefelde-Worbis",
+    "federalStateIndex": 4,
+    "federalStateName": "Thüringen",
+    "population": 20119,
+    "link": "/wiki/Leinefelde-Worbis",
+    "location": { "lat": 51.4071434, "lng": 10.3305838 }
+  },
+  {
+    "rang": 708,
+    "name": "Neunkirchen-Seelscheid",
+    "federalStateIndex": 8,
+    "federalStateName": "Nordrhein-Westfalen",
+    "population": 20109,
+    "link": "/wiki/Neunkirchen-Seelscheid",
+    "location": { "lat": 50.8552827, "lng": 7.331858599999999 }
+  },
+  {
+    "rang": 709,
+    "name": "Oberkirch",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 20092,
+    "link": "/wiki/Oberkirch_(Baden)",
+    "location": { "lat": 48.5335603, "lng": 8.0767816 }
+  },
+  {
+    "rang": 710,
+    "name": "Schmalkalden",
+    "federalStateIndex": 4,
+    "federalStateName": "Thüringen",
+    "population": 20065,
+    "link": "/wiki/Schmalkalden",
+    "location": { "lat": 50.7234272, "lng": 10.4546019 }
+  },
+  {
+    "rang": 711,
+    "name": "Tettnang",
+    "federalStateIndex": 12,
+    "federalStateName": "Baden-Württemberg",
+    "population": 20037,
+    "link": "/wiki/Tettnang",
+    "location": { "lat": 47.6681722, "lng": 9.5916036 }
+  }
+]

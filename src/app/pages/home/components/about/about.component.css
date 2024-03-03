@@ -1,0 +1,156 @@
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 3rem 10rem;
+  position: relative;
+}
+
+section:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  background:linear-gradient(45deg, #B1C9DBff, #605843ff, #CDBA9Cff);
+}
+
+.content {
+  position: relative;
+}
+
+h3 {
+  font-size: 2rem;
+  margin-bottom: 4rem;
+
+  text-align: center;
+}
+
+.about {
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+  font-weight: 400;
+  max-width: 900px;
+}
+
+a {
+  color: lightblue;
+}
+
+a:hover {
+  color: blue;
+}
+
+ul {
+  overflow: auto;
+}
+
+.button {
+  border-radius: 10px;
+  background-color: #212529;
+  border-radius: 0.25rem;
+  color: white;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button:active {
+  box-shadow: 0 0 0 0.25rem rgba(66, 70, 73, 0.5);
+}
+
+.button:hover {
+  background-color: rgb(55, 65, 81);
+  color: white;
+}
+
+.button-wrapper {
+  margin-top: 6rem;
+  text-align: center;
+}
+
+.cv-button {
+  position: absolute;
+  left: -20px;
+  top: 10px;
+  background-color: green;
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cv-button:hover {
+  background-color: lightgreen;
+}
+
+#cv-wrapper {
+  position: fixed;
+  z-index: 2;
+  left: 0px;
+  top: 10px;
+  width: 0px;
+  height: calc(100% - 10px);
+  bottom: 10px;
+  transition: all 0.4s ease 0s;
+  transform: translateX(250px);
+  background: lightgreen;
+  border-radius: 12px;
+}
+
+#cv-wrapper.active {
+  left: -240px;
+  width: 450px;
+  transition: all 0.4s ease 0s;
+}
+
+.close-cv-button {
+  padding-left: 15px;
+  cursor: pointer;
+}
+
+.close-cv-button:hover {
+  color: white;
+}
+
+.embeded-pdf {
+  height: 90%;
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  section {
+    padding: 3rem 3rem 3rem;
+  }
+
+  .about {
+    font-size: 1rem;
+  }
+
+  .button {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.75rem;
+  }
+
+  img {
+    float: none;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  #cv-wrapper.active {
+    width: 94%;
+  }
+}

@@ -1,0 +1,32 @@
+mwlResizable {
+  box-sizing: border-box;
+}
+
+::ng-deep
+  .mat-sort-header-container:not(.mat-sort-header-sorted)
+  .mat-sort-header-arrow {
+  opacity: 0.54 !important;
+  transform: translateY(0px) !important;
+}
+
+.mat-column-rang {
+  width: 70px;
+  max-width: 70px;
+}
+
+.mat-column-name {
+  width: 300px;
+  max-width: 300px;
+}
+
+.mat-column-population {
+  width: 115px;
+  max-width: 115px;
+}
+
+.mat-column-federalStateName {
+  width: 270px;
+  max-width: 270px;
+}
+
+

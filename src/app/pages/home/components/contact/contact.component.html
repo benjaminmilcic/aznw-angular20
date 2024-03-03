@@ -1,0 +1,54 @@
+<section id="contact">
+  <div class="content">
+    <h2>{{ "contact.headline" | translate }}</h2>
+    <hr />
+    <p class="invitation">
+      {{ "contact.text1" | translate }}
+      <br />
+      {{ "contact.text2" | translate }}
+    </p>
+     <div class="contact-wrapper">
+      <div>
+        <p><i class="fa-solid fa-phone"></i></p>
+        <p class="phone">+49 176 41942532</p>
+      </div>
+      <div>
+        <p><i class="fa-solid fa-envelope"></i></p>
+        <a href="mailto:benjamin.milcic@gmail.com">benjamin.milcic&#64;gmail.com</a>
+      </div>
+    </div>
+    <form (ngSubmit)="onSubmit(form)" #form="ngForm" class="mt-6">
+      <div class="name">
+        <div class="firstname">
+          <label for="firstname">{{ "contact.firstName" | translate }}</label>
+          <input type="text" name="firstname" id="firstname" ngModel required />
+        </div>
+        <div class="lastname">
+          <label for="lastname">{{ "contact.lastName" | translate }}</label>
+          <input type="text" name="lastname" id="lastname" ngModel required />
+        </div>
+      </div>
+      <div class="email">
+        <label for="email">eMail</label>
+        <input type="email" name="email" id="email" ngModel required email />
+      </div>
+      <div class="message">
+        <label for="message">{{ "contact.message" | translate }}</label>
+        <textarea
+          name="message"
+          id="message"
+          cols="30"
+          rows="10"
+          ngModel
+          required
+        ></textarea>
+      </div>
+      <div class="send-button ">
+        <button [disabled]="!form.valid || isSending" type="submit" class="!h-10 !p-0 !px-4">
+          {{ sendButtonText }}
+        </button>
+      </div>
+    </form>
+   
+  </div>
+</section>

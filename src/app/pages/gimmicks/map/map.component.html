@@ -1,0 +1,347 @@
+<div class="flex flex-col xl:flex-row bg-blue-50 xl:h-[calc(100%-25px)]">
+  <div
+    class="relative"
+    mwlResizable
+    [enableGhostResize]="true"
+    (resizing)="onResizeEnd($event)"
+    [ngStyle]="style"
+  >
+    <google-map
+      #map
+      height="100%"
+      width="100%"
+      [options]="mapOptions"
+    ></google-map>
+    <div *ngIf="!mapToSmall(200)" class="absolute left-60 top-[11px] z-10">
+      <form>
+        <div class="bg-white rounded shadow relative">
+          <input
+            type="text"
+            placeholder="Search a city"
+            [formControl]="selectedCity"
+            [matAutocomplete]="auto"
+            class="w-40 h-10 border-none px-2 rounded"
+          />
+          <i
+            class="fa-solid fa-magnifying-glass pr-2 opacity-50 absolute right-2 top-3"
+          ></i>
+          <mat-autocomplete #auto="matAutocomplete">
+            @for (city of selectedCityOptions | async; track city) {
+            <mat-option
+              *ngIf="this.selectedCity.value.length > 2"
+              [value]="city"
+              (click)="selectCity(city)"
+              >{{ city }}</mat-option
+            >
+            }
+          </mat-autocomplete>
+        </div>
+      </form>
+    </div>
+
+    <!-- <div
+      class="hidden lg:flex absolute rounded-full -right-4 cursor-col-resize bg-gray-500 top-1/2 w-8 h-8 place-items-center justify-center bg-opacity-30"
+      mwlResizeHandle
+      [resizeEdges]="{ right: true }"
+    >
+      <i class="fa-solid fa-arrows-left-right opacity-30"></i>
+    </div> -->
+    <div
+      class="xl:hidden flex absolute rounded-full -bottom-4 cursor-row-resize bg-gray-500 right-[calc(50%-8px)] w-8 h-8 place-items-center justify-center bg-opacity-30"
+      mwlResizeHandle
+      [resizeEdges]="{ bottom: true }"
+    >
+      <i class="fa-solid fa-arrows-up-down opacity-30"></i>
+    </div>
+    <div *ngIf="!mapToSmall(200)" class="absolute left-[420px] top-[11px] z-10">
+      <button
+        tooltip="Filter"
+        class="bg-blue-500 text-black rounded-lg w-10 h-10 flex justify-center place-items-center"
+        (click)="showFilter = !showFilter"
+      >
+        <i class="fa-solid fa-eye"></i>
+      </button>
+    </div>
+    <div
+      *ngIf="showFilter"
+      class="bg-white rounded-sm absolute left-20 top-[60px] z-10 overflow-y-scroll h-[calc(100%-60px)] w-96"
+    >
+      <div class="sticky top-0 z-10 bg-white pt-3">
+        <div class="flex justify-between place-items-center">
+          <div class="font-bold ml-2">Filter</div>
+          <ion-button
+            class="close"
+            size="small"
+            fill="clear"
+            color="dark"
+            (click)="showFilter = false"
+          >
+            <i class="fa-solid fa-xmark text-black"></i>
+          </ion-button>
+        </div>
+        <hr />
+      </div>
+
+      <div>
+        <ion-item lines="none">
+          <ion-checkbox
+            [(ngModel)]="badenWuerttemberg"
+            (ngModelChange)="selectFederalStates()"
+            mode="ios"
+            slot="start"
+          ></ion-checkbox>
+          <ion-label>Baden-Württemberg</ion-label>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-checkbox
+            [(ngModel)]="bavaria"
+            (ngModelChange)="selectFederalStates()"
+            mode="ios"
+            slot="start"
+          ></ion-checkbox>
+          <ion-label>Bayern</ion-label>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-checkbox
+            [(ngModel)]="berlin"
+            (ngModelChange)="selectFederalStates()"
+            mode="ios"
+            slot="start"
+          ></ion-checkbox>
+          <ion-label>Berlin</ion-label>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-checkbox
+            [(ngModel)]="brandenburg"
+            (ngModelChange)="selectFederalStates()"
+            mode="ios"
+            slot="start"
+          ></ion-checkbox>
+          <ion-label>Brandenburg</ion-label>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-checkbox
+            [(ngModel)]="bremen"
+            (ngModelChange)="selectFederalStates()"
+            mode="ios"
+            slot="start"
+          ></ion-checkbox>
+          <ion-label>Bremen</ion-label>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-checkbox
+            [(ngModel)]="hamburg"
+            (ngModelChange)="selectFederalStates()"
+            mode="ios"
+            slot="start"
+          ></ion-checkbox>
+          <ion-label>Hamburg</ion-label>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-checkbox
+            [(ngModel)]="hesse"
+            (ngModelChange)="selectFederalStates()"
+            mode="ios"
+            slot="start"
+          ></ion-checkbox>
+          <ion-label>Hessen</ion-label>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-checkbox
+            [(ngModel)]="mecklenburgWesternPomerania"
+            (ngModelChange)="selectFederalStates()"
+            mode="ios"
+            slot="start"
+          ></ion-checkbox>
+          <ion-label>Mecklenburg-Vorpommern</ion-label>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-checkbox
+            [(ngModel)]="lowerSaxony"
+            (ngModelChange)="selectFederalStates()"
+            mode="ios"
+            slot="start"
+          ></ion-checkbox>
+          <ion-label>Niedersachsen</ion-label>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-checkbox
+            [(ngModel)]="northrhineWestphalia"
+            (ngModelChange)="selectFederalStates()"
+            mode="ios"
+            slot="start"
+          ></ion-checkbox>
+          <ion-label>Nordrhein-Westfalen</ion-label>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-checkbox
+            [(ngModel)]="rhinelandPalatinate"
+            (ngModelChange)="selectFederalStates()"
+            mode="ios"
+            slot="start"
+          ></ion-checkbox>
+          <ion-label>Rheinland-Pfalz</ion-label>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-checkbox
+            [(ngModel)]="saarland"
+            (ngModelChange)="selectFederalStates()"
+            mode="ios"
+            slot="start"
+          ></ion-checkbox>
+          <ion-label>Saarland</ion-label>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-checkbox
+            [(ngModel)]="saxony"
+            (ngModelChange)="selectFederalStates()"
+            mode="ios"
+            slot="start"
+          ></ion-checkbox>
+          <ion-label>Sachsen</ion-label>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-checkbox
+            [(ngModel)]="saxonyAnhalt"
+            (ngModelChange)="selectFederalStates()"
+            mode="ios"
+            slot="start"
+          ></ion-checkbox>
+          <ion-label>Sachsen-Anhalt</ion-label>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-checkbox
+            [(ngModel)]="schleswigHolstein"
+            (ngModelChange)="selectFederalStates()"
+            mode="ios"
+            slot="start"
+          ></ion-checkbox>
+          <ion-label>Schleswig-Holstein</ion-label>
+        </ion-item>
+        <ion-item lines="none" class="pb-3">
+          <ion-checkbox
+            [(ngModel)]="thuringia"
+            (ngModelChange)="selectFederalStates()"
+            mode="ios"
+            slot="start"
+          ></ion-checkbox>
+          <ion-label>Thüringen</ion-label>
+        </ion-item>
+      </div>
+    </div>
+    <div
+      cdkDrag
+      [hidden]="!showCityInfo"
+      *ngIf="!mapToSmall(200)"
+      class="bg-white absolute top-[20px] right-[20px] shadow-lg rounded p-2 z-20"
+    >
+      <div class="flex justify-between place-items-center">
+        <div class="cursor-move text-gray-400 w-5" cdkDragHandle>
+          <i class="fa-solid fa-arrows-up-down-left-right"></i>
+        </div>
+        <div class="text-blue-500">City Info</div>
+        <div class="w-5">
+          <button (click)="showCityInfo = false">
+            <i class="fa-solid fa-xmark text-black"></i>
+          </button>
+        </div>
+      </div>
+      <div>
+        <span class="font-bold">Name: </span> <span>{{ cityInfo.name }}</span>
+      </div>
+      <div>
+        <span class="font-bold">Population: </span>
+        <span>{{ cityInfo.population }}</span>
+      </div>
+      <div>
+        <span class="font-bold">Bundesland: </span>
+        <span>{{ cityInfo.federalState }}</span>
+      </div>
+      <button
+        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded text-sm mt-1"
+        (click)="openWikipedia(cityInfo.link)"
+      >
+        Wikipedia
+      </button>
+    </div>
+  </div>
+  <div
+    *ngIf="mapToSmall(200)"
+    class="bg-white rounded text-red-400 px-2 xl:hidden"
+  >
+    Karte zu klein für Funktionen. Ziehen Sie die Karte etwas größer!
+  </div>
+
+  <div class="m-8 xl:m-4 xl:overflow-y-auto overflow-x-auto">
+    <div class="sticky top-0 left-0 bg-blue-50 z-10">
+      <div class="flex flex-col md:flex-row justify-center mb-4">
+        Städte mit
+        <div>
+          <input
+            type="number"
+            min="20000"
+            max="3800000"
+            [(ngModel)]="minPopulation"
+            (ngModelChange)="changeMarkersAndTable(this.federalStatesToShow)"
+            class="border-2 border-black rounded mx-1 px-1"
+          />
+
+          bis
+          <input
+            type="number"
+            min="20000"
+            max="3800000"
+            [(ngModel)]="maxPopulation"
+            (ngModelChange)="changeMarkersAndTable(this.federalStatesToShow)"
+            class="border-2 border-black rounded mx-1 px-1"
+          />
+        </div>
+
+        Einwohnern
+      </div>
+      <mat-paginator
+        [pageSizeOptions]="[5, 10, 20, 50, 100, 200]"
+        [length]="100"
+        [pageSize]="5"
+        showFirstLastButtons
+      >
+      </mat-paginator>
+    </div>
+
+    <table mat-table matSort [dataSource]="dataSource" class="mat-elevation-z8">
+      <ng-container matColumnDef="rang">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Rang</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.rang }}
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+        <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+      </ng-container>
+      <ng-container matColumnDef="population">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Population</th>
+        <td mat-cell *matCellDef="let element">{{ element.population }}</td>
+      </ng-container>
+      <ng-container matColumnDef="federalStateName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Bundesland</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.federalStateName }}
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="link">
+        <th mat-header-cell *matHeaderCellDef>Link</th>
+        <td mat-cell *matCellDef="let element">
+          <button
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded text-sm mt-1"
+            (click)="openWikipedia(element.link)"
+          >
+            Wiki
+          </button>
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+      <tr mat-row *matRowDef="let row; columns: columnsToDisplay"></tr>
+    </table>
+  </div>
+</div>
