@@ -13,6 +13,7 @@ import {
   IonButtons,
 } from '@ionic/angular/standalone';
 import { TranslateService } from '@ngx-translate/core';
+import { EditorModule } from '@tinymce/tinymce-angular';
 
 @Component({
   selector: 'app-day-modal',
@@ -29,6 +30,7 @@ import { TranslateService } from '@ngx-translate/core';
     IonIcon,
     IonButton,
     IonButtons,
+    EditorModule,
   ],
   templateUrl: './day-modal.component.html',
   styleUrl: './day-modal.component.css',

@@ -24,6 +24,7 @@
     "@ionic/angular": "^7.7.3",
     "@ngx-translate/core": "^15.0.0",
     "@ngx-translate/http-loader": "^8.0.0",
+    "@tinymce/tinymce-angular": "^7.0.0",
     "angular-resizable-element": "^7.0.2",
     "feiertagejs": "^1.4.0",
     "ng2-tooltip-directive": "^2.10.3",
