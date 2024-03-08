@@ -5,12 +5,11 @@ import { isHoliday, getHolidays } from 'feiertagejs';
 import { DayModalComponent } from './day-modal/day-modal.component';
 import { TranslateService } from '@ngx-translate/core';
 import { ModalController } from '@ionic/angular/standalone';
-import { EditorModule } from '@tinymce/tinymce-angular';
 
 @Component({
   selector: 'app-calendar',
   standalone: true,
-  imports: [CommonModule, FormsModule, EditorModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './calendar.component.html',
   styleUrl: './calendar.component.css',
 })
@@ -30,8 +29,6 @@ export class CalendarComponent {
     'November',
     'Dezember',
   ];
-
-  showDialog = false;
 
   constructor(
     private modalCtrl: ModalController,
@@ -113,20 +110,19 @@ export class CalendarComponent {
   }
 
   async openDayModal(day: number, month: string, year: number) {
-    // const modal = await this.modalCtrl.create({
-    //   component: DayModalComponent,
-    //   backdropDismiss: false,
-    //   componentProps: {
-    //     day,
-    //     month,
-    //     year,
-    //   },
-    // });
-    // modal.onDidDismiss().then(async (data) => {
-    //   if (data.role === 'save') {
-    //   }
-    // });
-    // await modal.present();
-    this.showDialog = true;
+    const modal = await this.modalCtrl.create({
+      component: DayModalComponent,
+      backdropDismiss: false,
+      componentProps: {
+        day,
+        month,
+        year,
+      },
+    });
+    modal.onDidDismiss().then(async (data) => {
+      if (data.role === 'save') {
+      }
+    });
+    await modal.present();
   }
 }

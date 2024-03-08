@@ -5,6 +5,7 @@ import { MapComponent } from './pages/gimmicks/map/map.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { CalendarComponent } from './pages/gimmicks/calendar/calendar.component';
 import { OverviewComponent } from './pages/gimmicks/overview/overview.component';
+import { GuestbookComponent } from './pages/gimmicks/guestbook/guestbook.component';
 
 export const routes: Routes = [
   {
@@ -27,7 +28,12 @@ export const routes: Routes = [
         path: 'calendar',
         component: CalendarComponent,
       },
+      {
+        path: 'guestbook',
+        component: GuestbookComponent,
+      },
     ],
   },
   { path: '**', component: PageNotFoundComponent },
 ];
+;

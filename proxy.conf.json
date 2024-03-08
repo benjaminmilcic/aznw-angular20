@@ -1,0 +1,6 @@
+{
+  "/api": {
+    "target": "https://auf-zu-neuen-welten.de/",
+    "secure": false
+  }
+}

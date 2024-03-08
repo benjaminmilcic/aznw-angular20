@@ -1,12 +1,5 @@
-<div class="p-8 h-full">
-  <dialog [open]="showDialog" class="bg-green-400">
-    <editor
-      apiKey="p8kzw066uvdiavhwv4gt5t1iqdqygdfatlxf194isih8d5rr"
-      [init]="{ plugins: 'lists link image table code help wordcount' }"
-    ></editor>
-    
-  </dialog>
-  <div class="flex flex-col place-items-center gap-4">
+<section class="p-8 h-full bg-blue-400">
+  <div class="flex flex-col place-items-center gap-4 relative">
     <div><input type="number" [(ngModel)]="year" min="1900" max="2300" /></div>
     <div class="flex flex-col gap-2">
       <div
@@ -19,7 +12,6 @@
           class="w-8 h-8 flex justify-center place-items-center cursor-pointer hover:z-10 hover:!bg-red-400 hover:rounded-full day group"
           *ngFor="let day of getDaysOfMonth(month)"
           [ngClass]="getBackgroundColor(monthIndex, day)"
-          (click)="openDrawer(drawer)"
         >
           <div
             class="flex flex-col justify-center place-items-center"
@@ -37,7 +29,7 @@
       </div>
     </div>
   </div>
-  <div class="flex justify-center gap-32 mt-8">
+  <div class="flex justify-center gap-32 mt-8 relative">
     <div>
       <div class="flex items-center gap-1">
         <hr class="w-100" />
@@ -82,4 +74,4 @@
       </div>
     </div>
   </div>
-</div>
+</section>

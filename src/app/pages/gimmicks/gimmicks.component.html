@@ -1,32 +1,46 @@
-<div class="bg-blue-700 text-gray-300 px-8 flex gap-4">
+<div
+  class="bg-blue-800 text-gray-300 px-8 flex flex-wrap gap-4 h-10 place-items-center"
+>
   <div class="hover:text-gray-100">
-    <button [routerLink]="['/gimmicks']">Overview</button>
+    <a [routerLink]="['/gimmicks']">Overview</a>
   </div>
   <div class="relative group hover:text-gray-100">
-    <button [routerLink]="['map']">Map</button>
+    <a [routerLink]="['map']">Map</a>
     <div
       class="absolute bg-blue-200 text-black rounded p-2 mt-2 w-60 hidden group-hover:block z-20 arrow"
     >
-      <ol class="list-disc text-xs">
-        <li class="ml-4">Google Maps API</li>
-        <li class="ml-4">Search with typeahead</li>
-        <li class="ml-4">Drag and drop</li>
-        <li class="ml-4">Table with sorting, filtering and pagination</li>
-        <li class="ml-4">Resizable element (on small screens)</li>
-        <li class="ml-4">responsiveness</li>
-      </ol>
+      <ul class="text-xs">
+        <li>Google Maps API</li>
+        <li>Search with typeahead</li>
+        <li>Drag and drop</li>
+        <li>Table with sorting, filtering and pagination</li>
+        <li>Resizable element (on small screens)</li>
+        <li>Responsiveness</li>
+      </ul>
     </div>
   </div>
   <div class="relative group hover:text-gray-100">
-    <button [routerLink]="['calendar']">Kalender</button>
+    <a [routerLink]="['calendar']">Kalender</a>
     <div
       class="absolute bg-blue-200 text-black rounded p-2 mt-2 w-60 hidden group-hover:block z-20 arrow"
     >
-      <ol class="list-disc text-xs">
-            <li class="ml-4">ToDo</li>
-          </ol>
+      <ul class="text-xs">
+        <li>ToDo</li>
+      </ul>
     </div>
   </div>
-  
+  <div class="relative group hover:text-gray-100">
+    <a [routerLink]="['guestbook']">Guestbook</a>
+    <div
+      class="absolute bg-blue-200 text-black rounded p-2 mt-2 w-60 hidden group-hover:block z-20 arrow"
+    >
+      <ul class="text-xs">
+        <li>Embedded Youtube player</li>
+        <li>Popup Modal</li>
+        <li>Embedded richtext editor</li>
+        <li>Responsiveness</li>
+      </ul>
+    </div>
+  </div>
 </div>
 <router-outlet></router-outlet>

@@ -1,4 +1,4 @@
-<div class="flex flex-col xl:flex-row bg-blue-50 xl:h-[calc(100%-25px)]">
+<section class="flex flex-col xl:flex-row bg-blue-400 xl:h-[calc(100%-25px)]">
   <div
     class="relative"
     mwlResizable
@@ -267,13 +267,13 @@
   </div>
   <div
     *ngIf="mapToSmall(200)"
-    class="bg-white rounded text-red-400 px-2 xl:hidden"
+    class="bg-white rounded text-red-400 px-2 xl:hidden relative"
   >
     Karte zu klein für Funktionen. Ziehen Sie die Karte etwas größer!
   </div>
 
-  <div class="m-8 xl:m-4 xl:overflow-y-auto overflow-x-auto">
-    <div class="sticky top-0 left-0 bg-blue-50 z-10">
+  <div class="m-8 xl:m-4 xl:overflow-y-auto overflow-x-auto relative">
+    <div class="sticky top-0 left-0 bg-white rounded z-10 pt-4">
       <div class="flex flex-col md:flex-row justify-center mb-4">
         Städte mit
         <div>
@@ -344,4 +344,4 @@
       <tr mat-row *matRowDef="let row; columns: columnsToDisplay"></tr>
     </table>
   </div>
-</div>
+</section>
