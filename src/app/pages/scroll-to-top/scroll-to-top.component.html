@@ -1,3 +1,12 @@
-<a *ngIf="currentRoute!=='/gimmicks/map'" [ngClass]="{ visible: scrollToTopVisible }" href="#header"
+<a *ngIf="currentRoute==='/'" [ngClass]="{ visible: scrollToTopVisible }"  [routerLink]="['/']" fragment="header"
+  ><i class="fas fa-angle-up"></i
+></a>
+<a *ngIf="currentRoute==='/gimmicks'" [ngClass]="{ visible: scrollToTopVisible }"  [routerLink]="['/gimmicks']" fragment="header"
+  ><i class="fas fa-angle-up"></i
+></a>
+<a *ngIf="currentRoute==='/gimmicks/guestbook'" [ngClass]="{ visible: scrollToTopVisible }"  [routerLink]="['/gimmicks/guestbook']" fragment="header"
+  ><i class="fas fa-angle-up"></i
+></a>
+<a *ngIf="currentRoute==='/gimmicks/map'" [ngClass]="{ visible: scrollToTopVisible }"  [routerLink]="['/gimmicks/map']" fragment="header"
   ><i class="fas fa-angle-up"></i
 ></a>

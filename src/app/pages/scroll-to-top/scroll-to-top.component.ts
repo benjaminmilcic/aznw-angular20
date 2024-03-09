@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, HostListener, OnInit } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
+import { NavigationEnd, Router, RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
@@ -8,7 +8,7 @@ import { TranslateModule } from '@ngx-translate/core';
   templateUrl: './scroll-to-top.component.html',
   styleUrls: ['./scroll-to-top.component.css'],
   standalone: true,
-  imports: [TranslateModule, CommonModule],
+  imports: [TranslateModule, CommonModule, RouterModule],
 })
 export class ScrollToTopComponent implements OnInit {
   scrollToTopVisible = false;
@@ -19,12 +19,11 @@ export class ScrollToTopComponent implements OnInit {
 
   currentRoute: string;
 
-  constructor(private router: Router) {
-  }
+  constructor(private router: Router) {}
   ngOnInit(): void {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        this.currentRoute = this.router.url;
+        this.currentRoute = this.router.url.split('#')[0];
       }
     });
   }

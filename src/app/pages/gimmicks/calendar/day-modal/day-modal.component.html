@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar color="primary" class="bg-blue-600 text-white">
+  <ion-toolbar color="primary" class="bg-green-700 text-white">
     <ion-title>{{ day }}. {{ month }} {{ year }}</ion-title>
     <ion-buttons slot="end">
       <ion-button (click)="close()">
@@ -9,108 +9,207 @@
   </ion-toolbar>
 </ion-header>
 <ion-content class="h-[calc(100%-50px)]">
-
-    <table class="my-4 mx-8">
-      <tr>
-        <td>00:00</td>
-        <td><input type="text" class="border-2 rounded"/></td>
-      </tr>
-      <tr>
-        <td>01:00</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>02:00</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>03:00</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>04:00</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>05:00</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>06:00</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>07:00</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>08:00</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>09:00</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>10:00</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>11:00</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>12:00</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>13:00</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>14:00</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>15:00</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>16:00</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>17:00</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>18:00</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>19:00</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>20:00</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>21:00</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>22:00</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>23:00</td>
-        <td></td>
-      </tr></table
-  >
+  <div class="bg-red-300">
+    <form [formGroup]="hours">
+      <table class="my-4 mx-2 border-spacing-x-2 xs:mx-8 xs:border-spacing-x-6">
+        <tr>
+          <td class="align-top pt-5">00:00</td>
+          <td class="w-full">
+            <mat-form-field  appearance="outline" subscriptSizing="dynamic" class="w-full">
+              <input matInput formControlName="h0"/>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td class="align-top pt-5">01:00</td>
+          <td class="w-full">
+            <mat-form-field  appearance="outline" subscriptSizing="dynamic" class="w-full">
+              <input matInput formControlName="h1"/>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td class="align-top pt-5">02:00</td>
+          <td class="w-full">
+            <mat-form-field  appearance="outline" subscriptSizing="dynamic" class="w-full">
+              <input matInput formControlName="h2"/>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td class="align-top pt-5">03:00</td>
+          <td class="w-full">
+            <mat-form-field  appearance="outline" subscriptSizing="dynamic" class="w-full">
+              <input matInput formControlName="h3"/>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td class="align-top pt-5">04:00</td>
+          <td class="w-full">
+            <mat-form-field  appearance="outline" subscriptSizing="dynamic" class="w-full">
+              <input matInput formControlName="h4"/>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td class="align-top pt-5">05:00</td>
+          <td class="w-full">
+            <mat-form-field  appearance="outline" subscriptSizing="dynamic" class="w-full">
+              <input matInput formControlName="h5"/>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td class="align-top pt-5">06:00</td>
+          <td class="w-full">
+            <mat-form-field  appearance="outline" subscriptSizing="dynamic" class="w-full">
+              <input matInput formControlName="h6"/>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td class="align-top pt-5">07:00</td>
+          <td class="w-full">
+            <mat-form-field  appearance="outline" subscriptSizing="dynamic" class="w-full">
+              <input matInput formControlName="h7"/>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td class="align-top pt-5">08:00</td>
+          <td class="w-full">
+            <mat-form-field  appearance="outline" subscriptSizing="dynamic" class="w-full">
+              <input matInput formControlName="h8"/>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td class="align-top pt-5">09:00</td>
+          <td class="w-full">
+            <mat-form-field  appearance="outline" subscriptSizing="dynamic" class="w-full">
+              <input matInput formControlName="h9"/>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td class="align-top pt-5">10:00</td>
+          <td class="w-full">
+            <mat-form-field  appearance="outline" subscriptSizing="dynamic" class="w-full">
+              <input matInput formControlName="h10"/>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td class="align-top pt-5">11:00</td>
+          <td class="w-full">
+            <mat-form-field  appearance="outline" subscriptSizing="dynamic" class="w-full">
+              <input matInput formControlName="h11"/>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td class="align-top pt-5">12:00</td>
+         <td class="w-full">
+            <mat-form-field  appearance="outline" subscriptSizing="dynamic" class="w-full">
+              <input matInput formControlName="h12"/>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td class="align-top pt-5">13:00</td>
+          <td class="w-full">
+            <mat-form-field  appearance="outline" subscriptSizing="dynamic" class="w-full">
+              <input matInput formControlName="h13"/>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td class="align-top pt-5">14:00</td>
+          <td class="w-full">
+            <mat-form-field  appearance="outline" subscriptSizing="dynamic" class="w-full">
+              <input matInput formControlName="h14"/>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td class="align-top pt-5">15:00</td>
+          <td class="w-full">
+            <mat-form-field  appearance="outline" subscriptSizing="dynamic" class="w-full">
+              <input matInput formControlName="h15"/>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td class="align-top pt-5">16:00</td>
+          <td class="w-full">
+            <mat-form-field  appearance="outline" subscriptSizing="dynamic" class="w-full">
+              <input matInput formControlName="h16"/>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td class="align-top pt-5">17:00</td>
+          <td class="w-full">
+            <mat-form-field  appearance="outline" subscriptSizing="dynamic" class="w-full">
+              <input matInput formControlName="h17"/>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td class="align-top pt-5">18:00</td>
+         <td class="w-full">
+            <mat-form-field  appearance="outline" subscriptSizing="dynamic" class="w-full">
+              <input matInput formControlName="h18"/>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td class="align-top pt-5">19:00</td>
+          <td class="w-full">
+            <mat-form-field  appearance="outline" subscriptSizing="dynamic" class="w-full">
+              <input matInput formControlName="h19"/>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td class="align-top pt-5">20:00</td>
+          <td class="w-full">
+            <mat-form-field  appearance="outline" subscriptSizing="dynamic" class="w-full">
+              <input matInput formControlName="h20"/>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td class="align-top pt-5">21:00</td>
+          <td class="w-full">
+            <mat-form-field  appearance="outline" subscriptSizing="dynamic" class="w-full">
+              <input matInput formControlName="h21"/>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td class="align-top pt-5">22:00</td>
+          <td class="w-full">
+            <mat-form-field  appearance="outline" subscriptSizing="dynamic" class="w-full">
+              <input matInput formControlName="h22"/>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td class="align-top pt-5">23:00</td>
+          <td class="w-full">
+            <mat-form-field  appearance="outline" subscriptSizing="dynamic" class="w-full">
+              <input matInput formControlName="h23"/>
+            </mat-form-field>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>
 </ion-content>
 <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-  <ion-fab-button (click)="save()">
+  <ion-fab-button (click)="save()" [disabled]="isSaveButtonDisabled()">
     <i class="fa-solid fa-floppy-disk text-2xl"></i>
   </ion-fab-button>
 </ion-fab>

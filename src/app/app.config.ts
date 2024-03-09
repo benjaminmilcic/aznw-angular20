@@ -23,6 +23,7 @@ export const appConfig: ApplicationConfig = {
     importProvidersFrom(
       RouterModule.forRoot(routes, {
         anchorScrolling: 'enabled',
+        useHash: true,
       })
     ),
     importProvidersFrom(HttpClientModule), // or provideHttpClient() in Angular v15

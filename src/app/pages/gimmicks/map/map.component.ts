@@ -136,7 +136,7 @@ export class MapComponent implements OnInit, AfterViewInit {
       dimension = JSON.parse(localStorage.getItem('mapDimension'));
     } else {
       dimension.width = window.innerWidth;
-      dimension.height = window.innerHeight - 25;
+      dimension.height = window.innerHeight - 40;
     }
 
     if (event.target.innerWidth < 1280) {
@@ -154,7 +154,7 @@ export class MapComponent implements OnInit, AfterViewInit {
     } else {
       this.style = {
         width: '100%',
-        height: 'calc(100vh - 25px)',
+        height: 'calc(100vh - 40px)',
       };
     }
   }
@@ -214,7 +214,7 @@ export class MapComponent implements OnInit, AfterViewInit {
     } else {
       this.style = {
         width: `100%`,
-        height: 'calc(100vh - 25px)',
+        height: 'calc(100vh - 40px)',
       };
     }
   }
@@ -465,7 +465,7 @@ export class MapComponent implements OnInit, AfterViewInit {
       return false;
     } else if (
       +this.style.height.slice(0, -2) > size ||
-      this.style.height === 'calc(100vh - 25px)' ||
+      this.style.height === 'calc(100vh - 40px)' ||
       this.style.height === 'nullpx'
     ) {
       return false;

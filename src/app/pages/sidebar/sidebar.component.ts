@@ -1,8 +1,8 @@
-import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { TranslateSendButtonService } from '../home/components/shared/translate-send-button.service';
-import { CommonModule, ViewportScroller } from '@angular/common';
-import { Router, RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
@@ -18,9 +18,7 @@ export class SidebarComponent {
 
   constructor(
     private translate: TranslateService,
-    private translateSendButtonService: TranslateSendButtonService,
-    private scroller: ViewportScroller,
-    private router:Router
+    private translateSendButtonService: TranslateSendButtonService
   ) {}
 
   onToggleSidebar(event: Event | null) {
@@ -44,7 +42,7 @@ export class SidebarComponent {
     }
   }
 
-  onClick(target:string='#') {
+  onClick(target: string = '#') {
     this.onToggleSidebar(null);
   }
 

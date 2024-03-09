@@ -1,0 +1,15 @@
+<div class="flex justify-center my-4">
+    <div>Welcher Feiertag ist am&nbsp;</div>
+  <div>{{holiday.date | date : undefined : undefined : "de"}} ?</div>
+</div>
+<div class="flex justify-center mt-4 mb-12">
+  <app-scratch-card [word]="getScratchWord()"></app-scratch-card>
+</div>
+<div class="flex justify-center mb-10">
+  <button
+    (click)="closeBottomSheet()"
+    class="bg-blue-500 hover:bg-blue-600 rounded text-white px-4 py-2"
+  >
+    Close Quiz
+  </button>
+</div>

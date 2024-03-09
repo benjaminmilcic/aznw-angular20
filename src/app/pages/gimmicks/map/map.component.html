@@ -1,4 +1,4 @@
-<section class="flex flex-col xl:flex-row bg-blue-400 xl:h-[calc(100%-25px)]">
+<section class="flex flex-col xl:flex-row bg-blue-400 xl:h-[calc(100%-40px)]">
   <div
     class="relative"
     mwlResizable
@@ -12,7 +12,7 @@
       width="100%"
       [options]="mapOptions"
     ></google-map>
-    <div *ngIf="!mapToSmall(200)" class="absolute left-60 top-[11px] z-10">
+    <div *ngIf="!mapToSmall(200)" class="absolute left-[10px] bottom-[20px] sm:left-60 sm:top-[11px] z-10">
       <form>
         <div class="bg-white rounded shadow relative">
           <input
@@ -20,7 +20,7 @@
             placeholder="Search a city"
             [formControl]="selectedCity"
             [matAutocomplete]="auto"
-            class="w-40 h-10 border-none px-2 rounded"
+            class="w-40 h-9 border-none px-2 rounded"
           />
           <i
             class="fa-solid fa-magnifying-glass pr-2 opacity-50 absolute right-2 top-3"
@@ -53,7 +53,7 @@
     >
       <i class="fa-solid fa-arrows-up-down opacity-30"></i>
     </div>
-    <div *ngIf="!mapToSmall(200)" class="absolute left-[420px] top-[11px] z-10">
+    <div *ngIf="!mapToSmall(200)" class="absolute left-[10px] bottom-[70px] sm:left-[425px] sm:top-[11px] z-10">
       <button
         tooltip="Filter"
         class="bg-blue-500 text-black rounded-lg w-10 h-10 flex justify-center place-items-center"
@@ -272,9 +272,9 @@
     Karte zu klein für Funktionen. Ziehen Sie die Karte etwas größer!
   </div>
 
-  <div class="m-8 xl:m-4 xl:overflow-y-auto overflow-x-auto relative">
+  <div class="my-8 sm:m-8 xl:m-4 xl:overflow-y-auto overflow-x-auto relative">
     <div class="sticky top-0 left-0 bg-white rounded z-10 pt-4">
-      <div class="flex flex-col md:flex-row justify-center mb-4">
+      <div class="flex flex-col md:flex-row justify-center place-items-center mb-4">
         Städte mit
         <div>
           <input

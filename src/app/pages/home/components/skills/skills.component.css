@@ -1,5 +1,4 @@
 section {
-  
   display: flex;
   flex-direction: column;
   padding: 3rem 0rem 10rem;
@@ -115,6 +114,7 @@ h3 {
 .l-and-t-wrapper {
   display: flex;
   justify-content: center;
+  padding-right: 40px;
 }
 
 .languages-and-tools {
