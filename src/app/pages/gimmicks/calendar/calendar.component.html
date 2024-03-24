@@ -1,11 +1,17 @@
-<section class="p-8 h-[calc(100%-104px)] bg-blue-400 flex flex-col place-items-center gap-6">
+<section
+  class="p-8 min-h-[calc(100%-104px)] bg-blue-400 flex flex-col place-items-center gap-6"
+>
   <div
-    class="bg-red-300 rounded-lg flex flex-col place-items-center w-[300px] h-[550px] shadow-lg relative"
+    class="bg-red-300 rounded-lg flex flex-col place-items-center h-[555px] shadow-lg relative"
+    [ngClass]="{
+      'w-[300px]': translateService.currentLang == 'de',
+      'w-[400px]': translateService.currentLang == 'en'
+    }"
   >
     <div class="flex justify-center w-full rounded-t-lg bg-green-700 py-4">
       <img [src]="getSvgOfMonth()" width="192px" />
     </div>
-    <div>{{ currentYear }}</div>
+    <div class="mt-2">{{ currentYear }}</div>
     <div class="flex gap-5 place-items-center">
       <button
         class="cursor-pointer bg-blue-400 hover:bg-blue-500 rounded"
@@ -14,7 +20,7 @@
         <i class="fa-solid fa-caret-left text-lg"></i>
       </button>
       <div class="w-20 flex justify-center my-4">
-        {{ months[currentMonth] }}
+        {{ "gimmicks.calendar.months." + months[currentMonth] | translate }}
       </div>
       <button
         class="cursor-pointer bg-blue-400 hover:bg-blue-500 rounded"
@@ -23,14 +29,18 @@
         <i class="fa-solid fa-caret-right text-lg"></i>
       </button>
     </div>
-    <div class="grid grid-cols-7 gap-3">
-      <div class="text-center">Mo</div>
-      <div class="text-center">Di</div>
-      <div class="text-center">Mi</div>
-      <div class="text-center">Do</div>
-      <div class="text-center">Fr</div>
-      <div class="text-center text-red-500">Sa</div>
-      <div class="text-center text-red-500">So</div>
+    <div class="grid grid-cols-7 gap-3 justify-items-center">
+      <div class="text-center">{{ "gimmicks.calendar.mon" | translate }}</div>
+      <div class="text-center">{{ "gimmicks.calendar.tue" | translate }}</div>
+      <div class="text-center">{{ "gimmicks.calendar.wed" | translate }}</div>
+      <div class="text-center">{{ "gimmicks.calendar.thur" | translate }}</div>
+      <div class="text-center">{{ "gimmicks.calendar.fri" | translate }}</div>
+      <div class="text-center text-red-500">
+        {{ "gimmicks.calendar.sat" | translate }}
+      </div>
+      <div class="text-center text-red-500">
+        {{ "gimmicks.calendar.sun" | translate }}
+      </div>
       <div *ngFor="let item of getEmptyDiv()"></div>
       <div
         *ngFor="let day of getDaysOfMonthArray(currentMonth); let i = index"
@@ -38,101 +48,33 @@
         [ngClass]="{
           border: isDateToday(currentYear, currentMonth, i + 1),
           'text-blue-500': dateIsHoliday(currentYear, currentMonth, i + 1)
-        }" (click)="openDayModal(i+1,months[currentMonth],currentYear)"
+        }"
+        (click)="openDayModal(i + 1, months[currentMonth], currentYear)"
       >
         {{ i + 1 }}
       </div>
     </div>
   </div>
-   <div class="flex flex-col place-items-center">
-      <div class="text-sm">Arbeitstage</div>
+  <div class="flex flex-col place-items-center">
+    <div class="text-sm">{{ "gimmicks.calendar.workdays" | translate }}</div>
+    <div
+      class="w-[200px] bg-gray-200 relative mt-2 rounded-xl border border-gray-400 bar-shadow"
+    >
       <div
-        class="w-[200px] bg-gray-200 relative mt-2 rounded-xl border border-gray-400 bar-shadow"
-      >
-        <div
-          class="h-4 bg-green-300 rounded-xl"
-          [style.width]="getWorkingDaysOfMonthPercentage()"
-        ></div>
-        <div class="absolute top-0 text-center text-xs w-full">
-          {{getWorkingDaysOfMonth()}} / {{ getDaysOfMonth(currentMonth) }}
-        </div>
-      </div>
-    </div>
-
-    <button (click)="openBottomSheet()" class="relative bg-blue-500 hover:bg-blue-600 rounded px-4 py-2 text-white">Open Quiz</button>
-
-  <!-- <div class="flex flex-col place-items-center gap-4 relative">
-    <div><input type="number" [(ngModel)]="year" min="1900" max="2300" /></div>
-    <div class="flex flex-col gap-2">
-      <div
-        *ngFor="let month of months; let monthIndex = index"
-        class="flex gap-2 place-items-center"
-      >
-        <div class="w-20">{{ month }}</div>
-        <div
-          class="w-8 h-8 flex justify-center place-items-center cursor-pointer hover:z-10 hover:!bg-red-400 hover:rounded-full day group"
-          *ngFor="let day of getDaysOfMonth(month)"
-          [ngClass]="getBackgroundColor(monthIndex, day)"
-        >
-          <div
-            class="flex flex-col justify-center place-items-center"
-            (click)="openDayModal(day, month, year)"
-          >
-            <div class="text-[6px] hidden group-hover:block order-2">
-              {{ month }}
-            </div>
-            <div class="group-hover:text-[9px] order-1">{{ getday(day) }}</div>
-            <div class="text-[6px] hidden group-hover:block order-3">
-              {{ year }}
-            </div>
-          </div>
-        </div>
+        class="h-4 bg-green-300 rounded-xl"
+        [style.width]="getWorkingDaysOfMonthPercentage()"
+      ></div>
+      <div class="absolute top-0 text-center text-xs w-full">
+        {{ getWorkingDaysOfMonth() }} / {{ getDaysOfMonth(currentMonth) }}
       </div>
     </div>
   </div>
-  <div class="flex justify-center gap-32 mt-8 relative">
-    <div>
-      <div class="flex items-center gap-1">
-        <hr class="w-100" />
-        <p class="text-center">Legende</p>
-        <hr class="w-100" />
-      </div>
-      <div class="flex gap-4">
-        <div class="flex gap-1 items-center">
-          <div class="w-4 h-4 bg-red-300"></div>
-          <p>Abgelehnt</p>
-        </div>
-        <div class="flex gap-1 items-center">
-          <div class="w-4 h-4 bg-cyan-200"></div>
-          <p>Abwesendheit</p>
-        </div>
-        <div class="flex gap-1 items-center">
-          <div class="w-4 h-4 bg-red-300"></div>
-          <p>Abgelehnt</p>
-        </div>
-        <div class="flex gap-1 items-center">
-          <div class="w-4 h-4 bg-cyan-200"></div>
-          <p>Abwesendheit</p>
-        </div>
-        <div class="flex gap-1 items-center">
-          <div class="w-4 h-4 border-b-4 bg-blue-300 border-blue-600"></div>
-          <p>Feiertag</p>
-        </div>
-      </div>
-    </div>
-    <div class="flex flex-col place-items-center">
-      <div class="text-sm">Feitertage die auf ein Wochende fallen</div>
-      <div
-        class="w-[200px] bg-gray-200 relative mt-2 rounded-xl border border-gray-400 bar-shadow"
-      >
-        <div
-          class="h-4 bg-green-300 rounded-xl"
-          [style.width]="getNumberOfHolidaysAtWeekendPercentage()"
-        ></div>
-        <div class="absolute top-0 text-center text-xs w-full">
-          {{ getNumberOfHolidaysAtWeekend() }}
-        </div>
-      </div>
-    </div>
-  </div> -->
+
+  <button
+    *ngIf="!showBackDrop"
+    (click)="openBottomSheet()"
+    class="relative bg-blue-500 hover:bg-blue-600 rounded px-4 py-2 text-white"
+  >
+    {{ "gimmicks.calendar.openQuiz" | translate }}
+  </button>
 </section>

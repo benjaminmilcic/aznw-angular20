@@ -14,7 +14,7 @@
     "text7": "Ich bin verheiratet und habe ein Kind.",
     "mySkills": "Meine Fähigkeiten",
     "curriculumVitae": "Lebenslauf",
-    "downloadCV":"Laden Sie hier meinen Lebenslauf herunter"
+    "downloadCV": "Laden Sie hier meinen Lebenslauf herunter"
   },
   "skills": {
     "headline": "Programmiersprachen & Werkzeuge",
@@ -61,5 +61,84 @@
     "aboutMe": "Über mich",
     "skills": "Fähigkeiten",
     "contact": "Kontakt"
+  },
+  "gimmicks": {
+    "menu": {
+      "overview": "Übersicht",
+      "map": "Karte",
+      "calendar": "Kalender",
+      "guestbook": "Gästebuch"
+    },
+    "overview": {
+      "header": "Bisher habe ich Unternehmensanwendungen erstellt, auf die nur mit Login und Passwort zugegriffen werden kann. Deshalb finden Sie hier Gimmicks, die mein Können unter Beweis stellen.",
+      "elements": "Elemente",
+      "searchTypeahead": "Suche mit typeahead",
+      "table": "Tabelle mit Sortierung, Filterung und Pagination",
+      "resizable": "In der Größe veränderbares Element (auf kleinen Bildschirmen)",
+      "scratchCard": "Rubbelkarte",
+      "youtubePlayer": "Eingebetteter Youtube Player",
+      "editor": "Eingebetteter Richtext Editor",
+      "open": "Öffnen"
+    },
+    "map": {
+      "search": "Stadtsuche...",
+      "Baden-Württemberg": "Baden-Württemberg",
+      "Bayern": "Bayern",
+      "Berlin": "Berlin",
+      "Brandenburg": "Brandenburg",
+      "Bremen": "Bremen",
+      "Hamburg": "Hamburg",
+      "Hessen": "Hessen",
+      "Mecklenburg-Vorpommern": "Mecklenburg-Vorpommern",
+      "Niedersachsen": "Niedersachsen",
+      "Nordrhein-Westfalen": "Nordrhein-Westfalen",
+      "Rheinland-Pfalz": "Rheinland-Pfalz",
+      "Saarland": "Saarland",
+      "Sachsen": "Sachsen",
+      "Sachsen-Anhalt": "Sachsen-Anhalt",
+      "Schleswig-Holstein": "Schleswig-Holstein",
+      "Thüringen": "Thüringen",
+      "cities1": "Städte mit",
+      "cities2": "bis",
+      "cities3": "Einwohnern",
+      "rang": "Rang",
+      "population": "Einwohner",
+      "federalState": "Bundesland",
+      "cityInfo": "Stadtinfo",
+      "noFunctions": "Karte ist zu klein für Funktionen. Ziehen Sie die Karte etwas größer!"
+    },
+    "calendar": {
+      "months": {
+        "january": "Januar",
+        "february": "Februar",
+        "march": "März",
+        "april": "April",
+        "may": "Mai",
+        "june": "Juni",
+        "july": "Juli",
+        "august": "August",
+        "september": "September",
+        "october": "Oktober",
+        "november": "November",
+        "december": "Dezember"
+      },
+      "workdays": "Arbeitstage",
+      "openQuiz": "Quiz öffnen",
+      "closeQuiz": "Quiz schließen",
+      "which": "Welcher Feiertag ist am",
+      "answer": "Antwort frei rubbeln",
+      "mon": "Mo",
+      "tue": "Di",
+      "wed": "Mi",
+      "thur": "Do",
+      "fri": "Fr",
+      "sat": "Sa",
+      "sun": "So"
+    },
+    "guestbook": {
+      "createComment": "Kommentar erstellen",
+      "thanks": "Vielen Dank für Ihren Kommentar",
+      "save": "Speichern"
+    }
   }
 }

@@ -1,48 +1,74 @@
-<div   id="header"
+<div
+  id="header"
   class="bg-blue-800 text-gray-300 px-8 flex flex-wrap gap-4 h-10 place-items-center"
 >
   <div class="hover:text-gray-100">
-    <a [routerLink]="['/gimmicks']">Overview</a>
+    <a [routerLink]="['/gimmicks']">{{
+      "gimmicks.menu.overview" | translate
+    }}</a>
   </div>
   <div class="relative group hover:text-gray-100">
-    <a [routerLink]="['map']">Map</a>
+    <a [routerLink]="['map']">{{ "gimmicks.menu.map" | translate }}</a>
     <div
       class="absolute bg-blue-200 text-black rounded p-2 mt-2 w-60 hidden group-hover:block z-20 arrow"
     >
       <ul class="text-xs">
         <li>Google Maps API</li>
-        <li>Search with typeahead</li>
+        <li>{{ "gimmicks.overview.searchTypeahead" | translate }}</li>
         <li>Drag and drop</li>
-        <li>Table with sorting, filtering and pagination</li>
-        <li>Resizable element (on small screens)</li>
-        <li>Responsiveness</li>
+        <li>{{ "gimmicks.overview.table" | translate }}</li>
+        <li>{{ "gimmicks.overview.resizable" | translate }}</li>
+        <li>Responsive design</li>
       </ul>
     </div>
   </div>
   <div class="relative group hover:text-gray-100">
-    <a [routerLink]="['calendar']">Kalender</a>
+    <a [routerLink]="['calendar']">{{
+      "gimmicks.menu.calendar" | translate
+    }}</a>
     <div
       class="absolute bg-blue-200 text-black rounded p-2 mt-2 w-60 hidden group-hover:block z-20 arrow"
     >
       <ul class="text-xs">
         <li>SVG</li>
-            <li>Popup Modal</li>
-            <li>Bottom Drawer</li>
-            <li>Scratch Card</li>
-            <li>Responsiveness</li>
+        <li>Popup modal</li>
+        <li>Bottom drawer</li>
+        <li>{{ "gimmicks.overview.scratchCard" | translate }}</li>
+        <li>{{ "gimmicks.overview.print" | translate }}</li>
+        <li>Responsive design</li>
       </ul>
     </div>
   </div>
   <div class="relative group hover:text-gray-100">
-    <a [routerLink]="['guestbook']">Guestbook</a>
+    <a [routerLink]="['guestbook']">{{
+      "gimmicks.menu.guestbook" | translate
+    }}</a>
     <div
       class="absolute bg-blue-200 text-black rounded p-2 mt-2 w-60 hidden group-hover:block z-20 arrow"
     >
       <ul class="text-xs">
-        <li>Embedded Youtube player</li>
+        <li>{{ "gimmicks.overview.youtubePlayer" | translate }}</li>
         <li>Popup Modal</li>
-        <li>Embedded richtext editor</li>
-        <li>Responsiveness</li>
+        <li>{{ "gimmicks.overview.editor" | translate }}</li>
+        <li>Google Firebase</li>
+        <li>PHP API</li>
+        <li>Responsive design</li>
+      </ul>
+    </div>
+  </div>
+  <div class="relative group hover:text-gray-100">
+    <a [routerLink]="['diagrams']">{{
+      "gimmicks.menu.diagrams" | translate
+    }}</a>
+    <div
+      class="absolute bg-blue-200 text-black rounded p-2 mt-2 w-60 hidden group-hover:block z-20 arrow"
+    >
+      <ul class="text-xs">
+        <li>{{ "gimmicks.overview.diagrams" | translate }}</li>
+        <li>PDF</li>
+        <li>{{ "gimmicks.overview.fileUpload" | translate }}</li>
+        <li>Google Firebase</li>
+        <li>Responsive design</li>
       </ul>
     </div>
   </div>

@@ -1,0 +1,10 @@
+<div class="flex justify-center">
+  <img [src]="getSvgOfMonth()" width="192px" />
+</div>
+<div class="flex justify-center my-4 text-lg">{{day}}.{{month}} {{year}}</div>
+<div class="grid grid-cols-10 px-10 border-2 py-4" [ngClass]="{'border-2':hoursKeys.length>0}">
+  <ng-container *ngFor="let hour of hoursKeys; let i = index">
+    <div class="border-b border-r"><span *ngIf="i < 10">0</span>{{ i }}:00</div>
+    <div class="col-span-9 max-w-[700px] break-words border-b px-2">{{ hours["h" + i.toString()] }}</div>
+  </ng-container>
+</div>

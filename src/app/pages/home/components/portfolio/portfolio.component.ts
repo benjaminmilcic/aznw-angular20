@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
@@ -6,6 +7,6 @@ import { TranslateModule } from '@ngx-translate/core';
   templateUrl: './portfolio.component.html',
   styleUrls: ['./portfolio.component.css'],
   standalone: true,
-  imports: [TranslateModule],
+  imports: [TranslateModule, RouterModule],
 })
 export class PortfolioComponent {}

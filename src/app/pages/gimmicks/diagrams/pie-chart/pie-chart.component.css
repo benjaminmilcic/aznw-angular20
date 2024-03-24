@@ -1,0 +1,8 @@
+
+ion-segment{
+  display: block;
+}
+
+.clip{
+  clip-path: circle(40%);
+}

@@ -8,11 +8,17 @@ import {
 import { ScratchCardComponent } from './scratch-card/scratch-card.component';
 import { Holiday, getHolidays } from 'feiertagejs';
 import * as de from '@angular/common/locales/de';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-quiz-bottom-sheet',
   standalone: true,
-  imports: [MatBottomSheetModule, CommonModule, ScratchCardComponent],
+  imports: [
+    MatBottomSheetModule,
+    CommonModule,
+    ScratchCardComponent,
+    TranslateModule,
+  ],
   providers: [{ provide: LOCALE_ID, useValue: 'de-DE' }],
   templateUrl: './quiz-bottom-sheet.component.html',
   styleUrl: './quiz-bottom-sheet.component.css',
@@ -36,7 +42,7 @@ export class QuizBottomSheetComponent implements OnInit {
     this._bottomSheetRef.dismiss();
   }
 
-  getScratchWord():string {
+  getScratchWord(): string {
     switch (this.holiday.name) {
       case 'NEUJAHRSTAG':
         return 'NEUJAHR';

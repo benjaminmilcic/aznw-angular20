@@ -1,0 +1,41 @@
+<div class="flex flex-col place-items-center gap-8 mt-20 px-10 relative">
+ 
+  <div class="flex flex-col place-items-center w-[500px]">
+    <canvas
+      baseChart
+      [data]="getBarChartData()"
+      [options]="getBarChartOptions()"
+      [type]="barChartType"
+      [plugins]="barChartPlugins"
+    >
+    </canvas>
+    <div class="flex self-end">
+      <div
+        *ngFor="let user of users; let i = index"
+        class="flex cursor-pointer justify-center"
+        [ngClass]="{ 'opacity-25': !showUser[i] }"
+        [style.width]="getLabelWidth()"
+        (click)="showUser[i] = !showUser[i]"
+      >
+        <img [src]="user.image" width="30px" class="rounded-full clip" />
+      </div>
+    </div>
+  </div>
+  <div>
+    <ion-segment
+      mode="ios"
+      [value]="kindOfConsumption"
+      (ionChange)="onChangeKindOfConsumption($event)"
+    >
+      <ion-segment-button value="electricity">
+        <ion-label>Electricity</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="water">
+        <ion-label>Water</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="gas">
+        <ion-label>Gas</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+</div>

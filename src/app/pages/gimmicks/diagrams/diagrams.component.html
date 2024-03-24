@@ -1,0 +1,170 @@
+<mat-drawer-container class="h-[calc(100%-40px)]">
+  <mat-drawer #drawer mode="over" disableClose="true"
+    ><app-drawer-content
+      *ngIf="user"
+      [user]="user"
+      [userNames]="userNames"
+      (closeDrawer)="onCloseEditDrawer()"
+      (saveUser)="onSaveUser($event)"
+    ></app-drawer-content>
+    <app-drawer-content
+      *ngIf="newUser"
+      [user]="newUser"
+      [userNames]="userNames"
+      (closeDrawer)="onCloseEditDrawer()"
+      (saveUser)="onSaveNewUser($event)"
+    ></app-drawer-content
+  ></mat-drawer>
+  <mat-drawer-content class="bg-blue-400 h-full pt-4">
+    <div class="flex">
+      <div class="w-1/2 flex flex-col place-items-center">
+        <ion-segment
+          mode="ios"
+          [value]="chartType"
+          class="w-[600px]"
+          (ionChange)="onChangeChartType($event)"
+        >
+          <ion-segment-button value="monthly">
+            <ion-label>Monatlicher Verbrauch</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="yearly">
+            <ion-label>Jährlicher Verbrauch</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="procentual">
+            <ion-label>Prozentualer Verbrauch</ion-label>
+          </ion-segment-button>
+        </ion-segment>
+        <div
+          *ngIf="chartType === 'procentual'"
+          class="flex flex-col items-center mt-6"
+        >
+          <app-pie-chart [users]="users"></app-pie-chart>
+          <div class="flex justify-evenly w-full items-center mt-8">
+            <div>
+              <ion-segment
+                mode="ios"
+                [value]="year"
+                class="block"
+                (ionChange)="onChangeYear($event)"
+              >
+                <ion-segment-button value="2022">
+                  <ion-label>2022</ion-label>
+                </ion-segment-button>
+                <ion-segment-button value="2023">
+                  <ion-label>2023</ion-label>
+                </ion-segment-button>
+              </ion-segment>
+            </div>
+
+            <div>
+              <ion-segment
+                mode="ios"
+                [value]="kindOfConsumption"
+                class="block"
+                (ionChange)="onChangeKindOfConsumption($event)"
+              >
+                <ion-segment-button value="electricity">
+                  <ion-label>Electricity</ion-label>
+                </ion-segment-button>
+                <ion-segment-button value="water">
+                  <ion-label>Water</ion-label>
+                </ion-segment-button>
+                <ion-segment-button value="gas">
+                  <ion-label>Gas</ion-label>
+                </ion-segment-button>
+              </ion-segment>
+            </div>
+            <mat-form-field appearance="outline" subscriptSizing="dynamic">
+              <mat-select
+                [(value)]="selectedPeriod"
+                (selectionChange)="onPeriodChange($event)"
+              >
+                <mat-option value="year">Whole Year</mat-option>
+                <mat-option *ngFor="let month of months" [value]="month">{{
+                  "gimmicks.calendar.months." + month | translate
+                }}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <app-line-chart
+          *ngIf="chartType === 'monthly'"
+          [users]="users"
+        ></app-line-chart>
+        <app-double-bar-chart
+          *ngIf="chartType === 'yearly'"
+          [users]="users"
+        ></app-double-bar-chart>
+      </div>
+      <div class="flex flex-col place-items-center relative h-full w-1/2">
+        <mat-accordion class="w-[440px]">
+          <mat-expansion-panel *ngFor="let user of users" class="border-b">
+            <mat-expansion-panel-header
+              collapsedHeight="100px"
+              expandedHeight="100px"
+            >
+              <div class="flex gap-6 place-items-center">
+                <img [src]="user.image" class="w-16 clip" />
+                <div>{{ user.name }}</div>
+              </div>
+            </mat-expansion-panel-header>
+            <div class="flex justify-between gap-4">
+              <div class="flex flex-col place-items-center">
+                <div class="flex flex-col place-items-center">
+                  <div>Strom</div>
+                  <div class="text-xs">kWh</div>
+                </div>
+                <app-bar-chart
+                  [chartValues]="getYearlyConsumption(user, 'electricity')"
+                  chartBgColor="#FF6384"
+                ></app-bar-chart>
+              </div>
+              <div class="flex flex-col place-items-center">
+                <div class="flex flex-col place-items-center">
+                  <div>Wasser</div>
+                  <div class="text-xs">m&#179;</div>
+                </div>
+                <app-bar-chart
+                  [chartValues]="getYearlyConsumption(user, 'water')"
+                  chartBgColor="#36A2EB"
+                ></app-bar-chart>
+              </div>
+              <div class="flex flex-col place-items-center">
+                <div class="flex flex-col place-items-center">
+                  <div>Gas</div>
+                  <div class="text-xs">kWh</div>
+                </div>
+                <app-bar-chart
+                  [chartValues]="getYearlyConsumption(user, 'gas')"
+                  chartBgColor="#FF9F40"
+                ></app-bar-chart>
+              </div>
+            </div>
+            <div class="flex justify-end">
+              <button
+                mat-mini-fab
+                matTooltip="Edit User"
+                color="primary"
+                class="mt-6"
+                (click)="onOpenEditDrawer(user)"
+              >
+                <mat-icon>edit</mat-icon>
+              </button>
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+        <div class="w-[440px]">
+          <button
+            mat-mini-fab
+            matTooltip="Add User"
+            color="primary"
+            class="mt-6"
+            (click)="onAddUser()"
+          >
+            <mat-icon>add</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>

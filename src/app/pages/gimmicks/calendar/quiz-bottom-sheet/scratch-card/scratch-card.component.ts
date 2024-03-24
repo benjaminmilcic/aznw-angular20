@@ -9,11 +9,12 @@ import {
   SimpleChanges,
   ViewChild,
 } from '@angular/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-scratch-card',
   standalone: true,
-  imports: [],
+  imports: [TranslateModule],
   templateUrl: './scratch-card.component.html',
   styleUrl: './scratch-card.component.css',
 })
@@ -73,7 +74,10 @@ export class ScratchCardComponent implements AfterViewInit, OnChanges {
     this.isDragging = false;
   }
 
-  constructor(private renderer: Renderer2) {}
+  constructor(
+    private renderer: Renderer2,
+    private translate: TranslateService
+  ) {}
 
   ngAfterViewInit(): void {
     this.context = this.scratchCanvas.nativeElement.getContext('2d');
@@ -86,7 +90,12 @@ export class ScratchCardComponent implements AfterViewInit, OnChanges {
     this.context.fillRect(0, 0, 250, 50);
     this.context.fillStyle = 'blue';
     this.context.font = 'bold 16px serif';
-    this.context.fillText('Antwort frei rubbeln', 49, 30, 650);
+    this.context.fillText(
+      this.translate.instant('gimmicks.calendar.answer'),
+      20,
+      30,
+      650
+    );
   }
 
   ngOnChanges(changes: SimpleChanges): void {

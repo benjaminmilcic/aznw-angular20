@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -16,7 +16,7 @@ import {
   IonButtons,
   IonInput,
 } from '@ionic/angular/standalone';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-day-modal',
@@ -36,7 +36,8 @@ import { TranslateService } from '@ngx-translate/core';
     IonInput,
     ReactiveFormsModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    TranslateModule,
   ],
   templateUrl: './day-modal.component.html',
   styleUrl: './day-modal.component.css',
@@ -45,6 +46,9 @@ export class DayModalComponent implements OnInit {
   @Input() day: number;
   @Input() month: string;
   @Input() year: number;
+  @Input() from: string;
+
+  @Output() ActionEvent;
 
   hours = new FormGroup({
     h0: new FormControl(''),
@@ -113,6 +117,11 @@ export class DayModalComponent implements OnInit {
       this.hours.setValue(valueJsonParsed);
       this.originalHours = JSON.parse(JSON.stringify(this.hours.value));
     }
+    if (this.from === 'print') {
+      const localStorageDay = localStorage.getItem('print');
+      const valueJsonParsed = JSON.parse(localStorageDay);
+      this.hours.setValue(valueJsonParsed);
+    }
   }
 
   async close() {
@@ -131,5 +140,16 @@ export class DayModalComponent implements OnInit {
     return (
       JSON.stringify(this.originalHours) === JSON.stringify(this.hours.value)
     );
+  }
+
+  print() {
+    this.close();
+    const valueJsonStringified = JSON.stringify(this.hours.value);
+    localStorage.setItem('print', valueJsonStringified);
+    this.ActionEvent.emit({
+      day: this.day,
+      month: this.month,
+      year: this.year,
+    });
   }
 }

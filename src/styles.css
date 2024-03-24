@@ -30,3 +30,13 @@ body {
   border-style: solid;
   border-color: theme('borderColor.DEFAULT', currentColor);
 }
+
+@media print {
+  app-root > * { display: none; }
+  app-print-schedule { display: block; }
+}
+
+.mdc-notched-outline__notch
+{
+  border-right: none;
+}

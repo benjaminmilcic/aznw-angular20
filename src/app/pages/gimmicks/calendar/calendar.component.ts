@@ -1,20 +1,21 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { isHoliday, getHolidays } from 'feiertagejs';
 import { DayModalComponent } from './day-modal/day-modal.component';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { ModalController } from '@ionic/angular/standalone';
 import {
   MatBottomSheet,
   MatBottomSheetModule,
 } from '@angular/material/bottom-sheet';
 import { QuizBottomSheetComponent } from './quiz-bottom-sheet/quiz-bottom-sheet.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-calendar',
   standalone: true,
-  imports: [CommonModule, FormsModule, MatBottomSheetModule],
+  imports: [CommonModule, FormsModule, MatBottomSheetModule, TranslateModule],
   templateUrl: './calendar.component.html',
   styleUrl: './calendar.component.css',
 })
@@ -22,24 +23,27 @@ export class CalendarComponent implements OnInit {
   currentYear: number;
   currentMonth: number;
   months = [
-    'Januar',
-    'Februar',
-    'März',
-    'April',
-    'Mai',
-    'Juni',
-    'Juli',
-    'August',
-    'September',
-    'Oktober',
-    'November',
-    'Dezember',
+    'january',
+    'february',
+    'march',
+    'april',
+    'may',
+    'june',
+    'july',
+    'august',
+    'september',
+    'october',
+    'november',
+    'december',
   ];
+
+  showBackDrop = false;
 
   constructor(
     private modalCtrl: ModalController,
-    private translate: TranslateService,
-    private _bottomSheet: MatBottomSheet
+    public translateService: TranslateService,
+    private _bottomSheet: MatBottomSheet,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -48,34 +52,13 @@ export class CalendarComponent implements OnInit {
     this.currentMonth = today.getMonth();
   }
 
-  openBottomSheet(): void {
-    this._bottomSheet.open(QuizBottomSheetComponent, {
+  async openBottomSheet() {
+    await this._bottomSheet.open(QuizBottomSheetComponent, {
       disableClose: true,
       data: { year: this.currentYear },
+      hasBackdrop: true,
     });
   }
-
-  // getBackgroundColor(monthIndex: number, day: number) {
-  //   const date = new Date(this.year, monthIndex, day);
-  //   let weekday = date.getDay();
-  //   let backgroundColor: string = '';
-  //   let bg: string;
-  //   let color: string;
-  //   if (weekday === 6 || weekday === 0) {
-  //     backgroundColor += ' self-bg-sky-600 text-white';
-  //   } else {
-  //     bg = '';
-  //     backgroundColor += ' self-bg-sky-200';
-  //   }
-  //   if (this.isDateToday(date)) {
-  //     backgroundColor +=
-  //       ' border-4 self-border-b-cyan-300 self-border-r-cyan-300 self-border-t-cyan-900 self-border-l-cyan-900';
-  //   }
-  //   if (isHoliday(date, 'BUND')) {
-  //     backgroundColor += ' border-b-4 self-border-b-blue-600';
-  //   }
-  //   return backgroundColor;
-  // }
 
   isDateToday(year: number, month: number, day: number): boolean {
     const date = new Date(year, month, day);
@@ -87,44 +70,8 @@ export class CalendarComponent implements OnInit {
     );
   }
 
-  // getday(day: number) {
-  //   if ([1, 2, 3, 4, 5, 6, 7, 8, 9].includes(day)) {
-  //     return '0' + day.toString();
-  //   } else {
-  //     return day.toString();
-  //   }
-  // }
-
-  // getNumberOfHolidaysAtWeekend(): string {
-  //   const holidays = getHolidays(this.year, 'BUND');
-  //   let numberOfHolidaysAtWeekend = 0;
-  //   holidays.forEach((holiday) => {
-  //     let weekday = holiday.date.getDay();
-  //     if (weekday === 6 || weekday === 0) {
-  //       numberOfHolidaysAtWeekend++;
-  //     }
-  //   });
-  //   return numberOfHolidaysAtWeekend + ' / ' + holidays.length;
-  // }
-
-  // getNumberOfHolidaysAtWeekendPercentage() {
-  //   const holidays = getHolidays(this.year, 'BUND');
-  //   let numberOfHolidaysAtWeekend = 0;
-  //   holidays.forEach((holiday) => {
-  //     let weekday = holiday.date.getDay();
-  //     if (weekday === 6 || weekday === 0) {
-  //       numberOfHolidaysAtWeekend++;
-  //     }
-  //   });
-  //   const result = Math.round(
-  //     (numberOfHolidaysAtWeekend * 100) / holidays.length
-  //   );
-  //   console.log(result);
-
-  //   return result.toString() + '%';
-  // }
-
-  async openDayModal(day: number, month: string, year: number) {
+  async openDayModal(day: number, month: string, year: number,from:string='calendar') {
+    this.showBackDrop = true;
     const modal = await this.modalCtrl.create({
       component: DayModalComponent,
       backdropDismiss: false,
@@ -132,13 +79,28 @@ export class CalendarComponent implements OnInit {
         day,
         month,
         year,
+        from,
+        ActionEvent: new EventEmitter<{
+          day: number;
+          month: string;
+          year: number;
+        }>(),
       },
     });
     modal.onDidDismiss().then(async (data) => {
+      this.showBackDrop = false;
+
       if (data.role === 'save') {
       }
     });
-    await modal.present();
+    await modal.present().then(() => {
+      modal.componentProps['ActionEvent'].subscribe({
+        next: (data) => {
+          this.print(data);
+          this.openDayModal(data.day, data.month, data.year,'print');
+        },
+      });
+    });
   }
 
   getEmptyDiv(): number[] {
@@ -237,5 +199,19 @@ export class CalendarComponent implements OnInit {
     );
 
     return result.toString() + '%';
+  }
+
+  print(data) {
+    this.router.navigate([
+      '/',
+      {
+        outlets: {
+          print: [
+            'print',
+            data.day.toString() + '.' + data.month + '.' + data.year.toString(),
+          ],
+        },
+      },
+    ]);
   }
 }

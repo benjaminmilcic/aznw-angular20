@@ -45,21 +45,100 @@
     "message": "Message",
     "send": "Send",
     "sending": "Sending...",
-    "toast":{
-      "success":{
-        "headline":"All right!",
-        "text":"Your message was sent!"
+    "toast": {
+      "success": {
+        "headline": "All right!",
+        "text": "Your message was sent!"
       },
-      "error":"An error has occurred, message was not sent!"
+      "error": "An error has occurred, message was not sent!"
     }
   },
-  "footer":{
-    "visitMe":"Visit me on"
+  "footer": {
+    "visitMe": "Visit me on"
   },
-  "sidebar":{
-    "home":"Home",
-    "aboutMe":"About me",
-    "skills":"Skills",
-    "contact":"Contact"
+  "sidebar": {
+    "home": "Home",
+    "aboutMe": "About me",
+    "skills": "Skills",
+    "contact": "Contact"
+  },
+  "gimmicks": {
+    "menu": {
+      "overview": "Overview",
+      "map": "Map",
+      "calendar": "Calendar",
+      "guestbook": "Guestbook"
+    },
+    "overview": {
+      "header": "So far I have created enterprise applications that can only be accessed with a login and password. That's why you'll find gimmicks here that demonstrate my skills.",
+      "elements": "Elements",
+      "searchTypeahead": "Search with typeahead",
+      "table": "Table with sorting, filtering and pagination",
+      "resizable": "Resizable element (on small screens)",
+      "scratchCard": "Scratch card",
+      "youtubePlayer": "Embedded Youtube player",
+      "editor": "Embedded richtext editor",
+      "open": "Open"
+    },
+    "map": {
+      "search": "Search a city...",
+      "Baden-Württemberg": "Baden-Württemberg",
+      "Bayern": "Bavaria",
+      "Berlin": "Berlin",
+      "Brandenburg": "Brandenburg",
+      "Bremen": "Bremen",
+      "Hamburg": "Hamburg",
+      "Hessen": "Hesse",
+      "Mecklenburg-Vorpommern": "Mecklenburg-Western Pomerania",
+      "Niedersachsen": "Lower Saxony",
+      "Nordrhein-Westfalen": "North Rhine-Westphalia",
+      "Rheinland-Pfalz": "Rhineland-Palatinate",
+      "Saarland": "Saarland",
+      "Sachsen": "Saxony",
+      "Sachsen-Anhalt": "Saxony-Anhalt",
+      "Schleswig-Holstein": "Schleswig-Holstein",
+      "Thüringen": "Thuringia",
+      "cities1": "Cities from",
+      "cities2": "to",
+      "cities3": "Residents",
+      "rang": "Rank",
+      "population": "Residents",
+      "federalState": "Federal state",
+      "cityInfo": "City info",
+      "noFunctions": "Map is too small for functions. Pull the map a little bigger!"
+    },
+    "calendar": {
+      "months": {
+        "january": "January",
+        "february": "February",
+        "march": "March",
+        "april": "April",
+        "may": "May",
+        "june": "June",
+        "july": "July",
+        "august": "August",
+        "september": "September",
+        "october": "October",
+        "november": "November",
+        "december": "December"
+      },
+      "workdays": "Working days",
+      "openQuiz": "Open quiz",
+      "closeQuiz": "Close quiz",
+      "which": "Which holiday is on",
+      "answer": "Scratch for answer",
+      "mon": "Mon",
+      "tue": "Tue",
+      "wed": "Wed",
+      "thur": "Thur",
+      "fri": "Fri",
+      "sat": "Sat",
+      "sun": "Sun"
+    },
+    "guestbook": {
+      "createComment": "Create Comment",
+      "thanks": "Thanks for leaving a comment",
+      "save": "Save"
+    }
   }
 }

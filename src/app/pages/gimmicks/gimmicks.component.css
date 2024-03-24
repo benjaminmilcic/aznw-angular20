@@ -6,13 +6,8 @@
   top: -7px;
   width: 14px;
   height: 14px;
-  /* border-color: #73a7f0; */
-  /* border-width: 1px; */
   border-style: none none solid solid;
   background-color: rgb(191 219 254 / var(--tw-bg-opacity));
-  /* box-shadow: -2px 2px 3.5px rgba(0, 0, 0, .5);
-    -webkit-box-shadow: -2px 2px 3.5px rgba(0, 0, 0, .5);
-    -moz-box-shadow: -2px 2px 3.5px rgba(0, 0, 0, .5); */
   transform: rotate(135deg);
   -webkit-transform: rotate(135deg);
   -moz-transform: rotate(135deg);

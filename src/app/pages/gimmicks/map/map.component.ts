@@ -29,6 +29,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-map',
@@ -54,6 +56,8 @@ import { map, startWith } from 'rxjs/operators';
     ReactiveFormsModule,
     MatFormFieldModule,
     AsyncPipe,
+    MatTooltipModule,
+    TranslateModule
   ],
   templateUrl: './map.component.html',
   styleUrl: './map.component.css',
@@ -442,7 +446,7 @@ export class MapComponent implements OnInit, AfterViewInit {
   }
 
   openWikipedia(link: string) {
-    window.open('https://de.wikipedia.org/' + link, '_blank');
+    window.open('https://de.wikipedia.org' + link, '_blank');
   }
 
   private async zoomToGermany() {

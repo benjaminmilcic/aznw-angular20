@@ -6,6 +6,8 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 import { CalendarComponent } from './pages/gimmicks/calendar/calendar.component';
 import { OverviewComponent } from './pages/gimmicks/overview/overview.component';
 import { GuestbookComponent } from './pages/gimmicks/guestbook/guestbook.component';
+import { PrintScheduleComponent } from './pages/gimmicks/calendar/print-schedule/print-schedule.component';
+import { DiagramsComponent } from './pages/gimmicks/diagrams/diagrams.component';
 
 export const routes: Routes = [
   {
@@ -32,7 +34,16 @@ export const routes: Routes = [
         path: 'guestbook',
         component: GuestbookComponent,
       },
+      {
+        path: 'diagrams',
+        component: DiagramsComponent,
+      },
     ],
+  },
+  {
+    path: 'print/:printDate',
+    outlet: 'print',
+    component: PrintScheduleComponent,
   },
   { path: '**', component: PageNotFoundComponent },
 ];

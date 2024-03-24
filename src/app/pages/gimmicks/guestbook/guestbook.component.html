@@ -9,7 +9,9 @@
     <div class="dialog-close">
       <a (click)="showcreatePostDialog = false"><b>X</b></a>
     </div>
-    <div class="text-center mb-4">Thanks for leaving a comment</div>
+    <div class="text-center mb-4">
+      {{ "gimmicks.guestbook.thanks" | translate }}
+    </div>
     <ion-input
       label="Name"
       label-placement="floating"
@@ -25,7 +27,10 @@
       class="w-[600px]"
     ></editor>
     <ion-fab slot="fixed" vertical="bottom" horizontal="end">
-      <ion-fab-button matTooltip="Speichern" (click)="onSavePost()">
+      <ion-fab-button
+        [matTooltip]="'gimmicks.guestbook.save' | translate"
+        (click)="onSavePost()"
+      >
         <i class="fa-solid fa-floppy-disk text-xl"></i>
       </ion-fab-button>
     </ion-fab>
@@ -49,7 +54,7 @@
       class="xl:self-start self-center max-w-48 mx-6 mt-4 mb-2 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded shadow"
       (click)="onCreatePost()"
     >
-      Create Comment
+      {{ "gimmicks.guestbook.createComment" | translate }}
     </button>
     <div
       *ngFor="let post of posts"

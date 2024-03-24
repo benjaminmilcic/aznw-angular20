@@ -4,9 +4,8 @@
     <div class="main">
       <div
         class="flex place-content-center justify-center w-[350px] h-[350px] rounded-full relative"
-        [tooltip]="'skills.workplace' | translate"
-      >
-      </div>
+        [matTooltip]="'skills.workplace' | translate"
+      ></div>
       <div
         class="circle group cursor-pointer"
         (click)="
@@ -126,7 +125,11 @@
         class="circle group cursor-pointer"
         (click)="openLink('https://nestjs.com/')"
       >
-        <img src="assets/svg/nestjs.svg" class="rotate-[-278deg]" width="48px"/>
+        <img
+          src="assets/svg/nestjs.svg"
+          class="rotate-[-278deg]"
+          width="48px"
+        />
         <p class="group-hover:font-bold rotate-[-278deg] -mt-8 -ml-20">
           NestJS
         </p>
@@ -158,7 +161,7 @@
         <img
           src="/assets/workplacehome.webp"
           class="rounded-lg max-w-full h-auto"
-          [tooltip]="'skills.workplace' | translate"
+          [matTooltip]="'skills.workplace' | translate"
         />
       </div>
     </div>
@@ -323,6 +326,6 @@
     </div>
   </div>
   <div class="relative text-center mt-20 md:mt-48">
-    <a href="#portfolio">Portfolio</a>
+    <a [routerLink]="['/']" fragment="portfolio">Portfolio</a>
   </div>
 </section>

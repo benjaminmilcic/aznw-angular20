@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
-import { TooltipModule } from 'ng2-tooltip-directive';
 
 @Component({
   selector: 'app-skills',
   templateUrl: './skills.component.html',
   styleUrls: ['./skills.component.css'],
   standalone: true,
-  imports: [TranslateModule,TooltipModule],
+  imports: [TranslateModule, RouterModule, MatTooltipModule],
 })
 export class SkillsComponent {
   openLink(url: string) {

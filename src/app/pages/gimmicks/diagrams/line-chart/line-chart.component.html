@@ -1,0 +1,54 @@
+<div class="flex flex-col place-items-center gap-8 mt-20 px-10 relative">
+  <div class="w-[500px]">
+    <canvas
+      baseChart
+      [data]="getLineChartData()"
+      [options]="getLineChartOptions()"
+      [type]="lineChartType"
+    ></canvas>
+  </div>
+
+  <div class="flex gap-8 flex-wrap justify-center">
+    <div
+      *ngFor="let user of users; let i = index"
+      class="flex place-items-center gap-2 cursor-pointer"
+      [ngClass]="{ 'opacity-25': !showUser[i] }"
+      (click)="showUser[i] = !showUser[i]"
+    >
+      <div
+        class="w-6 h-3 border"
+        [ngStyle]="{ 'background-color': legendColors[i] }"
+      ></div>
+      <img [src]="user.image" width="40px" class="rounded-full clip" />
+    </div>
+  </div>
+  <div class="flex w-full justify-evenly items-center">
+    <div>
+      <ion-segment mode="ios" [value]="year" (ionChange)="onChangeYear($event)">
+        <ion-segment-button value="2022">
+          <ion-label>2022</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="2023">
+          <ion-label>2023</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+    </div>
+    <div>
+      <ion-segment
+        mode="ios"
+        [value]="kindOfConsumption"
+        (ionChange)="onChangeKindOfConsumption($event)"
+      >
+        <ion-segment-button value="electricity">
+          <ion-label>Electricity</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="water">
+          <ion-label>Water</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="gas">
+          <ion-label>Gas</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+    </div>
+  </div>
+</div>

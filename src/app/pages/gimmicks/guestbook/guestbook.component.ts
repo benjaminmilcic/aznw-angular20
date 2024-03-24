@@ -26,6 +26,7 @@ import { HttpClient } from '@angular/common/http';
 import { Post } from './guestbook.model';
 import { registerLocaleData } from '@angular/common';
 import * as de from '@angular/common/locales/de';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-guestbook',
@@ -43,6 +44,7 @@ import * as de from '@angular/common/locales/de';
     MatTooltipModule,
     IonInput,
     FormsModule,
+    TranslateModule
   ],
   providers: [{ provide: LOCALE_ID, useValue: 'de-DE' }],
   templateUrl: './guestbook.component.html',
