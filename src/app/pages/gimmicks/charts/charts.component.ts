@@ -11,20 +11,21 @@ import { UserValues } from './Users';
 import { BarChartComponent } from './bar-chart/bar-chart.component';
 import { PieChartComponent } from './pie-chart/pie-chart.component';
 import {
+  AlertController,
   IonLabel,
   IonSegment,
   IonSegmentButton,
 } from '@ionic/angular/standalone';
-import { DiagramHelperService } from './diagram-helper.service';
+import { ChartsHelperService } from './charts-helper.service';
 import { LineChartComponent } from './line-chart/line-chart.component';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectChange, MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
 import { DoubleBarChartComponent } from './double-bar-chart/double-bar-chart.component';
 
 @Component({
-  selector: 'app-diagrams',
+  selector: 'app-charts',
   standalone: true,
   imports: [
     IonSegmentButton,
@@ -46,16 +47,16 @@ import { DoubleBarChartComponent } from './double-bar-chart/double-bar-chart.com
     MatSelectModule,
     MatOptionModule,
   ],
-  templateUrl: './diagrams.component.html',
-  styleUrl: './diagrams.component.css',
+  templateUrl: './charts.component.html',
+  styleUrl: './charts.component.css',
 })
-export class DiagramsComponent implements OnInit {
+export class ChartsComponent implements OnInit {
   users: User[] = UserValues;
   user: User = null;
   newUser: User = null;
   userNames: string[];
 
-  chartType: 'procentual' | 'yearly' | 'monthly' = 'procentual';
+  chartType: 'procentual' | 'yearly' | 'monthly' = 'monthly';
 
   @ViewChild('drawer') drawer: MatDrawer;
 
@@ -78,7 +79,11 @@ export class DiagramsComponent implements OnInit {
   year: '2022' | '2023' = '2022';
   kindOfConsumption: 'electricity' | 'water' | 'gas' = 'electricity';
 
-  constructor(private diagramHelperService: DiagramHelperService) {}
+  constructor(
+    private chartsHelperService: ChartsHelperService,
+    private alertController: AlertController,
+    private translate: TranslateService
+  ) {}
 
   ngOnInit() {}
 
@@ -98,14 +103,14 @@ export class DiagramsComponent implements OnInit {
     this.users[changedUser] = JSON.parse(JSON.stringify(event));
     this.user = null;
     this.drawer.close();
-    this.diagramHelperService.detectChanges.next();
+    this.chartsHelperService.detectChanges.next();
   }
 
   onSaveNewUser(event: User) {
     this.users.push(event);
     this.newUser = null;
     this.drawer.close();
-    this.diagramHelperService.detectChanges.next();
+    this.chartsHelperService.detectChanges.next();
   }
 
   getYearlyConsumption(user: User, part: string) {
@@ -120,17 +125,17 @@ export class DiagramsComponent implements OnInit {
   }
 
   onPeriodChange(event: MatSelectChange) {
-    this.diagramHelperService.periodChange.next(
+    this.chartsHelperService.periodChange.next(
       this.months.indexOf(event.value)
     );
   }
 
   onChangeYear(event) {
-    this.diagramHelperService.yearChange.next(event.detail.value);
+    this.chartsHelperService.yearChange.next(event.detail.value);
   }
 
   onChangeKindOfConsumption(event) {
-    this.diagramHelperService.kindOfConsumptionChange.next(event.detail.value);
+    this.chartsHelperService.kindOfConsumptionChange.next(event.detail.value);
   }
 
   onAddUser() {
@@ -143,5 +148,32 @@ export class DiagramsComponent implements OnInit {
       '2023': Array(12).fill({ electricity: 0, water: 0, gas: 0 }),
     };
     this.drawer.open();
+  }
+
+  async onDeleteUser(userToDelete: User) {
+    const alert = await this.alertController.create({
+      header: userToDelete.name,
+      subHeader: this.translate.instant('gimmicks.charts.reallyDelete'),
+      buttons: [
+        {
+          text: this.translate.instant('gimmicks.charts.cancel'),
+          role: 'cancel',
+          cssClass: 'alert-button-cancel',
+        },
+        {
+          text: this.translate.instant('gimmicks.charts.delete'),
+          cssClass: 'alert-button-confirm',
+          handler: () => {
+            const userIndex = this.users.findIndex(
+              (user) => user.id === userToDelete.id
+            );
+            this.users.splice(userIndex, 1);
+            this.chartsHelperService.detectChanges.next();
+          },
+        },
+      ],
+    });
+
+    await alert.present();
   }
 }

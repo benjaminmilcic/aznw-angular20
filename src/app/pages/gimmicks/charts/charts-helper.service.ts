@@ -4,7 +4,7 @@ import { Subject } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
-export class DiagramHelperService {
+export class ChartsHelperService {
   detectChanges = new Subject<void>();
 
   periodChange = new Subject<number>();

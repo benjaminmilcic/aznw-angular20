@@ -16,43 +16,11 @@ export class BarChartComponent implements OnInit {
 
   @ViewChild(BaseChartDirective) chart: BaseChartDirective<'bar'> | undefined;
 
-  barChartOptions: ChartConfiguration<'bar'>['options'];
   barChartType = 'bar' as const;
   barChartData: ChartData<'bar'>;
   barChartPlugins;
 
-  
-
   ngOnInit(): void {
-    this.barChartOptions = {
-      scales: {
-        x: { grid: { display: false } },
-        y: { display: false, grid: { display: false } },
-      },
-      plugins: {
-        datalabels: {formatter(value, context) {
-            let isInteger = true;
-            context.dataset.data.forEach((data) => {
-              if (!Number.isInteger(data)) {
-                isInteger = false;
-                return;
-              }
-            });
-            if (isInteger) {
-              return value.toFixed(0);
-            } else {
-              return value.toFixed(2);
-            }
-          }, color: 'black', labels: { title: { font: { weight: 'bold' } } } },
-        tooltip: {
-            enabled: false,
-          },
-        legend: {
-          display: false,
-        },
-      },
-    };
-
     this.barChartData = {
       labels: ['2022', '2023'],
       datasets: [
@@ -80,5 +48,46 @@ export class BarChartComponent implements OnInit {
     };
 
     this.barChartPlugins = [ChartDataLabels, custom_canvas_background_color];
+  }
+
+  getBarChartOptions(): ChartConfiguration<'bar'>['options'] {
+    let labels;
+    if (window.innerWidth < 640) {
+      labels = { title: { font: { size: 10 } } };
+    } else {
+      labels = { title: { font: { weight: 'bold' } } };
+    }
+    return {
+      scales: {
+        x: { grid: { display: false } },
+        y: { display: false, grid: { display: false } },
+      },
+      plugins: {
+        datalabels: {
+          formatter(value, context) {
+            let isInteger = true;
+            context.dataset.data.forEach((data) => {
+              if (!Number.isInteger(data)) {
+                isInteger = false;
+                return;
+              }
+            });
+            if (isInteger) {
+              return value.toFixed(0);
+            } else {
+              return value.toFixed(2);
+            }
+          },
+          color: 'black',
+          labels,
+        },
+        tooltip: {
+          enabled: false,
+        },
+        legend: {
+          display: false,
+        },
+      },
+    };
   }
 }

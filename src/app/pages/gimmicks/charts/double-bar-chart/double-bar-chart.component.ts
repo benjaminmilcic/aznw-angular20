@@ -7,88 +7,165 @@ import {
   OnInit,
   ViewChild,
 } from '@angular/core';
-import { ChartConfiguration, ChartEvent, ChartType, Tooltip } from 'chart.js';
-import { BaseChartDirective } from 'ng2-charts';
-import { User } from '../user.model';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import {
   IonLabel,
   IonSegment,
   IonSegmentButton,
 } from '@ionic/angular/standalone';
+import { ChartConfiguration, ChartData, ChartEvent } from 'chart.js';
+import { BaseChartDirective } from 'ng2-charts';
+import { User } from '../user.model';
 import { CommonModule } from '@angular/common';
-import { DiagramHelperService } from '../diagram-helper.service';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { ChartsHelperService } from '../charts-helper.service';
 
 @Component({
-  selector: 'app-line-chart',
+  selector: 'app-double-bar-chart',
   standalone: true,
   imports: [
     BaseChartDirective,
-    IonSegmentButton,
     IonSegment,
+    IonSegmentButton,
     IonLabel,
-    TranslateModule,
     CommonModule,
+    TranslateModule,
   ],
-  templateUrl: './line-chart.component.html',
-  styleUrl: './line-chart.component.css',
+  templateUrl: './double-bar-chart.component.html',
+  styleUrl: './double-bar-chart.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LineChartComponent implements OnInit, AfterViewInit {
-  lineChartType: ChartType = 'line';
+export class DoubleBarChartComponent implements OnInit, AfterViewInit {
+  @ViewChild(BaseChartDirective) chart: BaseChartDirective<'bar'> | undefined;
 
-  @ViewChild(BaseChartDirective) chart?: BaseChartDirective;
+  barChartType = 'bar' as const;
+  barChartPlugins = [];
+
   @Input() users: User[];
-
-  months = [
-    'january',
-    'february',
-    'march',
-    'april',
-    'may',
-    'june',
-    'july',
-    'august',
-    'september',
-    'october',
-    'november',
-    'december',
-  ];
 
   year: '2022' | '2023' = '2022';
   kindOfConsumption: 'electricity' | 'water' | 'gas' = 'electricity';
 
-  legendColors: string[] = [];
-  translatedMonths: string[];
-
   showUser: boolean[];
 
+  lableWidth: number = 0;
+
   constructor(
-    private translate: TranslateService,
     private cdr: ChangeDetectorRef,
-    private diagramHelperService: DiagramHelperService
+    private chartsHelperService: ChartsHelperService
   ) {}
 
-  async ngOnInit() {
+  ngOnInit(): void {
+    this.chartsHelperService.detectChanges.subscribe(() => {
+      this.cdr.detectChanges();
+      this.chart.render();
+      setTimeout(() => {
+        this.lableWidth = this.chart.chart.chartArea.width / this.users.length;
+        this.cdr.detectChanges();
+      }, 50);
+    });
     this.showUser = Array(this.users.length).fill(true);
-    this.diagramHelperService.detectChanges.subscribe(() => {
-      this.cdr.detectChanges();
-    });
-    this.translate.onLangChange.subscribe(() => {
-      this.cdr.detectChanges();
-    });
-
-    this.cdr.markForCheck();
-    setTimeout(() => {
-      this.cdr.detectChanges();
-    }, 100);
   }
 
   ngAfterViewInit(): void {
-    this.legendColors = <any>(
-      this.chart.data.datasets.map((dataset) => dataset.borderColor)
-    );
-    this.cdr.detectChanges();
+    setTimeout(() => {
+      this.lableWidth = this.chart.chart.chartArea.width / this.users.length;
+      this.cdr.detectChanges();
+    }, 50);
+  }
+
+  getBarChartData(): ChartData<'bar'> {
+    let consumption2022: number[] = [];
+    this.users.forEach((user, index) => {
+      let value = this.showUser[index]
+        ? user[2022]
+            .map((value) => value[this.kindOfConsumption])
+            .reduce((a, b) => a + b)
+        : null;
+
+      consumption2022.push(value);
+    });
+    let consumption2023: number[] = [];
+    this.users.forEach((user, index) => {
+      let value = this.showUser[index]
+        ? user[2023]
+            .map((value) => value[this.kindOfConsumption])
+            .reduce((a, b) => a + b)
+        : null;
+      consumption2023.push(value);
+    });
+
+    return {
+      labels: Array(this.users.length).fill(''),
+      datasets: [
+        {
+          data: consumption2022,
+          label: '2022',
+
+          backgroundColor: '#4BC0C0',
+        },
+
+        {
+          data: consumption2023,
+          label: '2023',
+          backgroundColor: '#FF9F40',
+        },
+      ],
+    };
+  }
+
+  onChangeYear(event) {
+    this.year = event.detail.value;
+  }
+
+  onChangeKindOfConsumption(event) {
+    this.kindOfConsumption = event.detail.value;
+    setTimeout(() => {
+      this.lableWidth = this.chart.chart.chartArea.width / this.users.length;
+      this.cdr.detectChanges();
+    }, 50);
+  }
+
+  getLabelWidth(): string {
+    return this.lableWidth + 'px';
+  }
+
+  getConsumptionLabel(): string {
+    switch (this.kindOfConsumption) {
+      case 'electricity':
+        return 'kWh';
+      case 'gas':
+        return 'kWh';
+      case 'water':
+        return 'm³';
+      default:
+        return '';
+    }
+  }
+
+  getBarChartOptions(): ChartConfiguration<'bar'>['options'] {
+    return {
+      scales: {
+        x: { display: false },
+        y: {
+          display: !this.showUser.every((v) => v === false),
+          title: {
+            text: this.getConsumptionLabel(),
+            display: true,
+          },
+        },
+      },
+
+      plugins: {
+        tooltip: {
+          enabled: false,
+          position: 'nearest',
+          external: this.externalTooltipHandler,
+        },
+        legend: {
+          display: true,
+        },
+      },
+    };
   }
 
   getOrCreateTooltip = (chart) => {
@@ -151,7 +228,7 @@ export class LineChartComponent implements OnInit, AfterViewInit {
       bodyLines.forEach((body, i) => {
         const colors = tooltip.labelColors[i];
         const image = document.createElement('img') as HTMLImageElement;
-        image.src = this.users[tooltip.dataPoints[i].datasetIndex].image;
+        image.src = this.users[tooltip.dataPoints[i].dataIndex].image;
         image.width = 40;
         image.height = 40;
         image.style.clipPath = 'circle(40%)';
@@ -220,72 +297,4 @@ export class LineChartComponent implements OnInit, AfterViewInit {
 
     tooltipEl.style.display = 'flex';
   };
-
-  getConsumptionLabel(): string {
-    switch (this.kindOfConsumption) {
-      case 'electricity':
-        return 'kWh';
-      case 'gas':
-        return 'kWh';
-      case 'water':
-        return 'm³';
-      default:
-        return '';
-    }
-  }
-
-  getLineChartOptions(): ChartConfiguration['options'] {
-    return {
-      elements: {
-        line: {
-          tension: 0.5,
-        },
-      },
-      scales: {
-        y: {
-          display: !this.showUser.every((v) => v === false),
-          title: {
-            text: this.getConsumptionLabel(),
-            display: true,
-          },
-        },
-      },
-
-      plugins: {
-        tooltip: {
-          enabled: false,
-          position: 'nearest',
-          external: this.externalTooltipHandler,
-        },
-        legend: { display: false },
-      },
-    };
-  }
-
-  getLineChartData(): ChartConfiguration['data'] {
-    this.translatedMonths = this.months.map((month) =>
-      this.translate.instant('gimmicks.calendar.months.' + month)
-    );
-    let datasets: { data: number[] }[] = [];
-    this.users.forEach((user, i) => {
-      let data = this.showUser[i]
-        ? {
-            data: user[this.year].map((value) => value[this.kindOfConsumption]),
-          }
-        : { data: null };
-      datasets.push(data);
-    });
-    return {
-      datasets: datasets,
-      labels: this.translatedMonths,
-    };
-  }
-
-  onChangeYear(event) {
-    this.year = event.detail.value;
-  }
-
-  onChangeKindOfConsumption(event) {
-    this.kindOfConsumption = event.detail.value;
-  }
 }

@@ -1,0 +1,13 @@
+<div class="w-[80px] h-[80px] sm:w-[100px] sm:h-[100px]">
+  <canvas
+    class="rounded"
+    height="100px"
+    width="100px"
+    baseChart
+    [data]="barChartData"
+    [options]="getBarChartOptions()"
+    [type]="barChartType"
+    [plugins]="barChartPlugins"
+  >
+  </canvas>
+</div>

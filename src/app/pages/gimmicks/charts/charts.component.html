@@ -1,4 +1,4 @@
-<mat-drawer-container class="h-[calc(100%-40px)]">
+<mat-drawer-container class="min-h-[calc(100%-40px)]">
   <mat-drawer #drawer mode="over" disableClose="true"
     ><app-drawer-content
       *ngIf="user"
@@ -15,23 +15,29 @@
       (saveUser)="onSaveNewUser($event)"
     ></app-drawer-content
   ></mat-drawer>
-  <mat-drawer-content class="bg-blue-400 h-full pt-4">
-    <div class="flex">
-      <div class="w-1/2 flex flex-col place-items-center">
+  <mat-drawer-content class="bg-blue-400">
+    <div class="flex flex-col lg:flex-row pt-4">
+      <div class="flex flex-col relative place-items-center">
         <ion-segment
           mode="ios"
           [value]="chartType"
-          class="w-[600px]"
+          class="w-[200px] sm:w-[560px] block sm:grid"
           (ionChange)="onChangeChartType($event)"
         >
           <ion-segment-button value="monthly">
-            <ion-label>Monatlicher Verbrauch</ion-label>
+            <ion-label>{{
+              "gimmicks.charts.monthlyConsumption" | translate
+            }}</ion-label>
           </ion-segment-button>
           <ion-segment-button value="yearly">
-            <ion-label>Jährlicher Verbrauch</ion-label>
+            <ion-label>{{
+              "gimmicks.charts.yearlyConsumption" | translate
+            }}</ion-label>
           </ion-segment-button>
           <ion-segment-button value="procentual">
-            <ion-label>Prozentualer Verbrauch</ion-label>
+            <ion-label>{{
+              "gimmicks.charts.procentualConsumption" | translate
+            }}</ion-label>
           </ion-segment-button>
         </ion-segment>
         <div
@@ -64,22 +70,28 @@
                 (ionChange)="onChangeKindOfConsumption($event)"
               >
                 <ion-segment-button value="electricity">
-                  <ion-label>Electricity</ion-label>
+                  <ion-label>{{
+                    "gimmicks.charts.electricity" | translate
+                  }}</ion-label>
                 </ion-segment-button>
                 <ion-segment-button value="water">
-                  <ion-label>Water</ion-label>
+                  <ion-label>{{
+                    "gimmicks.charts.water" | translate
+                  }}</ion-label>
                 </ion-segment-button>
                 <ion-segment-button value="gas">
-                  <ion-label>Gas</ion-label>
+                  <ion-label>{{ "gimmicks.charts.gas" | translate }}</ion-label>
                 </ion-segment-button>
               </ion-segment>
             </div>
-            <mat-form-field appearance="outline" subscriptSizing="dynamic">
+            <mat-form-field appearance="outline" subscriptSizing="dynamic" class="w-48">
               <mat-select
                 [(value)]="selectedPeriod"
                 (selectionChange)="onPeriodChange($event)"
               >
-                <mat-option value="year">Whole Year</mat-option>
+                <mat-option value="year">{{
+                  "gimmicks.charts.wholeYear" | translate
+                }}</mat-option>
                 <mat-option *ngFor="let month of months" [value]="month">{{
                   "gimmicks.calendar.months." + month | translate
                 }}</mat-option>
@@ -96,9 +108,9 @@
           [users]="users"
         ></app-double-bar-chart>
       </div>
-      <div class="flex flex-col place-items-center relative h-full w-1/2">
-        <mat-accordion class="w-[440px]">
-          <mat-expansion-panel *ngFor="let user of users" class="border-b">
+      <div class="h-full relative flex flex-col items-center mt-4 lg:mt-0">
+        <mat-accordion>
+          <mat-expansion-panel *ngFor="let user of users" class="border-b w-[340px] sm:w-96">
             <mat-expansion-panel-header
               collapsedHeight="100px"
               expandedHeight="100px"
@@ -111,7 +123,7 @@
             <div class="flex justify-between gap-4">
               <div class="flex flex-col place-items-center">
                 <div class="flex flex-col place-items-center">
-                  <div>Strom</div>
+                  <div>{{ "gimmicks.charts.electricity" | translate }}</div>
                   <div class="text-xs">kWh</div>
                 </div>
                 <app-bar-chart
@@ -121,7 +133,7 @@
               </div>
               <div class="flex flex-col place-items-center">
                 <div class="flex flex-col place-items-center">
-                  <div>Wasser</div>
+                  <div>{{ "gimmicks.charts.water" | translate }}</div>
                   <div class="text-xs">m&#179;</div>
                 </div>
                 <app-bar-chart
@@ -131,7 +143,7 @@
               </div>
               <div class="flex flex-col place-items-center">
                 <div class="flex flex-col place-items-center">
-                  <div>Gas</div>
+                  <div>{{ "gimmicks.charts.gas" | translate }}</div>
                   <div class="text-xs">kWh</div>
                 </div>
                 <app-bar-chart
@@ -140,12 +152,19 @@
                 ></app-bar-chart>
               </div>
             </div>
-            <div class="flex justify-end">
+            <div class="flex justify-end gap-2 mt-6">
               <button
                 mat-mini-fab
-                matTooltip="Edit User"
+                [matTooltip]="'gimmicks.charts.deleteUser' | translate"
+                color="warn"
+                (click)="onDeleteUser(user)"
+              >
+                <mat-icon>delete</mat-icon>
+              </button>
+              <button
+                mat-mini-fab
+                [matTooltip]="'gimmicks.charts.editUser' | translate"
                 color="primary"
-                class="mt-6"
                 (click)="onOpenEditDrawer(user)"
               >
                 <mat-icon>edit</mat-icon>
@@ -153,12 +172,11 @@
             </div>
           </mat-expansion-panel>
         </mat-accordion>
-        <div class="w-[440px]">
+        <div class="pt-4 pb-2 flex w-[340px] sm:w-96 lg:w-full">
           <button
-            mat-mini-fab
-            matTooltip="Add User"
+            class="bg-[#3f51b5] rounded-full w-10 h-10 text-white shadow flex justify-center items-center hover:opacity-90 cursor-pointer"
+            [matTooltip]="'gimmicks.charts.addUser' | translate"
             color="primary"
-            class="mt-6"
             (click)="onAddUser()"
           >
             <mat-icon>add</mat-icon>

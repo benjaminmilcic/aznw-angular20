@@ -7,148 +7,74 @@ import {
   OnInit,
   ViewChild,
 } from '@angular/core';
+import { BaseChartDirective } from 'ng2-charts';
+import { ChartConfiguration, ChartData, ChartEvent, ChartType } from 'chart.js';
 import {
   IonLabel,
   IonSegment,
   IonSegmentButton,
 } from '@ionic/angular/standalone';
-import { ChartConfiguration, ChartData, ChartEvent } from 'chart.js';
-import { BaseChartDirective } from 'ng2-charts';
-import { User } from '../user.model';
+import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { TranslateService } from '@ngx-translate/core';
-import { DiagramHelperService } from '../diagram-helper.service';
+import ChartDataLabels from 'chartjs-plugin-datalabels';
+import { User } from '../user.model';
+import { ChartsHelperService } from '../charts-helper.service';
 
 @Component({
-  selector: 'app-double-bar-chart',
+  selector: 'app-pie-chart',
   standalone: true,
   imports: [
     BaseChartDirective,
     IonSegment,
     IonSegmentButton,
     IonLabel,
+    FormsModule,
     CommonModule,
   ],
-  templateUrl: './double-bar-chart.component.html',
-  styleUrl: './double-bar-chart.component.css',
+  templateUrl: './pie-chart.component.html',
+  styleUrl: './pie-chart.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class DoubleBarChartComponent implements OnInit, AfterViewInit {
-  @ViewChild(BaseChartDirective) chart: BaseChartDirective<'bar'> | undefined;
-
-  barChartType = 'bar' as const;
-  barChartPlugins = [];
-
+export class PieChartComponent implements OnInit, AfterViewInit {
   @Input() users: User[];
 
-  year: '2022' | '2023' = '2022';
-  kindOfConsumption: 'electricity' | 'water' | 'gas' = 'electricity';
-
-  showUser: boolean[];
-
-  lableWidth: number = 0;
+  @ViewChild(BaseChartDirective) chart: BaseChartDirective | undefined;
 
   constructor(
     private cdr: ChangeDetectorRef,
-    private diagramHelperService: DiagramHelperService
+    private chartsHelperService: ChartsHelperService
   ) {}
 
+  pieChartOptions: ChartConfiguration['options'];
+  pieChartType: ChartType = 'pie';
+  barChartPlugins;
+
+  year: '2022' | '2023' = '2022';
+  kindOfConsumption: 'electricity' | 'water' | 'gas' = 'electricity';
+  period: number = -1;
+
+  legendColors: string[] = [];
+
   ngOnInit(): void {
-    this.diagramHelperService.detectChanges.subscribe(() => {
+    this.chartsHelperService.periodChange.subscribe((data) => {
+      this.period = data;
       this.cdr.detectChanges();
     });
-    this.showUser = Array(this.users.length).fill(true);
-  }
-
-  ngAfterViewInit(): void {
-    setTimeout(() => {
-      this.lableWidth = this.chart.chart.chartArea.width / this.users.length;
+    this.chartsHelperService.kindOfConsumptionChange.subscribe((data) => {
+      this.kindOfConsumption = data;
       this.cdr.detectChanges();
-    }, 10);
-  }
-
-  getBarChartData(): ChartData<'bar'> {
-    let consumption2022: number[] = [];
-    this.users.forEach((user, index) => {
-      let value = this.showUser[index]
-        ? user[2022]
-            .map((value) => value[this.kindOfConsumption])
-            .reduce((a, b) => a + b)
-        : null;
-
-      consumption2022.push(value);
     });
-    let consumption2023: number[] = [];
-    this.users.forEach((user, index) => {
-      let value = this.showUser[index]
-        ? user[2023]
-            .map((value) => value[this.kindOfConsumption])
-            .reduce((a, b) => a + b)
-        : null;
-      consumption2023.push(value);
+    this.chartsHelperService.yearChange.subscribe((data) => {
+      this.year = data;
+      this.cdr.detectChanges();
+    });
+    this.chartsHelperService.detectChanges.subscribe(() => {
+      this.cdr.detectChanges();
+      this.chart.render();
+
     });
 
-    return {
-      labels: Array(this.users.length).fill(''),
-      datasets: [
-        {
-          data: consumption2022,
-          label: '2022',
-
-          backgroundColor: '#4BC0C0',
-        },
-
-        {
-          data: consumption2023,
-          label: '2023',
-          backgroundColor: '#FF9F40',
-        },
-      ],
-    };
-  }
-
-  onChangeYear(event) {
-    this.year = event.detail.value;
-  }
-
-  onChangeKindOfConsumption(event) {
-    this.kindOfConsumption = event.detail.value;
-    setTimeout(() => {
-      this.lableWidth = this.chart.chart.chartArea.width / this.users.length;
-      this.cdr.detectChanges();
-    }, 10);
-  }
-
-  getLabelWidth(): string {
-    return this.lableWidth + 'px';
-  }
-
-  getConsumptionLabel(): string {
-    switch (this.kindOfConsumption) {
-      case 'electricity':
-        return 'kWh';
-      case 'gas':
-        return 'kWh';
-      case 'water':
-        return 'm³';
-      default:
-        return '';
-    }
-  }
-
-  getBarChartOptions(): ChartConfiguration<'bar'>['options'] {
-    return {
-      scales: {
-        x: { display: false },
-        y: {
-          display: !this.showUser.every((v) => v === false),
-          title: {
-            text: this.getConsumptionLabel(),
-            display: true,
-          },
-        },
-      },
-
+    this.pieChartOptions = {
       plugins: {
         tooltip: {
           enabled: false,
@@ -156,10 +82,53 @@ export class DoubleBarChartComponent implements OnInit, AfterViewInit {
           external: this.externalTooltipHandler,
         },
         legend: {
-          display: true,
+          display: false,
+        },
+        datalabels: {
+          formatter: (value) => {
+            let consumptionOfAll = this.getConsumption().reduce(
+              (a, b) => a + b
+            );
+
+            return ((value * 100) / consumptionOfAll).toFixed(2) + ' %';
+          },
         },
       },
     };
+    this.barChartPlugins = [ChartDataLabels];
+  }
+  ngAfterViewInit(): void {
+    this.legendColors = <string[]>this.chart.data.datasets[0].backgroundColor;
+    this.cdr.detectChanges();
+  }
+
+  getPieChartData(): ChartData<'pie', number[], string | string[]> {
+    return {
+      datasets: [
+        {
+          data: this.getConsumption(),
+        },
+      ],
+    };
+  }
+
+  getConsumption(): number[] {
+    let userByYear = this.users.map((user) => user[this.year]);
+    let result = [];
+    userByYear.forEach((user, index) => {
+      if (this.period === -1) {
+        result.push(
+          user
+            .map((user2) => user2[this.kindOfConsumption])
+            .reduce((a, b) => a + b)
+        );
+      } else {
+        result.push(
+          user.map((user2) => user2[this.kindOfConsumption])[this.period]
+        );
+      }
+    });
+    return result;
   }
 
   getOrCreateTooltip = (chart) => {
@@ -291,4 +260,17 @@ export class DoubleBarChartComponent implements OnInit, AfterViewInit {
 
     tooltipEl.style.display = 'flex';
   };
+
+  getConsumptionLabel(): string {
+    switch (this.kindOfConsumption) {
+      case 'electricity':
+        return 'kWh';
+      case 'gas':
+        return 'kWh';
+      case 'water':
+        return 'm³';
+      default:
+        return '';
+    }
+  }
 }

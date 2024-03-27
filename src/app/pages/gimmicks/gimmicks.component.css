@@ -13,17 +13,186 @@
   -moz-transform: rotate(135deg);
 }
 
-a {
-  text-decoration: none;
-  color: lightgray;
-}
-
-a:hover {
-  color: white;
-}
-
 @media (hover: none) {
   .arrow {
     display: none !important;
   }
+}
+
+@keyframes slideOverviewIn {
+  0% {
+    translate: 0px -8px;
+    opacity: 0;
+  }
+  100% {
+    translate: 0px 0px;
+    opacity: 1;
+  }
+}
+
+@keyframes slideFirstItemIn {
+  0% {
+    translate: 0px -44px;
+    opacity: 0;
+  }
+  100% {
+    translate: 0px 0px;
+    opacity: 1;
+  }
+}
+
+@keyframes slideSecondItemIn {
+  0% {
+    translate: 0px -80px;
+    opacity: 0;
+  }
+  100% {
+    translate: 0px 0px;
+    opacity: 1;
+  }
+}
+
+@keyframes slideThirdItemIn {
+  0% {
+    translate: 0px -116px;
+    opacity: 0;
+  }
+  100% {
+    translate: 0px 0px;
+    opacity: 1;
+  }
+}
+
+@keyframes slideFourthItemIn {
+  0% {
+    translate: 0px -152px;
+    opacity: 0;
+  }
+  100% {
+    translate: 0px 0px;
+    opacity: 1;
+  }
+}
+
+@keyframes slideOverviewOut {
+  0% {
+    translate: 0px 0px;
+    opacity: 1;
+  }
+  100% {
+    translate: 0px -8px;
+    opacity: 0;
+  }
+}
+
+@keyframes slideFirstItemOut {
+  0% {
+    translate: 0px 0px;
+    opacity: 1;
+  }
+  100% {
+    translate: 0px -44px;
+    opacity: 0;
+  }
+}
+
+@keyframes slideSecondItemOut {
+  0% {
+    translate: 0px 0px;
+    opacity: 1;
+  }
+  100% {
+    translate: 0px -80px;
+    opacity: 0;
+  }
+}
+
+@keyframes slideThirdItemOut {
+  0% {
+    translate: 0px 0px;
+    opacity: 1;
+  }
+  100% {
+    translate: 0px -116px;
+    opacity: 0;
+  }
+}
+
+@keyframes slideFourthItemOut {
+  0% {
+    translate: 0px 0px;
+    opacity: 1;
+  }
+  100% {
+    translate: 0px -152px;
+    opacity: 0;
+  }
+}
+
+
+
+@keyframes slideSubMenuButton {
+  0% {
+    rotate: 90deg;
+  }
+  100% {
+    rotate: 0deg;
+  }
+}
+
+@keyframes slideSubMenuButton2 {
+  0% {
+    rotate: -90deg;
+  }
+  100% {
+    rotate: 0deg;
+  }
+}
+
+.overviewIn {
+  animation: 0.3s ease-out slideOverviewIn;
+}
+
+.firstItemIn {
+  animation: 0.3s ease-out slideFirstItemIn;
+}
+
+.secondItemIn {
+  animation: 0.3s ease-out slideSecondItemIn;
+}
+
+.thirdItemIn {
+  animation: 0.3s ease-out slideThirdItemIn;
+}
+
+.fourthItemIn {
+  animation: 0.3s ease-out slideFourthItemIn;
+}
+
+.overviewOut{
+  animation: 0.3s ease-out slideOverviewOut;
+}
+
+.firstItemOut{
+  animation: 0.3s ease-out slideFirstItemOut;
+}
+
+.secondItemOut{
+  animation: 0.3s ease-out slideSecondItemOut;
+}
+
+.thirdItemOut{
+  animation: 0.3s ease-out slideThirdItemOut;
+}
+
+.fourthItemOut{
+  animation: 0.3s ease-out slideFourthItemOut;
+}
+
+.subMenuButton{
+   animation: 0.3s ease-out slideSubMenuButton;
+}
+
+.subMenuButton2{
+   animation: 0.3s ease-out slideSubMenuButton2;
 }

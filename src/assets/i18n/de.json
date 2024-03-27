@@ -67,7 +67,8 @@
       "overview": "Übersicht",
       "map": "Karte",
       "calendar": "Kalender",
-      "guestbook": "Gästebuch"
+      "guestbook": "Gästebuch",
+      "charts": "Diagramme"
     },
     "overview": {
       "header": "Bisher habe ich Unternehmensanwendungen erstellt, auf die nur mit Login und Passwort zugegriffen werden kann. Deshalb finden Sie hier Gimmicks, die mein Können unter Beweis stellen.",
@@ -78,7 +79,9 @@
       "scratchCard": "Rubbelkarte",
       "youtubePlayer": "Eingebetteter Youtube Player",
       "editor": "Eingebetteter Richtext Editor",
-      "open": "Öffnen"
+      "open": "Öffnen",
+      "charts": "Diagramme",
+      "fileUpload": "Datei Upload"
     },
     "map": {
       "search": "Stadtsuche...",
@@ -139,6 +142,26 @@
       "createComment": "Kommentar erstellen",
       "thanks": "Vielen Dank für Ihren Kommentar",
       "save": "Speichern"
+    },
+    "charts": {
+      "monthlyConsumption": "Monatlicher Verbrauch",
+      "yearlyConsumption": "Jährlicher Verbrauch",
+      "procentualConsumption": "Prozentualer Verbrauch",
+      "electricity": "Strom",
+      "water": "Wasser",
+      "gas": "Gas",
+      "wholeYear": "Ganzes Jahr",
+      "month": "Monat",
+      "save": "Speichern",
+      "deleteUser": "Benutzer löschen",
+      "editUser": "Benutzer bearbeiten",
+      "addUser": "Benutzer hinzufügen",
+      "delete": "Löschen",
+      "cancel": "Abbrechen",
+      "reallyDelete": "Möchten Sie diesen Benutzer wirklich löschen?",
+      "user": "Benutzer",
+      "image": "hochladen",
+      "upload": "Bild"
     }
   }
 }

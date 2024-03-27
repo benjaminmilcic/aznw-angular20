@@ -1,16 +1,17 @@
 <div
+  *ngIf="innerWidth >= 640"
   id="header"
-  class="bg-blue-800 text-gray-300 px-8 flex flex-wrap gap-4 h-10 place-items-center"
+  class="bg-blue-800 text-gray-300 px-8 flex flex-wrap gap-6 h-10 place-items-center"
 >
-  <div class="hover:text-gray-100">
-    <a [routerLink]="['/gimmicks']">{{
-      "gimmicks.menu.overview" | translate
-    }}</a>
+  <div class="hover:text-gray-100 cursor-pointer flex gap-1 items-center" [routerLink]="['/gimmicks']">
+    <i class="fa-solid fa-eye"></i>
+    <div>{{ "gimmicks.menu.overview" | translate }}</div>
   </div>
-  <div class="relative group hover:text-gray-100">
-    <a [routerLink]="['map']">{{ "gimmicks.menu.map" | translate }}</a>
+  <div class="relative group hover:text-gray-100 cursor-pointer flex gap-1 items-center" [routerLink]="['map']">
+    <i class="fa-solid fa-map text-yellow-100"></i>
+    <div>{{ "gimmicks.menu.map" | translate }}</div>
     <div
-      class="absolute bg-blue-200 text-black rounded p-2 mt-2 w-60 hidden group-hover:block z-20 arrow"
+      class="absolute bg-blue-200 text-black rounded p-2 top-8 w-60 hidden group-hover:block z-20 arrow"
     >
       <ul class="text-xs">
         <li>Google Maps API</li>
@@ -22,12 +23,13 @@
       </ul>
     </div>
   </div>
-  <div class="relative group hover:text-gray-100">
-    <a [routerLink]="['calendar']">{{
+  <div class="relative group hover:text-gray-100 cursor-pointer flex gap-1 items-center" [routerLink]="['calendar']">
+    <i class="fa-solid fa-calendar text-red-100"></i>
+    <div>{{
       "gimmicks.menu.calendar" | translate
-    }}</a>
+    }}</div>
     <div
-      class="absolute bg-blue-200 text-black rounded p-2 mt-2 w-60 hidden group-hover:block z-20 arrow"
+      class="absolute bg-blue-200 text-black rounded p-2 top-8 w-60 hidden group-hover:block z-20 arrow"
     >
       <ul class="text-xs">
         <li>SVG</li>
@@ -39,12 +41,13 @@
       </ul>
     </div>
   </div>
-  <div class="relative group hover:text-gray-100">
-    <a [routerLink]="['guestbook']">{{
+  <div class="relative group hover:text-gray-100 cursor-pointer flex gap-1 items-center" [routerLink]="['guestbook']">
+    <i class="fa-solid fa-book text-green-100"></i>
+    <div>{{
       "gimmicks.menu.guestbook" | translate
-    }}</a>
+    }}</div>
     <div
-      class="absolute bg-blue-200 text-black rounded p-2 mt-2 w-60 hidden group-hover:block z-20 arrow"
+      class="absolute bg-blue-200 text-black rounded p-2 top-8 w-60 hidden group-hover:block z-20 arrow"
     >
       <ul class="text-xs">
         <li>{{ "gimmicks.overview.youtubePlayer" | translate }}</li>
@@ -56,21 +59,122 @@
       </ul>
     </div>
   </div>
-  <div class="relative group hover:text-gray-100">
-    <a [routerLink]="['diagrams']">{{
-      "gimmicks.menu.diagrams" | translate
-    }}</a>
+  <div class="relative group hover:text-gray-100 cursor-pointer flex gap-1 items-center" [routerLink]="['charts']">
+    <i class="fa-solid fa-chart-simple text-blue-100"></i>
+    <div>{{ "gimmicks.menu.charts" | translate }}</div>
     <div
-      class="absolute bg-blue-200 text-black rounded p-2 mt-2 w-60 hidden group-hover:block z-20 arrow"
+      class="absolute bg-blue-200 text-black rounded p-2 top-8 w-60 hidden group-hover:block z-20 arrow"
     >
       <ul class="text-xs">
-        <li>{{ "gimmicks.overview.diagrams" | translate }}</li>
-        <li>PDF</li>
+        <li>{{ "gimmicks.overview.charts" | translate }}</li>
+        <li>PDF export</li>
         <li>{{ "gimmicks.overview.fileUpload" | translate }}</li>
-        <li>Google Firebase</li>
         <li>Responsive design</li>
       </ul>
     </div>
   </div>
+</div>
+<div *ngIf="innerWidth < 640" class="bg-blue-800 h-10 flex flex-col">
+  <button
+    *ngIf="fadeOut"
+    class="bg-red-600 rounded-md w-8 min-h-8 text-white mt-1 ml-2 shadow-lg"
+    (click)="showSubMenu = true; fadeOut = false"
+  >
+    <i class="fa-solid fa-chevron-right subMenuButton"></i>
+  </button>
+  <button
+    *ngIf="!fadeOut"
+    class="bg-red-600 rounded-md w-8 min-h-8 text-white mt-1 ml-2 shadow-lg"
+    (click)="hideSubMenu()"
+  >
+    <i class="fa-solid fa-chevron-down subMenuButton2"></i>
+  </button>
+  <ng-container *ngIf="showSubMenu">
+    <div
+      class="flex gap-1 items-center ml-2 mt-2 w-fit z-50 group overviewIn"
+      [ngClass]="{ overviewOut: fadeOut }"
+      [routerLink]="['/gimmicks']"
+      (click)="hideSubMenu()"
+    >
+      <button
+        class="w-7 h-7 rounded-full shadow-lg group-hover:text-white group-hover:bg-black"
+      >
+        <i class="fa-solid fa-eye"></i>
+      </button>
+      <div
+        class="bg-black text-white text-sm px-2 rounded shadow-lg group-hover:bg-white group-hover:text-black"
+      >
+        {{ "gimmicks.menu.overview" | translate }}
+      </div>
+    </div>
+    <div
+      class="flex gap-1 items-center ml-2 mt-2 w-fit z-50 group firstItemIn"
+      [ngClass]="{ firstItemOut: fadeOut }"
+      [routerLink]="['map']"
+      (click)="hideSubMenu()"
+    >
+      <button
+        class="w-7 h-7 rounded-full shadow-lg bg-yellow-100 group-hover:text-yellow-100 group-hover:bg-black"
+      >
+        <i class="fa-solid fa-map"></i>
+      </button>
+      <div
+        class="bg-black text-white text-sm px-2 rounded shadow-lg group-hover:bg-white group-hover:text-black"
+      >
+        {{ "gimmicks.menu.map" | translate }}
+      </div>
+    </div>
+    <div
+      class="flex gap-1 items-center ml-2 mt-2 w-fit z-50 group secondItemIn"
+      [ngClass]="{ secondItemOut: fadeOut }"
+      [routerLink]="['calendar']"
+      (click)="hideSubMenu()"
+    >
+      <button
+        class="w-7 h-7 rounded-full shadow-lg bg-red-100 group-hover:text-red-100 group-hover:bg-black"
+      >
+        <i class="fa-solid fa-calendar"></i>
+      </button>
+      <div
+        class="bg-black text-white text-sm px-2 rounded shadow-lg group-hover:bg-white group-hover:text-black"
+      >
+        {{ "gimmicks.menu.calendar" | translate }}
+      </div>
+    </div>
+    <div
+      class="flex gap-1 items-center ml-2 mt-2 w-fit z-50 group thirdItemIn"
+      [ngClass]="{ thirdItemOut: fadeOut }"
+      [routerLink]="['guestbook']"
+      (click)="hideSubMenu()"
+    >
+      <button
+        class="w-7 h-7 rounded-full shadow-lg bg-green-100 group-hover:text-green-100 group-hover:bg-black"
+      >
+        <i class="fa-solid fa-book"></i>
+      </button>
+      <div
+        class="bg-black text-white text-sm px-2 rounded shadow-lg group-hover:bg-white group-hover:text-black"
+      >
+        {{ "gimmicks.menu.guestbook" | translate }}
+      </div>
+    </div>
+    <div
+      class="flex gap-1 items-center ml-2 mt-2 w-fit z-50 group fourthItemIn"
+      [ngClass]="{ fourthItemOut: fadeOut }"
+      [routerLink]="['charts']"
+      (click)="hideSubMenu()"
+    >
+      <button
+        class="w-7 h-7 rounded-full shadow-lg bg-blue-100 group-hover:text-blue-100 group-hover:bg-black"
+      >
+        <i class="fa-solid fa-chart-simple"></i>
+      </button>
+      <div
+        class="bg-black text-white text-sm px-2 rounded shadow-lg group-hover:bg-white group-hover:text-black"
+      >
+        {{ "gimmicks.menu.charts" | translate }}
+      </div>
+    </div>
+  </ng-container>
 </div>
 <router-outlet></router-outlet>

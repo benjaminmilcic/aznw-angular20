@@ -7,7 +7,7 @@ import { CalendarComponent } from './pages/gimmicks/calendar/calendar.component'
 import { OverviewComponent } from './pages/gimmicks/overview/overview.component';
 import { GuestbookComponent } from './pages/gimmicks/guestbook/guestbook.component';
 import { PrintScheduleComponent } from './pages/gimmicks/calendar/print-schedule/print-schedule.component';
-import { DiagramsComponent } from './pages/gimmicks/diagrams/diagrams.component';
+import { ChartsComponent } from './pages/gimmicks/charts/charts.component';
 
 export const routes: Routes = [
   {
@@ -35,8 +35,8 @@ export const routes: Routes = [
         component: GuestbookComponent,
       },
       {
-        path: 'diagrams',
-        component: DiagramsComponent,
+        path: 'charts',
+        component: ChartsComponent,
       },
     ],
   },

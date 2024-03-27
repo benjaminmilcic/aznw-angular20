@@ -3,130 +3,94 @@ import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
   Component,
+  HostListener,
   Input,
   OnInit,
   ViewChild,
 } from '@angular/core';
+import { ChartConfiguration, ChartEvent, ChartType, Tooltip } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
-import { ChartConfiguration, ChartData, ChartEvent, ChartType } from 'chart.js';
+import { User } from '../user.model';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import {
   IonLabel,
   IonSegment,
   IonSegmentButton,
 } from '@ionic/angular/standalone';
-import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import ChartDataLabels from 'chartjs-plugin-datalabels';
-import { User } from '../user.model';
-import { DiagramHelperService } from '../diagram-helper.service';
+import { ChartsHelperService } from '../charts-helper.service';
 
 @Component({
-  selector: 'app-pie-chart',
+  selector: 'app-line-chart',
   standalone: true,
   imports: [
     BaseChartDirective,
-    IonSegment,
     IonSegmentButton,
+    IonSegment,
     IonLabel,
-    FormsModule,
+    TranslateModule,
     CommonModule,
   ],
-  templateUrl: './pie-chart.component.html',
-  styleUrl: './pie-chart.component.css',
+  templateUrl: './line-chart.component.html',
+  styleUrl: './line-chart.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class PieChartComponent implements OnInit, AfterViewInit {
+export class LineChartComponent implements OnInit, AfterViewInit {
+  lineChartType: ChartType = 'line';
+
+  @ViewChild(BaseChartDirective) chart?: BaseChartDirective;
   @Input() users: User[];
 
-  @ViewChild(BaseChartDirective) chart: BaseChartDirective | undefined;
-
-  constructor(
-    private cdr: ChangeDetectorRef,
-    private diagramHelperService: DiagramHelperService
-  ) {}
-
-  pieChartOptions: ChartConfiguration['options'];
-  pieChartType: ChartType = 'pie';
-  barChartPlugins;
+  months = [
+    'january',
+    'february',
+    'march',
+    'april',
+    'may',
+    'june',
+    'july',
+    'august',
+    'september',
+    'october',
+    'november',
+    'december',
+  ];
 
   year: '2022' | '2023' = '2022';
   kindOfConsumption: 'electricity' | 'water' | 'gas' = 'electricity';
-  period: number = -1;
 
   legendColors: string[] = [];
+  translatedMonths: string[];
 
-  ngOnInit(): void {
-    this.diagramHelperService.periodChange.subscribe((data) => {
-      this.period = data;
+  showUser: boolean[];
+
+  constructor(
+    private translate: TranslateService,
+    private cdr: ChangeDetectorRef,
+    private chartsHelperService: ChartsHelperService
+  ) {}
+
+  async ngOnInit() {
+    this.showUser = Array(this.users.length).fill(true);
+    this.chartsHelperService.detectChanges.subscribe(() => {
       this.cdr.detectChanges();
+      this.chart.render();
     });
-    this.diagramHelperService.kindOfConsumptionChange.subscribe((data) => {
-      this.kindOfConsumption = data;
-      this.cdr.detectChanges();
-    });
-    this.diagramHelperService.yearChange.subscribe((data) => {
-      this.year = data;
-      this.cdr.detectChanges();
-    });
-    this.diagramHelperService.detectChanges.subscribe(() => {
+    this.translate.onLangChange.subscribe(() => {
       this.cdr.detectChanges();
     });
 
-    this.pieChartOptions = {
-      plugins: {
-        tooltip: {
-          enabled: false,
-          position: 'nearest',
-          external: this.externalTooltipHandler,
-        },
-        legend: {
-          display: false,
-        },
-        datalabels: {
-          formatter: (value) => {
-            let consumptionOfAll = this.getConsumption().reduce(
-              (a, b) => a + b
-            );
-
-            return ((value * 100) / consumptionOfAll).toFixed(2) + ' %';
-          },
-        },
-      },
-    };
-    this.barChartPlugins = [ChartDataLabels];
+    this.cdr.markForCheck();
+    setTimeout(() => {
+      this.cdr.detectChanges();
+    }, 100);
   }
+
   ngAfterViewInit(): void {
-    this.legendColors = <string[]>this.chart.data.datasets[0].backgroundColor;
+    this.legendColors = <any>(
+      this.chart.data.datasets.map((dataset) => dataset.borderColor)
+    );
     this.cdr.detectChanges();
-  }
-
-  getPieChartData(): ChartData<'pie', number[], string | string[]> {
-    return {
-      datasets: [
-        {
-          data: this.getConsumption(),
-        },
-      ],
-    };
-  }
-
-  getConsumption(): number[] {
-    let userByYear = this.users.map((user) => user[this.year]);
-    let result = [];
-    userByYear.forEach((user, index) => {
-      if (this.period === -1) {
-        result.push(
-          user
-            .map((user2) => user2[this.kindOfConsumption])
-            .reduce((a, b) => a + b)
-        );
-      } else {
-        result.push(
-          user.map((user2) => user2[this.kindOfConsumption])[this.period]
-        );
-      }
-    });
-    return result;
   }
 
   getOrCreateTooltip = (chart) => {
@@ -189,7 +153,7 @@ export class PieChartComponent implements OnInit, AfterViewInit {
       bodyLines.forEach((body, i) => {
         const colors = tooltip.labelColors[i];
         const image = document.createElement('img') as HTMLImageElement;
-        image.src = this.users[tooltip.dataPoints[i].dataIndex].image;
+        image.src = this.users[tooltip.dataPoints[i].datasetIndex].image;
         image.width = 40;
         image.height = 40;
         image.style.clipPath = 'circle(40%)';
@@ -270,5 +234,60 @@ export class PieChartComponent implements OnInit, AfterViewInit {
       default:
         return '';
     }
+  }
+
+  getLineChartOptions(): ChartConfiguration['options'] {
+    return {
+      elements: {
+        line: {
+          tension: 0.5,
+        },
+      },
+      scales: {
+        y: {
+          display: !this.showUser.every((v) => v === false),
+          title: {
+            text: this.getConsumptionLabel(),
+            display: true,
+          },
+        },
+      },
+
+      plugins: {
+        tooltip: {
+          enabled: false,
+          position: 'nearest',
+          external: this.externalTooltipHandler,
+        },
+        legend: { display: false },
+      },
+    };
+  }
+
+  getLineChartData(): ChartConfiguration['data'] {
+    this.translatedMonths = this.months.map((month) =>
+      this.translate.instant('gimmicks.calendar.months.' + month)
+    );
+    let datasets: { data: number[] }[] = [];
+    this.users.forEach((user, i) => {
+      let data = this.showUser[i]
+        ? {
+            data: user[this.year].map((value) => value[this.kindOfConsumption]),
+          }
+        : { data: null };
+      datasets.push(data);
+    });
+    return {
+      datasets: datasets,
+      labels: this.translatedMonths,
+    };
+  }
+
+  onChangeYear(event) {
+    this.year = event.detail.value;
+  }
+
+  onChangeKindOfConsumption(event) {
+    this.kindOfConsumption = event.detail.value;
   }
 }

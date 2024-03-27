@@ -1,5 +1,5 @@
-<div class="flex flex-col place-items-center gap-8 relative">
-  <div class="flex flex-col gap-6 place-items-center w-96">
+<div class="flex flex-col place-items-center gap-8 relative sm:w-[600px]">
+  <div class="flex flex-col gap-6 place-items-center w-[340px] sm:w-96">
     <canvas
       baseChart
       [data]="getPieChartData()"
@@ -9,7 +9,7 @@
     >
     </canvas>
   </div>
-  <div class="flex gap-8 flex-wrap justify-center">
+  <div class="flex gap-x-8 gap-y-2 flex-wrap justify-center  w-[340px] lg:w-[600px]">
     <div
       *ngFor="let user of users; let i = index"
       class="flex place-items-center gap-2"
