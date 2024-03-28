@@ -8,6 +8,7 @@ import { OverviewComponent } from './pages/gimmicks/overview/overview.component'
 import { GuestbookComponent } from './pages/gimmicks/guestbook/guestbook.component';
 import { PrintScheduleComponent } from './pages/gimmicks/calendar/print-schedule/print-schedule.component';
 import { ChartsComponent } from './pages/gimmicks/charts/charts.component';
+import { AuthComponent } from './pages/gimmicks/auth/auth.component';
 
 export const routes: Routes = [
   {
@@ -37,6 +38,10 @@ export const routes: Routes = [
       {
         path: 'charts',
         component: ChartsComponent,
+      },
+      {
+        path: 'auth',
+        component: AuthComponent,
       },
     ],
   },

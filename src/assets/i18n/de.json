@@ -81,7 +81,8 @@
       "editor": "Eingebetteter Richtext Editor",
       "open": "Öffnen",
       "charts": "Diagramme",
-      "fileUpload": "Datei Upload"
+      "fileUpload": "Datei Upload",
+      "print": "Drucken"
     },
     "map": {
       "search": "Stadtsuche...",

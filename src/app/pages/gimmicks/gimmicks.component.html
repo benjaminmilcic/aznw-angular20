@@ -3,11 +3,17 @@
   id="header"
   class="bg-blue-800 text-gray-300 px-8 flex flex-wrap gap-6 h-10 place-items-center"
 >
-  <div class="hover:text-gray-100 cursor-pointer flex gap-1 items-center" [routerLink]="['/gimmicks']">
+  <div
+    class="hover:text-gray-100 cursor-pointer flex gap-1 items-center"
+    [routerLink]="['/gimmicks']"
+  >
     <i class="fa-solid fa-eye"></i>
     <div>{{ "gimmicks.menu.overview" | translate }}</div>
   </div>
-  <div class="relative group hover:text-gray-100 cursor-pointer flex gap-1 items-center" [routerLink]="['map']">
+  <div
+    class="relative group hover:text-gray-100 cursor-pointer flex gap-1 items-center"
+    [routerLink]="['map']"
+  >
     <i class="fa-solid fa-map text-yellow-100"></i>
     <div>{{ "gimmicks.menu.map" | translate }}</div>
     <div
@@ -23,11 +29,12 @@
       </ul>
     </div>
   </div>
-  <div class="relative group hover:text-gray-100 cursor-pointer flex gap-1 items-center" [routerLink]="['calendar']">
+  <div
+    class="relative group hover:text-gray-100 cursor-pointer flex gap-1 items-center"
+    [routerLink]="['calendar']"
+  >
     <i class="fa-solid fa-calendar text-red-100"></i>
-    <div>{{
-      "gimmicks.menu.calendar" | translate
-    }}</div>
+    <div>{{ "gimmicks.menu.calendar" | translate }}</div>
     <div
       class="absolute bg-blue-200 text-black rounded p-2 top-8 w-60 hidden group-hover:block z-20 arrow"
     >
@@ -41,11 +48,12 @@
       </ul>
     </div>
   </div>
-  <div class="relative group hover:text-gray-100 cursor-pointer flex gap-1 items-center" [routerLink]="['guestbook']">
+  <div
+    class="relative group hover:text-gray-100 cursor-pointer flex gap-1 items-center"
+    [routerLink]="['guestbook']"
+  >
     <i class="fa-solid fa-book text-green-100"></i>
-    <div>{{
-      "gimmicks.menu.guestbook" | translate
-    }}</div>
+    <div>{{ "gimmicks.menu.guestbook" | translate }}</div>
     <div
       class="absolute bg-blue-200 text-black rounded p-2 top-8 w-60 hidden group-hover:block z-20 arrow"
     >
@@ -59,7 +67,10 @@
       </ul>
     </div>
   </div>
-  <div class="relative group hover:text-gray-100 cursor-pointer flex gap-1 items-center" [routerLink]="['charts']">
+  <div
+    class="relative group hover:text-gray-100 cursor-pointer flex gap-1 items-center"
+    [routerLink]="['charts']"
+  >
     <i class="fa-solid fa-chart-simple text-blue-100"></i>
     <div>{{ "gimmicks.menu.charts" | translate }}</div>
     <div
@@ -67,11 +78,17 @@
     >
       <ul class="text-xs">
         <li>{{ "gimmicks.overview.charts" | translate }}</li>
-        <li>PDF export</li>
+        <!-- <li>PDF export</li> -->
         <li>{{ "gimmicks.overview.fileUpload" | translate }}</li>
         <li>Responsive design</li>
       </ul>
     </div>
+  </div>
+  <div
+    class="relative group hover:text-gray-100 cursor-pointer flex gap-1 items-center"
+    [routerLink]="['auth']"
+  >
+    <div>Auth</div>
   </div>
 </div>
 <div *ngIf="innerWidth < 640" class="bg-blue-800 h-10 flex flex-col">

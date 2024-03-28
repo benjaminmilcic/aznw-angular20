@@ -11,11 +11,12 @@ import {
 } from '@angular/material/bottom-sheet';
 import { QuizBottomSheetComponent } from './quiz-bottom-sheet/quiz-bottom-sheet.component';
 import { Router } from '@angular/router';
+import { AnalogClockComponent } from './analog-clock/analog-clock.component';
 
 @Component({
   selector: 'app-calendar',
   standalone: true,
-  imports: [CommonModule, FormsModule, MatBottomSheetModule, TranslateModule],
+  imports: [CommonModule, FormsModule, MatBottomSheetModule, TranslateModule,AnalogClockComponent],
   templateUrl: './calendar.component.html',
   styleUrl: './calendar.component.css',
 })

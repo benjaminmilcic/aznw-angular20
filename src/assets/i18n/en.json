@@ -68,7 +68,7 @@
       "map": "Map",
       "calendar": "Calendar",
       "guestbook": "Guestbook",
-      "charts":"Charts"
+      "charts": "Charts"
     },
     "overview": {
       "header": "So far I have created enterprise applications that can only be accessed with a login and password. That's why you'll find gimmicks here that demonstrate my skills.",
@@ -80,8 +80,9 @@
       "youtubePlayer": "Embedded Youtube player",
       "editor": "Embedded richtext editor",
       "open": "Open",
-      "charts":"Charts",
-      "fileUpload":"File upload"
+      "charts": "Charts",
+      "fileUpload": "File upload",
+      "print": "Printing"
     },
     "map": {
       "search": "Search a city...",
@@ -143,7 +144,7 @@
       "thanks": "Thanks for leaving a comment",
       "save": "Save"
     },
-    "charts":{
+    "charts": {
       "monthlyConsumption": "Monthly consumption",
       "yearlyConsumption": "Yearly consumption",
       "procentualConsumption": "Procentual consumption",
@@ -160,8 +161,8 @@
       "cancel": "Cancel",
       "reallyDelete": "Do you really want to delete this user?",
       "user": "User",
-      "image":"image",
-      "upload":"Upload"
+      "image": "image",
+      "upload": "Upload"
     }
   }
 }
