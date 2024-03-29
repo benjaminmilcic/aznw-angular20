@@ -2,7 +2,7 @@ import { ApplicationConfig, importProvidersFrom } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import { routes } from './app.routes';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ToastrModule } from 'ngx-toastr';
@@ -12,6 +12,7 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from '../environments/environment';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { provideCharts, withDefaultRegisterables } from 'ng2-charts';
+import { AuthInterceptorService } from './pages/gimmicks/auth/auth-interceptor.service';
 
 
 
@@ -44,5 +45,11 @@ export const appConfig: ApplicationConfig = {
     importProvidersFrom(AngularFireModule.initializeApp(environment.firebase)),
     importProvidersFrom(AngularFireStorageModule),
     provideCharts(withDefaultRegisterables()),
+    provideHttpClient(withInterceptorsFromDi()),
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true,
+    },
   ],
 };

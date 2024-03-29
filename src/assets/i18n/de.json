@@ -164,5 +164,9 @@
       "image": "hochladen",
       "upload": "Bild"
     }
+  },
+  "pageNotFound":{
+    "error":"Die angeforderte Seite wurde nicht gefunden!",
+    "goToHomepage":"Zur Startseite"
   }
 }

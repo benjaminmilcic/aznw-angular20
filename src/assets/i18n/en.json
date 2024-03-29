@@ -164,5 +164,9 @@
       "image": "image",
       "upload": "Upload"
     }
+  },
+  "pageNotFound": {
+    "error": "The requested page was not found!",
+    "goToHomepage": "Go to Homepage"
   }
 }

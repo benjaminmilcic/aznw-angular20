@@ -1,0 +1,15 @@
+<section
+  class="bg-blue-400 min-h-[calc(100vh-71px)] flex justify-center items-center"
+>
+  <div *ngIf="vicevi" class="relative whitespace-pre-line flex flex-col gap-6">
+    <div>{{ vicevi[0].deutsch }}</div>
+    <div>
+      {{ vicevi[0].hrvatski }}
+    </div>
+    <div>
+      {{ vicevi[0].english }}
+    </div>
+  </div>
+ <audio #audiElement controls></audio>
+<!-- <button onclick="playBack()"><i class="fas fa-volume-up"></i></button> -->
+</section>

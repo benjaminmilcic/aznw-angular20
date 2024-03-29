@@ -84,10 +84,18 @@
       </ul>
     </div>
   </div>
-  <div
+  <div  *ngIf="!isAuthenticated"
     class="relative group hover:text-gray-100 cursor-pointer flex gap-1 items-center"
-    [routerLink]="['auth']"
+    [routerLink]="['/gimmicks/auth/login']"
   >
+    <i class="fa-solid fa-lock"></i>
+    <div>Auth</div>
+  </div>
+   <div  *ngIf="isAuthenticated"
+    class="relative group hover:text-gray-100 cursor-pointer flex gap-1 items-center"
+    [routerLink]="['/gimmicks/auth/main']"
+  >
+    <i class="fa-solid fa-lock-open"></i>
     <div>Auth</div>
   </div>
 </div>
