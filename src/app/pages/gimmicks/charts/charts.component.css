@@ -29,7 +29,3 @@ mat-drawer {
  width: 100%;
  height: calc(100vh - 40px);
 }
-
-.clip{
-  clip-path: circle(40%);
-}

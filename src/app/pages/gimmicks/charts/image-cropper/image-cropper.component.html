@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-title>Titel</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="close()">
+        <i class="fa-solid fa-xmark text-lg"></i>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <input
+    type="file"
+    accept="image/*"
+    hidden
+    (change)="onFileSelected($event)"
+    #fileUpload
+  />
+  <button
+    class="bg-blue-500 hover:bg-blue-600 text-white px-2 py-2 rounded shadow cursor-pointer"
+    (click)="fileUpload.click()"
+  >
+    <i class="fa-solid fa-pen"></i>
+  </button>
+</ion-content>
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button (click)="save()" class="mt-4">
+    <i class="fa-solid fa-floppy-disk text-2xl"></i>
+  </ion-fab-button>
+</ion-fab>

@@ -204,9 +204,9 @@ export class PieChartComponent implements OnInit,OnDestroy, AfterViewInit {
         const colors = tooltip.labelColors[i];
         const image = document.createElement('img') as HTMLImageElement;
         image.src = this.users[tooltip.dataPoints[i].dataIndex].image;
-        image.width = 40;
-        image.height = 40;
-        image.style.clipPath = 'circle(40%)';
+        image.width = 34;
+        image.height = 34;
+        image.style.borderRadius='50%'
 
         const tr = document.createElement('tr');
         tr.style.backgroundColor = 'inherit';

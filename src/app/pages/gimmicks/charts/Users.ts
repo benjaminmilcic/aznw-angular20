@@ -4,7 +4,7 @@ export const UserValues: User[] = [
   {
     id: 1,
     name: 'Dagobert',
-    image: '/assets/Profile_Dagobert.webp',
+    image: '/assets/dagobert.webp',
     2022: [
       { electricity: 100, water: 3.87, gas: 760 },
       { electricity: 120, water: 3.85, gas: 765 },
@@ -37,7 +37,7 @@ export const UserValues: User[] = [
   {
     id: 2,
     name: 'Donald',
-    image: '/assets/Profile_Donald.webp',
+    image: '/assets/donald.webp',
     2022: [
       { electricity: 90, water: 2.97, gas: 561 },
       { electricity: 110, water: 2.91, gas: 562 },
@@ -70,7 +70,7 @@ export const UserValues: User[] = [
   {
     id: 3,
     name: 'Huey',
-    image: '/assets/Profile_Huey.webp',
+    image: '/assets/huey.webp',
     2022: [
       { electricity: 45, water: 1.51, gas: 281 },
       { electricity: 55, water: 1.46, gas: 283 },
@@ -103,7 +103,7 @@ export const UserValues: User[] = [
   {
     id: 4,
     name: 'Dewey',
-    image: '/assets/Profile_Dewey.webp',
+    image: '/assets/dewey.webp',
     2022: [
       { electricity: 45, water: 1.51, gas: 281 },
       { electricity: 55, water: 1.46, gas: 283 },
@@ -136,7 +136,7 @@ export const UserValues: User[] = [
   {
     id: 5,
     name: 'Louie',
-    image: '/assets/Profile_Louie.webp',
+    image: '/assets/louie.webp',
     2022: [
       { electricity: 45, water: 1.51, gas: 281 },
       { electricity: 55, water: 1.46, gas: 283 },
@@ -169,7 +169,7 @@ export const UserValues: User[] = [
   {
     id: 6,
     name: 'Daisy',
-    image: '/assets/Profile_Daisy.webp',
+    image: '/assets/daisy.webp',
     2022: [
       { electricity: 45, water: 1.51, gas: 281 },
       { electricity: 55, water: 1.46, gas: 283 },

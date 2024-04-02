@@ -14,12 +14,14 @@ import {
   IonSegment,
   IonSegmentButton,
   IonFab,
+  ModalController,
 } from '@ionic/angular/standalone';
 import { TranslateModule } from '@ngx-translate/core';
 import { User } from '../user.model.js';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatButtonModule } from '@angular/material/button';
+import { ImageCropperComponent } from '../image-cropper/image-cropper.component.js';
 
 @Component({
   selector: 'app-drawer-content',
@@ -72,6 +74,8 @@ export class DrawerContentComponent implements OnInit {
   userConsumptions = new FormArray([]);
 
   errorMessage: string = null;
+
+  constructor(private modalCtrl: ModalController) {}
 
   ngOnInit() {
     this.originalUser = JSON.parse(JSON.stringify(this.user));
@@ -141,8 +145,15 @@ export class DrawerContentComponent implements OnInit {
     }
   }
 
-  async onFileSelected(event) {
-    const file: File = event.target.files[0];
-    this.user.image = URL.createObjectURL(file);
+  async openUploadImageModal() {
+    const modal = await this.modalCtrl.create({
+      component: ImageCropperComponent,
+      backdropDismiss: false,
+    });
+    modal.onDidDismiss().then(async (data) => {
+      if (data.role === 'save') {
+      }
+    });
+    await modal.present();
   }
 }
