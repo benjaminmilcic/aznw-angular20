@@ -1,0 +1,68 @@
+<div class="p-8 shadow bg-white rounded w-[400px] m-8 relativ">
+  <div [formGroup]="paymentElementForm" class="flex flex-col">
+    <div class="flex gap-4 items-center mb-4">
+      <div class="w-16">Name:</div>
+      <mat-form-field
+        appearance="outline"
+        subscriptSizing="dynamic"
+        class="w-full"
+      >
+        <input #nameInput matInput formControlName="name" />
+        <mat-hint *ngIf="nameError" class="text-red-600">Name ist Pflicht!</mat-hint>
+      </mat-form-field>
+    </div>
+    <div class="flex gap-4 items-center mb-4">
+      <div class="w-16">Email:</div>
+      <mat-form-field
+        appearance="outline"
+        subscriptSizing="dynamic"
+        class="w-full"
+      >
+        <input #emailInput matInput type="email" formControlName="email" />
+        <mat-hint *ngIf="emailError" class="text-red-600">Email ist Pflicht!</mat-hint>
+      </mat-form-field>
+    </div>
+    <div class="flex gap-4 items-center mb-4">
+      <div class="w-16">Straße:</div>
+      <mat-form-field
+        appearance="outline"
+        subscriptSizing="dynamic"
+        class="w-full"
+      >
+        <input #streetInput matInput formControlName="address" />
+        <mat-hint *ngIf="streetError" class="text-red-600">Straße ist Pflicht!</mat-hint>
+      </mat-form-field>
+    </div>
+    <div class="flex gap-4 items-center mb-4">
+      <div class="w-16">PLZ:</div>
+      <mat-form-field
+        appearance="outline"
+        subscriptSizing="dynamic"
+        class="w-full"
+      >
+        <input #zipCodeInput matInput formControlName="zipcode" />
+        <mat-hint *ngIf="zipCodeError" class="text-red-600">PLZ ist Pflicht!</mat-hint>
+      </mat-form-field>
+    </div>
+    <div class="flex gap-4 items-center mb-4">
+      <div class="w-16">Stadt:</div>
+      <mat-form-field
+        appearance="outline"
+        subscriptSizing="dynamic"
+        class="w-full"
+      >
+        <input #cityInput matInput formControlName="city" />
+        <mat-hint *ngIf="cityError" class="text-red-600">Stadt ist Pflicht!</mat-hint>
+      </mat-form-field>
+    </div>
+
+    <ngx-stripe-elements
+      *ngIf="elementsOptions.clientSecret"
+      [stripe]="stripe"
+      [elementsOptions]="elementsOptions"
+    >
+      <ngx-stripe-payment [options]="paymentElementOptions" />
+    </ngx-stripe-elements>
+    <button  (click)="pay()">PAY</button>
+  </div>
+</div>

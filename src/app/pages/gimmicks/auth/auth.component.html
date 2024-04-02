@@ -1,5 +1,38 @@
-<div class="bg-red-500">
-
-    <button *ngIf="isAuthenticated" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded shadow cursor-pointer" (click)="onLogout()">Logout</button>
-</div>
-<router-outlet></router-outlet>
+<section class="flex bg-blue-400 min-h-[calc(100%-40px)] justify-center gap-10">
+  <div class="relative flex flex-col gap-4 w-[600px]">
+    <div class="flex bg-white rounded shadow mt-8 px-8 pb-8 gap-8">
+      <app-jokes-book></app-jokes-book>
+      <div class="mt-8">
+        I wrote a book with jokes, in pairs of german and croatian language. You
+        can read some of them when you login down here. You can create an
+        account by yourself or just use
+        <span class="font-bold">guest&commat;guest.com</span> for email and
+        <span class="font-bold">guest123</span> for password.
+        <br />
+        <br />
+        There is also a form for ordering the book using the
+        <a href="https://stripe.com/" target="_blank">stripe service</a>. But
+        because this is only a demontration website you can not really order the
+        book with this form. If you want to try out the functionality just enter
+        any address, <span class="font-bold">4242 4242 4242 4242</span> as the
+        card number, any future date as expiration and any 3-digit number as
+        CVC.
+        <br />
+        This is a test card provided from the stripe service.
+        <br />
+        <br />
+        If you really want to read my book, you can order it on amazon with
+        <a
+          href="https://www.amazon.de/Vicevi-dva-jezika-Sprachen-kroatisch/dp/B0CTXX39KZ/ref=sr_1_1?dib=eyJ2IjoiMSJ9.5PQfH2ltLtUPlA2ZafYO-Q.CSLZZD2SZp04jpj0y3zHZlaO3KokFMTL-OxcmiVQkw4&dib_tag=se&qid=1711988862&refinements=p_27%3ABenjamin+Mil%C4%8Di%C4%87&s=books&sr=1-1&text=Benjamin+Mil%C4%8Di%C4%87"
+          target="_blank"
+          >this</a
+        >
+        link.
+      </div>
+    </div>
+    <router-outlet></router-outlet>
+  </div>
+  <div class="relative">
+    <app-stripe></app-stripe>
+  </div>
+</section>

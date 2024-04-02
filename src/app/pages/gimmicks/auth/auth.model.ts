@@ -22,3 +22,9 @@ export class AuthUser {
         return this._token;
     }
 }
+
+export interface Joke{
+  english: string;
+  deutsch: string;
+  hrvatski: string;
+}

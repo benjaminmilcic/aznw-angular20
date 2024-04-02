@@ -4,6 +4,7 @@ import {
   ChangeDetectorRef,
   Component,
   Input,
+  OnDestroy,
   OnInit,
   ViewChild,
 } from '@angular/core';
@@ -19,6 +20,7 @@ import { CommonModule } from '@angular/common';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 import { User } from '../user.model';
 import { ChartsHelperService } from '../charts-helper.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-pie-chart',
@@ -35,10 +37,15 @@ import { ChartsHelperService } from '../charts-helper.service';
   styleUrl: './pie-chart.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class PieChartComponent implements OnInit, AfterViewInit {
+export class PieChartComponent implements OnInit,OnDestroy, AfterViewInit {
   @Input() users: User[];
 
   @ViewChild(BaseChartDirective) chart: BaseChartDirective | undefined;
+
+  private periodChangeSub: Subscription;
+  private kindOfConsumptionChangeSub: Subscription;
+  private yearChangeSub: Subscription;
+  private chartsDetectChangesSub: Subscription;
 
   constructor(
     private cdr: ChangeDetectorRef,
@@ -56,23 +63,28 @@ export class PieChartComponent implements OnInit, AfterViewInit {
   legendColors: string[] = [];
 
   ngOnInit(): void {
-    this.chartsHelperService.periodChange.subscribe((data) => {
-      this.period = data;
-      this.cdr.detectChanges();
-    });
-    this.chartsHelperService.kindOfConsumptionChange.subscribe((data) => {
-      this.kindOfConsumption = data;
-      this.cdr.detectChanges();
-    });
-    this.chartsHelperService.yearChange.subscribe((data) => {
-      this.year = data;
-      this.cdr.detectChanges();
-    });
-    this.chartsHelperService.detectChanges.subscribe(() => {
-      this.cdr.detectChanges();
-      this.chart.render();
-
-    });
+    this.periodChangeSub = this.chartsHelperService.periodChange.subscribe(
+      (data) => {
+        this.period = data;
+        this.cdr.detectChanges();
+      }
+    );
+    this.kindOfConsumptionChangeSub =
+      this.chartsHelperService.kindOfConsumptionChange.subscribe((data) => {
+        this.kindOfConsumption = data;
+        this.cdr.detectChanges();
+      });
+    this.yearChangeSub = this.chartsHelperService.yearChange.subscribe(
+      (data) => {
+        this.year = data;
+        this.cdr.detectChanges();
+      }
+    );
+    this.chartsDetectChangesSub =
+      this.chartsHelperService.detectChanges.subscribe(() => {
+        this.cdr.detectChanges();
+        this.chart.render();
+      });
 
     this.pieChartOptions = {
       plugins: {
@@ -272,5 +284,12 @@ export class PieChartComponent implements OnInit, AfterViewInit {
       default:
         return '';
     }
+  }
+
+  ngOnDestroy(): void {
+    this.periodChangeSub.unsubscribe();
+    this.kindOfConsumptionChangeSub.unsubscribe();
+    this.yearChangeSub.unsubscribe();
+    this.chartsDetectChangesSub.unsubscribe();
   }
 }

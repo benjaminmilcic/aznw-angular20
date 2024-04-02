@@ -126,6 +126,17 @@
         "november": "November",
         "december": "Dezember"
       },
+      "holidays":{
+        "NEUJAHRSTAG": "NEUJAHR",
+        "KARFREITAG": "KARFREITAG",
+        "OSTERMONTAG": "OSTERMONTAG",
+        "TAG_DER_ARBEIT": "TAG DER ARBEIT",
+        "CHRISTIHIMMELFAHRT": "CHRISTIHIMMELFAHRT",
+        "PFINGSTMONTAG": "PFINGSTMONTAG",
+        "DEUTSCHEEINHEIT": "TAG DER DEUTSCHEN EINHEIT",
+        "ERSTERWEIHNACHTSFEIERTAG": "ERSTER WEIHNACHTSFEIERTAG",
+        "ZWEITERWEIHNACHTSFEIERTAG": "ZWEITER WEIHNACHTSFEIERTAG"
+      },
       "workdays": "Arbeitstage",
       "openQuiz": "Quiz öffnen",
       "closeQuiz": "Quiz schließen",
@@ -165,8 +176,8 @@
       "upload": "Bild"
     }
   },
-  "pageNotFound":{
-    "error":"Die angeforderte Seite wurde nicht gefunden!",
-    "goToHomepage":"Zur Startseite"
+  "pageNotFound": {
+    "error": "Die angeforderte Seite wurde nicht gefunden!",
+    "goToHomepage": "Zur Startseite"
   }
 }

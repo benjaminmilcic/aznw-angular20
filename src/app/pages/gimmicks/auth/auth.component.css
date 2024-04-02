@@ -1,0 +1,49 @@
+section {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+section:before {
+  content: ' ';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.1;
+  background-image: url(/assets/skimming-stone-asteroid-meta.png);
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  background-size: cover;
+}
+
+/* .vl {
+  border-left: 4px solid white;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.vl:before {
+  content: '';
+ position: absolute;
+ background-color: white;
+ width: 20px;
+ height: 20px;
+ top: 0;
+ left: -12px;
+ border-radius: 50%;
+}
+
+.vl:after {
+  content: '';
+ position: absolute;
+ background-color: white;
+ width: 20px;
+ height: 20px;
+ top: calc(100% - 20px);
+ left: -12px;
+ border-radius: 50%;
+} */

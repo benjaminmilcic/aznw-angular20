@@ -1,15 +1,57 @@
 <section
-  class="bg-blue-400 min-h-[calc(100vh-71px)] flex justify-center items-center"
+  class="bg-white rounded shadow flex flex-col items-center p-8"
 >
-  <div *ngIf="vicevi" class="relative whitespace-pre-line flex flex-col gap-6">
-    <div>{{ vicevi[0].deutsch }}</div>
-    <div>
-      {{ vicevi[0].hrvatski }}
+<div class="self-start relative">
+
+    <button class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded shadow cursor-pointer" (click)="onLogout()">Logout</button>
+</div>
+  <div class="mt-8 flex gap-8">
+    <div class="flex items-center">
+      <ion-checkbox
+        [(ngModel)]="english"
+        mode="ios"
+        class="mr-2"
+      ></ion-checkbox>
+      <img src="/assets/svg/gb.svg" height="24px" />
     </div>
-    <div>
-      {{ vicevi[0].english }}
+
+    <div class="flex items-center">
+      <ion-checkbox [(ngModel)]="german" mode="ios" class="mr-2"></ion-checkbox>
+      <img src="/assets/svg/de.svg" height="24px" />
+    </div>
+    <div class="flex items-center">
+      <ion-checkbox
+        [(ngModel)]="croatian"
+        mode="ios"
+        class="mr-2"
+      ></ion-checkbox>
+      <img src="/assets/svg/hr.svg" height="24px" />
     </div>
   </div>
- <audio #audiElement controls></audio>
-<!-- <button onclick="playBack()"><i class="fas fa-volume-up"></i></button> -->
+  <div class="flex gap-10 relative my-8">
+    <button
+      class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded shadow cursor-pointer"
+      (click)="nextJoke()"
+    >
+      <i class="fa-solid fa-caret-left"></i>
+    </button>
+    <button
+      class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded shadow cursor-pointer"
+      (click)="previousJoke()"
+    >
+      <i class="fa-solid fa-caret-right"></i>
+    </button>
+  </div>
+  <div
+    *ngIf="jokes"
+    class="relative whitespace-pre-line flex flex-col gap-6 w-96"
+  >
+    <div *ngIf="english">
+      {{ jokes[jokeIndex].english }}
+    </div>
+    <div *ngIf="german">{{ jokes[jokeIndex].deutsch }}</div>
+    <div *ngIf="croatian">
+      {{ jokes[jokeIndex].hrvatski }}
+    </div>
+  </div>
 </section>

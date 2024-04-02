@@ -4,6 +4,7 @@ import {
   ChangeDetectorRef,
   Component,
   Input,
+  OnDestroy,
   OnInit,
   ViewChild,
 } from '@angular/core';
@@ -18,6 +19,7 @@ import { User } from '../user.model';
 import { CommonModule } from '@angular/common';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { ChartsHelperService } from '../charts-helper.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-double-bar-chart',
@@ -34,7 +36,7 @@ import { ChartsHelperService } from '../charts-helper.service';
   styleUrl: './double-bar-chart.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class DoubleBarChartComponent implements OnInit, AfterViewInit {
+export class DoubleBarChartComponent implements OnInit, OnDestroy, AfterViewInit {
   @ViewChild(BaseChartDirective) chart: BaseChartDirective<'bar'> | undefined;
 
   barChartType = 'bar' as const;
@@ -49,20 +51,24 @@ export class DoubleBarChartComponent implements OnInit, AfterViewInit {
 
   lableWidth: number = 0;
 
+  private chartsDetectChangesSub: Subscription;
+
   constructor(
     private cdr: ChangeDetectorRef,
     private chartsHelperService: ChartsHelperService
   ) {}
 
   ngOnInit(): void {
-    this.chartsHelperService.detectChanges.subscribe(() => {
-      this.cdr.detectChanges();
-      this.chart.render();
-      setTimeout(() => {
-        this.lableWidth = this.chart.chart.chartArea.width / this.users.length;
+    this.chartsDetectChangesSub =
+      this.chartsHelperService.detectChanges.subscribe(() => {
         this.cdr.detectChanges();
-      }, 50);
-    });
+        this.chart.render();
+        setTimeout(() => {
+          this.lableWidth =
+            this.chart.chart.chartArea.width / this.users.length;
+          this.cdr.detectChanges();
+        }, 50);
+      });
     this.showUser = Array(this.users.length).fill(true);
   }
 
@@ -297,4 +303,8 @@ export class DoubleBarChartComponent implements OnInit, AfterViewInit {
 
     tooltipEl.style.display = 'flex';
   };
+
+  ngOnDestroy(): void {
+    this.chartsDetectChangesSub.unsubscribe();
+  }
 }

@@ -8,7 +8,7 @@ import {
 import { ScratchCardComponent } from './scratch-card/scratch-card.component';
 import { Holiday, getHolidays } from 'feiertagejs';
 import * as de from '@angular/common/locales/de';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-quiz-bottom-sheet',
@@ -26,6 +26,7 @@ import { TranslateModule } from '@ngx-translate/core';
 export class QuizBottomSheetComponent implements OnInit {
   holiday: Holiday;
   constructor(
+    private translate: TranslateService,
     private _bottomSheetRef: MatBottomSheetRef<QuizBottomSheetComponent>,
     @Inject(MAT_BOTTOM_SHEET_DATA) public data: { year: number }
   ) {
@@ -45,23 +46,23 @@ export class QuizBottomSheetComponent implements OnInit {
   getScratchWord(): string {
     switch (this.holiday.name) {
       case 'NEUJAHRSTAG':
-        return 'NEUJAHR';
+        return this.translate.instant('gimmicks.calendar.holidays.NEUJAHRSTAG');
       case 'KARFREITAG':
-        return 'KARFREITAG';
+        return this.translate.instant('gimmicks.calendar.holidays.KARFREITAG');
       case 'OSTERMONTAG':
-        return 'OSTERMONTAG';
+        return this.translate.instant('gimmicks.calendar.holidays.OSTERMONTAG');
       case 'TAG_DER_ARBEIT':
-        return 'TAG DER ARBEIT';
+        return this.translate.instant('gimmicks.calendar.holidays.TAG_DER_ARBEIT');
       case 'CHRISTIHIMMELFAHRT':
-        return 'CHRISTIHIMMELFAHRT';
+        return this.translate.instant('gimmicks.calendar.holidays.CHRISTIHIMMELFAHRT');
       case 'PFINGSTMONTAG':
-        return 'PFINGSTMONTAG';
+        return this.translate.instant('gimmicks.calendar.holidays.PFINGSTMONTAG');
       case 'DEUTSCHEEINHEIT':
-        return 'TAG DER DEUTSCHEN EINHEIT';
+        return this.translate.instant('gimmicks.calendar.holidays.DEUTSCHEEINHEIT');
       case 'ERSTERWEIHNACHTSFEIERTAG':
-        return 'ERSTER WEIHNACHTSFEIERTAG';
+        return this.translate.instant('gimmicks.calendar.holidays.ERSTERWEIHNACHTSFEIERTAG');
       case 'ZWEITERWEIHNACHTSFEIERTAG':
-        return 'ZWEITER WEIHNACHTSFEIERTAG';
+        return this.translate.instant('gimmicks.calendar.holidays.ZWEITERWEIHNACHTSFEIERTAG');
 
       default:
         return '';

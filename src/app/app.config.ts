@@ -13,6 +13,7 @@ import { environment } from '../environments/environment';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { provideCharts, withDefaultRegisterables } from 'ng2-charts';
 import { AuthInterceptorService } from './pages/gimmicks/auth/auth-interceptor.service';
+import { provideNgxStripe } from 'ngx-stripe';
 
 
 
@@ -51,5 +52,8 @@ export const appConfig: ApplicationConfig = {
       useClass: AuthInterceptorService,
       multi: true,
     },
+    provideNgxStripe(
+      'pk_test_51P05azL6Qm22ltjdlDi75OKMXcdkImE9eB6U7pS709irbBgVW1OuvSEho05cYC3OdwAt4nJh2Zfike65t3OKhviN00RWkBd4Qa'
+    ),
   ],
 };

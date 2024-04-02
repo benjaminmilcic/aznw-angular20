@@ -3,7 +3,7 @@ ion-spinner {
   height: 100px;
 }
 
-section {
+/* section {
   background-size: cover;
   background-position: center;
   position: relative;
@@ -22,4 +22,4 @@ section:before {
   background-repeat: no-repeat;
   background-position: 50% 0;
   background-size: cover;
-}
+} */

@@ -61,7 +61,7 @@
         <li>{{ "gimmicks.overview.youtubePlayer" | translate }}</li>
         <li>Popup Modal</li>
         <li>{{ "gimmicks.overview.editor" | translate }}</li>
-        <li>Google Firebase</li>
+        <li>Google Firebase Storage</li>
         <li>PHP API</li>
         <li>Responsive design</li>
       </ul>
@@ -84,19 +84,20 @@
       </ul>
     </div>
   </div>
-  <div  *ngIf="!isAuthenticated"
-    class="relative group hover:text-gray-100 cursor-pointer flex gap-1 items-center"
-    [routerLink]="['/gimmicks/auth/login']"
-  >
-    <i class="fa-solid fa-lock"></i>
-    <div>Auth</div>
-  </div>
-   <div  *ngIf="isAuthenticated"
+  <div
     class="relative group hover:text-gray-100 cursor-pointer flex gap-1 items-center"
     [routerLink]="['/gimmicks/auth/main']"
   >
-    <i class="fa-solid fa-lock-open"></i>
-    <div>Auth</div>
+    <i class="fa-solid fa-face-smile"></i>
+    <div>Jokes</div>
+    <div
+      class="absolute bg-blue-200 text-black rounded p-2 top-8 w-60 hidden group-hover:block z-20 arrow"
+    >
+      <ul class="text-xs">
+        <li>Google Firebase authentication and authorization</li>
+        <li>Stripe payment</li>
+      </ul>
+    </div>
   </div>
 </div>
 <div *ngIf="innerWidth < 640" class="bg-blue-800 h-10 flex flex-col">

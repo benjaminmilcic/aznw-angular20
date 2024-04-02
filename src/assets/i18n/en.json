@@ -126,6 +126,17 @@
         "november": "November",
         "december": "December"
       },
+      "holidays": {
+        "NEUJAHRSTAG": "NEW YEAR",
+        "KARFREITAG": "GOOD FRIDAY",
+        "OSTERMONTAG": "EASTER MONDAY",
+        "TAG_DER_ARBEIT": "LABOR DAY",
+        "CHRISTIHIMMELFAHRT": "ASCENSION DAY",
+        "PFINGSTMONTAG": "WHIT MONDAY",
+        "DEUTSCHEEINHEIT": "DAY OF GERMAN UNITY",
+        "ERSTERWEIHNACHTSFEIERTAG": "CHRISTMAS DAY",
+        "ZWEITERWEIHNACHTSFEIERTAG": "BOXING DAY"
+      },
       "workdays": "Working days",
       "openQuiz": "Open quiz",
       "closeQuiz": "Close quiz",

@@ -30,7 +30,7 @@
         </div>
         <div class="flex justify-end">
           <button
-            class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-1 px-2 rounded text-sm mt-1"
+            class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-1 px-2 rounded text-sm mt-1 cursor-pointer"
             [routerLink]="['/gimmicks/map']"
           >
             {{ "gimmicks.overview.open" | translate }}
@@ -64,7 +64,7 @@
         </div>
         <div class="flex justify-end">
           <button
-            class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-1 px-2 rounded text-sm mt-1"
+            class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-1 px-2 rounded text-sm mt-1 cursor-pointer"
             [routerLink]="['/gimmicks/calendar']"
           >
             {{ "gimmicks.overview.open" | translate }}
@@ -90,14 +90,14 @@
             <li>{{ "gimmicks.overview.youtubePlayer" | translate }}</li>
             <li>Popup Modal</li>
             <li>{{ "gimmicks.overview.editor" | translate }}</li>
-            <li>Google Firebase</li>
+            <li>Google Firebase Storage</li>
             <li>PHP API</li>
             <li>Responsive design</li>
           </ul>
         </div>
         <div class="flex justify-end">
           <button
-            class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-1 px-2 rounded text-sm mt-1"
+            class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-1 px-2 rounded text-sm mt-1 cursor-pointer"
             [routerLink]="['/gimmicks/guestbook']"
           >
             {{ "gimmicks.overview.open" | translate }}
@@ -128,8 +128,37 @@
         </div>
         <div class="flex justify-end">
           <button
-            class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-1 px-2 rounded text-sm mt-1"
+            class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-1 px-2 rounded text-sm mt-1 cursor-pointer"
             [routerLink]="['/gimmicks/charts']"
+          >
+            {{ "gimmicks.overview.open" | translate }}
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      class="bg-blue-800 text-white rounded-lg sm:h-[410px] p-8 m-8 w-72 shadow-lg"
+    >
+      <div class="flex flex-col justify-between h-full">
+        <div>
+          <div class="flex justify-between items-center mb-6">
+            <div class="text-xl font-bold">
+              {{ "gimmicks.menu.jokes" | translate }}
+            </div>
+            <i class="fa-solid fa-face-smile text-4xl text-violet-100"></i>
+          </div>
+          <div class="mb-2 text-gray-200">
+            {{ "gimmicks.overview.elements" | translate }}:
+          </div>
+          <ul class="mb-8 text-sm sm:text-base text-gray-200">
+            <li>Google Firebase authentication and authorization</li>
+            <li>Stripe payment</li>
+          </ul>
+        </div>
+        <div class="flex justify-end">
+          <button
+            class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-1 px-2 rounded text-sm mt-1 cursor-pointer"
+            [routerLink]="['/gimmicks/auth/main']"
           >
             {{ "gimmicks.overview.open" | translate }}
           </button>

@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { HttpClient } from '@angular/common/http';
 import { TranslateService } from '@ngx-translate/core';
-import { forkJoin } from 'rxjs';
+import { Subscription, forkJoin } from 'rxjs';
 import { TranslateSendButtonService } from '../shared/translate-send-button.service';
 import { TranslateModule } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
@@ -13,12 +13,14 @@ import { CommonModule } from '@angular/common';
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.css'],
   standalone: true,
-  imports: [TranslateModule,FormsModule,CommonModule],
+  imports: [TranslateModule, FormsModule, CommonModule],
 })
-export class ContactComponent implements OnInit {
+export class ContactComponent implements OnInit, OnDestroy {
   isSending = false;
 
   sendButtonText = '';
+
+  translateSendButtonSub: Subscription;
 
   constructor(
     private toastr: ToastrService,
@@ -28,11 +30,12 @@ export class ContactComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.translateSendButtonService.translateSendButton.subscribe(() => {
-      this.translate.get('contact.send').subscribe((res: string) => {
-        this.sendButtonText = res;
+    this.translateSendButtonSub =
+      this.translateSendButtonService.translateSendButton.subscribe(() => {
+        this.translate.get('contact.send').subscribe((res: string) => {
+          this.sendButtonText = res;
+        });
       });
-    });
     this.translateSendButtonService.translateSendButton.next();
   }
 
@@ -73,5 +76,9 @@ export class ContactComponent implements OnInit {
           });
         }
       );
+  }
+
+  ngOnDestroy(): void {
+    this.translateSendButtonSub.unsubscribe();
   }
 }

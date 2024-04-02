@@ -1,4 +1,4 @@
-<section
+<section id="header"
   class="flex min-h-[calc(100%-40px)] xl:h-[calc(100%-40px)] bg-blue-400 gap-16 flex-col xl:flex-row px-4 sm:px-0"
 >
   <dialog
@@ -51,7 +51,7 @@
   </div>
   <div class="flex flex-col w-full relative xl:overflow-y-auto">
     <button
-      class="xl:self-start self-center max-w-48 mx-6 mt-4 mb-2 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded shadow"
+      class="xl:self-start self-center max-w-48 mx-6 mt-4 mb-2 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded shadow cursor-pointer"
       (click)="onCreatePost()"
     >
       {{ "gimmicks.guestbook.createComment" | translate }}

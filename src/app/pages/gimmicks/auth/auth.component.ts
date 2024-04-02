@@ -1,33 +1,13 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Router, RouterModule } from '@angular/router';
-import { AuthService } from './auth.service';
-import { Subscription, exhaustMap, take } from 'rxjs';
-import { CommonModule } from '@angular/common';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { JokesBookComponent } from './jokes-book/jokes-book.component';
+import { StripeComponent } from './stripe/stripe.component';
 
 @Component({
   selector: 'app-auth',
   standalone: true,
-  imports: [RouterModule, CommonModule],
+  imports: [RouterModule, JokesBookComponent,StripeComponent],
   templateUrl: './auth.component.html',
   styleUrl: './auth.component.css',
 })
-export class AuthComponent implements OnInit, OnDestroy {
-  isAuthenticated = false;
-  private authUserSub: Subscription;
-  constructor(private authService: AuthService, private router: Router) {}
-
-  ngOnInit(): void {
-    this.authUserSub = this.authService.authUser.subscribe((authUser) => {
-      this.isAuthenticated = !!authUser;
-    });
-  }
-
-  onLogout() {
-    this.authService.logout();
-  }
-
-  ngOnDestroy(): void {
-    this.authUserSub.unsubscribe();
-  }
-}
+export class AuthComponent {}

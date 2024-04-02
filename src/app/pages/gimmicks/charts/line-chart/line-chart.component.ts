@@ -5,6 +5,7 @@ import {
   Component,
   HostListener,
   Input,
+  OnDestroy,
   OnInit,
   ViewChild,
 } from '@angular/core';
@@ -19,6 +20,7 @@ import {
 } from '@ionic/angular/standalone';
 import { CommonModule } from '@angular/common';
 import { ChartsHelperService } from '../charts-helper.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-line-chart',
@@ -35,7 +37,7 @@ import { ChartsHelperService } from '../charts-helper.service';
   styleUrl: './line-chart.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LineChartComponent implements OnInit, AfterViewInit {
+export class LineChartComponent implements OnInit, OnDestroy, AfterViewInit {
   lineChartType: ChartType = 'line';
 
   @ViewChild(BaseChartDirective) chart?: BaseChartDirective;
@@ -64,6 +66,9 @@ export class LineChartComponent implements OnInit, AfterViewInit {
 
   showUser: boolean[];
 
+  private chartsDetectChangesSub: Subscription;
+  private translateSub: Subscription;
+
   constructor(
     private translate: TranslateService,
     private cdr: ChangeDetectorRef,
@@ -72,11 +77,12 @@ export class LineChartComponent implements OnInit, AfterViewInit {
 
   async ngOnInit() {
     this.showUser = Array(this.users.length).fill(true);
-    this.chartsHelperService.detectChanges.subscribe(() => {
-      this.cdr.detectChanges();
-      this.chart.render();
-    });
-    this.translate.onLangChange.subscribe(() => {
+    this.chartsDetectChangesSub =
+      this.chartsHelperService.detectChanges.subscribe(() => {
+        this.cdr.detectChanges();
+        this.chart.render();
+      });
+    this.translateSub = this.translate.onLangChange.subscribe(() => {
       this.cdr.detectChanges();
     });
 
@@ -289,5 +295,10 @@ export class LineChartComponent implements OnInit, AfterViewInit {
 
   onChangeKindOfConsumption(event) {
     this.kindOfConsumption = event.detail.value;
+  }
+
+  ngOnDestroy(): void {
+    this.chartsDetectChangesSub.unsubscribe();
+    this.translateSub.unsubscribe();
   }
 }
