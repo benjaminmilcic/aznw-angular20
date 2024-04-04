@@ -6,9 +6,8 @@ import { Subject } from 'rxjs';
 })
 export class ChartsHelperService {
   detectChanges = new Subject<void>();
-
   periodChange = new Subject<number>();
-
   yearChange = new Subject<'2022' | '2023'>();
   kindOfConsumptionChange = new Subject<'electricity' | 'water' | 'gas'>();
+  usersChange = new Subject<void>();
 }

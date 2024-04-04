@@ -111,6 +111,7 @@ export class ChartsComponent implements OnInit {
     this.newUser = null;
     this.drawer.close();
     this.chartsHelperService.detectChanges.next();
+    this.chartsHelperService.usersChange.next();
   }
 
   getYearlyConsumption(user: User, part: string) {
@@ -169,6 +170,7 @@ export class ChartsComponent implements OnInit {
             );
             this.users.splice(userIndex, 1);
             this.chartsHelperService.detectChanges.next();
+            this.chartsHelperService.usersChange.next();
           },
         },
       ],

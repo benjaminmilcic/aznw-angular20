@@ -68,7 +68,8 @@
       "map": "Karte",
       "calendar": "Kalender",
       "guestbook": "Gästebuch",
-      "charts": "Diagramme"
+      "charts": "Diagramme",
+      "jokes":"Witze"
     },
     "overview": {
       "header": "Bisher habe ich Unternehmensanwendungen erstellt, auf die nur mit Login und Passwort zugegriffen werden kann. Deshalb finden Sie hier Gimmicks, die mein Können unter Beweis stellen.",
@@ -82,7 +83,8 @@
       "open": "Öffnen",
       "charts": "Diagramme",
       "fileUpload": "Datei Upload",
-      "print": "Drucken"
+      "print": "Drucken",
+      "imageManipulation":"Bildbearbeitung"
     },
     "map": {
       "search": "Stadtsuche...",
@@ -173,7 +175,14 @@
       "reallyDelete": "Möchten Sie diesen Benutzer wirklich löschen?",
       "user": "Benutzer",
       "image": "hochladen",
-      "upload": "Bild"
+      "upload": "Bild",
+      "mustUploadImage": "Sie müssen ein Bild hochladen",
+      "mustEnterName": "Sie müssen einen Namen eingeben",
+      "nameExist": "Der Name existiert bereits"
+    },
+    "jokes":{
+      "auth": "Google Firebase Authentifizierung und Autorisierung",
+      "stripe": "Stripe Bezahlsystem"
     }
   },
   "pageNotFound": {

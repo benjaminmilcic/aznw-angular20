@@ -2,23 +2,64 @@
   <div class="relative flex flex-col gap-4 w-[600px]">
     <div class="flex bg-white rounded shadow mt-8 px-8 pb-8 gap-8">
       <app-jokes-book></app-jokes-book>
-      <div class="mt-8">
+      <div class="mt-8" id="container">
         I wrote a book with jokes, in pairs of german and croatian language. You
         can read some of them when you login down here. You can create an
         account by yourself or just use
-        <span class="font-bold">guest&commat;guest.com</span> for email and
-        <span class="font-bold">guest123</span> for password.
+        <span class="font-bold">guest&commat;guest.com</span>
+        <span (click)="copyToClipboard('guest@guest.com', $event)">
+          <i
+            class="fa-regular fa-clipboard ml-1 hover:text-green-500 cursor-pointer"
+          ></i
+        ></span>
+        for email and <span class="font-bold">guest123</span
+        ><span (click)="copyToClipboard('guest123', $event)">
+          <i
+            class="fa-regular fa-clipboard ml-1 hover:text-green-500 cursor-pointer"
+          ></i
+        ></span>
+        for password.
         <br />
         <br />
         There is also a form for ordering the book using the
         <a href="https://stripe.com/" target="_blank">stripe service</a>. But
         because this is only a demontration website you can not really order the
         book with this form. If you want to try out the functionality just enter
-        any address, <span class="font-bold">4242 4242 4242 4242</span> as the
-        card number, any future date as expiration and any 3-digit number as
-        CVC.
-        <br />
-        This is a test card provided from the stripe service.
+        any address, one of the following test cards provided from the stripe
+        service to simulate a payment
+        <div class="bg-gray-300 rounded p-2 text-xs grid grid-cols-2">
+          <div class="text-blue-500 mb-1">Payment succeeds</div>
+          <div class="text-blue-500 flex">
+            <div>4242 4242 4242 4242</div>
+            <div (click)="copyToClipboard('4242 4242 4242 4242', $event)">
+              <i
+                class="fa-regular fa-clipboard ml-1 hover:text-blue-700 cursor-pointer"
+              ></i>
+            </div>
+          </div>
+          <div class="text-orange-500 mb-1">
+            Payment requires authentication
+          </div>
+          <div class="text-orange-500 flex">
+            <div>4000 0025 0000 3155</div>
+            <div (click)="copyToClipboard('4000 0025 0000 3155', $event)">
+              <i
+                class="fa-regular fa-clipboard ml-1 hover:text-blue-700 cursor-pointer"
+              ></i>
+            </div>
+          </div>
+          <div class="text-red-500">Payment is declined</div>
+          <div class="text-red-500 flex">
+            <div>4000 0000 0000 9995</div>
+            <div (click)="copyToClipboard('4000 0000 0000 9995', $event)">
+              <i
+                class="fa-regular fa-clipboard ml-1 hover:text-blue-700 cursor-pointer"
+              ></i>
+            </div>
+          </div>
+        </div>
+        , any future date as expiration and any 3-digit number as CVC.
+
         <br />
         <br />
         If you really want to read my book, you can order it on amazon with

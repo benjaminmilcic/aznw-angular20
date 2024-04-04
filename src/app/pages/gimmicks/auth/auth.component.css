@@ -18,32 +18,3 @@ section:before {
   background-position: 50% 0;
   background-size: cover;
 }
-
-/* .vl {
-  border-left: 4px solid white;
-  margin-top: 40px;
-  margin-bottom: 40px;
-  position: relative;
-}
-
-.vl:before {
-  content: '';
- position: absolute;
- background-color: white;
- width: 20px;
- height: 20px;
- top: 0;
- left: -12px;
- border-radius: 50%;
-}
-
-.vl:after {
-  content: '';
- position: absolute;
- background-color: white;
- width: 20px;
- height: 20px;
- top: calc(100% - 20px);
- left: -12px;
- border-radius: 50%;
-} */

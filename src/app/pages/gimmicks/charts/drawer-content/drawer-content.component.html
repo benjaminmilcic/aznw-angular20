@@ -1,11 +1,11 @@
 <div class="flex justify-end my-4 mr-4">
-  <button (click)="closeDrawer.emit()" class="hover:scale-150 cursor-pointer bg-white">
+  <button (click)="onClose()" class="hover:scale-150 cursor-pointer bg-white">
     <i class="fa-solid fa-xmark text-lg"></i>
   </button>
 </div>
 <div class="flex items-center">
   <div class="relative mr-2 sm:mr-4">
-    <img *ngIf="user.image" [src]="user.image" class="w-32 sm:w-40 rounded-full" />
+    <img *ngIf="user.image" [src]="user.image" class="w-32 sm:w-36 rounded-full" />
     <div
       *ngIf="!user.image"
       class="w-32 h-32 sm:w-36 sm:h-36 bg-gray-400 rounded-full text-white flex flex-col justify-center items-center"

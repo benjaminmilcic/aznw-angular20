@@ -16,7 +16,7 @@ import {
   IonFab,
   ModalController,
 } from '@ionic/angular/standalone';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { User } from '../user.model.js';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
@@ -75,7 +75,10 @@ export class DrawerContentComponent implements OnInit {
 
   errorMessage: string = null;
 
-  constructor(private modalCtrl: ModalController) {}
+  constructor(
+    private modalCtrl: ModalController,
+    private translate: TranslateService
+  ) {}
 
   ngOnInit() {
     this.originalUser = JSON.parse(JSON.stringify(this.user));
@@ -100,26 +103,36 @@ export class DrawerContentComponent implements OnInit {
     this.userConsumptions.setValue([...userByYear]);
   }
 
+  onClose() {
+    this.errorMessage = null;
+    this.closeDrawer.emit();
+  }
+
   onSaveUser() {
     this.user.name = this.user.name.trim();
 
     if (!this.user.image) {
-      this.errorMessage = 'You must upload an image';
+      this.errorMessage = this.translate.instant(
+        'gimmicks.charts.mustUploadImage'
+      );
       return;
     }
     if (!this.user.name) {
-      this.errorMessage = 'You must enter a name';
+      this.errorMessage = this.translate.instant(
+        'gimmicks.charts.mustEnterName'
+      );
       return;
     }
     if (
       this.userNames.includes(this.user.name) &&
       this.user.name !== this.originalUserName
     ) {
-      this.errorMessage = 'This name already exist';
+      this.errorMessage = this.translate.instant('gimmicks.charts.nameExist');
       return;
     }
 
     this.user[this.year] = this.userConsumptions.value;
+    this.errorMessage=null;
     this.saveUser.emit(this.user);
   }
 
@@ -149,9 +162,13 @@ export class DrawerContentComponent implements OnInit {
     const modal = await this.modalCtrl.create({
       component: ImageCropperComponent,
       backdropDismiss: false,
+      componentProps: {
+        imageUrl:this.user.image
+      },
     });
-    modal.onDidDismiss().then(async (data) => {
+    modal.onDidDismiss().then((data) => {
       if (data.role === 'save') {
+        this.user.image = data.data;
       }
     });
     await modal.present();

@@ -7,6 +7,7 @@ import {
   ViewChild,
 } from '@angular/core';
 import {
+  FormsModule,
   ReactiveFormsModule,
   UntypedFormBuilder,
   Validators,
@@ -17,9 +18,11 @@ import { MatInputModule } from '@angular/material/input';
 import {
   injectStripe,
   NgxStripeModule,
+  StripeElementsDirective,
   StripePaymentElementComponent,
 } from 'ngx-stripe';
 import {
+  StripeElementLocale,
   StripeElementsOptions,
   StripePaymentElementOptions,
 } from '@stripe/stripe-js';
@@ -27,6 +30,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { CommonModule } from '@angular/common';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { lastValueFrom } from 'rxjs';
+import { TranslateService } from '@ngx-translate/core';
+import { IonSpinner } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-stripe',
@@ -37,6 +42,8 @@ import { lastValueFrom } from 'rxjs';
     CommonModule,
     NgxStripeModule,
     MatInputModule,
+    FormsModule,
+    IonSpinner,
   ],
   templateUrl: './stripe.component.html',
   styleUrl: './stripe.component.css',
@@ -44,17 +51,16 @@ import { lastValueFrom } from 'rxjs';
 export class StripeComponent implements OnInit {
   @ViewChild(StripePaymentElementComponent)
   paymentElement!: StripePaymentElementComponent;
+  @ViewChild(StripeElementsDirective) elements!: StripeElementsDirective;
+
+  viewType: 'payment' | 'success' | 'error' = 'payment';
+  error: string = null;
 
   @ViewChild('nameInput') nameInput: ElementRef;
-  nameError = false;
   @ViewChild('emailInput') emailInput: ElementRef;
-  emailError = false;
   @ViewChild('streetInput') streetInput: ElementRef;
-  streetError = false;
   @ViewChild('zipCodeInput') zipCodeInput: ElementRef;
-  zipCodeError = false;
   @ViewChild('cityInput') cityInput: ElementRef;
-  cityError = false;
 
   private readonly fb = inject(UntypedFormBuilder);
 
@@ -68,7 +74,7 @@ export class StripeComponent implements OnInit {
   });
 
   elementsOptions: StripeElementsOptions = {
-    locale: 'en',
+    locale: <StripeElementLocale>this.translate.currentLang,
     clientSecret: null,
     appearance: {
       theme: 'flat',
@@ -85,15 +91,18 @@ export class StripeComponent implements OnInit {
   };
 
   // Replace with your own public key
-  stripe = injectStripe(
-    'pk_test_51P05azL6Qm22ltjdlDi75OKMXcdkImE9eB6U7pS709irbBgVW1OuvSEho05cYC3OdwAt4nJh2Zfike65t3OKhviN00RWkBd4Qa'
-  );
+  stripe = injectStripe();
   paying = signal(false);
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private translate: TranslateService) {}
 
   async ngOnInit() {
-    const items = [{ id: 'xl-tshirt' }];
+    this.translate.onLangChange.subscribe((lang) => {
+      this.elementsOptions.locale = <StripeElementLocale>lang.lang;
+      this.elements.update(this.elementsOptions);
+    });
+
+    const items = [{ items: 'book' }];
 
     try {
       const { clientSecret } = await lastValueFrom(
@@ -110,36 +119,26 @@ export class StripeComponent implements OnInit {
   }
 
   pay() {
-    this.nameError = false;
-    this.emailError = false;
-    this.streetError = false;
-    this.zipCodeError = false;
-    this.cityError = false;
     if (this.paymentElementForm.invalid) {
       if (this.paymentElementForm.controls['name'].invalid) {
         this.nameInput.nativeElement.focus();
         this.nameInput.nativeElement.blur();
-        this.nameError = true;
       }
       if (this.paymentElementForm.controls['email'].invalid) {
         this.emailInput.nativeElement.focus();
         this.emailInput.nativeElement.blur();
-        this.emailError = true;
       }
       if (this.paymentElementForm.controls['address'].invalid) {
         this.streetInput.nativeElement.focus();
         this.streetInput.nativeElement.blur();
-        this.streetError = true;
       }
       if (this.paymentElementForm.controls['zipcode'].invalid) {
         this.zipCodeInput.nativeElement.focus();
         this.zipCodeInput.nativeElement.blur();
-        this.zipCodeError = true;
       }
       if (this.paymentElementForm.controls['city'].invalid) {
         this.cityInput.nativeElement.focus();
         this.cityInput.nativeElement.blur();
-        this.cityError = true;
       }
       return;
     }
@@ -175,16 +174,24 @@ export class StripeComponent implements OnInit {
         this.paying.set(false);
         if (result.error) {
           // Show error to your customer (e.g., insufficient funds)
-          alert({ success: false, error: result.error.message });
-          console.log(result.error.message);
+          this.viewType = 'error';
+          this.error = result.error.message;
         } else {
           // The payment has been processed!
           if (result.paymentIntent.status === 'succeeded') {
             // Show a success message to your customer
-            alert({ success: true });
-            console.log('succeed');
+            this.viewType = 'success';
           }
         }
       });
+  }
+
+  onTryAgain() {
+    this.viewType = 'payment';
+    this.paymentElementForm.controls['name'].setValue('');
+    this.paymentElementForm.controls['email'].setValue('');
+    this.paymentElementForm.controls['address'].setValue('');
+    this.paymentElementForm.controls['zipcode'].setValue('');
+    this.paymentElementForm.controls['city'].setValue('');
   }
 }

@@ -83,3 +83,12 @@ button.alert-button.alert-button-confirm {
 button.alert-button.alert-button-confirm:hover {
   background-color: rgb(220, 38, 38);
 }
+
+.cropper-crop-box, .cropper-view-box {
+    border-radius: 50%;
+}
+
+.cropper-view-box {
+    box-shadow: 0 0 0 1px #39f;
+    outline: 0;
+}

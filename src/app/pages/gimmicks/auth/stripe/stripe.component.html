@@ -1,5 +1,15 @@
-<div class="p-8 shadow bg-white rounded w-[400px] m-8 relativ">
-  <div [formGroup]="paymentElementForm" class="flex flex-col">
+<div class="p-8 shadow bg-white rounded w-[420px] m-8 relativ">
+  <div
+    *ngIf="elementsOptions.clientSecret && viewType === 'payment'"
+    [formGroup]="paymentElementForm"
+    class="flex flex-col"
+  >
+    <div class="flex justify-center mb-4 text-lg">
+      Order the book for only&nbsp;<span
+        class="bg-green-300 rounded-lg text-blue-600 px-2"
+        >14.98 Euro</span
+      >
+    </div>
     <div class="flex gap-4 items-center mb-4">
       <div class="w-16">Name:</div>
       <mat-form-field
@@ -8,7 +18,6 @@
         class="w-full"
       >
         <input #nameInput matInput formControlName="name" />
-        <mat-hint *ngIf="nameError" class="text-red-600">Name ist Pflicht!</mat-hint>
       </mat-form-field>
     </div>
     <div class="flex gap-4 items-center mb-4">
@@ -19,7 +28,6 @@
         class="w-full"
       >
         <input #emailInput matInput type="email" formControlName="email" />
-        <mat-hint *ngIf="emailError" class="text-red-600">Email ist Pflicht!</mat-hint>
       </mat-form-field>
     </div>
     <div class="flex gap-4 items-center mb-4">
@@ -30,7 +38,6 @@
         class="w-full"
       >
         <input #streetInput matInput formControlName="address" />
-        <mat-hint *ngIf="streetError" class="text-red-600">Straße ist Pflicht!</mat-hint>
       </mat-form-field>
     </div>
     <div class="flex gap-4 items-center mb-4">
@@ -41,7 +48,6 @@
         class="w-full"
       >
         <input #zipCodeInput matInput formControlName="zipcode" />
-        <mat-hint *ngIf="zipCodeError" class="text-red-600">PLZ ist Pflicht!</mat-hint>
       </mat-form-field>
     </div>
     <div class="flex gap-4 items-center mb-4">
@@ -52,17 +58,49 @@
         class="w-full"
       >
         <input #cityInput matInput formControlName="city" />
-        <mat-hint *ngIf="cityError" class="text-red-600">Stadt ist Pflicht!</mat-hint>
       </mat-form-field>
     </div>
-
-    <ngx-stripe-elements
-      *ngIf="elementsOptions.clientSecret"
-      [stripe]="stripe"
-      [elementsOptions]="elementsOptions"
-    >
+    <ngx-stripe-elements [stripe]="stripe" [elementsOptions]="elementsOptions">
       <ngx-stripe-payment [options]="paymentElementOptions" />
     </ngx-stripe-elements>
-    <button  (click)="pay()">PAY</button>
+    <button (click)="pay()">
+      PAY  14.98 Euro
+    </button>
+  </div>
+  <div
+    *ngIf="!elementsOptions.clientSecret && viewType === 'payment'"
+    class="bg-red-300 text-white p-4 rounded"
+  >
+    Das Stripe Bezahlsystem konnte nicht geladen werden.
+  </div>
+  <div *ngIf="viewType === 'success'" class="bg-green-300 p-4 rounded">
+    <div>Congratualtion!</div>
+    <div class="mb-4">You ordered the book. It will be shipped to:</div>
+    <div>{{ paymentElementForm.controls["name"].value }}</div>
+    <div>{{ paymentElementForm.controls["address"].value }}</div>
+    <div class="flex gap-2">
+      <div>{{ paymentElementForm.controls["zipcode"].value }}</div>
+      <div>{{ paymentElementForm.controls["city"].value }}</div>
+    </div>
+    <br /><br />
+    <button
+      (click)="onTryAgain()"
+      class="hover:bg-blue-600 text-white px-4 py-2 rounded shadow cursor-pointer"
+    >
+      OK
+    </button>
+  </div>
+
+  <div *ngIf="viewType === 'error'" class="bg-red-300 p-4 rounded">
+    Die Bezahlung konnte nicht ausgeführt werden!
+    <br /><br />
+    {{ error }}
+    <br /><br />
+    <button
+      (click)="onTryAgain()"
+      class="hover:bg-blue-600 text-white px-4 py-2 rounded shadow cursor-pointer"
+    >
+      Try again
+    </button>
   </div>
 </div>

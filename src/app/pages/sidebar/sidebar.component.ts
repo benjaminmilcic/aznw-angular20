@@ -14,7 +14,7 @@ import { RouterModule } from '@angular/router';
 export class SidebarComponent {
   sidebarActivated: boolean = false;
 
-  language: 'de' | 'en' = 'en';
+  language: string = this.translate.currentLang;
 
   constructor(
     private translate: TranslateService,

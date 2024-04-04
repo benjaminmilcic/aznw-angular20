@@ -68,6 +68,7 @@ export class LineChartComponent implements OnInit, OnDestroy, AfterViewInit {
 
   private chartsDetectChangesSub: Subscription;
   private translateSub: Subscription;
+  private usersChangeSub: Subscription;
 
   constructor(
     private translate: TranslateService,
@@ -77,6 +78,13 @@ export class LineChartComponent implements OnInit, OnDestroy, AfterViewInit {
 
   async ngOnInit() {
     this.showUser = Array(this.users.length).fill(true);
+    this.usersChangeSub = this.chartsHelperService.usersChange.subscribe(() => {
+      this.showUser = Array(this.users.length).fill(true);
+      this.legendColors = <any>(
+        this.chart.data.datasets.map((dataset) => dataset.borderColor)
+      );
+      this.cdr.detectChanges();
+    });
     this.chartsDetectChangesSub =
       this.chartsHelperService.detectChanges.subscribe(() => {
         this.cdr.detectChanges();
@@ -162,7 +170,7 @@ export class LineChartComponent implements OnInit, OnDestroy, AfterViewInit {
         image.src = this.users[tooltip.dataPoints[i].datasetIndex].image;
         image.width = 34;
         image.height = 34;
-        image.style.borderRadius='50%'
+        image.style.borderRadius = '50%';
 
         const tr = document.createElement('tr');
         tr.style.backgroundColor = 'inherit';
@@ -204,10 +212,16 @@ export class LineChartComponent implements OnInit, OnDestroy, AfterViewInit {
     tooltipEl.style.opacity = '1';
     let rect = tooltipEl.getClientRects();
 
-    tooltipEl.style.left =
-      positionX + tooltip.caretX - rect[0].width / 2 - 10 + 'px';
+    if (tooltip.caretX > rect[0].width) {
+      tooltipEl.style.left =
+        positionX + tooltip.caretX - rect[0].width / 2 - 10 + 'px';
+    } else {
+      tooltipEl.style.left =
+        positionX + tooltip.caretX + rect[0].width / 2 + 10 + 'px';
+    }
     tooltipEl.style.top =
       positionY + tooltip.caretY - rect[0].height / 2 + 'px';
+
     tooltipEl.style.font = tooltip.options.bodyFont.string;
     tooltipEl.style.padding =
       tooltip.options.padding + 'px ' + tooltip.options.padding + 'px';
@@ -218,9 +232,15 @@ export class LineChartComponent implements OnInit, OnDestroy, AfterViewInit {
     arrow.style.background = 'rgba(0, 0, 0, 0.9)';
     arrow.style.position = 'absolute';
     arrow.style.clipPath = 'polygon(50% 0, 100% 100%, 0 100%)';
-    arrow.style.rotate = '90deg';
+    if (tooltip.caretX > rect[0].width) { 
+      arrow.style.rotate = '90deg';
+      arrow.style.right = '-10px';
+    } else {
+      arrow.style.rotate = '270deg';
+      arrow.style.left = '-10px';
+    }
+
     arrow.style.top = rect[0].height / 2 - 5 + 'px';
-    arrow.style.right = '-10px';
     for (let index = 1; index < tooltipEl.childNodes.length; index++) {
       tooltipEl.removeChild(tooltipEl.childNodes[index]);
     }
@@ -300,5 +320,6 @@ export class LineChartComponent implements OnInit, OnDestroy, AfterViewInit {
   ngOnDestroy(): void {
     this.chartsDetectChangesSub.unsubscribe();
     this.translateSub.unsubscribe();
+    this.usersChangeSub.unsubscribe();
   }
 }

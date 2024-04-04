@@ -68,7 +68,8 @@
       "map": "Map",
       "calendar": "Calendar",
       "guestbook": "Guestbook",
-      "charts": "Charts"
+      "charts": "Charts",
+      "jokes": "Jokes"
     },
     "overview": {
       "header": "So far I have created enterprise applications that can only be accessed with a login and password. That's why you'll find gimmicks here that demonstrate my skills.",
@@ -82,7 +83,8 @@
       "open": "Open",
       "charts": "Charts",
       "fileUpload": "File upload",
-      "print": "Printing"
+      "print": "Printing",
+      "imageManipulation":"Image manipulation"
     },
     "map": {
       "search": "Search a city...",
@@ -173,7 +175,14 @@
       "reallyDelete": "Do you really want to delete this user?",
       "user": "User",
       "image": "image",
-      "upload": "Upload"
+      "upload": "Upload",
+      "mustUploadImage": "You must upload an image",
+      "mustEnterName": "You must enter a name",
+      "nameExist": "This name already exist"
+    },
+    "jokes":{
+      "auth":"Google Firebase authentication and authorization",
+      "stripe":"Stripe payment"
     }
   },
   "pageNotFound": {

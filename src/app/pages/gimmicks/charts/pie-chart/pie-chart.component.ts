@@ -37,7 +37,7 @@ import { Subscription } from 'rxjs';
   styleUrl: './pie-chart.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class PieChartComponent implements OnInit,OnDestroy, AfterViewInit {
+export class PieChartComponent implements OnInit, OnDestroy, AfterViewInit {
   @Input() users: User[];
 
   @ViewChild(BaseChartDirective) chart: BaseChartDirective | undefined;
@@ -46,6 +46,7 @@ export class PieChartComponent implements OnInit,OnDestroy, AfterViewInit {
   private kindOfConsumptionChangeSub: Subscription;
   private yearChangeSub: Subscription;
   private chartsDetectChangesSub: Subscription;
+  private usersChangeSub: Subscription;
 
   constructor(
     private cdr: ChangeDetectorRef,
@@ -63,6 +64,12 @@ export class PieChartComponent implements OnInit,OnDestroy, AfterViewInit {
   legendColors: string[] = [];
 
   ngOnInit(): void {
+    this.usersChangeSub = this.chartsHelperService.usersChange.subscribe(() => {
+      this.legendColors = <any>(
+        this.chart.data.datasets.map((dataset) => dataset.borderColor)
+      );
+      this.cdr.detectChanges();
+    });
     this.periodChangeSub = this.chartsHelperService.periodChange.subscribe(
       (data) => {
         this.period = data;
@@ -206,7 +213,7 @@ export class PieChartComponent implements OnInit,OnDestroy, AfterViewInit {
         image.src = this.users[tooltip.dataPoints[i].dataIndex].image;
         image.width = 34;
         image.height = 34;
-        image.style.borderRadius='50%'
+        image.style.borderRadius = '50%';
 
         const tr = document.createElement('tr');
         tr.style.backgroundColor = 'inherit';
@@ -248,8 +255,13 @@ export class PieChartComponent implements OnInit,OnDestroy, AfterViewInit {
     tooltipEl.style.opacity = '1';
     let rect = tooltipEl.getClientRects();
 
-    tooltipEl.style.left =
-      positionX + tooltip.caretX - rect[0].width / 2 - 10 + 'px';
+   if (tooltip.caretX > rect[0].width) {
+     tooltipEl.style.left =
+       positionX + tooltip.caretX - rect[0].width / 2 - 10 + 'px';
+   } else {
+     tooltipEl.style.left =
+       positionX + tooltip.caretX + rect[0].width / 2 + 10 + 'px';
+   }
     tooltipEl.style.top =
       positionY + tooltip.caretY - rect[0].height / 2 + 'px';
     tooltipEl.style.font = tooltip.options.bodyFont.string;
@@ -262,9 +274,14 @@ export class PieChartComponent implements OnInit,OnDestroy, AfterViewInit {
     arrow.style.background = 'rgba(0, 0, 0, 0.9)';
     arrow.style.position = 'absolute';
     arrow.style.clipPath = 'polygon(50% 0, 100% 100%, 0 100%)';
-    arrow.style.rotate = '90deg';
+    if (tooltip.caretX > rect[0].width) {
+      arrow.style.rotate = '90deg';
+      arrow.style.right = '-10px';
+    } else {
+      arrow.style.rotate = '270deg';
+      arrow.style.left = '-10px';
+    }
     arrow.style.top = rect[0].height / 2 - 5 + 'px';
-    arrow.style.right = '-10px';
     for (let index = 1; index < tooltipEl.childNodes.length; index++) {
       tooltipEl.removeChild(tooltipEl.childNodes[index]);
     }
@@ -291,5 +308,6 @@ export class PieChartComponent implements OnInit,OnDestroy, AfterViewInit {
     this.kindOfConsumptionChangeSub.unsubscribe();
     this.yearChangeSub.unsubscribe();
     this.chartsDetectChangesSub.unsubscribe();
+    this.usersChangeSub.unsubscribe();
   }
 }

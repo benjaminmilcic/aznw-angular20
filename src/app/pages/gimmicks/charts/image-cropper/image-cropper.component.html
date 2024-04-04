@@ -1,6 +1,6 @@
 <ion-header>
-  <ion-toolbar color="danger">
-    <ion-title>Titel</ion-title>
+  <ion-toolbar color="primary" class="bg-blue-700 text-white">
+    <ion-title>Update User Image</ion-title>
     <ion-buttons slot="end">
       <ion-button (click)="close()">
         <i class="fa-solid fa-xmark text-lg"></i>
@@ -9,22 +9,89 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <input
-    type="file"
-    accept="image/*"
-    hidden
-    (change)="onFileSelected($event)"
-    #fileUpload
-  />
-  <button
-    class="bg-blue-500 hover:bg-blue-600 text-white px-2 py-2 rounded shadow cursor-pointer"
-    (click)="fileUpload.click()"
-  >
-    <i class="fa-solid fa-pen"></i>
-  </button>
+  <div *ngIf="imageUrl" class="flex flex-col gap-2 mt-4">
+    <div class="flex justify-center gap-8">
+      <button
+        class="bg-green-500 hover:bg-green-600 text-white rounded shadow cursor-pointer h-7"
+        (click)="moveLeft()"
+      >
+        <mat-icon>arrow_left</mat-icon>
+      </button>
+      <button
+        class="bg-green-500 hover:bg-green-600 text-white rounded shadow cursor-pointer h-7"
+        (click)="moveRight()"
+      >
+      <mat-icon>arrow_right</mat-icon>
+      </button>
+    </div>
+    <div class="flex justify-center items-center gap-2">
+      <div class="h-full flex flex-col gap-8">
+        <button
+          class="bg-green-500 hover:bg-green-600 text-white rounded shadow cursor-pointer"
+          (click)="zoomIn()"
+        >
+          <mat-icon>zoom_in</mat-icon>
+        </button>
+        <button
+          class="bg-green-500 hover:bg-green-600 text-white rounded shadow cursor-pointer"
+          (click)="zoomOut()"
+        >
+          <mat-icon>zoom_out</mat-icon>
+        </button>
+      </div>
+      <div>
+        <angular-cropper
+          #cropper
+          [cropperOptions]="config"
+          [imageUrl]="imageUrl"
+        ></angular-cropper>
+      </div>
+      <div class="h-full flex flex-col justify-center gap-8">
+        <button
+          class="bg-green-500 hover:bg-green-600 text-white rounded shadow cursor-pointer h-7"
+          (click)="moveUp()"
+        >
+          <mat-icon>arrow_drop_up</mat-icon>
+        </button>
+        <button
+          class="bg-green-500 hover:bg-green-600 text-white  rounded shadow cursor-pointer h-7"
+          (click)="moveDown()"
+        >
+          <mat-icon>arrow_drop_down</mat-icon>
+        </button>
+      </div>
+    </div>
+    <div class="flex justify-center">
+      <button
+        class="bg-green-500 hover:bg-green-600 text-white px-2 py-2 rounded shadow cursor-pointer"
+        (click)="reset()"
+      >
+        Reset
+      </button>
+    </div>
+  </div>
 </ion-content>
 <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-  <ion-fab-button (click)="save()" class="mt-4">
-    <i class="fa-solid fa-floppy-disk text-2xl"></i>
-  </ion-fab-button>
+  <div class="flex gap-4">
+    <input
+      type="file"
+      accept="image/*"
+      hidden
+      (change)="onFileSelected($event)"
+      #fileUpload
+    />
+    <button
+      class="bg-blue-500 hover:bg-blue-600 text-white px-2 py-2 rounded shadow cursor-pointer"
+      (click)="fileUpload.click()"
+    >
+      Upload Image
+    </button>
+    <button
+      class="bg-blue-500 hover:bg-blue-600 disabled:bg-blue-300 text-white px-2 py-2 rounded shadow cursor-pointer"
+      (click)="save()"
+      [disabled]="!imageUrl"
+    >
+      Save Cropped Image
+    </button>
+  </div>
 </ion-fab>

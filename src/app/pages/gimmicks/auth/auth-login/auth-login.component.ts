@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -26,12 +26,47 @@ export class AuthLoginComponent implements OnInit {
   isLoginMode = true;
   isLoading = false;
   error: string = null;
+  @ViewChild('emailInput') emailInput: ElementRef;
+  @ViewChild('passwordInput') passwordInput: ElementRef;
+  @ViewChild('emailInput2') emailInput2: ElementRef;
+  @ViewChild('passwordInput2') passwordInput2: ElementRef;
+  @ViewChild('confirmInput') confirmInput: ElementRef;
+  passwordError: string = null;
   constructor(private authService: AuthService, private router: Router) {}
   ngOnInit() {}
 
   onSwitchMode() {
     this.error = null;
+    this.passwordError = null;
     this.isLoginMode = !this.isLoginMode;
+  }
+
+  onLogin(form: NgForm) {
+    if (form.controls['email'].invalid) {
+      this.emailInput.nativeElement.focus();
+      this.emailInput.nativeElement.blur();
+    }
+    if (form.controls['password'].invalid) {
+      this.passwordInput.nativeElement.focus();
+      this.passwordInput.nativeElement.blur();
+    }
+  }
+
+  onSignUp(form: NgForm) {
+    this.passwordError = null;
+    if (form.controls['email'].invalid) {
+      this.emailInput2.nativeElement.focus();
+      this.emailInput2.nativeElement.blur();
+    }
+    if (form.controls['password'].invalid) {
+      this.passwordInput2.nativeElement.focus();
+      this.passwordInput2.nativeElement.blur();
+      this.passwordError='Das Password muss mindestens 6 Zeichen lang sein'
+    }
+    if (form.controls['confirmPassword'].invalid) {
+      this.confirmInput.nativeElement.focus();
+      this.confirmInput.nativeElement.blur();
+    }
   }
 
   onSubmit(form: NgForm) {
@@ -51,7 +86,7 @@ export class AuthLoginComponent implements OnInit {
       if (password === confirmPassword) {
         authObs = this.authService.signup(email, password);
       } else {
-        this.error = 'Passwoerter stimmen nicht ueberein!'
+        this.error = 'Passwoerter stimmen nicht ueberein!';
         this.isLoading = false;
         return;
       }
