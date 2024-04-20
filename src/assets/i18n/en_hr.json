@@ -1,0 +1,233 @@
+{
+  "header": {
+    "developer": "Developer",
+    "findOutMore": "Saznaj više"
+  },
+  "about": {
+    "aboutMe": "O meni",
+    "text1": "Izrađivao sam web-stranice koristeći HTML, CSS, Javascript i PHP od kad sam bio tinejdžer.",
+    "text2": "U 2019. pohađao sam online tečajeve kako bih se profesionalno počeo baviti razvojem web stranica i mobilnih aplikacija.",
+    "text3": "Od tada radim kao freelancer za različite tvrtke.",
+    "text4": "i",
+    "text5": "Odgovoran sam za daljnji i novi razvoj složenih web stranica i mobilnih aplikacija.",
+    "text6": "Moj materinji jezik je njemački, ali također dobro govorim engleski i napredno hrvatski.",
+    "text7": "Oženjen sam i imam dijete.",
+    "mySkills": "Moje vještine",
+    "curriculumVitae": "životopis",
+    "downloadCV": "Ovdje preuzmite moj životopis"
+  },
+  "skills": {
+    "headline": "Programski jezici i alati",
+    "workplace": "Moje radno mjesto u mom kućnom uredu"
+  },
+  "portfolio": {
+    "contact": "Kontakt",
+    "vocabularyTrainer": {
+      "text1": "Web aplikacija za učenje hrvatskog jezika. Izrađeno s Angularom.",
+      "text2": "Android aplikacija za učenje hrvatskog jezika. Izrađen s Angular i Ionic.",
+      "sourceCode": "Izvorni kod"
+    },
+    "catchCups": {
+      "text1": "U ime tvrtke",
+      "text2": "Radio sam na mobilnoj aplikaciji koja procjenjuje podatke mjerenja iz sustava za navodnjavanje travnjaka. Aplikacija je napravljena pomoću Angular i Ionic."
+    },
+    "webaro": {
+      "text1": "Za tvrtku",
+      "text2": ", radio sam na daljnjem razvoju web aplikacije za učinkovito planiranje i evaluaciju podataka dronovima u poljoprivrednom sektoru. Realizirano s Angularom, u ime"
+    }
+  },
+  "contact": {
+    "headline": "Javimo se!",
+    "text1": "Jeste li spremni započeti svoj sljedeći projekt sa mnom?",
+    "text2": "Pošalji mi poruku!",
+    "firstName": "Ime",
+    "lastName": "Prezime",
+    "message": "Poruka",
+    "send": "Poslati",
+    "sending": "Slanje...",
+    "toast": {
+      "success": {
+        "headline": "U redu!",
+        "text": "Vaša poruka je poslana!"
+      },
+      "error": "Došlo je do greške, poruka nije poslana!"
+    }
+  },
+  "footer": {
+    "visitMe": "Posjetite me na"
+  },
+  "sidebar": {
+    "home": "Dom",
+    "aboutMe": "O meni",
+    "skills": "Vještine",
+    "contact": "Kontakt"
+  },
+  "gimmicks": {
+    "menu": {
+      "overview": "Pregled",
+      "map": "Karta",
+      "calendar": "Kalendar",
+      "guestbook": "Knjiga gostiju",
+      "charts": "Karte",
+      "jokes": "šale"
+    },
+    "overview": {
+      "header1": "Do sada sam izradio poslovne aplikacije kojima se može pristupiti samo uz prijavu i lozinku. Zato ćete naći",
+      "header2": "evo koje pokazuju moje vještine.",
+      "header3": " trikovi",
+      "elements": "Elementi",
+      "searchTypeahead": "Pretraživanje s upisivanjem unaprijed",
+      "table": "Tablica s sortiranjem, filtriranjem i paginacijom",
+      "resizable": "Element promjenjive veličine (na malim zaslonima)",
+      "scratchCard": "Ogrebana kartica",
+      "youtubePlayer": "Ugrađeni Youtube player",
+      "editor": "Ugrađeni uređivač bogatog teksta",
+      "open": "Otvoren",
+      "charts": "Karte",
+      "fileUpload": "Prijenos datoteke",
+      "print": "Ispis",
+      "imageManipulation": "Manipulacija slikom"
+    },
+    "map": {
+      "search": "Traži grad...",
+      "Baden-Württemberg": "Baden-Württemberg",
+      "Bayern": "Bavarska",
+      "Berlin": "Berlin",
+      "Brandenburg": "Brandenburg",
+      "Bremen": "Bremen",
+      "Hamburg": "Hamburg",
+      "Hessen": "Hesse",
+      "Mecklenburg-Vorpommern": "Mecklenburg-Zapadno Pomorje",
+      "Niedersachsen": "Donja Saska",
+      "Nordrhein-Westfalen": "Sjeverna Rajna-Vestfalija",
+      "Rheinland-Pfalz": "Porajnje-Falačka",
+      "Saarland": "Saarland",
+      "Sachsen": "Saska",
+      "Sachsen-Anhalt": "Saska-Anhalt",
+      "Schleswig-Holstein": "Schleswig-Holstein",
+      "Thüringen": "Tiringija",
+      "cities1": "Gradovi iz",
+      "cities2": "do",
+      "cities3": "Stanovnici",
+      "rang": "Rang",
+      "population": "Stanovnici",
+      "federalState": "Savezna država",
+      "cityInfo": "Informacije o gradu",
+      "noFunctions": "Karta je premala za funkcije. Povuci kartu malo veću!"
+    },
+    "calendar": {
+      "months": {
+        "january": "siječnja",
+        "february": "veljača",
+        "march": "ožujak",
+        "april": "travanj",
+        "may": "svibanj",
+        "june": "lipanj",
+        "july": "srpanj",
+        "august": "kolovoz",
+        "september": "rujan",
+        "october": "listopad",
+        "november": "studeni",
+        "december": "prosinac"
+      },
+      "holidays": {
+        "NEUJAHRSTAG": "NOVA GODINA",
+        "KARFREITAG": "DOBAR PETAK",
+        "OSTERMONTAG": "USKRŠNJI PONEDJELJAK",
+        "TAG_DER_ARBEIT": "PRAZNIK RADA",
+        "CHRISTIHIMMELFAHRT": "UZAŠAŠĆE",
+        "PFINGSTMONTAG": "DUHOVSKI PONEDJELJAK",
+        "DEUTSCHEEINHEIT": "DAN NJEMAČKOG JEDINSTVA",
+        "ERSTERWEIHNACHTSFEIERTAG": "BOŽIĆ",
+        "ZWEITERWEIHNACHTSFEIERTAG": "DAN ZA BOKS"
+      },
+      "workdays": "Radni dani",
+      "openQuiz": "Otvoreni kviz",
+      "closeQuiz": "Zatvori kviz",
+      "which": "Koji je praznik",
+      "answer": "Grebi za odgovor",
+      "mon": "pon",
+      "tue": "uto",
+      "wed": "oženiti se",
+      "thur": "čet",
+      "fri": "pet",
+      "sat": "sub",
+      "sun": "Sunce"
+    },
+    "guestbook": {
+      "createComment": "Napravite komentar",
+      "thanks": "Hvala što ste ostavili komentar",
+      "save": "Uštedjeti"
+    },
+    "charts": {
+      "monthlyConsumption": "Mjesečna potrošnja",
+      "yearlyConsumption": "Godišnja potrošnja",
+      "procentualConsumption": "Procentualna potrošnja",
+      "electricity": "Struja",
+      "water": "Voda",
+      "gas": "Plin",
+      "wholeYear": "Cijela godina",
+      "month": "Mjesec",
+      "save": "Uštedjeti",
+      "deleteUser": "Izbriši korisnika",
+      "editUser": "Uredi korisnika",
+      "addUser": "Dodaj korisnika",
+      "delete": "Izbrisati",
+      "cancel": "Otkazati",
+      "reallyDelete": "Želite li stvarno izbrisati ovog korisnika?",
+      "user": "Korisnik",
+      "image": "slika",
+      "upload": "Učitaj",
+      "mustUploadImage": "Morate učitati sliku",
+      "mustEnterName": "Morate unijeti ime",
+      "nameExist": "Ovo ime već postoji"
+    },
+    "jokes": {
+      "auth": "Google Firebase autentifikacija i autorizacija",
+      "stripe": "Stripe plaćanje",
+      "text1": "Napisao sam knjigu sa vicevima, u parovima njemačkog i hrvatskog jezika. Neke od njih možete pročitati kada se prijavite ovdje. Račun možete kreirati sami ili jednostavno koristiti",
+      "text2": "za e-poštu i",
+      "text3": "za lozinku.",
+      "text4": "Tu je i obrazac za naručivanje knjige putem",
+      "text5": "pruga usluga",
+      "text6": "Ali budući da je ovo samo pokazna web stranica, ne možete naručiti knjigu s ovim obrascem. Ako želite isprobati funkcionalnost samo unesite bilo koju adresu, jednu od sljedećih testnih kartica pružene od prugaste usluge za simulaciju plaćanja.",
+      "paymentSucceeds": "Uplata uspjela",
+      "paymentRequiresAuth": "Plaćanje zahtijeva autentifikaciju",
+      "paymentDeclined": "Plaćanje je odbijeno",
+      "text7": "Zatim bilo koji budući datum kao istek i bilo koji troznamenkasti broj kao CVC.",
+      "text8": "Ako stvarno želite pročitati moju knjigu, možete je naručiti na Amazonu",
+      "text9": "ovaj",
+      "text10": "veza.",
+      "copied": "Kopirano!",
+      "password6Char": "Lozinka mora imati najmanje 6 znakova",
+      "passwordsDontMatch": "Lozinke se ne podudaraju!",
+      "loginToRead": "Prijavite se kako biste pročitali neke smiješne šale",
+      "unknownError": "Došlo je do nepoznate pogreške!",
+      "requestBlocked": "Blokirali smo sve zahtjeve s ovog uređaja zbog neobične aktivnosti. Pokušajte ponovno kasnije.",
+      "emailExists": "E-mail adresu već koristi drugi račun.",
+      "invalidCredentials": "Ovaj email nije registriran ili je lozinka netočna.",
+      "password": "Lozinka",
+      "login": "Prijaviti se",
+      "noAccount": "Nemate račun?",
+      "signUp": "Prijavite se",
+      "confirmPassword": "Potvrdi lozinku",
+      "haveAccount": "Već imate račun?",
+      "logout": "Odjavite se",
+      "orderBook": "Naručite knjigu za samo",
+      "street": "Ulica",
+      "zipCode": "Poštanski broj:",
+      "city": "Grad:",
+      "payAmount": "PLAĆA 14,98 eura",
+      "stripNotLoaded": "Sustav plaćanja Stripe nije se mogao učitati.",
+      "congratulation": "Svaka čast!",
+      "bookOrdered": "Naručio si knjigu.",
+      "noSuccess": "Uplata nije mogla biti izvršena!",
+      "tryAgain": "Pokušajte ponovno",
+      "paymentFailed": "Plaćanje PayPalom nije uspjelo."
+    }
+  },
+  "pageNotFound": {
+    "error": "Tražena stranica nije pronađena!",
+    "goToHomepage": "Idi na početnu stranicu"
+  }
+}
