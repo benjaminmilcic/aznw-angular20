@@ -58,13 +58,12 @@
     </button>
     <div
       *ngFor="let post of posts"
-      class="flex flex-col m-4 pt-2 pb-4 rounded-lg shadow bg-white w-full sm:w-[600px] max-w-[600px] self-center xl:self-start"
+      class="flex flex-col m-4 pb-4 rounded-lg shadow bg-white w-full sm:w-[600px] max-w-[600px] self-center xl:self-start"
     >
-      <div class="flex justify-between px-4 py-1">
+      <div class="flex justify-between px-4 py-2 bg-gradient-to-b from-green-400 to-blue-600 rounded-t">
         <div>{{ post.name }}</div>
         <div>{{ post.date | date : undefined : undefined : "de" }}</div>
       </div>
-      <hr />
       <div
         class="px-4 py-1 overflow-x-auto"
         [innerHTML]="this.sanitizer.bypassSecurityTrustHtml(post.content)"

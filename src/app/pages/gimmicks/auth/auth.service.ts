@@ -25,7 +25,6 @@ export class AuthService {
         }
       )
       .pipe(
-        catchError(this.handleError),
         tap((resData) => {
           this.handleAuthentication(
             resData.email,
@@ -48,7 +47,6 @@ export class AuthService {
         }
       )
       .pipe(
-        catchError(this.handleError),
         tap((resData) => {
           this.handleAuthentication(
             resData.email,
@@ -115,26 +113,5 @@ export class AuthService {
     localStorage.setItem('authUserData', JSON.stringify(authUser));
   }
 
-  private handleError(errorRes: HttpErrorResponse) {
-    let errorMessage = 'An unknown error occured!';
-    if (!errorRes.error || !errorRes.error.error) {
-      return throwError(() => new Error(errorMessage));
-    }
-    console.log(errorRes.error.error.message);
-    if (
-      (<string>errorRes.error.error.message).includes(
-        'TOO_MANY_ATTEMPTS_TRY_LATER'
-      )
-    ) {
-      errorMessage =
-        'We have blocked all requests from this device due to unusual activity. Try again later.';
-    } else if (errorRes.error.error.message === 'EMAIL_EXISTS') {
-      errorMessage = 'The email address is already in use by another account.';
-    } else if (errorRes.error.error.message === 'INVALID_LOGIN_CREDENTIALS') {
-      errorMessage =
-        'Diese E-Mail ist nicht registriert oder das Passwort ist falsch.';
-    }
-
-    return throwError(() => new Error(errorMessage));
-  }
+  
 }

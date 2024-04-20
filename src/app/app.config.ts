@@ -2,7 +2,7 @@ import { ApplicationConfig, importProvidersFrom } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import { routes } from './app.routes';
-import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpBackend, HttpClient, HttpClientModule, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ToastrModule } from 'ngx-toastr';
@@ -14,11 +14,13 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { provideCharts, withDefaultRegisterables } from 'ng2-charts';
 import { AuthInterceptorService } from './pages/gimmicks/auth/auth-interceptor.service';
 import { provideNgxStripe } from 'ngx-stripe';
+import { LocationStrategy } from '@angular/common';
+import { ParameterHashLocationStrategy } from './ParameterHashLocationStrategy';
 
 
 
-export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http);
+export function HttpLoaderFactory(httpHandler: HttpBackend) {
+  return new TranslateHttpLoader(new HttpClient(httpHandler));
 }
 
 export const appConfig: ApplicationConfig = {
@@ -35,7 +37,7 @@ export const appConfig: ApplicationConfig = {
         loader: {
           provide: TranslateLoader,
           useFactory: HttpLoaderFactory,
-          deps: [HttpClient],
+          deps: [HttpBackend],
         },
         defaultLanguage: 'en',
       })
@@ -55,5 +57,9 @@ export const appConfig: ApplicationConfig = {
     provideNgxStripe(
       'pk_test_51P05azL6Qm22ltjdlDi75OKMXcdkImE9eB6U7pS709irbBgVW1OuvSEho05cYC3OdwAt4nJh2Zfike65t3OKhviN00RWkBd4Qa'
     ),
+    {
+      provide: LocationStrategy,
+      useClass: ParameterHashLocationStrategy,
+    },
   ],
 };

@@ -166,13 +166,13 @@
       <div class="portfolio-item m-4">
         <a
           style="cursor: pointer"
-          (click)="vocabularyTrainerDialog.showModal()"
+          [routerLink]="['/gimmicks']"
         >
           <div class="portfolio-image-wrapper">
             <div class="portfolio-link-wrapper rounded-lg">
               <img
                 class="portfolio-image"
-                src="assets/vocabularyTrainer.webp"
+                src="assets/gimmicks.webp"
                 alt="Learn Language App"
               />
               <div
@@ -185,7 +185,7 @@
           <div class="portfolio-caption rounded-lg">
             <div class="portfolio-caption-content">
               <div>
-                <p class="portfolio-caption-header">Vocabulary Trainer</p>
+                <p class="portfolio-caption-header">Gimmicks</p>
               </div>
             </div>
           </div>
@@ -243,23 +243,33 @@
           </div>
         </a>
       </div>
-      <div class="portfolio-item m-4">
-        <div class="portfolio-image-wrapper">
-          <div class="portfolio-link-wrapper">
-            <div style="width: 530px"></div>
-            <!-- <div
-              class="portfolio-overlay"
-            ></div> -->
-          </div>
-        </div>
-
-        <!-- <div class="portfolio-caption">
-          <div class="portfolio-caption-content">
-            <div>
-              <p class="portfolio-caption-header"></p>
+     <div class="portfolio-item m-4">
+        <a
+          style="cursor: pointer"
+          (click)="vocabularyTrainerDialog.showModal()"
+        >
+          <div class="portfolio-image-wrapper">
+            <div class="portfolio-link-wrapper rounded-lg">
+              <img
+                class="portfolio-image"
+                src="assets/vocabularyTrainer.webp"
+                alt="Learn Language App"
+              />
+              <div
+                class="portfolio-overlay"
+                style="background-color: #1d819f"
+              ></div>
             </div>
           </div>
-        </div> -->
+
+          <div class="portfolio-caption rounded-lg">
+            <div class="portfolio-caption-content">
+              <div>
+                <p class="portfolio-caption-header">Vocabulary Trainer</p>
+              </div>
+            </div>
+          </div>
+        </a>
       </div>
     </div>
     <div class="button-wrapper">

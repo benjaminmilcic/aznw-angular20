@@ -261,11 +261,20 @@ dialog::backdrop {
   }
 }
 
-@media (hover: none) and (max-width: 1099px) {
-  .wrapper1 :nth-child(1) {
+@media (hover: none) and (max-width: 1131px) {
+  .wrapper2 :nth-child(1) {
     order: 2;
   }
-  .wrapper1 :nth-child(2) {
+  .wrapper2 :nth-child(2) {
+    order: 1;
+  }
+}
+
+@media (hover) and (max-width: 1140px) {
+  .wrapper2 :nth-child(1) {
+    order: 2;
+  }
+  .wrapper2 :nth-child(2) {
     order: 1;
   }
 }
@@ -289,15 +298,6 @@ dialog::backdrop {
 
   .android-app-image {
     width: 200px;
-  }
-}
-
-@media (max-width: 1074px) {
-  .wrapper1 :nth-child(1) {
-    order: 2;
-  }
-  .wrapper1 :nth-child(2) {
-    order: 1;
   }
 }
 

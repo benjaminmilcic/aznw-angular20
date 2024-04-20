@@ -7,13 +7,13 @@
     </div>
     <div class="flex justify-center lg:h-[555px] order-2">
       <div
-        class="bg-red-300 rounded-lg flex flex-col place-items-center h-[555px] shadow-lg relative"
+        class="bg-green-400 rounded-lg flex flex-col place-items-center h-[555px] shadow-lg relative"
         [ngClass]="{
           'w-[300px]': translateService.currentLang == 'de',
           'w-[400px]': translateService.currentLang == 'en'
         }"
       >
-        <div class="flex justify-center w-full rounded-t-lg bg-green-700 py-4">
+        <div class="flex justify-center w-full rounded-t-lg bg-gradient-to-b from-red-400 to-blue-600 py-4">
           <img [src]="getSvgOfMonth()" width="192px" />
         </div>
         <div class="mt-2">{{ currentYear }}</div>
@@ -90,7 +90,7 @@
         class="w-[200px] bg-gray-200 relative mt-2 rounded-xl border border-gray-400 bar-shadow"
       >
         <div
-          class="h-4 bg-green-300 rounded-xl"
+          class="h-4 bg-green-400 rounded-xl"
           [style.width]="getWorkingDaysOfMonthPercentage()"
         ></div>
         <div class="absolute top-0 text-center text-xs w-full">

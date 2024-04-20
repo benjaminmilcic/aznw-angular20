@@ -6,11 +6,12 @@ import { Joke } from '../auth.model';
 import { IonCheckbox } from '@ionic/angular/standalone';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from '../auth.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-main',
   standalone: true,
-  imports: [CommonModule, IonCheckbox, FormsModule],
+  imports: [CommonModule, IonCheckbox, FormsModule,TranslateModule],
   templateUrl: './auth-main.component.html',
   styleUrl: './auth-main.component.css',
 })

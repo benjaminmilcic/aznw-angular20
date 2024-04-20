@@ -164,6 +164,10 @@ export class DoubleBarChartComponent
           title: {
             text: this.getConsumptionLabel(),
             display: true,
+            color: 'beige',
+          },
+          ticks: {
+            color: 'beige',
           },
         },
       },
@@ -176,6 +180,9 @@ export class DoubleBarChartComponent
         },
         legend: {
           display: true,
+          labels: {
+            color:'beige'
+          }
         },
       },
     };

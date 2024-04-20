@@ -35,29 +35,24 @@
     </div>
 
     <div
-      class="about bg-white rounded-lg p-6 pt-20 sm:pt-40 shadow mt-[64px] sm:mt-[120px]"
+      class="about rounded-lg p-6 sm:p-20 pt-20 sm:pt-40 shadow mt-[64px] sm:mt-[120px] bg-gradient-to-b from-green-400 to-green-600 font-mono"
     >
-      <p class="leading-none">
+      <p class="leading-normal">
         {{ "about.text1" | translate }}<br />
-        {{ "about.text2" | translate }}<br />
+        {{ "about.text2" | translate }}<br /><br />
 
         {{ "about.text3" | translate }}
-        <a href="https://www.itm-webdesign.com/" target="_blank"
-          >ITM Webdesign</a
-        >
-        {{ "about.text4" | translate }}
-        <a href="https://codext.de/" target="_blank">Codext GmbH</a>.<br />
-        {{ "about.text5" | translate }}<br />
-        {{ "about.text6" | translate }}<br />
+        {{ "about.text5" | translate }}<br /><br />
+        {{ "about.text6" | translate }}<br /><br />
         {{ "about.text7" | translate }}<br /><br />
       </p>
       <div class="flex place-items-center mt-6 gap-4">
         <img src="/assets/PDF_file_icon.svg.png" width="24" />
 
-        <a *ngIf="translateService.currentLang == 'de'" href="/assets/CV_DE.pdf"
+        <a *ngIf="translateService.currentLang == 'de'" href="/assets/CV_DE.pdf" class="text-blue-200"
           ><span>{{ "about.downloadCV" | translate }}</span></a
         >
-        <a *ngIf="translateService.currentLang == 'en'" href="/assets/CV_EN.pdf"
+        <a *ngIf="translateService.currentLang == 'en'" href="/assets/CV_EN.pdf" class="text-blue-200"
           ><span>{{ "about.downloadCV" | translate }}</span></a
         >
       </div>

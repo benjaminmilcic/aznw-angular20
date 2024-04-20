@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { TranslateSendButtonService } from '../home/components/shared/translate-send-button.service';
 import { CommonModule } from '@angular/common';
@@ -11,7 +11,7 @@ import { RouterModule } from '@angular/router';
   standalone: true,
   imports: [TranslateModule, CommonModule, RouterModule],
 })
-export class SidebarComponent {
+export class SidebarComponent implements OnInit {
   sidebarActivated: boolean = false;
 
   language: string = this.translate.currentLang;
@@ -20,6 +20,12 @@ export class SidebarComponent {
     private translate: TranslateService,
     private translateSendButtonService: TranslateSendButtonService
   ) {}
+
+  ngOnInit(): void {
+    this.translate.onLangChange.subscribe(
+      () => (this.language = this.translate.currentLang)
+    );
+  }
 
   onToggleSidebar(event: Event | null) {
     if (event) {

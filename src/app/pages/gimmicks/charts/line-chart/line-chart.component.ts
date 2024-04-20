@@ -275,8 +275,13 @@ export class LineChartComponent implements OnInit, OnDestroy, AfterViewInit {
           title: {
             text: this.getConsumptionLabel(),
             display: true,
+            color: 'beige',
+          },
+          ticks: {
+            color: 'beige',
           },
         },
+        x: { ticks: { color: 'beige' } },
       },
 
       plugins: {

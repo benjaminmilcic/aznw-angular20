@@ -1,16 +1,16 @@
 <section
   class="bg-transparent flex flex-col justify-center items-center bg-white shadow rounded py-8"
 >
-<div class="text-lg mb-4">Login to read some funny jokes</div>
+  <div class="sm:text-lg mb-4 px-6 text-center">{{ "gimmicks.jokes.loginToRead" | translate }}</div>
   <div
     *ngIf="error"
-    class="flex justify-center p-8 bg-red-300 rounded mb-4 text-white w-96"
+    class="flex justify-center p-8 bg-red-300 rounded mb-4 w-60 sm:w-96"
   >
     {{ error }}
   </div>
   <div
     *ngIf="isLoginMode"
-    class="bg-gradient-to-b from-green-400 to-green-600 shadow-2xl rounded p-8 relative w-96 h-48"
+    class="bg-gradient-to-b from-cyan-400 to-cyan-600 shadow-2xl rounded p-8 relative w-60 sm:w-96 h-48"
   >
     <div *ngIf="isLoading" class="flex justify-center items-center h-full">
       <ion-spinner></ion-spinner>
@@ -22,7 +22,7 @@
       *ngIf="!isLoading"
     >
       <div class="flex flex-col">
-        <mat-form-field appearance="outline" class="w-96">
+        <mat-form-field appearance="outline" class="w-60 sm:w-96">
           <mat-label>E-Mail</mat-label>
           <input
             #emailInput
@@ -35,8 +35,8 @@
             email
           />
         </mat-form-field>
-        <mat-form-field appearance="outline" class="w-96">
-          <mat-label>Password</mat-label>
+        <mat-form-field appearance="outline" class="w-60 sm:w-96">
+          <mat-label>{{ "gimmicks.jokes.password" | translate }}</mat-label>
           <input
             #passwordInput
             matInput
@@ -45,7 +45,6 @@
             ngModel
             name="password"
             required
-            minlength="6"
           />
         </mat-form-field>
       </div>
@@ -55,21 +54,23 @@
         (click)="onLogin(loginForm)"
         class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded shadow cursor-pointer w-full"
       >
-        Login
+        {{ "gimmicks.jokes.login" | translate }}
       </button>
     </form>
   </div>
   <ng-container *ngIf="isLoginMode">
-    <div class="flex justify-center mt-6">--- Don't have an account? ---</div>
+    <div class="flex justify-center mt-6">
+      --- {{ "gimmicks.jokes.noAccount" | translate }} ---
+    </div>
     <div class="flex justify-center mt-6">
       <a class="cursor-pointer hover:scale-125" (click)="onSwitchMode()">
-        <u>Sign Up</u>
+        <u>{{ "gimmicks.jokes.signUp" | translate }}</u>
       </a>
     </div>
   </ng-container>
   <div
     *ngIf="!isLoginMode"
-    class="bg-gradient-to-b from-green-400 to-green-600 shadow-2xl rounded p-8 relative w-96 h-64"
+    class="bg-gradient-to-b from-cyan-400 to-cyan-600 shadow-2xl rounded p-8 relative w-60 sm:w-96 h-64"
   >
     <div *ngIf="isLoading" class="flex justify-center items-center h-full">
       <ion-spinner></ion-spinner>
@@ -80,7 +81,7 @@
       *ngIf="!isLoading"
     >
       <div class="flex flex-col">
-        <mat-form-field appearance="outline" class="w-96">
+        <mat-form-field appearance="outline" class="w-60 sm:w-96">
           <mat-label>E-Mail</mat-label>
           <input
             #emailInput2
@@ -93,8 +94,8 @@
             email
           />
         </mat-form-field>
-        <mat-form-field appearance="outline" class="w-96">
-          <mat-label>Password</mat-label>
+        <mat-form-field appearance="outline" class="w-60 sm:w-96">
+          <mat-label>{{ "gimmicks.jokes.password" | translate }}</mat-label>
           <input
             #passwordInput2
             matInput
@@ -105,10 +106,14 @@
             required
             minlength="6"
           />
-          <mat-hint *ngIf="passwordError" class="text-red-600">{{ passwordError }}</mat-hint>
+          <mat-hint *ngIf="passwordError" class="text-red-600">{{
+            passwordError
+          }}</mat-hint>
         </mat-form-field>
-        <mat-form-field appearance="outline" class="w-96">
-          <mat-label>Confirm password</mat-label>
+        <mat-form-field appearance="outline" class="w-60 sm:w-96">
+          <mat-label>{{
+            "gimmicks.jokes.confirmPassword" | translate
+          }}</mat-label>
           <input
             #confirmInput
             matInput
@@ -127,15 +132,17 @@
         (click)="onSignUp(signUpForm)"
         class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded shadow cursor-pointer w-full"
       >
-        Sign Up
+        {{ "gimmicks.jokes.signUp" | translate }}
       </button>
     </form>
   </div>
   <ng-container *ngIf="!isLoginMode">
-    <div class="flex justify-center mt-6">--- Already have an account? ---</div>
+    <div class="flex justify-center mt-6">
+      --- {{ "gimmicks.jokes.haveAccount" | translate }} ---
+    </div>
     <div class="flex justify-center mt-6">
       <a class="cursor-pointer hover:scale-125" (click)="onSwitchMode()">
-        <u>Login</u>
+        <u>{{ "gimmicks.jokes.login" | translate }}</u>
       </a>
     </div>
   </ng-container>

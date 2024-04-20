@@ -8,6 +8,7 @@ import { IonSpinner } from '@ionic/angular/standalone';
 import { Observable } from 'rxjs';
 import { AuthResponseData } from '../auth.model';
 import { Router } from '@angular/router';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-auth',
@@ -18,6 +19,7 @@ import { Router } from '@angular/router';
     MatInputModule,
     FormsModule,
     CommonModule,
+    TranslateModule,
   ],
   templateUrl: './auth-login.component.html',
   styleUrl: './auth-login.component.css',
@@ -32,7 +34,11 @@ export class AuthLoginComponent implements OnInit {
   @ViewChild('passwordInput2') passwordInput2: ElementRef;
   @ViewChild('confirmInput') confirmInput: ElementRef;
   passwordError: string = null;
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private translate: TranslateService
+  ) {}
   ngOnInit() {}
 
   onSwitchMode() {
@@ -61,7 +67,9 @@ export class AuthLoginComponent implements OnInit {
     if (form.controls['password'].invalid) {
       this.passwordInput2.nativeElement.focus();
       this.passwordInput2.nativeElement.blur();
-      this.passwordError='Das Password muss mindestens 6 Zeichen lang sein'
+      this.passwordError = this.translate.instant(
+        'gimmicks.jokes.password6Char'
+      );
     }
     if (form.controls['confirmPassword'].invalid) {
       this.confirmInput.nativeElement.focus();
@@ -86,19 +94,38 @@ export class AuthLoginComponent implements OnInit {
       if (password === confirmPassword) {
         authObs = this.authService.signup(email, password);
       } else {
-        this.error = 'Passwoerter stimmen nicht ueberein!';
+        this.error = this.translate.instant(
+          'gimmicks.jokes.passwordsDontMatch'
+        );
         this.isLoading = false;
         return;
       }
     }
     authObs.subscribe(
       (resData) => {
-        console.log(resData);
         this.isLoading = false;
         this.router.navigate(['/gimmicks/auth/main']);
       },
-      (errorMessage) => {
-        console.log('Error', errorMessage);
+      (error) => {
+        console.log(error);
+        let errorMessage = this.translate.instant(
+          'gimmicks.jokes.unknownError'
+        );;
+        if (
+          (<string>error.error.error.message).includes(
+            'TOO_MANY_ATTEMPTS_TRY_LATER'
+          )
+        ) {
+          errorMessage = this.translate.instant(
+            'gimmicks.jokes.requestBlocked'
+          );
+        } else if (error.error.error.message === 'EMAIL_EXISTS') {
+          errorMessage = this.translate.instant('gimmicks.jokes.emailExists');
+        } else if (error.error.error.message === 'INVALID_LOGIN_CREDENTIALS') {
+          errorMessage = this.translate.instant(
+            'gimmicks.jokes.invalidCredentials'
+          );
+        }
         this.error = errorMessage;
         this.isLoading = false;
       }

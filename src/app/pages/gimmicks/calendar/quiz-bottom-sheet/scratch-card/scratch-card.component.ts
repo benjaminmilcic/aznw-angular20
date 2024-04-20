@@ -86,9 +86,12 @@ export class ScratchCardComponent implements AfterViewInit, OnChanges {
 
   fillScratchCard() {
     this.context.globalCompositeOperation = 'source-over';
-    this.context.fillStyle = 'gray';
+    const grad = this.context.createLinearGradient(0, 0, 0, 50);
+    grad.addColorStop(0, '#f87171');
+    grad.addColorStop(1, '#2563eb');
+    this.context.fillStyle = grad;
     this.context.fillRect(0, 0, 250, 50);
-    this.context.fillStyle = 'blue';
+    this.context.fillStyle = 'white';
     this.context.font = 'bold 16px serif';
     this.context.fillText(
       this.translate.instant('gimmicks.calendar.answer'),

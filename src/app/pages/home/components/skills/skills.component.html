@@ -1,21 +1,17 @@
-<section id="skills">
+<section id="skills" class="bg-blue-300">
   <div class="flex-col place-items-center w-full content hidden md:flex">
     <h3 class="mb-40">Skills</h3>
-    <div class="main">
+    <div class="main border-4 border-black shadow-2xl">
       <div
         class="flex place-content-center justify-center w-[350px] h-[350px] rounded-full relative"
         [matTooltip]="'skills.workplace' | translate"
       ></div>
       <div
         class="circle group cursor-pointer"
-        (click)="
-          openLink(
-            'https://wikipedia.org/wiki/HTML5#:~:text=HTML5%20ist%20die%20f%C3%BCnfte%20Fassung,vorwiegend%20im%20World%20Wide%20Web.'
-          )
-        "
+        (click)="openLink('https://wikipedia.org/wiki/HTML5')"
       >
         <img src="assets/svg/html5.svg" width="36px" />
-        <p class="group-hover:font-bold mt-1">HTML5</p>
+        <p class="group-hover:font-bold font-semibold mt-1">HTML5</p>
       </div>
 
       <div
@@ -25,18 +21,20 @@
         "
       >
         <img src="assets/svg/css3.svg" width="36px" class="rotate-[-28deg]" />
-        <p class="group-hover:font-bold ml-10 mt-1 rotate-[-28deg]">CSS3</p>
+        <p
+          class="group-hover:font-bold font-semibold ml-10 mt-1 rotate-[-28deg]"
+        >
+          CSS3
+        </p>
       </div>
       <div
         class="circle group cursor-pointer"
-        (click)="
-          openLink(
-            'https://wikipedia.org/wiki/JavaScript#:~:text=JavaScript%20(kurz%20JS)%20ist%20eine,M%C3%B6glichkeiten%20von%20HTML%20zu%20erweitern.'
-          )
-        "
+        (click)="openLink('https://wikipedia.org/wiki/JavaScript')"
       >
         <img src="assets/svg/js.svg" width="36px" class="rotate-[-55deg]" />
-        <p class="group-hover:font-bold ml-14 -mt-2 rotate-[-55deg]">
+        <p
+          class="group-hover:font-bold font-semibold ml-14 -mt-2 rotate-[-55deg]"
+        >
           JavaScript
         </p>
       </div>
@@ -49,14 +47,20 @@
           width="36px"
           class="rotate-[-83deg]"
         />
-        <p class="group-hover:font-bold ml-16 -mt-7 rotate-[-83deg]">Angular</p>
+        <p
+          class="group-hover:font-bold font-semibold ml-16 -mt-7 rotate-[-83deg]"
+        >
+          Angular
+        </p>
       </div>
       <div
         class="circle group cursor-pointer"
         (click)="openLink('https://ionicframework.com/')"
       >
         <img src="assets/svg/ionic.svg" width="36px" class="rotate-[-111deg]" />
-        <p class="group-hover:font-bold rotate-[-111deg] -mt-[42px] ml-16">
+        <p
+          class="group-hover:font-bold font-semibold rotate-[-111deg] -mt-[42px] ml-16"
+        >
           Ionic
         </p>
       </div>
@@ -69,7 +73,9 @@
           width="36px"
           class="rotate-[-138deg]"
         />
-        <p class="group-hover:font-bold rotate-[-138deg] -mt-14 ml-11">
+        <p
+          class="group-hover:font-bold font-semibold rotate-[-138deg] -mt-14 ml-11"
+        >
           Cypress
         </p>
       </div>
@@ -82,7 +88,9 @@
           width="36px"
           class="rotate-[-166deg]"
         />
-        <p class="group-hover:font-bold rotate-[-166deg] -mt-16 ml-6">
+        <p
+          class="group-hover:font-bold font-semibold rotate-[-166deg] -mt-16 ml-6"
+        >
           Bootstrap
         </p>
       </div>
@@ -95,7 +103,9 @@
           width="36px"
           class="rotate-[-194deg]"
         />
-        <p class="group-hover:font-bold rotate-[-194deg] -mt-14 -ml-2">
+        <p
+          class="group-hover:font-bold font-semibold rotate-[-194deg] -mt-14 -ml-2"
+        >
           Tailwind
         </p>
       </div>
@@ -104,7 +114,9 @@
         (click)="openLink('https://www.mysql.com')"
       >
         <img src="assets/svg/mysql.svg" width="36px" class="rotate-[-222deg]" />
-        <p class="group-hover:font-bold rotate-[-222deg] -mt-14 -ml-12">
+        <p
+          class="group-hover:font-bold font-semibold rotate-[-222deg] -mt-14 -ml-12"
+        >
           MySQL
         </p>
       </div>
@@ -117,7 +129,9 @@
           width="48px"
           class="rotate-[-249deg]"
         />
-        <p class="group-hover:font-bold rotate-[-249deg] -mt-12 -ml-16">
+        <p
+          class="group-hover:font-bold font-semibold rotate-[-249deg] -mt-12 -ml-16"
+        >
           Node.js
         </p>
       </div>
@@ -130,7 +144,9 @@
           class="rotate-[-278deg]"
           width="48px"
         />
-        <p class="group-hover:font-bold rotate-[-278deg] -mt-8 -ml-20">
+        <p
+          class="group-hover:font-bold font-semibold rotate-[-278deg] -mt-8 -ml-20"
+        >
           NestJS
         </p>
       </div>
@@ -139,7 +155,11 @@
         (click)="openLink('https://www.npmjs.com/')"
       >
         <img src="assets/svg/npm.svg" class="rotate-[-310deg]" width="48px" />
-        <p class="group-hover:font-bold rotate-[-310deg] -mt-1 -ml-8">npm</p>
+        <p
+          class="group-hover:font-bold font-semibold rotate-[-310deg] -mt-1 -ml-8"
+        >
+          npm
+        </p>
       </div>
       <div
         class="circle group cursor-pointer"
@@ -150,7 +170,11 @@
           width="36px"
           class="rotate-[-332deg]"
         />
-        <p class="group-hover:font-bold rotate-[-332deg] -ml-8 mt-1">Docker</p>
+        <p
+          class="group-hover:font-bold font-semibold rotate-[-332deg] -ml-8 mt-1"
+        >
+          Docker
+        </p>
       </div>
     </div>
   </div>
@@ -160,7 +184,7 @@
       <div class="max-w-96">
         <img
           src="/assets/workplacehome.webp"
-          class="rounded-lg max-w-full h-auto"
+          class="rounded-lg max-w-full h-auto border-4 border-black"
           [matTooltip]="'skills.workplace' | translate"
         />
       </div>
@@ -171,14 +195,12 @@
         <li>
           <div
             class="item-wrapper group cursor-pointer"
-            (click)="
-              openLink(
-                'https://wikipedia.org/wiki/HTML5#:~:text=HTML5%20ist%20die%20f%C3%BCnfte%20Fassung,vorwiegend%20im%20World%20Wide%20Web.'
-              )
-            "
+            (click)="openLink('https://wikipedia.org/wiki/HTML5')"
           >
             <img src="assets/svg/html5.svg" />
-            <p class="!text-black !font-normal group-hover:!font-bold">HTML5</p>
+            <p class="!text-black !font-semibold group-hover:!font-bold">
+              HTML5
+            </p>
           </div>
         </li>
         <li>
@@ -189,20 +211,18 @@
             "
           >
             <img src="assets/svg/css3.svg" />
-            <p class="!text-black !font-normal group-hover:!font-bold">CSS3</p>
+            <p class="!text-black !font-semibold group-hover:!font-bold">
+              CSS3
+            </p>
           </div>
         </li>
         <li>
           <div
             class="item-wrapper group cursor-pointer"
-            (click)="
-              openLink(
-                'https://wikipedia.org/wiki/JavaScript#:~:text=JavaScript%20(kurz%20JS)%20ist%20eine,M%C3%B6glichkeiten%20von%20HTML%20zu%20erweitern.'
-              )
-            "
+            (click)="openLink('https://wikipedia.org/wiki/JavaScript')"
           >
             <img src="assets/svg/js.svg" />
-            <p class="!text-black !font-normal group-hover:!font-bold">
+            <p class="!text-black !font-semibold group-hover:!font-bold">
               JavaScript
             </p>
           </div>
@@ -213,7 +233,7 @@
             (click)="openLink('https://angular.io/')"
           >
             <img src="assets/svg/angular.svg" />
-            <p class="!text-black !font-normal group-hover:!font-bold">
+            <p class="!text-black !font-semibold group-hover:!font-bold">
               Angular
             </p>
           </div>
@@ -224,7 +244,9 @@
             (click)="openLink('https://ionicframework.com/')"
           >
             <img src="assets/svg/ionic.svg" />
-            <p class="!text-black !font-normal group-hover:!font-bold">Ionic</p>
+            <p class="!text-black !font-semibold group-hover:!font-bold">
+              Ionic
+            </p>
           </div>
         </li>
         <li>
@@ -233,7 +255,7 @@
             (click)="openLink('https://www.cypress.io/')"
           >
             <img src="assets/svg/cypress.svg" />
-            <p class="!text-black !font-normal group-hover:!font-bold">
+            <p class="!text-black !font-semibold group-hover:!font-bold">
               Cypress
             </p>
           </div>
@@ -244,7 +266,7 @@
             (click)="openLink('https://getbootstrap.com/')"
           >
             <img src="assets/svg/bootstrap.svg" />
-            <p class="!text-black !font-normal group-hover:!font-bold">
+            <p class="!text-black !font-semibold group-hover:!font-bold">
               Bootstrap
             </p>
           </div>
@@ -255,7 +277,7 @@
             (click)="openLink('https://tailwindcss.com/')"
           >
             <img src="assets/svg/tailwind.svg" />
-            <p class="!text-black !font-normal group-hover:!font-bold">
+            <p class="!text-black !font-semibold group-hover:!font-bold">
               Tailwinds
             </p>
           </div>
@@ -266,7 +288,7 @@
             (click)="openLink('https://firebase.google.com/')"
           >
             <img src="assets/svg/firebase.svg" width="32px" />
-            <p class="!text-black !font-normal group-hover:!font-bold">
+            <p class="!text-black !font-semibold group-hover:!font-bold">
               Firebase
             </p>
           </div>
@@ -277,7 +299,9 @@
             (click)="openLink('https://www.mysql.com')"
           >
             <img src="assets/svg/mysql.svg" />
-            <p class="!text-black !font-normal group-hover:!font-bold">MySQL</p>
+            <p class="!text-black !font-semibold group-hover:!font-bold">
+              MySQL
+            </p>
           </div>
         </li>
         <li>
@@ -286,7 +310,7 @@
             (click)="openLink('https://nodejs.org')"
           >
             <img src="assets/svg/nodejs.svg" width="64px" />
-            <p class="!text-black !font-normal group-hover:!font-bold">
+            <p class="!text-black !font-semibold group-hover:!font-bold">
               Node.js
             </p>
           </div>
@@ -297,7 +321,7 @@
             (click)="openLink('https://nestjs.com/')"
           >
             <img src="assets/svg/nestjs.svg" />
-            <p class="!text-black !font-normal group-hover:!font-bold">
+            <p class="!text-black !font-semibold group-hover:!font-bold">
               NestJS
             </p>
           </div>
@@ -308,7 +332,7 @@
             (click)="openLink('https://www.npmjs.com/')"
           >
             <img src="assets/svg/npm.svg" />
-            <p class="!text-black !font-normal group-hover:!font-bold">npm</p>
+            <p class="!text-black !font-semibold group-hover:!font-bold">npm</p>
           </div>
         </li>
         <li>
@@ -317,7 +341,7 @@
             (click)="openLink('https://www.docker.com/')"
           >
             <img src="assets/svg/docker.svg" />
-            <p class="!text-black !font-normal group-hover:!font-bold">
+            <p class="!text-black !font-semibold group-hover:!font-bold">
               Docker
             </p>
           </div>
@@ -325,7 +349,19 @@
       </ul>
     </div>
   </div>
-  <div class="relative text-center mt-20 md:mt-48">
+  <div class="relative mt-20 md:mt-48 flex justify-center">
+    <div class="text-lg sm:text-xl text-center w-96 px-4">
+      {{ "gimmicks.overview.header1" | translate }}
+      <button
+        [routerLink]="['/gimmicks/']"
+        class="bg-blue-500 hover:bg-blue-600 rounded px-4 py-2 text-white cursor-pointer"
+      >
+        Gimmicks
+      </button>
+      {{ "gimmicks.overview.header2" | translate }}
+    </div>
+  </div>
+  <div class="relative text-center mt-14 md:mt-20">
     <a [routerLink]="['/']" fragment="portfolio">Portfolio</a>
   </div>
 </section>

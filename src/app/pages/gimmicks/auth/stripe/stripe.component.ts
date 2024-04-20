@@ -28,10 +28,12 @@ import {
 } from '@stripe/stripe-js';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { CommonModule } from '@angular/common';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { lastValueFrom } from 'rxjs';
-import { TranslateService } from '@ngx-translate/core';
+import { HttpClient } from '@angular/common/http';
+import { lastValueFrom, map, take, tap } from 'rxjs';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { IonSpinner } from '@ionic/angular/standalone';
+import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-stripe',
@@ -44,6 +46,7 @@ import { IonSpinner } from '@ionic/angular/standalone';
     MatInputModule,
     FormsModule,
     IonSpinner,
+    TranslateModule,
   ],
   templateUrl: './stripe.component.html',
   styleUrl: './stripe.component.css',
@@ -53,7 +56,8 @@ export class StripeComponent implements OnInit {
   paymentElement!: StripePaymentElementComponent;
   @ViewChild(StripeElementsDirective) elements!: StripeElementsDirective;
 
-  viewType: 'payment' | 'success' | 'error' = 'payment';
+  viewType: 'payment' | 'success' | 'error' | 'couldNotLoad' | 'spinner' =
+    'spinner';
   error: string = null;
 
   @ViewChild('nameInput') nameInput: ElementRef;
@@ -94,27 +98,88 @@ export class StripeComponent implements OnInit {
   stripe = injectStripe();
   paying = signal(false);
 
-  constructor(private http: HttpClient, private translate: TranslateService) {}
+  constructor(
+    private http: HttpClient,
+    private translate: TranslateService,
+    private router: Router,
+    private authService: AuthService
+  ) {}
 
   async ngOnInit() {
-    this.translate.onLangChange.subscribe((lang) => {
-      this.elementsOptions.locale = <StripeElementLocale>lang.lang;
-      this.elements.update(this.elementsOptions);
+    const url = window.location.toString();
+    let clientSecret;
+    if (url.includes('?')) {
+      let queryParams = url.split('?');
+      let params = queryParams[2].split('&');
+      let language = queryParams[1].split('=').pop();
+      this.translate.use(language);
+
+      let isNotAuthenticated = await lastValueFrom(
+        this.authService.authUser.pipe(
+          take(1),
+          map((authUser) => {
+            return !authUser;
+          })
+        )
+      );
+
+      if (isNotAuthenticated) {
+        this.router.navigate(['/gimmicks/auth/login']);
+      } else {
+        this.router.navigate(['/gimmicks/auth/main']);
+      }
+
+      clientSecret = params
+        .filter((param) => param.includes('payment_intent_client_secret'))[0]
+        .split('=')
+        .pop();
+
+      const { paymentIntent, error } = await lastValueFrom(
+        this.stripe.retrievePaymentIntent(clientSecret)
+      );
+
+      if (error) {
+        this.viewType = 'error';
+        this.error = error.message;
+      } else if (paymentIntent && paymentIntent.status === 'succeeded') {
+        this.viewType = 'success';
+      } else {
+        this.viewType = 'error';
+        this.error = this.translate.instant('gimmicks.jokes.paymentFailed');
+      }
+    } else {
+      this.catchClientSectet();
+    }
+
+    this.translate.onLangChange.subscribe(async (lang) => {
+      if (this.elements) {
+        this.elementsOptions.locale = <StripeElementLocale>lang.lang;
+        this.elements.update(this.elementsOptions);
+        await this.catchClientSectet();
+      }
     });
+  }
 
+  private async catchClientSectet() {
+    this.viewType = 'spinner';
     const items = [{ items: 'book' }];
-
     try {
       const { clientSecret } = await lastValueFrom(
         this.http.post<{ clientSecret: string }>(
           'http://localhost:80/create.php',
-          JSON.stringify({ items })
+          JSON.stringify({ items, lang: this.translate.currentLang })
         )
       );
       this.elementsOptions.clientSecret = clientSecret;
+      this.elementsOptions.locale = <StripeElementLocale>(
+        this.translate.currentLang
+      );
+      if (this.elements) {
+        this.elements.update(this.elementsOptions);
+      }
+      this.viewType = 'payment';
     } catch (error) {
-      console.log('clientSecret not fetched');
-      console.log(error);
+      this.viewType = 'couldNotLoad';
     }
   }
 
@@ -164,13 +229,14 @@ export class StripeComponent implements OnInit {
               },
             },
           },
-          return_url: 'http://localhost:4200/#/gimmicks/auth/login',
+          return_url:
+            'http://localhost:4200/#/gimmicks/auth/login?lang=' +
+            this.translate.currentLang +
+            '&',
         },
         redirect: 'if_required',
       })
       .subscribe((result) => {
-        console.log(result);
-
         this.paying.set(false);
         if (result.error) {
           // Show error to your customer (e.g., insufficient funds)
@@ -186,8 +252,9 @@ export class StripeComponent implements OnInit {
       });
   }
 
-  onTryAgain() {
-    this.viewType = 'payment';
+  async onTryAgain() {
+    this.viewType = 'spinner';
+    await this.catchClientSectet();
     this.paymentElementForm.controls['name'].setValue('');
     this.paymentElementForm.controls['email'].setValue('');
     this.paymentElementForm.controls['address'].setValue('');

@@ -1,12 +1,12 @@
-<div class="p-8 shadow bg-white rounded w-[420px] m-8 relativ">
+<div class="p-4 lg:p-6 shadow bg-white rounded w-[340px] sm:w-[600px] lg:w-[360px] xl:w-[420px] m-2 sm:mb-4 lg:mt-8 relativ">
   <div
     *ngIf="elementsOptions.clientSecret && viewType === 'payment'"
     [formGroup]="paymentElementForm"
     class="flex flex-col"
   >
-    <div class="flex justify-center mb-4 text-lg">
-      Order the book for only&nbsp;<span
-        class="bg-green-300 rounded-lg text-blue-600 px-2"
+    <div class="flex justify-center mb-4 sm:text-lg lg:text-base xl:text-lg">
+      {{ "gimmicks.jokes.orderBook" | translate }}&nbsp;<span
+        class="bg-cyan-300 rounded-lg text-red-600 px-2"
         >14.98 Euro</span
       >
     </div>
@@ -31,7 +31,7 @@
       </mat-form-field>
     </div>
     <div class="flex gap-4 items-center mb-4">
-      <div class="w-16">Straße:</div>
+      <div class="w-16">{{ "gimmicks.jokes.street" | translate }}</div>
       <mat-form-field
         appearance="outline"
         subscriptSizing="dynamic"
@@ -41,7 +41,7 @@
       </mat-form-field>
     </div>
     <div class="flex gap-4 items-center mb-4">
-      <div class="w-16">PLZ:</div>
+      <div class="w-16">{{ "gimmicks.jokes.zipCode" | translate }}</div>
       <mat-form-field
         appearance="outline"
         subscriptSizing="dynamic"
@@ -51,7 +51,7 @@
       </mat-form-field>
     </div>
     <div class="flex gap-4 items-center mb-4">
-      <div class="w-16">Stadt:</div>
+      <div class="w-16">{{ "gimmicks.jokes.city" | translate }}</div>
       <mat-form-field
         appearance="outline"
         subscriptSizing="dynamic"
@@ -64,25 +64,25 @@
       <ngx-stripe-payment [options]="paymentElementOptions" />
     </ngx-stripe-elements>
     <button (click)="pay()">
-      PAY  14.98 Euro
+      {{ "gimmicks.jokes.payAmount" | translate }}
     </button>
   </div>
   <div
-    *ngIf="!elementsOptions.clientSecret && viewType === 'payment'"
-    class="bg-red-300 text-white p-4 rounded"
+    *ngIf="viewType === 'spinner'"
+    class="bg-white p-4 rounded flex justify-center"
   >
-    Das Stripe Bezahlsystem konnte nicht geladen werden.
+    <ion-spinner></ion-spinner>
+  </div>
+  <div *ngIf="viewType === 'couldNotLoad'" class="bg-red-300 p-4 rounded">
+    <div>{{ "gimmicks.jokes.stripNotLoaded" | translate }}</div>
   </div>
   <div *ngIf="viewType === 'success'" class="bg-green-300 p-4 rounded">
-    <div>Congratualtion!</div>
-    <div class="mb-4">You ordered the book. It will be shipped to:</div>
-    <div>{{ paymentElementForm.controls["name"].value }}</div>
-    <div>{{ paymentElementForm.controls["address"].value }}</div>
-    <div class="flex gap-2">
-      <div>{{ paymentElementForm.controls["zipcode"].value }}</div>
-      <div>{{ paymentElementForm.controls["city"].value }}</div>
+    <div class="flex justify-center">
+      {{ "gimmicks.jokes.congratulation" | translate }}
     </div>
-    <br /><br />
+    <div class="flex justify-center my-4">
+      {{ "gimmicks.jokes.bookOrdered" | translate }}
+    </div>
     <button
       (click)="onTryAgain()"
       class="hover:bg-blue-600 text-white px-4 py-2 rounded shadow cursor-pointer"
@@ -92,7 +92,7 @@
   </div>
 
   <div *ngIf="viewType === 'error'" class="bg-red-300 p-4 rounded">
-    Die Bezahlung konnte nicht ausgeführt werden!
+    {{ "gimmicks.jokes.noSuccess" | translate }}
     <br /><br />
     {{ error }}
     <br /><br />
@@ -100,7 +100,7 @@
       (click)="onTryAgain()"
       class="hover:bg-blue-600 text-white px-4 py-2 rounded shadow cursor-pointer"
     >
-      Try again
+      {{ "gimmicks.jokes.tryAgain" | translate }}
     </button>
   </div>
 </div>

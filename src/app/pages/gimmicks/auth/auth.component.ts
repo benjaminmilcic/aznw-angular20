@@ -3,17 +3,23 @@ import { RouterModule } from '@angular/router';
 import { JokesBookComponent } from './jokes-book/jokes-book.component';
 import { StripeComponent } from './stripe/stripe.component';
 import { IonPopover } from '@ionic/angular/standalone';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-auth',
   standalone: true,
-  imports: [IonPopover, RouterModule, JokesBookComponent, StripeComponent],
+  imports: [
+    IonPopover,
+    RouterModule,
+    JokesBookComponent,
+    StripeComponent,
+    TranslateModule,
+  ],
   templateUrl: './auth.component.html',
   styleUrl: './auth.component.css',
 })
 export class AuthComponent {
-  constructor(private translate:TranslateService){}
+  constructor(private translate: TranslateService) {}
   copyToClipboard(text: string, event: PointerEvent) {
     navigator.clipboard.writeText(text);
     let div = document.createElement('div');
@@ -31,7 +37,7 @@ export class AuthComponent {
     let container = document.getElementById('container');
     container.appendChild(div);
     let rect = div.getClientRects();
-    div.style.top = (event.clientY - rect[0].height-10).toString() + 'px';
+    div.style.top = (event.clientY - rect[0].height - 10).toString() + 'px';
     div.style.left = event.clientX.toString() + 'px';
     setTimeout(() => {
       container.removeChild(div);

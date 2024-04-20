@@ -3,6 +3,7 @@ import {
   ActivatedRouteSnapshot,
   RouterStateSnapshot,
   Router,
+  ActivatedRoute,
 } from '@angular/router';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -12,7 +13,11 @@ import { AuthService } from './auth.service';
 
 @Injectable({ providedIn: 'root' })
 export class AuthLoginGuard implements CanActivate {
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute
+  ) {}
 
   canActivate(
     route: ActivatedRouteSnapshot,
@@ -25,7 +30,16 @@ export class AuthLoginGuard implements CanActivate {
       }),
       tap((isNotAuth) => {
         if (!isNotAuth) {
-          this.router.navigate(['/gimmicks/auth/main']);
+          let href = window.location.href;
+
+          if (href.includes('?')) {
+            let params = href.split('?');
+            let lang = params[2].slice(0, -1);
+
+            this.router.navigateByUrl('/gimmicks/auth/main?' + lang);
+          } else {
+            this.router.navigate(['/gimmicks/auth/main']);
+          }
         }
       })
     );
