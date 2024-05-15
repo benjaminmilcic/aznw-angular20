@@ -1,6 +1,8 @@
 <ion-header>
   <ion-toolbar color="primary" class="bg-blue-700 text-white">
-    <ion-title>Update User Image</ion-title>
+    <ion-title>{{
+      "gimmicks.charts.imageCropper.headline" | translate
+    }}</ion-title>
     <ion-buttons slot="end">
       <ion-button (click)="close()">
         <i class="fa-solid fa-xmark text-lg"></i>
@@ -21,7 +23,7 @@
         class="bg-green-500 hover:bg-green-600 text-white rounded shadow cursor-pointer h-7"
         (click)="moveRight()"
       >
-      <mat-icon>arrow_right</mat-icon>
+        <mat-icon>arrow_right</mat-icon>
       </button>
     </div>
     <div class="flex justify-center items-center gap-2">
@@ -54,7 +56,7 @@
           <mat-icon>arrow_drop_up</mat-icon>
         </button>
         <button
-          class="bg-green-500 hover:bg-green-600 text-white  rounded shadow cursor-pointer h-7"
+          class="bg-green-500 hover:bg-green-600 text-white rounded shadow cursor-pointer h-7"
           (click)="moveDown()"
         >
           <mat-icon>arrow_drop_down</mat-icon>
@@ -66,7 +68,7 @@
         class="bg-green-500 hover:bg-green-600 text-white px-2 py-2 rounded shadow cursor-pointer"
         (click)="reset()"
       >
-        Reset
+        {{ "gimmicks.charts.imageCropper.reset" | translate }}
       </button>
     </div>
   </div>
@@ -84,14 +86,14 @@
       class="bg-blue-500 hover:bg-blue-600 text-white px-2 py-2 rounded shadow cursor-pointer"
       (click)="fileUpload.click()"
     >
-      Upload Image
+      {{ "gimmicks.charts.imageCropper.uploadImage" | translate }}
     </button>
     <button
       class="bg-blue-500 hover:bg-blue-600 disabled:bg-blue-300 text-white px-2 py-2 rounded shadow cursor-pointer"
       (click)="save()"
       [disabled]="!imageUrl"
     >
-      Save Cropped Image
+      {{ "gimmicks.charts.imageCropper.saveImage" | translate }}
     </button>
   </div>
 </ion-fab>

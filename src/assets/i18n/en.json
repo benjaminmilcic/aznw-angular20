@@ -86,7 +86,8 @@
       "charts": "Charts",
       "fileUpload": "File upload",
       "print": "Printing",
-      "imageManipulation": "Image manipulation"
+      "imageManipulation": "Image manipulation",
+      "sourceCode":"Here you will find the source code of this website."
     },
     "map": {
       "search": "Search a city...",
@@ -180,7 +181,13 @@
       "upload": "Upload",
       "mustUploadImage": "You must upload an image",
       "mustEnterName": "You must enter a name",
-      "nameExist": "This name already exist"
+      "nameExist": "This name already exist",
+      "imageCropper":{
+        "headline":"Update user image",
+        "uploadImage":"Upload new image",
+        "saveImage":"Save cropped image",
+        "reset":"Reset"
+      }
     },
     "jokes": {
       "auth": "Google Firebase authentication and authorization",

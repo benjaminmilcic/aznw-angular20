@@ -86,7 +86,8 @@
       "charts": "Diagramme",
       "fileUpload": "Datei Upload",
       "print": "Drucken",
-      "imageManipulation":"Bildbearbeitung"
+      "imageManipulation":"Bildbearbeitung",
+      "sourceCode":"Hier finden Sie den Quellcode dieser Webseite."
     },
     "map": {
       "search": "Stadtsuche...",
@@ -180,7 +181,13 @@
       "upload": "Bild",
       "mustUploadImage": "Sie müssen ein Bild hochladen",
       "mustEnterName": "Sie müssen einen Namen eingeben",
-      "nameExist": "Der Name existiert bereits"
+      "nameExist": "Der Name existiert bereits",
+      "imageCropper": {
+        "headline": "Benutzerbild aktualisieren",
+        "uploadImage": "Neues Bild hochladen",
+        "saveImage": "Zugeschnittenes Bild speichern",
+        "reset": "Zurücksetzen"
+      }
     },
     "jokes":{
       "auth": "Google Firebase Authentifizierung und Autorisierung",

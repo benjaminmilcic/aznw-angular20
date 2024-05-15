@@ -147,6 +147,14 @@ export class StripeComponent implements OnInit {
         this.viewType = 'error';
         this.error = this.translate.instant('gimmicks.jokes.paymentFailed');
       }
+      if (window.innerWidth < 1024) {
+        setTimeout(() => {
+          window.scrollTo({
+            left: 0,
+            top: document.body.scrollHeight,
+          });
+        }, 50);
+      }
     } else {
       this.catchClientSectet();
     }

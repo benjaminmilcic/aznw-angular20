@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { JokesBookComponent } from './jokes-book/jokes-book.component';
 import { StripeComponent } from './stripe/stripe.component';
@@ -20,6 +20,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 })
 export class AuthComponent {
   constructor(private translate: TranslateService) {}
+
   copyToClipboard(text: string, event: PointerEvent) {
     navigator.clipboard.writeText(text);
     let div = document.createElement('div');

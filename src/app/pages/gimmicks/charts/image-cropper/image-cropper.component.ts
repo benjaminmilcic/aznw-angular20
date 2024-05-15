@@ -13,6 +13,7 @@ import {
   IonToolbar,
   ModalController,
 } from '@ionic/angular/standalone';
+import { TranslateModule } from '@ngx-translate/core';
 import { AngularCropperjsModule, CropperComponent } from 'angular-cropperjs';
 
 @Component({
@@ -31,6 +32,7 @@ import { AngularCropperjsModule, CropperComponent } from 'angular-cropperjs';
     CommonModule,
     MatIcon,
     IonIcon,
+    TranslateModule
   ],
   templateUrl: './image-cropper.component.html',
   styleUrl: './image-cropper.component.css',

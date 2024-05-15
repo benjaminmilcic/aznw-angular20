@@ -1,6 +1,10 @@
-<section class="flex flex-col lg:flex-row bg-blue-400 min-h-[calc(100%-40px)] items-center lg:items-start justify-center gap-7 lg:gap-6 xl:gap-10">
+<section
+  class="flex flex-col lg:flex-row bg-blue-400 min-h-[calc(100%-40px)] items-center lg:items-start justify-center gap-7 lg:gap-6 xl:gap-10"
+>
   <div class="relative flex flex-col gap-4 w-[340px] sm:w-[600px] lg:mb-8">
-    <div class="flex flex-col sm:flex-row bg-white rounded items-center sm:items-start shadow mt-2 sm:mt-4 lg:mt-8 px-4 sm:px-8  pb-4 sm:pb-8 sm:gap-8">
+    <div
+      class="flex flex-col sm:flex-row bg-white rounded items-center sm:items-start shadow mt-2 sm:mt-4 lg:mt-8 px-4 sm:px-8 pb-4 sm:pb-8 sm:gap-8"
+    >
       <app-jokes-book></app-jokes-book>
       <div class="sm:mt-8" id="container">
         {{ "gimmicks.jokes.text1" | translate }}
@@ -10,7 +14,8 @@
             class="fa-regular fa-clipboard ml-1 hover:text-cyan-500 cursor-pointer"
           ></i
         ></span>
-        {{ "gimmicks.jokes.text2" | translate }} <span class="font-bold">jokes123</span
+        {{ "gimmicks.jokes.text2" | translate }}
+        <span class="font-bold">jokes123</span
         ><span (click)="copyToClipboard('jokes123', $event)">
           <i
             class="fa-regular fa-clipboard ml-1 hover:text-cyan-500 cursor-pointer"
@@ -20,9 +25,14 @@
         <br />
         <br />
         {{ "gimmicks.jokes.text4" | translate }}
-        <a href="https://stripe.com/" target="_blank">{{ "gimmicks.jokes.text5" | translate }}</a>. {{ "gimmicks.jokes.text6" | translate }}
+        <a href="https://stripe.com/" target="_blank">{{
+          "gimmicks.jokes.text5" | translate
+        }}</a
+        >. {{ "gimmicks.jokes.text6" | translate }}
         <div class="bg-gray-300 rounded p-2 text-xs grid grid-cols-2 my-2">
-          <div class="text-blue-500 mb-1">{{ "gimmicks.jokes.paymentSucceeds" | translate }}</div>
+          <div class="text-blue-500 mb-1">
+            {{ "gimmicks.jokes.paymentSucceeds" | translate }}
+          </div>
           <div class="text-blue-500 flex">
             <div>4242 4242 4242 4242</div>
             <div (click)="copyToClipboard('4242 4242 4242 4242', $event)">
@@ -42,7 +52,9 @@
               ></i>
             </div>
           </div>
-          <div class="text-red-500">{{ "gimmicks.jokes.paymentDeclined" | translate }}</div>
+          <div class="text-red-500">
+            {{ "gimmicks.jokes.paymentDeclined" | translate }}
+          </div>
           <div class="text-red-500 flex">
             <div>4000 0000 0000 9995</div>
             <div (click)="copyToClipboard('4000 0000 0000 9995', $event)">
