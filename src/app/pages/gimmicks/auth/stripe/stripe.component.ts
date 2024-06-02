@@ -1,3 +1,8 @@
+// for development
+// 'http://localhost:80/create.php'
+// 'http://localhost:4200/#/gimmicks/auth/login?lang=';
+
+
 import {
   Component,
   ElementRef,
@@ -174,7 +179,7 @@ export class StripeComponent implements OnInit {
     try {
       const { clientSecret } = await lastValueFrom(
         this.http.post<{ clientSecret: string }>(
-          'http://localhost:80/create.php',
+          'api/stripe/create.php',
           JSON.stringify({ items, lang: this.translate.currentLang })
         )
       );
@@ -238,7 +243,7 @@ export class StripeComponent implements OnInit {
             },
           },
           return_url:
-            'http://localhost:4200/#/gimmicks/auth/login?lang=' +
+            'https://auf-zu-neuen-welten.de/#/gimmicks/auth/login?lang=' +
             this.translate.currentLang +
             '&',
         },
