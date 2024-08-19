@@ -1,12 +1,13 @@
 <section id="skills" class="bg-blue-300">
   <div class="flex-col place-items-center w-full content hidden md:flex">
-    <h3 class="mb-40">Skills</h3>
+    <h3 class="mb-40 text-color1">Skills</h3>
     <div
-      class="main border-4 border-black shadow-2xl animation image-animation"
+      class="main border-2 border-color1 shadow-2xl animation image-animation"
     >
       <div
         class="flex place-content-center justify-center w-[350px] h-[350px] rounded-full relative"
         [matTooltip]="'skills.workplace' | translate"
+        matTooltipClass="my-tooltip-class"
       ></div>
       <div
         class="circle group cursor-pointer animation skill-animation2"
@@ -181,13 +182,14 @@
     </div>
   </div>
   <div class="skills-wrapper md:hidden content">
-    <h3 class="mb-4">Skills</h3>
+    <h3 class="mb-4 text-color1">Skills</h3>
     <div class="p-6 flex justify-center mb-4">
       <div class="max-w-96">
         <img
           src="/assets/workplacehome.webp"
-          class="rounded-lg max-w-full h-auto border-4 border-black"
+          class="rounded-lg max-w-full h-auto border-2 border-color1"
           [matTooltip]="'skills.workplace' | translate"
+          matTooltipClass="my-tooltip-class"
         />
       </div>
     </div>
@@ -200,7 +202,7 @@
             (click)="openLink('https://wikipedia.org/wiki/HTML5')"
           >
             <img src="assets/svg/html5.svg" />
-            <p class="!text-black !font-semibold group-hover:!font-bold">
+            <p class=" !font-semibold group-hover:!font-bold">
               HTML5
             </p>
           </div>
@@ -213,7 +215,7 @@
             "
           >
             <img src="assets/svg/css3.svg" />
-            <p class="!text-black !font-semibold group-hover:!font-bold">
+            <p class=" !font-semibold group-hover:!font-bold">
               CSS3
             </p>
           </div>
@@ -224,7 +226,7 @@
             (click)="openLink('https://wikipedia.org/wiki/JavaScript')"
           >
             <img src="assets/svg/js.svg" />
-            <p class="!text-black !font-semibold group-hover:!font-bold">
+            <p class=" !font-semibold group-hover:!font-bold">
               JavaScript
             </p>
           </div>
@@ -235,7 +237,7 @@
             (click)="openLink('https://angular.io/')"
           >
             <img src="assets/svg/angular.svg" />
-            <p class="!text-black !font-semibold group-hover:!font-bold">
+            <p class=" !font-semibold group-hover:!font-bold">
               Angular
             </p>
           </div>
@@ -246,7 +248,7 @@
             (click)="openLink('https://ionicframework.com/')"
           >
             <img src="assets/svg/ionic.svg" />
-            <p class="!text-black !font-semibold group-hover:!font-bold">
+            <p class=" !font-semibold group-hover:!font-bold">
               Ionic
             </p>
           </div>
@@ -257,7 +259,7 @@
             (click)="openLink('https://www.cypress.io/')"
           >
             <img src="assets/svg/cypress.svg" />
-            <p class="!text-black !font-semibold group-hover:!font-bold">
+            <p class=" !font-semibold group-hover:!font-bold">
               Cypress
             </p>
           </div>
@@ -268,7 +270,7 @@
             (click)="openLink('https://getbootstrap.com/')"
           >
             <img src="assets/svg/bootstrap.svg" />
-            <p class="!text-black !font-semibold group-hover:!font-bold">
+            <p class=" !font-semibold group-hover:!font-bold">
               Bootstrap
             </p>
           </div>
@@ -279,7 +281,7 @@
             (click)="openLink('https://tailwindcss.com/')"
           >
             <img src="assets/svg/tailwind.svg" />
-            <p class="!text-black !font-semibold group-hover:!font-bold">
+            <p class=" !font-semibold group-hover:!font-bold">
               Tailwinds
             </p>
           </div>
@@ -290,7 +292,7 @@
             (click)="openLink('https://firebase.google.com/')"
           >
             <img src="assets/svg/firebase.svg" width="32px" />
-            <p class="!text-black !font-semibold group-hover:!font-bold">
+            <p class=" !font-semibold group-hover:!font-bold">
               Firebase
             </p>
           </div>
@@ -301,7 +303,7 @@
             (click)="openLink('https://www.mysql.com')"
           >
             <img src="assets/svg/mysql.svg" />
-            <p class="!text-black !font-semibold group-hover:!font-bold">
+            <p class=" !font-semibold group-hover:!font-bold">
               MySQL
             </p>
           </div>
@@ -312,7 +314,7 @@
             (click)="openLink('https://nodejs.org')"
           >
             <img src="assets/svg/nodejs.svg" width="64px" />
-            <p class="!text-black !font-semibold group-hover:!font-bold">
+            <p class=" !font-semibold group-hover:!font-bold">
               Node.js
             </p>
           </div>
@@ -323,7 +325,7 @@
             (click)="openLink('https://nestjs.com/')"
           >
             <img src="assets/svg/nestjs.svg" />
-            <p class="!text-black !font-semibold group-hover:!font-bold">
+            <p class=" !font-semibold group-hover:!font-bold">
               NestJS
             </p>
           </div>
@@ -334,7 +336,7 @@
             (click)="openLink('https://www.npmjs.com/')"
           >
             <img src="assets/svg/npm.svg" />
-            <p class="!text-black !font-semibold group-hover:!font-bold">npm</p>
+            <p class=" !font-semibold group-hover:!font-bold">npm</p>
           </div>
         </li>
         <li>
@@ -343,7 +345,7 @@
             (click)="openLink('https://www.docker.com/')"
           >
             <img src="assets/svg/docker.svg" />
-            <p class="!text-black !font-semibold group-hover:!font-bold">
+            <p class=" !font-semibold group-hover:!font-bold">
               Docker
             </p>
           </div>
@@ -373,15 +375,16 @@
         <button
           [routerLink]="['/gimmicks/']"
           fragment="header"
-          class="bg-blue-500 hover:bg-blue-600 rounded px-4 py-2 text-white cursor-pointer"
+          class="bg-color2 hover:bg-color4 rounded px-4 py-2 text-color1 cursor-pointer"
         >
           Gimmicks
         </button>
         <ng-container *ngIf="translateService.currentLang === 'en'"
-          ><span class="sm:hidden">&nbsp;</span><a
+          ><span class="sm:hidden">&nbsp;</span
+          ><a
             [routerLink]="['/gimmicks/']"
             fragment="header"
-            class="hover:text-blue-600"
+            class="hover:text-color5 text-color4"
             >here</a
           ></ng-container
         >

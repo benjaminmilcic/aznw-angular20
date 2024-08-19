@@ -3,7 +3,7 @@ section {
   justify-content: center;
   text-align: center;
   padding: 3rem 0rem 10rem;
- 
+
   position: relative;
 }
 
@@ -16,15 +16,15 @@ section:before {
   width: 100%;
   height: 100%;
   opacity: 0.5;
-   background-color: darkgreen;
-  background-image: radial-gradient(green 9px, transparent 30px),
+  background-color: var(--color2);
+  background-image: radial-gradient(var(--color3) 9px, transparent 30px),
     repeating-radial-gradient(
-      green 0,
-      green 4px,
+      var(--color3) 0,
+      var(--color3) 4px,
       transparent 5px,
       transparent 20px,
-      green 21px,
-      green 25px,
+      var(--color3) 21px,
+      var(--color3) 25px,
       transparent 26px,
       transparent 50px
     );
@@ -136,7 +136,7 @@ h3 {
   padding: 3.5rem;
   transition: background-color 0.7s;
   text-align: left;
-  color: white;
+  color: var(--color1);
   display: flex;
   align-items: center;
   width: 100%;
@@ -149,9 +149,9 @@ h3 {
 
 .contact-button {
   border-radius: 10px;
-  background-color: #212529;
+  background-color: var(--color1);
   border-radius: 0.25rem;
-  color: white;
+  color: var(--color2);
   padding: 1rem 2rem;
   font-size: 1rem;
   text-decoration: none;
@@ -159,11 +159,11 @@ h3 {
 }
 
 .contact-button:active {
-  box-shadow: 0 0 0 0.25rem rgba(66, 70, 73, 0.5);
+  box-shadow: 0 0 0 0.25rem var(--color3);
 }
 
 .contact-button:hover {
-  background-color: rgb(55, 65, 81);
+  opacity: 0.85;
 }
 
 .button-wrapper {
@@ -183,14 +183,10 @@ dialog::backdrop {
 }
 
 .dialog-close {
-  display: flex;
-  justify-content: end;
+  position: fixed;
+  top: 10%;
+  right: calc(10% + 15px);
   cursor: pointer;
-  /* color: white; */
-}
-
-.dialog-close:hover {
-  color: black;
 }
 
 .vocabulary-trainer,
@@ -389,4 +385,30 @@ dialog::backdrop {
   .android-app-image {
     width: 75px;
   }
+}
+
+@keyframes left-box-animation {
+  from {
+    transform: translatex(-100vw);
+  }
+  to {
+  }
+}
+
+.in-view.left-box-animation {
+  animation-name: left-box-animation;
+  animation-duration: 2s;
+}
+
+@keyframes right-box-animation {
+  from {
+    transform: translatex(100vw);
+  }
+  to {
+  }
+}
+
+.in-view.right-box-animation {
+  animation-name: right-box-animation;
+  animation-duration: 2s;
 }

@@ -14,26 +14,26 @@ section:before {
   top: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.8;
+  opacity: 0.4;
   background: radial-gradient(
-        hsl(0, 50%, 27%) 4%,
-        hsl(0, 50%, 18%) 9%,
-        hsla(0, 50%, 20%, 0) 9%
+        hsl(84, 50%, 27%) 4%,
+        hsl(84, 50%, 18%) 9%,
+        hsla(84, 50%, 20%, 0) 9%
       )
       0 0,
     radial-gradient(
-        hsl(0, 50%, 27%) 4%,
-        hsl(0, 50%, 18%) 8%,
-        hsla(0, 50%, 20%, 0) 10%
+        hsl(84, 50%, 27%) 4%,
+        hsl(84, 50%, 18%) 8%,
+        hsla(84, 50%, 20%, 0) 10%
       )
       50px 50px,
-    radial-gradient(hsla(0, 50%, 30%, 0.8) 20%, hsla(0, 50%, 20%, 0)) 50px 0,
-    radial-gradient(hsla(0, 50%, 30%, 0.8) 20%, hsla(0, 50%, 20%, 0)) 0 50px,
-    radial-gradient(hsla(0, 50%, 20%, 1) 35%, hsla(0, 50%, 20%, 0) 60%) 50px 0,
-    radial-gradient(hsla(0, 50%, 20%, 1) 35%, hsla(0, 50%, 20%, 0) 60%) 100px
+    radial-gradient(hsla(84, 50%, 30%, 0.8) 20%, hsla(0, 50%, 20%, 0)) 50px 0,
+    radial-gradient(hsla(84, 50%, 30%, 0.8) 20%, hsla(0, 50%, 20%, 0)) 0 50px,
+    radial-gradient(hsla(84, 50%, 20%, 1) 35%, hsla(0, 50%, 20%, 0) 60%) 50px 0,
+    radial-gradient(hsla(84, 50%, 20%, 1) 35%, hsla(0, 50%, 20%, 0) 60%) 100px
       50px,
-    radial-gradient(hsla(0, 50%, 15%, 0.7), hsla(0, 50%, 20%, 0)) 0 0,
-    radial-gradient(hsla(0, 50%, 15%, 0.7), hsla(0, 50%, 20%, 0)) 50px 50px,
+    radial-gradient(hsla(84, 50%, 15%, 0.7), hsla(0, 50%, 20%, 0)) 0 0,
+    radial-gradient(hsla(84, 50%, 15%, 0.7), hsla(0, 50%, 20%, 0)) 50px 50px,
     linear-gradient(
         45deg,
         hsla(0, 50%, 20%, 0) 49%,
@@ -84,9 +84,9 @@ ul {
 
 .button {
   border-radius: 10px;
-  background-color: #212529;
+  background-color: var(--color3);
   border-radius: 0.25rem;
-  color: white;
+  color: var(--color1);
   padding: 1rem 2rem;
   font-size: 1rem;
   text-decoration: none;
@@ -94,12 +94,11 @@ ul {
 }
 
 .button:active {
-  box-shadow: 0 0 0 0.25rem rgba(66, 70, 73, 0.5);
+  box-shadow: 0 0 0 0.25rem var(--color1);
 }
 
 .button:hover {
-  background-color: rgb(55, 65, 81);
-  color: white;
+  opacity: 0.8;;
 }
 
 .button-wrapper {

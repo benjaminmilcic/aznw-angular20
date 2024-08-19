@@ -4,8 +4,8 @@ footer {
   align-items: center;
   text-align: center;
   padding: 1rem 0rem;
-  color: white;
-  background-color: black;
+  color: var(--color1);
+  background-color: var(--color2);
 }
 
 @media screen and (max-width: 600px) {

@@ -2,12 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-:root{
-  --color1:#f5eec2;
-  --color2:#416a59;
-  --color3:#39395f;
-  --color4:#73a24e;
-  --color5:#a9c25d;
+:root {
+  --color1: #f5eec2;
+  --color2: #416a59;
+  --color3: #39395f;
+  --color4: #73a24e;
+  --color5: #a9c25d;
 }
 
 body,
@@ -100,4 +100,9 @@ button.alert-button.alert-button-confirm:hover {
 .cropper-view-box {
   box-shadow: 0 0 0 1px #39f;
   outline: 0;
+}
+
+.my-tooltip-class .mdc-tooltip__surface {
+  background-color: var(--color3) !important;
+  color: var(--color1) !important;
 }

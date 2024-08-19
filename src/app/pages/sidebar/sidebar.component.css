@@ -5,15 +5,16 @@
   width: 48px;
   height: 48px;
   text-align: center;
-  color: #fff;
-  background: rgba(52, 58, 64, 0.5);
+  color: var(--color1);
+  background: var(--color3);
+  opacity: 0.5;
   line-height: 50px;
   z-index: 999;
   border-radius: 0.25rem;
 }
 
 .menu-toggle:hover {
-  background: #343a40;
+  opacity: 1;
 }
 
 #sidebar-wrapper {
@@ -24,7 +25,7 @@
   height: 100%;
   transition: all 0.4s ease 0s;
   transform: translateX(250px);
-  background: #1d809f;
+  background: var(--color2);
   border-left: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -59,7 +60,7 @@ a {
 .sidebar-item {
   display: flex;
   padding: 15px;
-  color: white;
+  color: var(--color1);
   align-items: center;
 }
 

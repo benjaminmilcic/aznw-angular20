@@ -1,13 +1,13 @@
 <section id="portfolio">
-  <dialog #vocabularyTrainerDialog class="bg-[#4a9ab2] text-white p-4">
+  <dialog #vocabularyTrainerDialog class="bg-color5 text-color3 p-4">
     <div class="dialog-close">
-      <a (click)="vocabularyTrainerDialog.close()"><b>X</b></a>
+      <a (click)="vocabularyTrainerDialog.close()"><b class="hover:text-color1">X</b></a>
     </div>
     <div class="flex flex-col place-items-center">
       <div class="text-3xl mb-4">Vocabulary Trainer</div>
       <div>
         <div class="flex flex-col place-items-center">
-          <p class="mb-8 text-lg">
+          <p class="mb-8 text-lg text-color1">
             {{ "portfolio.vocabularyTrainer.text1" | translate }}
           </p>
           <img
@@ -19,7 +19,7 @@
             <a
               href="https://vocabularyinputapp.web.app"
               target="_blank"
-              class="text-yellow-300 hover:text-yellow-400"
+              class="text-color2 hover:opacity-75"
               tabindex="-1"
               >https://vocabularyinputapp.web.app</a
             >
@@ -28,14 +28,14 @@
             <a
               href="https://github.com/benjaminmilcic/LearnLanguageApp"
               target="_blank"
-              class="text-yellow-300 hover:text-yellow-400"
+              class="text-color2 hover:opacity-75"
               tabindex="-1"
               >{{ "portfolio.vocabularyTrainer.sourceCode" | translate }}</a
             >
           </div>
         </div>
         <div class="mt-10 flex flex-col place-items-center">
-          <p class="mb-8 text-lg">
+          <p class="mb-8 text-lg text-color1">
             {{ "portfolio.vocabularyTrainer.text2" | translate }}
           </p>
           <img
@@ -57,7 +57,7 @@
             <a
               href="https://github.com/benjaminmilcic/learn-language-android-app"
               target="_blank"
-              class="text-yellow-300 hover:text-yellow-400"
+              class="text-color2 hover:opacity-75"
               tabindex="-1"
               >{{ "portfolio.vocabularyTrainer.sourceCode" | translate }}</a
             >
@@ -66,27 +66,27 @@
       </div>
     </div>
   </dialog>
-  <dialog #catchCupDialog class="text-black bg-[#f2cf56] p-4">
+  <dialog #catchCupDialog class="bg-color4 p-4">
     <div class="dialog-close">
-      <a (click)="catchCupDialog.close()"><b>X</b></a>
+      <a (click)="catchCupDialog.close()" class="text-color2"><b class="hover:text-color1">X</b></a>
     </div>
     <div class="cc">
-      <div class="text-3xl mb-4">CatchCups</div>
+      <div class="text-3xl mb-4 text-color2">CatchCups</div>
       <div style="margin-bottom: 10px">
         <a
           href="https://catchcups.com"
           target="_blank"
-          class="text-blue-500 hover:text-blue-600"
+          class="text-color3 hover:opacity-75"
           >https://catchcups.com</a
         >
       </div>
       <div class="cc-text" style="margin-bottom: 20px">
-        <p>
+        <p class="text-color1">
           {{ "portfolio.catchCups.text1" | translate }}
           <a
             href="https://codext.de/"
             target="_blank"
-            class="text-gray-500 hover:text-gray-600"
+            class="text-color3 hover:opacity-75"
             >Codext GmbH</a
           >,
           {{ "portfolio.catchCups.text2" | translate }}
@@ -110,25 +110,25 @@
       </div>
     </div>
   </dialog>
-  <dialog #webaroDialog class="text-black bg-[#f2cf56] p-4">
+  <dialog #webaroDialog class="bg-color4 p-4">
     <div class="dialog-close">
-      <a (click)="webaroDialog.close()"><b>X</b></a>
+      <a (click)="webaroDialog.close()" class="text-color2"><b class="hover:text-color1">X</b></a>
     </div>
     <div class="webaro">
-      <div class="text-3xl mb-4">Webaro</div>
+      <div class="text-3xl mb-4 text-color2">Webaro</div>
       <div class="webaro-text">
-        <p class="mb-8 text-lg">
+        <p class="mb-8 text-lg text-color1">
           {{ "portfolio.webaro.text1" | translate }}
           <a
             href="https://webaro.de"
             target="_blank"
-            class="text-gray-500 hover:text-gray-600"
+            class="text-color3 hover:opacity-75"
             >Weber Agrar Robotik GmbH</a
           >{{ "portfolio.webaro.text2" | translate }}
           <a
             href="https://codext.de"
             target="_blank"
-            class="text-gray-500 hover:text-gray-600"
+            class="text-color3 hover:opacity-75"
             >Codext GmbH</a
           >.
         </p>
@@ -154,7 +154,7 @@
         <a
           href="https://webaro.dev"
           target="_blank"
-          class="text-blue-500 hover:text-blue-600"
+          class="text-color3 hover:opacity-75"
           >https://webaro.dev</a
         >
       </div>
@@ -163,7 +163,7 @@
   <div class="content">
     <h3>Portfolio</h3>
     <div class="wrapper1">
-      <div class="portfolio-item m-4 border-4 border-yellow-700 rounded-xl">
+      <div class="portfolio-item m-4 border-4 border-color2 rounded-xl animation left-box-animation">
         <a style="cursor: pointer" [routerLink]="['/gimmicks']">
           <div class="portfolio-image-wrapper">
             <div class="portfolio-link-wrapper rounded-lg">
@@ -174,7 +174,7 @@
               />
               <div
                 class="portfolio-overlay"
-                style="background-color: #1d819f"
+                style="background-color: var(--color5)"
               ></div>
             </div>
           </div>
@@ -188,7 +188,7 @@
           </div>
         </a>
       </div>
-      <div class="portfolio-item m-4 border-4 border-yellow-700 rounded-xl">
+      <div class="portfolio-item m-4 border-4 border-color2 rounded-xl animation right-box-animation">
         <a style="cursor: pointer" (click)="catchCupDialog.showModal()">
           <div class="portfolio-image-wrapper">
             <div class="portfolio-link-wrapper rounded-lg">
@@ -199,7 +199,7 @@
               />
               <div
                 class="portfolio-overlay"
-                style="background-color: #efc32c"
+                style="background-color: var(--color4)"
               ></div>
             </div>
           </div>
@@ -215,7 +215,7 @@
       </div>
     </div>
     <div class="wrapper2">
-      <div class="portfolio-item m-4 border-4 border-yellow-700 rounded-xl">
+      <div class="portfolio-item m-4 border-4 border-color2 rounded-xl animation left-box-animation">
         <a style="cursor: pointer" (click)="webaroDialog.showModal()">
           <div class="portfolio-image-wrapper">
             <div class="portfolio-link-wrapper rounded-lg">
@@ -226,7 +226,7 @@
               />
               <div
                 class="portfolio-overlay"
-                style="background-color: #efc32c"
+                style="background-color: var(--color4)"
               ></div>
             </div>
           </div>
@@ -240,7 +240,7 @@
           </div>
         </a>
       </div>
-      <div class="portfolio-item m-4 border-4 border-yellow-700 rounded-xl">
+      <div class="portfolio-item m-4 border-4 border-color2 rounded-xl animation right-box-animation">
         <a
           style="cursor: pointer"
           (click)="vocabularyTrainerDialog.showModal()"
@@ -254,7 +254,7 @@
               />
               <div
                 class="portfolio-overlay"
-                style="background-color: #1d819f"
+                style="background-color: var(--color5)"
               ></div>
             </div>
           </div>
