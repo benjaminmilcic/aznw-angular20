@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { TranslateService } from '@ngx-translate/core';
@@ -9,10 +9,12 @@ import { TranslateService } from '@ngx-translate/core';
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.css'],
   standalone: true,
-  imports:[TranslateModule,CommonModule,RouterModule]
+  imports: [TranslateModule, CommonModule, RouterModule],
 })
 export class AboutComponent {
   cvActivated: boolean = false;
+
+  
 
   constructor(public translateService: TranslateService) {}
 

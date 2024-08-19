@@ -272,7 +272,7 @@
         <span class="font-bold"
           >{{ "gimmicks.map.federalState" | translate }}:
         </span>
-        <span>{{ cityInfo.federalState }}</span>
+        <span>{{"gimmicks.map." + cityInfo.federalState | translate  }}</span>
       </div>
       <button
         [matTooltip]="'https://de.wikipedia.org' + cityInfo.link"

@@ -10,7 +10,7 @@ header {
 }
 
 header:before {
-  content: ' ';
+  content: " ";
   display: block;
   position: absolute;
   left: 0;
@@ -87,4 +87,43 @@ a:active {
   h1 {
     font-size: 2rem;
   }
+}
+
+@keyframes name-animation {
+  from {
+    transform: translateY(-100vh);
+  }
+  to {
+  }
+}
+
+.in-view.name-animation {
+  animation-name: name-animation;
+  animation-duration: 1s;
+}
+
+@keyframes profession-animation {
+  from {
+    transform: translatex(-100vw);
+  }
+  to {
+  }
+}
+
+.in-view.profession-animation {
+  animation-name: profession-animation;
+  animation-duration: 1s;
+}
+
+@keyframes button-animation {
+  from {
+    transform: translateY(100vh);
+  }
+  to {
+  }
+}
+
+.in-view.button-animation {
+  animation-name: button-animation;
+  animation-duration: 1.5s;
 }

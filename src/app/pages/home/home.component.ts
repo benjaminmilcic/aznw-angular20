@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { HeaderComponent } from './components/header/header.component';
 import { AboutComponent } from './components/about/about.component';
 import { SkillsComponent } from './components/skills/skills.component';
@@ -25,4 +25,22 @@ import { CommonModule } from '@angular/common';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
-export class HomeComponent {}
+export class HomeComponent {
+  @HostListener('document:DOMContentLoaded')
+  onInView() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          // return;
+        }
+        // entry.target.classList.remove('in-view');
+      });
+    });
+    // Get all the elements with the .animate class applied
+    const allAnimatedElements = document.querySelectorAll('.animation');
+
+    // Add the observer to each of those elements
+    allAnimatedElements.forEach((element) => observer.observe(element));
+  }
+}

@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+:root{
+  --color1:#f5eec2;
+  --color2:#416a59;
+  --color3:#39395f;
+  --color4:#73a24e;
+  --color5:#a9c25d;
+}
+
 body,
 html {
   margin: 0px;
