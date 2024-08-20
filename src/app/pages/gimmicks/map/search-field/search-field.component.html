@@ -1,0 +1,24 @@
+<form>
+        <div class="bg-white rounded shadow relative ml-[10px]">
+          <input
+            type="text"
+            [placeholder]="'gimmicks.map.search' | translate"
+            [formControl]="selectedCity"
+            [matAutocomplete]="auto"
+            class="w-40 h-9 border-none px-2 rounded"
+          />
+          <i
+            class="fa-solid fa-magnifying-glass pr-2 opacity-50 absolute right-2 top-3"
+          ></i>
+          <mat-autocomplete #auto="matAutocomplete">
+            @for (city of selectedCityOptions | async; track city) {
+            <mat-option
+              *ngIf="this.selectedCity.value.length > 2"
+              [value]="city"
+              (click)="selected.emit(city)"
+              >{{ city }}</mat-option
+            >
+            }
+          </mat-autocomplete>
+        </div>
+      </form>

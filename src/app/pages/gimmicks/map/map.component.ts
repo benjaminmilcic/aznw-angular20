@@ -3,6 +3,7 @@ import {
   ChangeDetectorRef,
   Component,
   HostListener,
+  Injector,
   OnInit,
   ViewChild,
 } from '@angular/core';
@@ -31,6 +32,13 @@ import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { TranslateModule } from '@ngx-translate/core';
+import { FilterButtonComponent } from './filter-button/filter-button.component';
+import {
+  createCustomElement,
+  NgElement,
+  WithProperties,
+} from '@angular/elements';
+import { SearchFieldComponent } from './search-field/search-field.component';
 
 @Component({
   selector: 'app-map',
@@ -57,7 +65,9 @@ import { TranslateModule } from '@ngx-translate/core';
     MatFormFieldModule,
     AsyncPipe,
     MatTooltipModule,
-    TranslateModule
+    TranslateModule,
+    FilterButtonComponent,
+    SearchFieldComponent,
   ],
   templateUrl: './map.component.html',
   styleUrl: './map.component.css',
@@ -79,6 +89,7 @@ export class MapComponent implements OnInit, AfterViewInit {
         stylers: [{ visibility: 'off' }],
       },
     ],
+    streetViewControl: false,
   };
 
   showFilter: boolean = false;
@@ -167,7 +178,16 @@ export class MapComponent implements OnInit, AfterViewInit {
   cityOptions: string[];
   selectedCityOptions: Observable<string[]>;
 
-  constructor(private cdr: ChangeDetectorRef) {}
+  constructor(private cdr: ChangeDetectorRef, injector: Injector) {
+    const FilterButtonElement = createCustomElement(FilterButtonComponent, {
+      injector,
+    });
+    customElements.define('filter-button-element', FilterButtonElement);
+    const SearchFieldElement = createCustomElement(SearchFieldComponent, {
+      injector,
+    });
+    customElements.define('search-field-element', SearchFieldElement);
+  }
 
   async ngOnInit() {
     this.setMapDimension();
@@ -194,7 +214,27 @@ export class MapComponent implements OnInit, AfterViewInit {
 
   async ngAfterViewInit() {
     this.map = this.googleMap.googleMap;
+    this.addCustomMapControls();
     this.cdr.detectChanges();
+  }
+
+  addCustomMapControls() {
+    const searchFieldEl: NgElement & WithProperties<SearchFieldComponent> =
+      document.createElement('search-field-element') as any;
+    searchFieldEl.addEventListener('selected', (city: any) =>
+      this.selectCity(city.detail)
+    );
+    this.map.controls[google.maps.ControlPosition.LEFT_TOP].push(searchFieldEl);
+
+    const filterButtonEl: NgElement & WithProperties<FilterButtonComponent> =
+      document.createElement('filter-button-element') as any;
+    filterButtonEl.addEventListener(
+      'toggle',
+      () => (this.showFilter = !this.showFilter)
+    );
+    this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(
+      filterButtonEl
+    );
   }
 
   private setMapDimension() {
@@ -509,8 +549,6 @@ export class MapComponent implements OnInit, AfterViewInit {
         })
         .indexOf(onlyCity);
       const pageNumber = Math.floor(onlyCityIndex / this.paginator.pageSize);
-      console.log(pageNumber);
-
       this.paginator.pageIndex = pageNumber;
     } else {
       this.paginator.firstPage();
@@ -555,5 +593,30 @@ export class MapComponent implements OnInit, AfterViewInit {
     this.map?.panToBounds(bounds);
     this.map?.fitBounds(bounds);
     this.filterTableData(cityName);
+  }
+
+  createButton() {
+    const controlI = document.createElement('i');
+    controlI.classList.add('fa-solid', 'fa-eye');
+    const controlButton = document.createElement('button');
+    controlButton.appendChild(controlI);
+    controlButton.setAttribute('matTooltip', 'Filter');
+    controlButton.classList.add(
+      'bg-blue-500',
+      'text-black',
+      'rounded-lg',
+      'w-10',
+      'h-10',
+      'flex',
+      'justify-center',
+      'place-items-center',
+      'cursor-pointer'
+    );
+    controlButton.addEventListener('click', () => {
+      this.showFilter = !this.showFilter;
+    });
+    const controlDiv = document.createElement('div');
+    controlDiv.appendChild(controlButton);
+    return controlDiv;
   }
 }
