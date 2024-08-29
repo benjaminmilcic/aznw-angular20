@@ -11,6 +11,10 @@ export const environment = {
     authDomain: 'aznw-1753b.firebaseapp.com',
     messagingSenderId: '881209153407',
   },
+  stripe: {
+    createApi: 'http://localhost:80/create.php',
+    returnUrl: 'http://localhost:4200',
+  },
   production: false,
 };
 

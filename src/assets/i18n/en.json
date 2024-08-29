@@ -87,7 +87,7 @@
       "fileUpload": "File upload",
       "print": "Printing",
       "imageManipulation": "Image manipulation",
-      "sourceCode":"Here you will find the source code of this website."
+      "sourceCode":"Source code of this website on GitHub"
     },
     "map": {
       "search": "Search a city...",
@@ -221,7 +221,7 @@
       "haveAccount":"Already have an account?",
       "logout":"Logout",
       "orderBook":"Order the book for only",
-      "street":"Street",
+      "street":"Street:",
       "zipCode":"Zip code:",
       "city":"City:",
       "payAmount":"PAY 14.98 Euro",
@@ -230,7 +230,8 @@
       "bookOrdered":"You ordered the book.",
       "noSuccess":"The payment could not be made!",
       "tryAgain":"Try again",
-      "paymentFailed":"The payment with PayPal failed."
+      "paymentFailed":"The payment with PayPal failed.",
+      "clickToRotate":"Click on book to rotate"
     }
   },
   "pageNotFound": {

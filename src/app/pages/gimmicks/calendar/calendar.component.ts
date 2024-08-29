@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnDestroy, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { isHoliday, getHolidays } from 'feiertagejs';
 import { DayModalComponent } from './day-modal/day-modal.component';
@@ -16,11 +16,17 @@ import { AnalogClockComponent } from './analog-clock/analog-clock.component';
 @Component({
   selector: 'app-calendar',
   standalone: true,
-  imports: [CommonModule, FormsModule, MatBottomSheetModule, TranslateModule,AnalogClockComponent],
+  imports: [
+    CommonModule,
+    FormsModule,
+    MatBottomSheetModule,
+    TranslateModule,
+    AnalogClockComponent,
+  ],
   templateUrl: './calendar.component.html',
   styleUrl: './calendar.component.css',
 })
-export class CalendarComponent implements OnInit {
+export class CalendarComponent implements OnInit, OnDestroy {
   currentYear: number;
   currentMonth: number;
   months = [
@@ -55,9 +61,9 @@ export class CalendarComponent implements OnInit {
 
   async openBottomSheet() {
     await this._bottomSheet.open(QuizBottomSheetComponent, {
-      disableClose: true,
+      disableClose: false,
       data: { year: this.currentYear },
-      hasBackdrop: true,
+      hasBackdrop: false,
     });
   }
 
@@ -71,7 +77,12 @@ export class CalendarComponent implements OnInit {
     );
   }
 
-  async openDayModal(day: number, month: string, year: number,from:string='calendar') {
+  async openDayModal(
+    day: number,
+    month: string,
+    year: number,
+    from: string = 'calendar'
+  ) {
     this.showBackDrop = true;
     const modal = await this.modalCtrl.create({
       component: DayModalComponent,
@@ -98,7 +109,7 @@ export class CalendarComponent implements OnInit {
       modal.componentProps['ActionEvent'].subscribe({
         next: (data) => {
           this.print(data);
-          this.openDayModal(data.day, data.month, data.year,'print');
+          this.openDayModal(data.day, data.month, data.year, 'print');
         },
       });
     });
@@ -214,5 +225,9 @@ export class CalendarComponent implements OnInit {
         },
       },
     ]);
+  }
+
+  ngOnDestroy(): void {
+    this._bottomSheet.dismiss();
   }
 }

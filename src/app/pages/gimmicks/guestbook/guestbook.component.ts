@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import {
   AfterViewInit,
+  ChangeDetectionStrategy,
   ChangeDetectorRef,
   Component,
   ElementRef,
@@ -27,6 +28,7 @@ import { Post } from './guestbook.model';
 import { registerLocaleData } from '@angular/common';
 import * as de from '@angular/common/locales/de';
 import { TranslateModule } from '@ngx-translate/core';
+import { SafeHtmlPipe } from './safe-html.pipe';
 
 @Component({
   selector: 'app-guestbook',
@@ -44,7 +46,8 @@ import { TranslateModule } from '@ngx-translate/core';
     MatTooltipModule,
     IonInput,
     FormsModule,
-    TranslateModule
+    TranslateModule,
+    SafeHtmlPipe,
   ],
   providers: [{ provide: LOCALE_ID, useValue: 'de-DE' }],
   templateUrl: './guestbook.component.html',
@@ -59,7 +62,8 @@ export class GuestbookComponent implements OnInit, AfterViewInit {
   config: EditorComponent['init'] = {
     plugins: 'lists link image table code help wordcount',
     toolbar:
-      'undo redo | bold italic | alignleft aligncenter alignright | bullist numlist outdent indent | link image',
+      'undo redo | bold italic | forecolor backcolor | alignleft aligncenter alignright | bullist numlist outdent indent | link image',
+    toolbar_mode: 'wrap',
     file_picker_types: 'image',
     // image_advtab: false,
     image_description: false,

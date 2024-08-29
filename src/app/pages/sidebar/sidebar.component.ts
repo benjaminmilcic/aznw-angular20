@@ -36,8 +36,8 @@ export class SidebarComponent implements OnInit {
 
     // this is necessary because ngClass does not work with FontAwesome CSS Libary
     // Next time better use FontAwesome Angular Package
-    const menuClosed = document.body.querySelector('.fa-bars');
-    const menuOpen = document.body.querySelector('.fa-xmark');
+    const menuClosed = document.body.querySelector('.fa-bars.menu-button');
+    const menuOpen = document.body.querySelector('.fa-xmark.menu-button');
     if (menuClosed) {
       menuClosed.classList.remove('fa-bars');
       menuClosed.classList.add('fa-xmark');

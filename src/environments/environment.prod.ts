@@ -7,5 +7,9 @@ export const environment = {
     authDomain: 'aznw-1753b.firebaseapp.com',
     messagingSenderId: '881209153407',
   },
+  stripe: {
+    createApi: 'api/stripe/create.php',
+    returnUrl: 'https://auf-zu-neuen-welten.de',
+  },
   production: true,
 };

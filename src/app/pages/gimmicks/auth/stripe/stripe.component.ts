@@ -1,8 +1,3 @@
-// for development
-// 'http://localhost:80/create.php'
-// 'http://localhost:4200/#/gimmicks/auth/login?lang=';
-
-
 import {
   Component,
   ElementRef,
@@ -39,6 +34,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { IonSpinner } from '@ionic/angular/standalone';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
+import { environment } from '../../../../../environments/environment';
 
 @Component({
   selector: 'app-stripe',
@@ -179,7 +175,7 @@ export class StripeComponent implements OnInit {
     try {
       const { clientSecret } = await lastValueFrom(
         this.http.post<{ clientSecret: string }>(
-          'api/stripe/create.php',
+          environment.stripe.createApi,
           JSON.stringify({ items, lang: this.translate.currentLang })
         )
       );
@@ -243,7 +239,7 @@ export class StripeComponent implements OnInit {
             },
           },
           return_url:
-            'https://auf-zu-neuen-welten.de/#/gimmicks/auth/login?lang=' +
+            environment.stripe.returnUrl+'/#/gimmicks/auth/login?lang=' +
             this.translate.currentLang +
             '&',
         },

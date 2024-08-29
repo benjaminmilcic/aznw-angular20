@@ -39,6 +39,7 @@ import {
   WithProperties,
 } from '@angular/elements';
 import { SearchFieldComponent } from './search-field/search-field.component';
+import { MapService } from './map.service';
 
 @Component({
   selector: 'app-map',
@@ -178,15 +179,22 @@ export class MapComponent implements OnInit, AfterViewInit {
   cityOptions: string[];
   selectedCityOptions: Observable<string[]>;
 
-  constructor(private cdr: ChangeDetectorRef, injector: Injector) {
-    const FilterButtonElement = createCustomElement(FilterButtonComponent, {
-      injector,
-    });
-    customElements.define('filter-button-element', FilterButtonElement);
-    const SearchFieldElement = createCustomElement(SearchFieldComponent, {
-      injector,
-    });
-    customElements.define('search-field-element', SearchFieldElement);
+  constructor(
+    private cdr: ChangeDetectorRef,
+    injector: Injector,
+    private mapService: MapService
+  ) {
+    if (this.mapService.firstLoad) {
+      const FilterButtonElement = createCustomElement(FilterButtonComponent, {
+        injector,
+      });
+      customElements.define('filter-button-element', FilterButtonElement);
+      const SearchFieldElement = createCustomElement(SearchFieldComponent, {
+        injector,
+      });
+      customElements.define('search-field-element', SearchFieldElement);
+      mapService.firstLoad = false;
+    }
   }
 
   async ngOnInit() {
@@ -215,6 +223,7 @@ export class MapComponent implements OnInit, AfterViewInit {
   async ngAfterViewInit() {
     this.map = this.googleMap.googleMap;
     this.addCustomMapControls();
+    this.mapService.firstLoad = false;
     this.cdr.detectChanges();
   }
 
@@ -595,28 +604,28 @@ export class MapComponent implements OnInit, AfterViewInit {
     this.filterTableData(cityName);
   }
 
-  createButton() {
-    const controlI = document.createElement('i');
-    controlI.classList.add('fa-solid', 'fa-eye');
-    const controlButton = document.createElement('button');
-    controlButton.appendChild(controlI);
-    controlButton.setAttribute('matTooltip', 'Filter');
-    controlButton.classList.add(
-      'bg-blue-500',
-      'text-black',
-      'rounded-lg',
-      'w-10',
-      'h-10',
-      'flex',
-      'justify-center',
-      'place-items-center',
-      'cursor-pointer'
-    );
-    controlButton.addEventListener('click', () => {
-      this.showFilter = !this.showFilter;
-    });
-    const controlDiv = document.createElement('div');
-    controlDiv.appendChild(controlButton);
-    return controlDiv;
-  }
+  // createButton() {
+  //   const controlI = document.createElement('i');
+  //   controlI.classList.add('fa-solid', 'fa-eye');
+  //   const controlButton = document.createElement('button');
+  //   controlButton.appendChild(controlI);
+  //   controlButton.setAttribute('matTooltip', 'Filter');
+  //   controlButton.classList.add(
+  //     'bg-blue-500',
+  //     'text-black',
+  //     'rounded-lg',
+  //     'w-10',
+  //     'h-10',
+  //     'flex',
+  //     'justify-center',
+  //     'place-items-center',
+  //     'cursor-pointer'
+  //   );
+  //   controlButton.addEventListener('click', () => {
+  //     this.showFilter = !this.showFilter;
+  //   });
+  //   const controlDiv = document.createElement('div');
+  //   controlDiv.appendChild(controlButton);
+  //   return controlDiv;
+  // }
 }

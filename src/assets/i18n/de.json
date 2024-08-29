@@ -76,7 +76,7 @@
       "header2":"die mein Können unter Beweis stellen.",
       "header3":" Gimmicks, ",
       "elements": "Elemente",
-      "searchTypeahead": "Suche mit typeahead",
+      "searchTypeahead": "Suche mit Typeahead",
       "table": "Tabelle mit Sortierung, Filterung und Pagination",
       "resizable": "In der Größe veränderbares Element (auf kleinen Bildschirmen)",
       "scratchCard": "Rubbelkarte",
@@ -87,7 +87,7 @@
       "fileUpload": "Datei Upload",
       "print": "Drucken",
       "imageManipulation":"Bildbearbeitung",
-      "sourceCode":"Hier finden Sie den Quellcode dieser Webseite."
+      "sourceCode":"Quellcode dieser Webseite auf GitHub"
     },
     "map": {
       "search": "Stadtsuche...",
@@ -221,7 +221,7 @@
       "haveAccount": "Sie haben bereits ein Konto?",
       "logout": "Abmelden",
       "orderBook": "Bestellen Sie das Buch für nur",
-      "street": "Straße",
+      "street": "Straße:",
       "zipCode": "PLZ:",
       "city": "Stadt:",
       "payAmount": "14.98 Euro bezahlen",
@@ -230,7 +230,8 @@
       "bookOrdered": "Sie haben das Buch bestellt.",
       "noSuccess": "Die Bezahlung konnte nicht ausgeführt werden!",
       "tryAgain": "Erneut versuchen",
-      "paymentFailed": "Die Zahlung mit PayPal ist fehlgeschlagen."
+      "paymentFailed": "Die Zahlung mit PayPal ist fehlgeschlagen.",
+      "clickToRotate": "Zum Umdrehen aufs Buch klicken"
     }
   },
   "pageNotFound": {

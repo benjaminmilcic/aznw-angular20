@@ -15,35 +15,6 @@
       width="100%"
       [options]="mapOptions"
     ></google-map>
-    <!-- <div
-      *ngIf="!mapToSmall(200)"
-      class="absolute left-[10px] bottom-[20px] sm:left-60 sm:top-[11px] z-10"
-    >
-      <form>
-        <div class="bg-white rounded shadow relative">
-          <input
-            type="text"
-            [placeholder]="'gimmicks.map.search' | translate"
-            [formControl]="selectedCity"
-            [matAutocomplete]="auto"
-            class="w-40 h-9 border-none px-2 rounded"
-          />
-          <i
-            class="fa-solid fa-magnifying-glass pr-2 opacity-50 absolute right-2 top-3"
-          ></i>
-          <mat-autocomplete #auto="matAutocomplete">
-            @for (city of selectedCityOptions | async; track city) {
-            <mat-option
-              *ngIf="this.selectedCity.value.length > 2"
-              [value]="city"
-              (click)="selectCity(city)"
-              >{{ city }}</mat-option
-            >
-            }
-          </mat-autocomplete>
-        </div>
-      </form>
-    </div> -->
     <div
       class="xl:hidden flex absolute rounded-full -bottom-4 cursor-row-resize bg-gray-500 right-[calc(50%-8px)] w-8 h-8 place-items-center justify-center bg-opacity-30 z-50"
       mwlResizeHandle
@@ -51,23 +22,13 @@
     >
       <i class="fa-solid fa-arrows-up-down opacity-30"></i>
     </div>
-    <!-- <div
-      *ngIf="!mapToSmall(200)"
-      class="absolute left-[10px] bottom-[70px] sm:left-[425px] sm:top-[11px] z-10"
-    >
-      <button
-        matTooltip="Filter"
-        class="bg-blue-500 text-black rounded-lg w-10 h-10 flex justify-center place-items-center cursor-pointer"
-        (click)="showFilter = !showFilter"
-      >
-        <i class="fa-solid fa-eye"></i>
-      </button>
-    </div> -->
     <div
       *ngIf="showFilter"
-      class="bg-white rounded-sm absolute left-20 top-[60px] z-10 overflow-y-scroll h-[calc(100%-60px)] w-96"
+      class="bg-white rounded-sm absolute left-20 top-[60px] z-10 overflow-y-scroll h-[calc(100%-60px)] w-fit"
     >
-      <div class="sticky top-0 z-10 bg-gradient-to-b from-yellow-400 to-gray-400 pt-3">
+      <div
+        class="sticky top-0 z-10 bg-gradient-to-b from-yellow-400 to-gray-400 pt-3"
+      >
         <div class="flex justify-between place-items-center">
           <div class="font-bold ml-2">Filter</div>
           <ion-button
@@ -89,154 +50,178 @@
             [(ngModel)]="badenWuerttemberg"
             (ngModelChange)="selectFederalStates()"
             mode="ios"
-            slot="start"
-          ></ion-checkbox>
-          <ion-label>{{
-            "gimmicks.map.Baden-Württemberg" | translate
-          }}</ion-label>
+            labelPlacement="end"
+            justify="start"
+            class="text-sm"
+            >{{ "gimmicks.map.Baden-Württemberg" | translate }}</ion-checkbox
+          >
         </ion-item>
         <ion-item lines="none">
           <ion-checkbox
             [(ngModel)]="bavaria"
             (ngModelChange)="selectFederalStates()"
             mode="ios"
-            slot="start"
-          ></ion-checkbox>
-          <ion-label>{{ "gimmicks.map.Bayern" | translate }}</ion-label>
+            labelPlacement="end"
+            justify="start"
+            class="text-sm"
+            >{{ "gimmicks.map.Bayern" | translate }}</ion-checkbox
+          >
         </ion-item>
         <ion-item lines="none">
           <ion-checkbox
             [(ngModel)]="berlin"
             (ngModelChange)="selectFederalStates()"
             mode="ios"
-            slot="start"
-          ></ion-checkbox>
-          <ion-label>{{ "gimmicks.map.Berlin" | translate }}</ion-label>
+            labelPlacement="end"
+            justify="start"
+            class="text-sm"
+            >{{ "gimmicks.map.Berlin" | translate }}</ion-checkbox
+          >
         </ion-item>
         <ion-item lines="none">
           <ion-checkbox
             [(ngModel)]="brandenburg"
             (ngModelChange)="selectFederalStates()"
             mode="ios"
-            slot="start"
-          ></ion-checkbox>
-          <ion-label>{{ "gimmicks.map.Brandenburg" | translate }}</ion-label>
+            labelPlacement="end"
+            justify="start"
+            class="text-sm"
+            >{{ "gimmicks.map.Brandenburg" | translate }}</ion-checkbox
+          >
         </ion-item>
         <ion-item lines="none">
           <ion-checkbox
             [(ngModel)]="bremen"
             (ngModelChange)="selectFederalStates()"
             mode="ios"
-            slot="start"
-          ></ion-checkbox>
-          <ion-label>{{ "gimmicks.map.Bremen" | translate }}</ion-label>
+            labelPlacement="end"
+            justify="start"
+            class="text-sm"
+            >{{ "gimmicks.map.Bremen" | translate }}</ion-checkbox
+          >
         </ion-item>
         <ion-item lines="none">
           <ion-checkbox
             [(ngModel)]="hamburg"
             (ngModelChange)="selectFederalStates()"
             mode="ios"
-            slot="start"
-          ></ion-checkbox>
-          <ion-label>{{ "gimmicks.map.Hamburg" | translate }}</ion-label>
+            labelPlacement="end"
+            justify="start"
+            class="text-sm"
+            >{{ "gimmicks.map.Hamburg" | translate }}</ion-checkbox
+          >
         </ion-item>
         <ion-item lines="none">
           <ion-checkbox
             [(ngModel)]="hesse"
             (ngModelChange)="selectFederalStates()"
             mode="ios"
-            slot="start"
-          ></ion-checkbox>
-          <ion-label>{{ "gimmicks.map.Hessen" | translate }}</ion-label>
+            labelPlacement="end"
+            justify="start"
+            class="text-sm"
+            >{{ "gimmicks.map.Hessen" | translate }}</ion-checkbox
+          >
         </ion-item>
         <ion-item lines="none">
           <ion-checkbox
             [(ngModel)]="mecklenburgWesternPomerania"
             (ngModelChange)="selectFederalStates()"
             mode="ios"
-            slot="start"
-          ></ion-checkbox>
-          <ion-label>{{
-            "gimmicks.map.Mecklenburg-Vorpommern" | translate
-          }}</ion-label>
+            labelPlacement="end"
+            justify="start"
+            class="text-sm"
+            >{{
+              "gimmicks.map.Mecklenburg-Vorpommern" | translate
+            }}</ion-checkbox
+          >
         </ion-item>
         <ion-item lines="none">
           <ion-checkbox
             [(ngModel)]="lowerSaxony"
             (ngModelChange)="selectFederalStates()"
             mode="ios"
-            slot="start"
-          ></ion-checkbox>
-          <ion-label>{{ "gimmicks.map.Niedersachsen" | translate }}</ion-label>
+            labelPlacement="end"
+            justify="start"
+            class="text-sm"
+            >{{ "gimmicks.map.Niedersachsen" | translate }}</ion-checkbox
+          >
         </ion-item>
         <ion-item lines="none">
           <ion-checkbox
             [(ngModel)]="northrhineWestphalia"
             (ngModelChange)="selectFederalStates()"
             mode="ios"
-            slot="start"
-          ></ion-checkbox>
-          <ion-label>{{
-            "gimmicks.map.Nordrhein-Westfalen" | translate
-          }}</ion-label>
+            labelPlacement="end"
+            justify="start"
+            class="text-sm"
+            >{{ "gimmicks.map.Nordrhein-Westfalen" | translate }}</ion-checkbox
+          >
         </ion-item>
         <ion-item lines="none">
           <ion-checkbox
             [(ngModel)]="rhinelandPalatinate"
             (ngModelChange)="selectFederalStates()"
             mode="ios"
-            slot="start"
-          ></ion-checkbox>
-          <ion-label>{{
-            "gimmicks.map.Rheinland-Pfalz" | translate
-          }}</ion-label>
+            labelPlacement="end"
+            justify="start"
+            class="text-sm"
+            >{{ "gimmicks.map.Rheinland-Pfalz" | translate }}</ion-checkbox
+          >
         </ion-item>
         <ion-item lines="none">
           <ion-checkbox
             [(ngModel)]="saarland"
             (ngModelChange)="selectFederalStates()"
             mode="ios"
-            slot="start"
-          ></ion-checkbox>
-          <ion-label>{{ "gimmicks.map.Saarland" | translate }}</ion-label>
+            labelPlacement="end"
+            justify="start"
+            class="text-sm"
+            >{{ "gimmicks.map.Saarland" | translate }}</ion-checkbox
+          >
         </ion-item>
         <ion-item lines="none">
           <ion-checkbox
             [(ngModel)]="saxony"
             (ngModelChange)="selectFederalStates()"
             mode="ios"
-            slot="start"
-          ></ion-checkbox>
-          <ion-label>{{ "gimmicks.map.Sachsen" | translate }}</ion-label>
+            labelPlacement="end"
+            justify="start"
+            class="text-sm"
+            >{{ "gimmicks.map.Sachsen" | translate }}</ion-checkbox
+          >
         </ion-item>
         <ion-item lines="none">
           <ion-checkbox
             [(ngModel)]="saxonyAnhalt"
             (ngModelChange)="selectFederalStates()"
             mode="ios"
-            slot="start"
-          ></ion-checkbox>
-          <ion-label>{{ "gimmicks.map.Sachsen-Anhalt" | translate }}</ion-label>
+            labelPlacement="end"
+            justify="start"
+            class="text-sm"
+            >{{ "gimmicks.map.Sachsen-Anhalt" | translate }}</ion-checkbox
+          >
         </ion-item>
         <ion-item lines="none">
           <ion-checkbox
             [(ngModel)]="schleswigHolstein"
             (ngModelChange)="selectFederalStates()"
             mode="ios"
-            slot="start"
-          ></ion-checkbox>
-          <ion-label>{{
-            "gimmicks.map.Schleswig-Holstein" | translate
-          }}</ion-label>
+            labelPlacement="end"
+            justify="start"
+            class="text-sm"
+            >{{ "gimmicks.map.Schleswig-Holstein" | translate }}</ion-checkbox
+          >
         </ion-item>
         <ion-item lines="none" class="pb-3">
           <ion-checkbox
             [(ngModel)]="thuringia"
             (ngModelChange)="selectFederalStates()"
             mode="ios"
-            slot="start"
-          ></ion-checkbox>
-          <ion-label>{{ "gimmicks.map.Thüringen" | translate }}</ion-label>
+            labelPlacement="end"
+            justify="start"
+            class="text-sm"
+            >{{ "gimmicks.map.Thüringen" | translate }}</ion-checkbox
+          >
         </ion-item>
       </div>
     </div>
@@ -244,9 +229,11 @@
       cdkDrag
       [hidden]="!showCityInfo"
       *ngIf="!mapToSmall(200)"
-      class="bg-white absolute top-[20px] right-[20px] shadow-lg rounded p-2 z-20"
+      class="bg-white absolute top-[20px] right-[20px] shadow-lg rounded p-2 z-10"
     >
-      <div class="flex justify-between place-items-center bg-gradient-to-b from-yellow-400 to-gray-400 -m-2 p-2">
+      <div
+        class="flex justify-between place-items-center bg-gradient-to-b from-yellow-400 to-gray-400 -m-2 p-2"
+      >
         <div class="cursor-move text-gray-500 w-5" cdkDragHandle>
           <i class="fa-solid fa-arrows-up-down-left-right"></i>
         </div>
@@ -254,7 +241,10 @@
           {{ "gimmicks.map.cityInfo" | translate }}
         </div>
         <div class="w-5">
-          <button (click)="showCityInfo = false" class="bg-transparent cursor-pointer">
+          <button
+            (click)="showCityInfo = false"
+            class="bg-transparent cursor-pointer"
+          >
             <i class="fa-solid fa-xmark text-black"></i>
           </button>
         </div>
@@ -272,7 +262,7 @@
         <span class="font-bold"
           >{{ "gimmicks.map.federalState" | translate }}:
         </span>
-        <span>{{"gimmicks.map." + cityInfo.federalState | translate  }}</span>
+        <span>{{ "gimmicks.map." + cityInfo.federalState | translate }}</span>
       </div>
       <button
         [matTooltip]="'https://de.wikipedia.org' + cityInfo.link"
@@ -291,7 +281,9 @@
   </div>
 
   <div class="my-8 sm:m-8 xl:m-4 xl:overflow-y-auto overflow-x-auto relative">
-    <div class="sticky top-0 left-0 bg-gradient-to-b from-yellow-400 to-blue-600 rounded z-10 pt-4">
+    <div
+      class="sticky top-0 left-0 bg-gradient-to-b from-yellow-400 to-blue-600 rounded z-10 pt-4"
+    >
       <div
         class="flex flex-col md:flex-row justify-center place-items-center mb-4"
       >

@@ -48,6 +48,11 @@ export const routes: Routes = [
         component: AuthComponent,
         children: [
           {
+            path: '',
+            redirectTo: '/gimmicks/auth/login',
+            pathMatch:'full'
+          },
+          {
             path: 'login',
             canActivate: [AuthLoginGuard],
             component: AuthLoginComponent,

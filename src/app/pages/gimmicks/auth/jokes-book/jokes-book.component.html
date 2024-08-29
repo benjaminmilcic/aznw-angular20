@@ -1,7 +1,12 @@
-  <div class="book-perspective">
-    <div class="book-wrap" #bookWrap>
-      <div class="book book-front" #bookFront></div>
-      <div class="book-title"></div>
-      <div class="book book-back" #bookBack></div>
-    </div>
+<div class="book-perspective relative">
+  <div class="book-wrap" #bookWrap>
+    <div class="book book-front" #bookFront></div>
+    <div class="book-title"></div>
+    <div class="book book-back" #bookBack></div>
   </div>
+</div>
+<div class="flex items-center gap-2 ml-2 -mt-8 mb-4">
+  <i class="fa-solid fa-rotate text-sm"></i>
+  <div class="text-sm">{{ "gimmicks.jokes.clickToRotate" | translate }}</div>
+
+</div>
