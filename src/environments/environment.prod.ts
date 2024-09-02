@@ -8,8 +8,16 @@ export const environment = {
     messagingSenderId: '881209153407',
   },
   stripe: {
-    createApi: 'api/stripe/create.php',
+    // old PHP API => createApi: 'api/stripe/create.php',
+    createApi: 'http://87.106.117.170:8080/api/v2/stripe',
     returnUrl: 'https://auf-zu-neuen-welten.de',
+  },
+  guestbook: {
+    getAllPostsApi: 'http://87.106.117.170:8080/api/v2/guestbook',
+    addPostApi: 'http://87.106.117.170:8080/api/v2/guestbook',
+  },
+  contact: {
+    form2mailApi: 'http://87.106.117.170:8080/api/v2/form2mail',
   },
   production: true,
 };

@@ -12,8 +12,16 @@ export const environment = {
     messagingSenderId: '881209153407',
   },
   stripe: {
-    createApi: 'http://localhost:80/create.php',
+    //old PHP API => createApi: 'http://localhost:80/create.php',
+    createApi: 'http://localhost:8080/api/v2/stripe',
     returnUrl: 'http://localhost:4200',
+  },
+  guestbook: {
+    getAllPostsApi: 'http://localhost:8080/api/v2/guestbook',
+    addPostApi: 'http://localhost:8080/api/v2/guestbook',
+  },
+  contact: {
+    form2mailApi: 'http://localhost:8080/api/v2/form2mail',
   },
   production: false,
 };
@@ -25,8 +33,4 @@ export const environment = {
  * This import should be commented out in production mode because it will have a negative impact
  * on performance if an error is thrown.
  */
-// import 'zone.js/plugins/zone-error';  // Included with Angular CLI.         
-          
-          
-          
-          
+// import 'zone.js/plugins/zone-error';  // Included with Angular CLI.

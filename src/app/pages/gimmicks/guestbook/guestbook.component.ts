@@ -23,12 +23,13 @@ import { FormsModule } from '@angular/forms';
 import { DomSanitizer } from '@angular/platform-browser';
 import { finalize, last, lastValueFrom } from 'rxjs';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Post } from './guestbook.model';
 import { registerLocaleData } from '@angular/common';
 import * as de from '@angular/common/locales/de';
 import { TranslateModule } from '@ngx-translate/core';
 import { SafeHtmlPipe } from './safe-html.pipe';
+import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'app-guestbook',
@@ -144,21 +145,46 @@ export class GuestbookComponent implements OnInit, AfterViewInit {
   }
 
   private async saveToDatabase() {
+    // old PHP API
+    //
+    // await lastValueFrom(
+    //   this.http.post<Post>(
+    //     'https://auf-zu-neuen-welten.de/api/posts/post/',
+    //     JSON.stringify({
+    //       name: this.postName,
+    //       content: this.postContent,
+    //       date: new Date(),
+    //     })
+    //   )
+    // );
+
+    const headers = new HttpHeaders().set(
+      'Content-Type',
+      'application/json; charset=utf-8'
+    );
+
     await lastValueFrom(
-      this.http.post<Post>(
-        'https://auf-zu-neuen-welten.de/api/posts/post/',
+      this.http.post<any>(
+        environment.guestbook.addPostApi,
         JSON.stringify({
           name: this.postName,
           content: this.postContent,
           date: new Date(),
-        })
+        }),
+        { headers: headers }
       )
     );
   }
 
   private async loadFromDatabase() {
+    // old PHP API
+    //
+    // this.posts = await lastValueFrom(
+    //   this.http.get<Post[]>('https://auf-zu-neuen-welten.de/api/posts/get/')
+    // );
+
     this.posts = await lastValueFrom(
-      this.http.get<Post[]>('https://auf-zu-neuen-welten.de/api/posts/get/')
+      this.http.get<Post[]>(environment.guestbook.getAllPostsApi)
     );
   }
 }

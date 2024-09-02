@@ -28,7 +28,7 @@ import {
 } from '@stripe/stripe-js';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { CommonModule } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { lastValueFrom, map, take, tap } from 'rxjs';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { IonSpinner } from '@ionic/angular/standalone';
@@ -106,6 +106,18 @@ export class StripeComponent implements OnInit {
     private authService: AuthService
   ) {}
 
+  // async ngOnInit() {
+  //   const items = [{ items: 'book' }];
+  //   const { clientSecret } = await lastValueFrom(
+  //     this.http.post<{ clientSecret: string }>(
+  //       'http://localhost:8080',
+  //       JSON.stringify({ items, lang: this.translate.currentLang })
+  //     )
+  //   );
+  //   console.log(clientSecret);
+    
+  // }
+
   async ngOnInit() {
     const url = window.location.toString();
     let clientSecret;
@@ -172,13 +184,26 @@ export class StripeComponent implements OnInit {
   private async catchClientSectet() {
     this.viewType = 'spinner';
     const items = [{ items: 'book' }];
+    const headers = new HttpHeaders().set(
+      'Content-Type',
+      'application/json; charset=utf-8'
+    );
     try {
       const { clientSecret } = await lastValueFrom(
         this.http.post<{ clientSecret: string }>(
-          environment.stripe.createApi,
-          JSON.stringify({ items, lang: this.translate.currentLang })
+          'http://87.106.117.170:8080/api/v2/stripe',
+          JSON.stringify({ items: 1, lang: this.translate.currentLang }),
+          { headers: headers }
         )
       );
+      // old PHP API
+      //
+      // const { clientSecret } = await lastValueFrom(
+      //   this.http.post<{ clientSecret: string }>(
+      //     environment.stripe.createApi,
+      //     JSON.stringify({ items, lang: this.translate.currentLang })
+      //   )
+      // );
       this.elementsOptions.clientSecret = clientSecret;
       this.elementsOptions.locale = <StripeElementLocale>(
         this.translate.currentLang
@@ -239,9 +264,10 @@ export class StripeComponent implements OnInit {
             },
           },
           return_url:
-            environment.stripe.returnUrl+'/#/gimmicks/auth/login?lang=' +
+            environment.stripe.returnUrl +
+            '/#/gimmicks/auth/login?lang=' +
             this.translate.currentLang +
-            '&',
+            '&'
         },
         redirect: 'if_required',
       })

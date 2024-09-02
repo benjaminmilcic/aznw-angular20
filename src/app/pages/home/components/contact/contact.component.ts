@@ -1,12 +1,13 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { TranslateService } from '@ngx-translate/core';
 import { Subscription, forkJoin } from 'rxjs';
 import { TranslateSendButtonService } from '../shared/translate-send-button.service';
 import { TranslateModule } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
+import { environment } from '../../../../../environments/environment';
 
 @Component({
   selector: 'app-contact',
@@ -44,8 +45,22 @@ export class ContactComponent implements OnInit, OnDestroy {
     this.translate.get('contact.sending').subscribe((res: string) => {
       this.sendButtonText = res;
     });
+
+    // old PHP API
+    //
+    //this.http.post('https://nest-form2mail.adaptable.app/', messageForm.value);
+    
+    const headers = new HttpHeaders().set(
+      'Content-Type',
+      'application/json; charset=utf-8'
+    );
+    
     this.http
-      .post('https://nest-form2mail.adaptable.app/', messageForm.value)
+      .post(
+        environment.contact.form2mailApi,
+        JSON.stringify(messageForm.value),
+        { headers: headers }
+      )
       .subscribe(
         () => {
           this.isSending = false;
