@@ -13,15 +13,15 @@ export const environment = {
   },
   stripe: {
     //old PHP API => createApi: 'http://localhost:80/create.php',
-    createApi: 'http://localhost:8080/api/v2/stripe',
+    createApi: 'https://localhost:8443/api/v2/stripe',
     returnUrl: 'http://localhost:4200',
   },
   guestbook: {
-    getAllPostsApi: 'http://localhost:8080/api/v2/guestbook',
-    addPostApi: 'http://localhost:8080/api/v2/guestbook',
+    getAllPostsApi: 'https://localhost:8443/api/v2/guestbook',
+    addPostApi: 'https://localhost:8443/api/v2/guestbook',
   },
   contact: {
-    form2mailApi: 'http://localhost:8080/api/v2/form2mail',
+    form2mailApi: 'https://localhost:8443/api/v2/form2mail',
   },
   production: false,
 };

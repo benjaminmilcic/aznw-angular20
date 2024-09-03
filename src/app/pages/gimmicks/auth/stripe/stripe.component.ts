@@ -191,7 +191,7 @@ export class StripeComponent implements OnInit {
     try {
       const { clientSecret } = await lastValueFrom(
         this.http.post<{ clientSecret: string }>(
-          'http://87.106.117.170:8080/api/v2/stripe',
+          environment.stripe.createApi,
           JSON.stringify({ items: 1, lang: this.translate.currentLang }),
           { headers: headers }
         )
