@@ -19,6 +19,7 @@ export const environment = {
   guestbook: {
     getAllPostsApi: 'https://localhost:8443/api/v2/guestbook',
     addPostApi: 'https://localhost:8443/api/v2/guestbook',
+    filesUrl: 'https://localhost:8443/api/v2/guestbook/files',
   },
   contact: {
     form2mailApi: 'https://localhost:8443/api/v2/form2mail',

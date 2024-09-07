@@ -72,30 +72,74 @@ export class GuestbookComponent implements OnInit, AfterViewInit {
     block_unsupported_drop: true,
     images_reuse_filename: true,
     paste_data_images: false,
-    images_upload_handler: (blobInfo) => {
-      const file = blobInfo.blob();
-      const filePath = `${Date.now()}-${blobInfo.filename()}`;
-      const ref = this.storage.ref(filePath);
-      const task = this.storage.upload(filePath, file);
-      const promise = new Promise<string>((resolve, reject) => {
-        task
-          .snapshotChanges()
-          .pipe(
-            finalize(() =>
-              ref
-                .getDownloadURL()
-                .pipe(last())
-                .subscribe((url) => {
-                  resolve(url);
-                })
-            )
-          )
-          .subscribe((_) => {
-            // do nothing
-          });
-      });
-      return promise;
-    },
+    // images_upload_handler: (blobInfo) => {
+    //   const file = blobInfo.blob();
+    //   const filePath = `${Date.now()}-${blobInfo.filename()}`;
+    //   const ref = this.storage.ref(filePath);
+    //   const task = this.storage.upload(filePath, file);
+    //   const promise = new Promise<string>((resolve, reject) => {
+    //     task
+    //       .snapshotChanges()
+    //       .pipe(
+    //         finalize(() =>
+    //           ref
+    //             .getDownloadURL()
+    //             .pipe(last())
+    //             .subscribe((url) => {
+    //               resolve(url);
+    //             })
+    //         )
+    //       )
+    //       .subscribe((_) => {
+    //         // do nothing
+    //       });
+    //   });
+    //   return promise;
+    // },
+    images_upload_handler: (blobInfo, progress) =>
+      new Promise((resolve, reject) => {
+        const xhr = new XMLHttpRequest();
+        xhr.withCredentials = false;
+        let url = environment.guestbook.filesUrl;
+        xhr.open('POST', url + '/upload');
+
+        xhr.upload.onprogress = (e) => {
+          progress((e.loaded / e.total) * 100);
+        };
+
+        xhr.onload = () => {
+          if (xhr.status === 403) {
+            reject({ message: 'HTTP Error: ' + xhr.status, remove: true });
+            return;
+          }
+
+          if (xhr.status < 200 || xhr.status >= 300) {
+            reject('HTTP Error: ' + xhr.status);
+            return;
+          }
+
+          const json = JSON.parse(xhr.responseText);
+
+          if (!json || typeof json.file != 'string') {
+            reject('Invalid JSON: ' + xhr.responseText);
+            return;
+          }
+
+          resolve(url + '/download/' + json.file);
+        };
+
+        xhr.onerror = () => {
+          reject(
+            'Image upload failed due to a XHR Transport error. Code: ' +
+              xhr.status
+          );
+        };
+
+        const formData = new FormData();
+        formData.append('file', blobInfo.blob(), blobInfo.filename());
+
+        xhr.send(formData);
+      }),
   };
 
   @ViewChild('youTubePlayer') youTubePlayer: ElementRef<HTMLDivElement>;
