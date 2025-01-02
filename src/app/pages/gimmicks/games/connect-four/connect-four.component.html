@@ -1,0 +1,17 @@
+<div class="game-container">
+  <h1>{{ title }}</h1>
+  <div *ngIf="winner" class="winner">
+    {{ winner }} wins!
+  </div>
+  <div class="board">
+    <div class="row" *ngFor="let row of board; let rowIndex = index">
+      <div
+        class="cell"
+        *ngFor="let cell of row; let colIndex = index"
+        [ngClass]="cell"
+        (click)="dropDisc(colIndex)"
+      ></div>
+    </div>
+  </div>
+  <button (click)="resetBoard()">Reset</button>
+</div>

@@ -189,21 +189,23 @@ export class StripeComponent implements OnInit {
       'application/json; charset=utf-8'
     );
     try {
-      const { clientSecret } = await lastValueFrom(
-        this.http.post<{ clientSecret: string }>(
-          environment.stripe.createApi,
-          JSON.stringify({ items: 1, lang: this.translate.currentLang }),
-          { headers: headers }
-        )
-      );
-      // old PHP API
+      // spring boot api
       //
       // const { clientSecret } = await lastValueFrom(
       //   this.http.post<{ clientSecret: string }>(
       //     environment.stripe.createApi,
-      //     JSON.stringify({ items, lang: this.translate.currentLang })
+      //     JSON.stringify({ items: 1, lang: this.translate.currentLang }),
+      //     { headers: headers }
       //   )
       // );
+      // old PHP API or new nest api
+      //
+      const { clientSecret } = await lastValueFrom(
+        this.http.post<{ clientSecret: string }>(
+          environment.stripe.createApi,
+          JSON.stringify({ items, lang: this.translate.currentLang })
+        )
+      );
       this.elementsOptions.clientSecret = clientSecret;
       this.elementsOptions.locale = <StripeElementLocale>(
         this.translate.currentLang

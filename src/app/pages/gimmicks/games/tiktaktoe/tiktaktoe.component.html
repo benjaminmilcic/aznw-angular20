@@ -1,0 +1,150 @@
+<div
+  class="flex flex-col gap-6 justify-center items-center h-[calc(100%-40px)]"
+>
+  <div class="flex gap-12">
+    <div class="bg-yellow-600 rounded-sm p-2">
+      <div>X</div>
+      <div><input [(ngModel)]="name1" class="bg-white p-1" type="text" /></div>
+    </div>
+    <div class="bg-yellow-600 rounded-sm p-2">
+      <div>O</div>
+      <div><input [(ngModel)]="name2" class="bg-white p-1" type="text" /></div>
+    </div>
+  </div>
+  <div class="grid grid-cols-3 gap-4">
+    <div>
+      <button
+        [disabled]="boardDisabled"
+        (click)="makeMove(0, 0)"
+        class="w-20 h-20 text-[48px] disabled:bg-gray-200 bg-gray-200"
+        [ngClass]="{
+          'bg-green-400': row1 || column1 || diagonal1,
+          'text-blue-400 disabled:text-blue-400': board[0][0] === 'X',
+          'text-red-400 disabled:text-red-400': board[0][0] === 'O'
+        }"
+      >
+        {{ board[0][0] }}
+      </button>
+    </div>
+    <div>
+      <button
+        [disabled]="boardDisabled"
+        (click)="makeMove(0, 1)"
+        class="w-20 h-20 text-[48px] disabled:bg-gray-200 bg-gray-200"
+        [ngClass]="{
+          'bg-green-400': row1 || column2,
+          'text-blue-400 disabled:text-blue-400': board[0][1] === 'X',
+          'text-red-400 disabled:text-red-400': board[0][1] === 'O'
+        }"
+      >
+        {{ board[0][1] }}
+      </button>
+    </div>
+    <div>
+      <button
+        [disabled]="boardDisabled"
+        (click)="makeMove(0, 2)"
+        class="w-20 h-20 text-[48px] disabled:bg-gray-200 bg-gray-200"
+        [ngClass]="{
+          'bg-green-400': row1 || column3 || diagonal2,
+          'text-blue-400 disabled:text-blue-400': board[0][2] === 'X',
+          'text-red-400 disabled:text-red-400': board[0][2] === 'O'
+        }"
+      >
+        {{ board[0][2] }}
+      </button>
+    </div>
+    <div>
+      <button
+        [disabled]="boardDisabled"
+        (click)="makeMove(1, 0)"
+        class="w-20 h-20 text-[48px] disabled:bg-gray-200 bg-gray-200"
+        [ngClass]="{
+          'bg-green-400': row2 || column1,
+          'text-blue-400 disabled:text-blue-400': board[1][0] === 'X',
+          'text-red-400 disabled:text-red-400': board[1][0] === 'O'
+        }"
+      >
+        {{ board[1][0] }}
+      </button>
+    </div>
+    <div>
+      <button
+        [disabled]="boardDisabled"
+        (click)="makeMove(1, 1)"
+        class="w-20 h-20 text-[48px] disabled:bg-gray-200 bg-gray-200"
+        [ngClass]="{
+          'bg-green-400': row2 || column2 || diagonal1 || diagonal2,
+          'text-blue-400 disabled:text-blue-400': board[1][1] === 'X',
+          'text-red-400 disabled:text-red-400': board[1][1] === 'O'
+        }"
+      >
+        {{ board[1][1] }}
+      </button>
+    </div>
+    <div>
+      <button
+        [disabled]="boardDisabled"
+        (click)="makeMove(1, 2)"
+        class="w-20 h-20 text-[48px] disabled:bg-gray-200 bg-gray-200"
+        [ngClass]="{
+          'bg-green-400': row2 || column3,
+          'text-blue-400 disabled:text-blue-400': board[1][2] === 'X',
+          'text-red-400 disabled:text-red-400': board[1][2] === 'O'
+        }"
+      >
+        {{ board[1][2] }}
+      </button>
+    </div>
+    <div>
+      <button
+        [disabled]="boardDisabled"
+        (click)="makeMove(2, 0)"
+        class="w-20 h-20 text-[48px] disabled:bg-gray-200 bg-gray-200"
+        [ngClass]="{
+          'bg-green-400': row3 || column1 || diagonal2,
+          'text-blue-400 disabled:text-blue-400': board[2][0] === 'X',
+          'text-red-400 disabled:text-red-400': board[2][0] === 'O'
+        }"
+      >
+        {{ board[2][0] }}
+      </button>
+    </div>
+    <div>
+      <button
+        [disabled]="boardDisabled"
+        (click)="makeMove(2, 1)"
+        class="w-20 h-20 text-[48px] disabled:bg-gray-200 bg-gray-200"
+        [ngClass]="{
+          'bg-green-400': row3 || column2,
+          'text-blue-400 disabled:text-blue-400': board[2][1] === 'X',
+          'text-red-400 disabled:text-red-400': board[2][1] === 'O'
+        }"
+      >
+        {{ board[2][1] }}
+      </button>
+    </div>
+    <div>
+      <button
+        [disabled]="boardDisabled"
+        (click)="makeMove(2, 2)"
+        class="w-20 h-20 text-[48px] disabled:bg-gray-200 bg-gray-200"
+        [ngClass]="{
+          'bg-green-400': row3 || column3 || diagonal1,
+          'text-blue-400 disabled:text-blue-400': board[2][2] === 'X',
+          'text-red-400 disabled:text-red-400': board[2][2] === 'O'
+        }"
+      >
+        {{ board[2][2] }}
+      </button>
+    </div>
+  </div>
+  <div *ngIf="!showDraw && !showWin">{{ currentName }} ist am Zug</div>
+  <button (click)="onNewGame()" class="bg-yellow-300 rounded py-1 px-4">
+    Neues Spiel
+  </button>
+  <div *ngIf="showWin">
+    {{ currentName === name1 ? name2 : name1 }} hat gewonnen
+  </div>
+  <div *ngIf="showDraw">Das Spiel endet unentschieden</div>
+</div>

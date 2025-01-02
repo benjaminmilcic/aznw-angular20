@@ -13,6 +13,11 @@ import { AuthMainComponent } from './pages/gimmicks/auth/auth-main/auth-main.com
 import { AuthComponent } from './pages/gimmicks/auth/auth.component';
 import { AuthMainGuard } from './pages/gimmicks/auth/auth-main.guard';
 import { AuthLoginGuard } from './pages/gimmicks/auth/auth-login.guard';
+import { TiktaktoeComponent } from './pages/gimmicks/games/tiktaktoe/tiktaktoe.component';
+import { ConnectFourComponent } from './pages/gimmicks/games/connect-four/connect-four.component';
+import { GamesComponent } from './pages/gimmicks/games/games.component';
+import { Tiktaktoe2Component } from './pages/gimmicks/games/tiktaktoe2/tiktaktoe2.component';
+import { MemoQuizComponent } from './pages/gimmicks/games/memo-quiz/memo-quiz.component';
 
 export const routes: Routes = [
   {
@@ -50,7 +55,7 @@ export const routes: Routes = [
           {
             path: '',
             redirectTo: '/gimmicks/auth/login',
-            pathMatch:'full'
+            pathMatch: 'full',
           },
           {
             path: 'login',
@@ -61,6 +66,33 @@ export const routes: Routes = [
             path: 'main',
             canActivate: [AuthMainGuard],
             component: AuthMainComponent,
+          },
+        ],
+      },
+      {
+        path: 'games',
+        component: GamesComponent,
+        children: [
+          {
+            path: '',
+            redirectTo: '/gimmicks/games/tiktaktoe',
+            pathMatch: 'full',
+          },
+          {
+            path: 'tiktaktoe',
+            component: TiktaktoeComponent,
+          },
+          {
+            path: 'connect-four',
+            component: ConnectFourComponent,
+          },
+          {
+            path: 'tiktaktoe2',
+            component: Tiktaktoe2Component,
+          },
+          {
+            path: 'memo-quiz',
+            component: MemoQuizComponent,
           },
         ],
       },

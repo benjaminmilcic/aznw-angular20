@@ -10,7 +10,9 @@ export const environment = {
   stripe: {
     // old PHP API => createApi: 'api/stripe/create.php',
     // new spring boot API => createApi: 'https://87.106.117.170:8443/api/v2/stripe',
-    createApi: 'https://benjaminmilcic.site:8443/api/v2/stripe',
+    // new spring boot API with url name => createApi: 'https://benjaminmilcic.site:8443/api/v2/stripe',
+    // new nest api:
+    createApi: 'https://benjaminmilcic.site:3000/stripe',
     returnUrl: 'https://auf-zu-neuen-welten.de',
   },
   guestbook: {
@@ -24,9 +26,11 @@ export const environment = {
     filesUrl: 'https://benjaminmilcic.site:8443/api/v2/guestbook/files',
   },
   contact: {
-    // old PHP API => form2mailApi: 'https://nest-form2mail.adaptable.app/',
+    // old nest API => form2mailApi: 'https://nest-form2mail.adaptable.app/',
     // new spring boot API => form2mailApi: 'https://87.106.117.170:8443/api/v2/form2mail',
-    form2mailApi: 'https://benjaminmilcic.site:8443/api/v2/form2mail',
+    // new spring boot API with url name => form2mailApi: 'https://benjaminmilcic.site:8443/api/v2/form2mail',
+    // new nest api:
+    form2mailApi: 'https://benjaminmilcic.site:3000/form2email',
   },
   production: true,
 };

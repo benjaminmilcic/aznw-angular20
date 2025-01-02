@@ -1,0 +1,33 @@
+<div class="flex h-[calc(100%-40px)]">
+  <div class="w-full"><router-outlet></router-outlet></div>
+  <div class="flex flex-col gap-6 w-[100px] p-4">
+    <button
+      mat-raised-button
+      [routerLink]="['/gimmicks/games/tiktaktoe']"
+      routerLinkActive="router-link-active"
+    >
+      TIKTAKTOE
+    </button>
+    <button
+      mat-raised-button
+      [routerLink]="['/gimmicks/games/connect-four']"
+      routerLinkActive="router-link-active"
+    >
+      4 Gewinnt
+    </button>
+    <button
+      mat-raised-button
+      [routerLink]="['/gimmicks/games/tiktaktoe2']"
+      routerLinkActive="router-link-active"
+    >
+      TIKTAKTOE2
+    </button>
+    <button
+      mat-raised-button
+      [routerLink]="['/gimmicks/games/memo-quiz']"
+      routerLinkActive="router-link-active"
+    >
+      Memo-Quiz
+    </button>
+  </div>
+</div>

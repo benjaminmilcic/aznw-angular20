@@ -13,7 +13,9 @@ export const environment = {
   },
   stripe: {
     //old PHP API => createApi: 'http://localhost:80/create.php',
-    createApi: 'https://localhost:8443/api/v2/stripe',
+    // new spring boot API => createApi: 'https://localhost:8443/api/v2/stripe',
+    // new nest api:
+    createApi: 'https://benjaminmilcic.site:3000/stripe',
     returnUrl: 'http://localhost:4200',
   },
   guestbook: {
@@ -22,7 +24,9 @@ export const environment = {
     filesUrl: 'https://localhost:8443/api/v2/guestbook/files',
   },
   contact: {
-    form2mailApi: 'https://localhost:8443/api/v2/form2mail',
+    // new spring boot API => form2mailApi: 'https://localhost:8443/api/v2/form2mail',
+    // new nest api:
+    form2mailApi: 'https://benjaminmilcic.site:3000/form2email',
   },
   production: false,
 };

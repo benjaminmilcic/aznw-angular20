@@ -46,15 +46,17 @@ export class ContactComponent implements OnInit, OnDestroy {
       this.sendButtonText = res;
     });
 
-    // old PHP API
+    // old Nest API
     //
     //this.http.post('https://nest-form2mail.adaptable.app/', messageForm.value);
-    
+
+    // spring or nest boot api
+
     const headers = new HttpHeaders().set(
       'Content-Type',
       'application/json; charset=utf-8'
     );
-    
+
     this.http
       .post(
         environment.contact.form2mailApi,
