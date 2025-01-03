@@ -25,10 +25,11 @@ export const environment = {
     // new spring boot API with url name =>
     //                  getAllPostsApi: 'https://benjaminmilcic.site:8443/api/v2/guestbook',
     //                  addPostApi: 'https://benjaminmilcic.site:8443/api/v2/guestbook',
+    //                  filesUrl: 'https://benjaminmilcic.site:8443/api/v2/guestbook/files',
     // new nest api:
     getAllPostsApi: 'https://benjaminmilcic.site:3000/guestbook',
     addPostApi: 'https://benjaminmilcic.site:3000/guestbook',
-    filesUrl: 'https://benjaminmilcic.site:8443/api/v2/guestbook/files',
+    filesUrl: 'https://benjaminmilcic.site:3000/files',
   },
   contact: {
     // old nest API => form2mailApi: 'https://nest-form2mail.adaptable.app/',

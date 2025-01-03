@@ -26,7 +26,7 @@ export const environment = {
     // new nest api:
     getAllPostsApi: 'http://localhost:3000/guestbook',
     addPostApi: 'http://localhost:3000/guestbook',
-    filesUrl: 'https://benjaminmilcic.site:8443/api/v2/guestbook/files',
+    filesUrl: 'http://localhost:3000/files',
   },
   contact: {
     // new spring boot API => form2mailApi: 'https://localhost:8443/api/v2/form2mail',
