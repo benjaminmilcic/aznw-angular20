@@ -16,13 +16,18 @@ export const environment = {
     returnUrl: 'https://auf-zu-neuen-welten.de',
   },
   guestbook: {
-    // old PHP API => getAllPostsApi: 'https://auf-zu-neuen-welten.de/api/posts/get/',
-    // new spring boot API => getAllPostsApi: 'https://87.106.117.170:8443/api/v2/guestbook',
-    getAllPostsApi: 'https://benjaminmilcic.site:8443/api/v2/guestbook',
-
-    // old PHP API => addPostApi: 'https://auf-zu-neuen-welten.de/api/posts/post/',
-    // new spring boot API => addPostApi: 'https://87.106.117.170:8443/api/v2/guestbook',
-    addPostApi: 'https://benjaminmilcic.site:8443/api/v2/guestbook',
+    // old PHP API =>
+    //                 getAllPostsApi: 'https://auf-zu-neuen-welten.de/api/posts/get/',
+    //                 addPostApi: 'https://auf-zu-neuen-welten.de/api/posts/post/',
+    // new spring boot API =>
+    //                  getAllPostsApi: 'https://87.106.117.170:8443/api/v2/guestbook',
+    //                  addPostApi: 'https://87.106.117.170:8443/api/v2/guestbook',
+    // new spring boot API with url name =>
+    //                  getAllPostsApi: 'https://benjaminmilcic.site:8443/api/v2/guestbook',
+    //                  addPostApi: 'https://benjaminmilcic.site:8443/api/v2/guestbook',
+    // new nest api:
+    getAllPostsApi: 'https://benjaminmilcic.site:3000/guestbook',
+    addPostApi: 'https://benjaminmilcic.site:3000/guestbook',
     filesUrl: 'https://benjaminmilcic.site:8443/api/v2/guestbook/files',
   },
   contact: {

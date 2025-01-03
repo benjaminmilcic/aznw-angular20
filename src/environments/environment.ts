@@ -15,18 +15,23 @@ export const environment = {
     //old PHP API => createApi: 'http://localhost:80/create.php',
     // new spring boot API => createApi: 'https://localhost:8443/api/v2/stripe',
     // new nest api:
-    createApi: 'https://benjaminmilcic.site:3000/stripe',
+    createApi: 'http://localhost:3000/stripe',
     returnUrl: 'http://localhost:4200',
   },
   guestbook: {
-    getAllPostsApi: 'https://localhost:8443/api/v2/guestbook',
-    addPostApi: 'https://localhost:8443/api/v2/guestbook',
-    filesUrl: 'https://localhost:8443/api/v2/guestbook/files',
+    // new spring boot API =>
+    //                        getAllPostsApi: 'https://localhost:8443/api/v2/guestbook',
+    //                        addPostApi: 'https://localhost:8443/api/v2/guestbook',
+    //                        filesUrl: 'https://localhost:8443/api/v2/guestbook/files',
+    // new nest api:
+    getAllPostsApi: 'http://localhost:3000/guestbook',
+    addPostApi: 'http://localhost:3000/guestbook',
+    filesUrl: 'https://benjaminmilcic.site:8443/api/v2/guestbook/files',
   },
   contact: {
     // new spring boot API => form2mailApi: 'https://localhost:8443/api/v2/form2mail',
     // new nest api:
-    form2mailApi: 'https://benjaminmilcic.site:3000/form2email',
+    form2mailApi: 'http://localhost:3000/form2email',
   },
   production: false,
 };
