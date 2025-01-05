@@ -1,7 +1,17 @@
 <section
   class="bg-gradient-to-b from-cyan-400 to-cyan-600 rounded shadow flex flex-col items-center p-8"
 >
-  <div class="self-end relative">
+  
+  <div class="flex w-full justify-between relative">
+    <mat-icon id="click-trigger" fontIcon="info" class="cursor-pointer text-red-500"></mat-icon>
+    <ion-popover trigger="click-trigger" triggerAction="click">
+      <ng-template>
+        <ion-content class="ion-padding"
+          ><div class="p-4">{{ "gimmicks.jokes.textToSpeech" | translate }}</div>
+          </ion-content
+        >
+      </ng-template>
+    </ion-popover>
     <button
       class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded shadow cursor-pointer"
       (click)="onLogout()"
@@ -50,12 +60,23 @@
     *ngIf="jokes && jokes.length > 0"
     class="relative whitespace-pre-line flex flex-col gap-6 w-60 sm:w-96"
   >
-    <div *ngIf="english">
-      {{ jokes[jokeIndex].english }}
+    <div *ngIf="english" class="flex gap-2">
+      <div class="w-full">{{ jokes[jokeIndex].english }}</div>
+      <button mat-icon-button (click)="onPlay(jokes[jokeIndex].english)">
+        <mat-icon fontIcon="play_circle"></mat-icon>
+      </button>
     </div>
-    <div *ngIf="german">{{ jokes[jokeIndex].deutsch }}</div>
-    <div *ngIf="croatian">
-      {{ jokes[jokeIndex].hrvatski }}
+    <div *ngIf="german" class="flex gap-2">
+      <div class="w-full">{{ jokes[jokeIndex].deutsch }}</div>
+      <button mat-icon-button (click)="onPlay(jokes[jokeIndex].deutsch)">
+        <mat-icon fontIcon="play_circle"></mat-icon>
+      </button>
+    </div>
+    <div *ngIf="croatian" class="flex gap-2">
+      <div class="w-full">{{ jokes[jokeIndex].hrvatski }}</div>
+      <button mat-icon-button (click)="onPlay(jokes[jokeIndex].hrvatski)">
+        <mat-icon fontIcon="play_circle"></mat-icon>
+      </button>
     </div>
   </div>
 </section>

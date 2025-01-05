@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { lastValueFrom } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+import { lastValueFrom, Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { Joke, JokesFromApi } from '../auth.model';
 import { IonCheckbox } from '@ionic/angular/standalone';
@@ -8,11 +8,26 @@ import { FormsModule } from '@angular/forms';
 import { AuthService } from '../auth.service';
 import { TranslateModule } from '@ngx-translate/core';
 import { environment } from '../../../../../environments/environment';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { IonContent, IonPopover } from '@ionic/angular/standalone';
+
 
 @Component({
   selector: 'app-main',
   standalone: true,
-  imports: [CommonModule, IonCheckbox, FormsModule, TranslateModule],
+  imports: [
+    CommonModule,
+    IonCheckbox,
+    FormsModule,
+    TranslateModule,
+    MatButtonModule,
+    MatIconModule,
+    MatTooltipModule,
+    IonContent,
+    IonPopover,
+  ],
   templateUrl: './auth-main.component.html',
   styleUrl: './auth-main.component.css',
 })
@@ -22,6 +37,12 @@ export class AuthMainComponent implements OnInit {
   english = true;
   german = true;
   croatian = true;
+
+  private apiKey = '02a129c7ef07d2d6862e13fdcdc32853';
+  private voiceId = 'pNInz6obpgDQGcFmaJgB'; // Change to your preferred voice
+  private apiUrl = `https://api.elevenlabs.io/v1/text-to-speech/${this.voiceId}`;
+  isLoading = false;
+  audio = new Audio();
 
   constructor(private http: HttpClient, private authService: AuthService) {}
   async ngOnInit() {
@@ -76,77 +97,42 @@ export class AuthMainComponent implements OnInit {
     this.jokeIndex =
       this.jokeIndex > this.jokes.length - 2 ? 0 : this.jokeIndex + 1;
   }
+
+  generateSpeech(text: string): Observable<Blob> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'xi-api-key': this.apiKey,
+    });
+
+    const body = {
+      text: text,
+      model_id: 'eleven_multilingual_v2',
+      voice_settings: {
+        stability: 0.5,
+        similarity_boost: 0.8,
+      },
+    };
+
+    return this.http.post(this.apiUrl, body, { headers, responseType: 'blob' });
+  }
+
+  async onPlay(text: string) {
+    if (!text.trim()) return;
+
+    this.isLoading = true;
+
+    this.generateSpeech(text).subscribe(
+      (blob) => {
+        this.isLoading = false;
+
+        const audioUrl = URL.createObjectURL(blob);
+        this.audio.src = audioUrl;
+        this.audio.play();
+      },
+      (error) => {
+        console.error('Error generating speech:', error);
+        this.isLoading = false;
+      }
+    );
+  }
 }
-
-// const playLanguage = this.otherLanguage === 'german' ? 'de-de' : 'hr-hr';
-
-//     this.playAudio.src =
-//       'https://api.voicerss.org/?key=5cde9db8cff64cc2b675b76dfcadb68f&r=-3&hl=' +
-//       playLanguage +
-//       '&src=' +
-//       this.wordToPractice[this.otherLanguage];
-
-//     this.playAudio.play();
-
-// ctx = new AudioContext();
-// audio;
-
-// async ngOnInit() {
-
-// let text = (<string>this.vicevi[0].deutsch).replaceAll('\n', '');
-//     text = text.replaceAll('\r', '');
-//     text = text.replaceAll('"', '');
-
-//     console.log(text);
-
-//     const options = {
-//       method: 'POST',
-//       headers: {
-//         'xi-api-key': '02a129c7ef07d2d6862e13fdcdc32853',
-//         'Content-Type': 'application/json',
-//       },
-//       body:
-//         '{"model_id":"eleven_multilingual_v2","text":"' +
-//         text +
-//         '","voice_settings":{"similarity_boost":0.5,"stability":0.5}}',
-//     };
-
-//     await fetch(
-//       'https://api.elevenlabs.io/v1/text-to-speech/VR6AewLTigWG4xSOukaG',
-//       options
-//     )
-//       .then((data) => data.arrayBuffer())
-//       .then((arrayBuffer) => this.ctx.decodeAudioData(arrayBuffer))
-//       .then((decodedAudio) => {
-
-//         const source = this.ctx.createBufferSource();
-//         source.buffer = decodedAudio;
-//         source.playbackRate.value = 0.1;
-//         source.loop = true;
-//         source.start(0);
-//         const streamNode = this.ctx.createMediaStreamDestination();
-//         source.connect(streamNode);
-//         const audioElem = new Audio();
-//         audioElem.controls = true;
-//         document.body.appendChild(audioElem);
-//         audioElem.srcObject = streamNode.stream;
-
-//         // this.audio = decodedAudio;
-//         // window.addEventListener('mousedown', () => {
-//         //   this.playback(this.audio);
-//         // });
-//       });
-//  }
-
-// playback(audio) {
-//     const playSound = this.ctx.createBufferSource();
-//     playSound.buffer = audio;
-//     playSound.connect(this.ctx.destination);
-//     playSound.start(this.ctx.currentTime);
-//   }
-
-//  this.playAudio.src =
-//    'https://api.voicerss.org/?key=5cde9db8cff64cc2b675b76dfcadb68f&r=-3&hl=' +
-//    'de-de' +
-//    '&src=' +
-//    'Hallo, guten abend!';

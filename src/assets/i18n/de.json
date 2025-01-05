@@ -69,12 +69,12 @@
       "calendar": "Kalender",
       "guestbook": "Gästebuch",
       "charts": "Diagramme",
-      "jokes":"Witze"
+      "jokes": "Witze"
     },
     "overview": {
       "header1": "Bisher habe ich Unternehmensanwendungen erstellt, auf die nur mit Login und Passwort zugegriffen werden kann. Deshalb finden Sie",
-      "header2":"die mein Können unter Beweis stellen.",
-      "header3":" Gimmicks, ",
+      "header2": "die mein Können unter Beweis stellen.",
+      "header3": " Gimmicks, ",
       "elements": "Elemente",
       "searchTypeahead": "Suche mit Typeahead",
       "table": "Tabelle mit Sortierung, Filterung und Pagination",
@@ -86,8 +86,8 @@
       "charts": "Diagramme",
       "fileUpload": "Datei Upload",
       "print": "Drucken",
-      "imageManipulation":"Bildbearbeitung",
-      "sourceCode":"Quellcode dieser Webseite auf GitHub"
+      "imageManipulation": "Bildbearbeitung",
+      "sourceCode": "Quellcode dieser Webseite auf GitHub"
     },
     "map": {
       "search": "Stadtsuche...",
@@ -131,7 +131,7 @@
         "november": "November",
         "december": "Dezember"
       },
-      "holidays":{
+      "holidays": {
         "NEUJAHRSTAG": "NEUJAHR",
         "KARFREITAG": "KARFREITAG",
         "OSTERMONTAG": "OSTERMONTAG",
@@ -189,7 +189,7 @@
         "reset": "Zurücksetzen"
       }
     },
-    "jokes":{
+    "jokes": {
       "auth": "Google Firebase Authentifizierung und Autorisierung",
       "stripe": "Stripe Bezahlsystem",
       "text1": "Ich habe ein Buch mit Witzen geschrieben, paarweise in Deutsch und Kroatisch. Einige davon können Sie lesen, wenn Sie sich hier unten anmelden. Sie können selbst einen Account erstellen oder einfach",
@@ -231,7 +231,8 @@
       "noSuccess": "Die Bezahlung konnte nicht ausgeführt werden!",
       "tryAgain": "Erneut versuchen",
       "paymentFailed": "Die Zahlung mit PayPal ist fehlgeschlagen.",
-      "clickToRotate": "Zum Umdrehen aufs Buch klicken"
+      "clickToRotate": "Zum Umdrehen aufs Buch klicken",
+      "textToSpeech": "Die TextToSpeech API die hier genutzt wird ist eine kostenlose Demo-Version und unterstützt nur 10 Minuten Audio pro Monat. Danach funktioniert die API nicht mehr. Aber für Demo-Zwecke sollte das reichen."
     }
   },
   "pageNotFound": {
