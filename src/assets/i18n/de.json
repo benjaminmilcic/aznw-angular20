@@ -210,7 +210,7 @@
       "passwordsDontMatch": "Passwörter stimmen nicht überein!",
       "loginToRead": "Melden Sie sich an, um einige lustige Witze zu lesen",
       "unknownError": "Ein unbekannter Fehler ist aufgetreten!",
-      "requestBlocked": "Wir haben alle Anfragen von diesem Gerät aufgrund ungewöhnlicher Aktivitäten blockiert. Versuchen Sie es später erneut.",
+      "requestBlocked": "Wir haben alle Anfragen von diesem Gerät aufgrund ungewöhnlicher Aktivitäten blockiert. Versuchen Sie es in 5 Minuten erneut.",
       "emailExists": "Diese E-Mail-Adresse wird bereits von einem anderen Konto verwendet.",
       "invalidCredentials": "Diese E-Mail ist nicht registriert oder das Passwort ist falsch.",
       "password": "Passwort",

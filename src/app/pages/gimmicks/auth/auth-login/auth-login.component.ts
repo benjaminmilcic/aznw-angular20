@@ -113,7 +113,7 @@ export class AuthLoginComponent implements OnInit {
         );;
         if (
           (<string>error.error.error.message).includes(
-            'TOO_MANY_ATTEMPTS_TRY_LATER'
+            'Too many failed login attempts. Try again in 5 minutes.'
           )
         ) {
           errorMessage = this.translate.instant(

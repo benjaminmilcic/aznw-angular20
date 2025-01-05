@@ -1,17 +1,18 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { lastValueFrom } from 'rxjs';
 import { CommonModule } from '@angular/common';
-import { Joke } from '../auth.model';
+import { Joke, JokesFromApi } from '../auth.model';
 import { IonCheckbox } from '@ionic/angular/standalone';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from '../auth.service';
 import { TranslateModule } from '@ngx-translate/core';
+import { environment } from '../../../../../environments/environment';
 
 @Component({
   selector: 'app-main',
   standalone: true,
-  imports: [CommonModule, IonCheckbox, FormsModule,TranslateModule],
+  imports: [CommonModule, IonCheckbox, FormsModule, TranslateModule],
   templateUrl: './auth-main.component.html',
   styleUrl: './auth-main.component.css',
 })
@@ -22,13 +23,44 @@ export class AuthMainComponent implements OnInit {
   german = true;
   croatian = true;
 
-  constructor(private http: HttpClient, private authService:AuthService) {}
+  constructor(private http: HttpClient, private authService: AuthService) {}
   async ngOnInit() {
-    this.jokes = await lastValueFrom(
-      this.http.get<Joke[]>(
-        'https://aznw-1753b-default-rtdb.europe-west1.firebasedatabase.app/vicevi.json'
-      )
-    );
+    //old firebase solution, when authentication works via firebase
+    // this.jokes = await lastValueFrom(
+    //   this.http.get<Joke[]>(
+    //     'https://aznw-1753b-default-rtdb.europe-west1.firebasedatabase.app/vicevi.json'
+    //   )
+    // );
+    this.jokes = [];
+    const authUserData: {
+      email: string;
+      id: string;
+      _token: string;
+      _tokenExpirationDate: string;
+    } = JSON.parse(localStorage.getItem('authUserData'));
+    if (authUserData) {
+      const headers = new HttpHeaders().set(
+        'Authorization',
+        `Bearer ${authUserData._token}`
+      );
+      try {
+        let data = await lastValueFrom(
+          this.http.get<JokesFromApi>(environment.auth.getJokesFile, {
+            headers,
+          })
+        );
+        let parsedData: JokesFromApi = JSON.parse(JSON.stringify(data));
+        parsedData.vicevi.forEach((joke) => {
+          this.jokes.push({
+            deutsch: joke.deutsch,
+            english: joke.english,
+            hrvatski: joke.hrvatski,
+          });
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    }
   }
 
   onLogout() {

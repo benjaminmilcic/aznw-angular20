@@ -33,6 +33,16 @@ export const environment = {
     // new nest api:
     form2mailApi: 'http://localhost:3000/form2email',
   },
+  auth: {
+    // old firebase solution =>
+    //                          getJokesFile: 'https://aznw-1753b-default-rtdb.europe-west1.firebasedatabase.app/vicevi.json',
+    //                          login: 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBzuR3T7b8V2iC-K5-0wmfqRxnjWnh8QGs',
+    //                          signup: 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBzuR3T7b8V2iC-K5-0wmfqRxnjWnh8QGs',
+    // new nest solution:
+    getJokesFile: 'http://localhost:3000/auth/jokes',
+    login: 'http://localhost:3000/auth/login',
+    signup: 'http://localhost:3000/auth/signup',
+  },
   production: false,
 };
 
