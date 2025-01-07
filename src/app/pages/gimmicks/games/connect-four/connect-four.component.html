@@ -15,9 +15,11 @@
   </ion-segment>
 
   <div class="flex justify-center gap-6">
-    <div class="bg-[#A52A2A] rounded px-2 pb-2 w-[110px]">
-      <div class="flex justify-center text-blue-400 text-2xl">X</div>
-      <div class="flex gap-1 items-center">
+    <div class="bg-[#A52A2A] rounded p-2 w-[110px]">
+      <div class="flex justify-center">
+        <div class="w-5 h-5 rounded-full bg-[red]"></div>
+      </div>
+      <div class="flex gap-1 items-center mt-1">
         <input
           #name1Input
           [disabled]="!name1Edit"
@@ -45,10 +47,12 @@
     </div>
     <div
       *ngIf="opponent === 'human'"
-      class="bg-[#A52A2A] rounded px-2 pb-2 w-[110px]"
+      class="bg-[#A52A2A] rounded p-2 w-[110px]"
     >
-      <div class="flex justify-center text-red-400 text-2xl">O</div>
-      <div class="flex gap-1 items-center">
+      <div class="flex justify-center">
+        <div class="w-5 h-5 rounded-full bg-[yellow]"></div>
+      </div>
+      <div class="flex gap-1 items-center mt-1">
         <input
           #name2Input
           [disabled]="!name2Edit"
@@ -92,8 +96,12 @@
       ></div>
     </div>
   </div>
-  <div *ngIf="!showDraw && !showWin">
-    {{ currentPlayer === "Red" ? name1 : name2 }} ist am Zug
+  <div *ngIf="!showDraw && !showWin" class="flex gap-2 items-center">
+    <div
+      class="w-5 h-5 rounded-full"
+      [ngClass]="currentPlayer === 'Red' ? 'bg-[red]' : 'bg-[yellow]'"
+    ></div>
+    <div>{{ currentPlayer === "Red" ? name1 : name2 }} ist am Zug</div>
   </div>
   <div class="flex justify-center mt-6">
     <button

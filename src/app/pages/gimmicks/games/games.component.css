@@ -33,3 +33,8 @@ section:before {
   background: linear-gradient(yellow, #a52a2a) !important;
   color: #2563eb !important;
 }
+
+.mat-jigsaw {
+  background: linear-gradient(#2563eb, #a52a2a) !important;
+  color: yellow !important;
+}
