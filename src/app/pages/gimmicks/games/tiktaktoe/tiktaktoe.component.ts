@@ -1,11 +1,26 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { MatIconModule } from '@angular/material/icon';
+import {
+  IonLabel,
+  IonSegment,
+  IonSegmentButton,
+} from '@ionic/angular/standalone';
+import { WinnerDialogComponent } from '../winner-dialog/winner-dialog.component';
 
 @Component({
   selector: 'app-tiktaktoe',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [
+    FormsModule,
+    CommonModule,
+    MatIconModule,
+    IonLabel,
+    IonSegment,
+    IonSegmentButton,
+  ],
   templateUrl: './tiktaktoe.component.html',
   styleUrl: './tiktaktoe.component.css',
 })
@@ -18,7 +33,10 @@ export class TiktaktoeComponent {
   player: 'X' | 'O' = 'X';
   name1: string = 'Player 1';
   name2: string = 'Player 2';
-  currentName: string = this.name1;
+  tempName2: string;
+  name1Edit = false;
+  name2Edit = false;
+  currentPlayer: 'X' | 'O' = 'X';
   moveCount = 1;
   showWin: boolean = false;
   showDraw = false;
@@ -33,21 +51,36 @@ export class TiktaktoeComponent {
 
   boardDisabled = false;
 
+  constructor(private dialog: MatDialog) {}
+
+  @ViewChild('name2Input') name2Input: ElementRef<HTMLInputElement>;
+  @ViewChild('name1Input') name1Input: ElementRef<HTMLInputElement>;
+
+  opponent: 'human' | 'computer' = 'human';
+
   makeMove(x: number, y: number) {
+    if (this.board[x][y] !== '') {
+      return;
+    }
     if (this.moveCount < 10 && !this.showWin) {
       this.board[x][y] = this.player;
       this.player = this.player === 'X' ? 'O' : 'X';
-      this.currentName = this.player === 'X' ? this.name1 : this.name2;
+      this.currentPlayer = this.player;
       this.moveCount++;
       this.checkWin();
-      if (this.player === 'O' && !this.showDraw && !this.showWin) {
+      if (
+        this.opponent === 'computer' &&
+        this.player === 'O' &&
+        !this.showDraw &&
+        !this.showWin
+      ) {
         this.makeComputerMove();
       }
     }
   }
 
   async makeComputerMove() {
-    this.boardDisabled=true;
+    this.boardDisabled = true;
     await new Promise((f) => setTimeout(f, 500));
     let x: number;
     let y: number;
@@ -57,7 +90,6 @@ export class TiktaktoeComponent {
     } while (this.board[x][y] !== '');
     this.makeMove(x, y);
     this.boardDisabled = false;
-
   }
 
   getRandomNumber(): number {
@@ -71,7 +103,7 @@ export class TiktaktoeComponent {
       ['', '', ''],
     ];
     this.player = 'X';
-    this.currentName = this.name1;
+    this.currentPlayer = 'X';
     this.moveCount = 1;
     this.showWin = false;
     this.showDraw = false;
@@ -134,11 +166,63 @@ export class TiktaktoeComponent {
     ) {
       this.onShowWin();
     } else if (this.moveCount === 10) {
-      this.showDraw = true;
+      this.onShowDraw();
     }
   }
 
   onShowWin() {
     this.showWin = true;
+    this.openDialog();
+  }
+
+  onShowDraw() {
+    this.showDraw = true;
+    this.openDialog();
+  }
+
+  onToggleName2() {
+    this.name2Edit = !this.name2Edit;
+    if (this.name2Edit) {
+      setTimeout(() => {
+        this.name2Input.nativeElement.focus();
+      }, 1);
+    }
+  }
+
+  onToggleName1() {
+    this.name1Edit = !this.name1Edit;
+    if (this.name1Edit) {
+      setTimeout(() => {
+        this.name1Input.nativeElement.focus();
+      }, 1);
+    }
+  }
+
+  onChangeOpponent() {
+    if (this.opponent === 'computer') {
+      this.tempName2 = this.name2;
+      this.name2 = 'Computer';
+      if (this.player === 'O' && !this.showDraw && !this.showWin) {
+        this.makeComputerMove();
+      }
+    } else {
+      this.name2 = this.tempName2;
+    }
+  }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(WinnerDialogComponent, {
+      disableClose: true,
+      width: '300px',
+      height: '300px',
+      data: {
+        showWin: this.showWin,
+        winner: this.currentPlayer === 'X' ? this.name2 : this.name1,
+      },
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      this.onNewGame();
+    });
   }
 }

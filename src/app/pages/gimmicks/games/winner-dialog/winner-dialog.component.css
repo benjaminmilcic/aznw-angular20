@@ -1,0 +1,15 @@
+.fireworks {
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 280px;
+  position: absolute;
+}
+.background {
+  background-image: url("/assets/hanging-flowers.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgba(255, 255, 255, 0.5);
+  background-blend-mode: lighten;
+  height: 100%;
+}

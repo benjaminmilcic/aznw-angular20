@@ -16,7 +16,6 @@ import { AuthLoginGuard } from './pages/gimmicks/auth/auth-login.guard';
 import { TiktaktoeComponent } from './pages/gimmicks/games/tiktaktoe/tiktaktoe.component';
 import { ConnectFourComponent } from './pages/gimmicks/games/connect-four/connect-four.component';
 import { GamesComponent } from './pages/gimmicks/games/games.component';
-import { Tiktaktoe2Component } from './pages/gimmicks/games/tiktaktoe2/tiktaktoe2.component';
 import { MemoQuizComponent } from './pages/gimmicks/games/memo-quiz/memo-quiz.component';
 
 export const routes: Routes = [
@@ -75,7 +74,7 @@ export const routes: Routes = [
         children: [
           {
             path: '',
-            redirectTo: '/gimmicks/games/tiktaktoe',
+            redirectTo: '/gimmicks/games/connect-four',
             pathMatch: 'full',
           },
           {
@@ -87,13 +86,9 @@ export const routes: Routes = [
             component: ConnectFourComponent,
           },
           {
-            path: 'tiktaktoe2',
-            component: Tiktaktoe2Component,
-          },
-          {
             path: 'memo-quiz',
             component: MemoQuizComponent,
-          },
+          }
         ],
       },
     ],

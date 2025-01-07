@@ -1,17 +1,107 @@
-<div class="game-container">
-  <h1>{{ title }}</h1>
-  <div *ngIf="winner" class="winner">
+<div class="flex flex-col gap-6 justify-center items-center h-full relative">
+  <div class="-mb-4">Gegner</div>
+  <ion-segment
+    [(ngModel)]="opponent"
+    (ngModelChange)="onChangeOpponent()"
+    mode="ios"
+    class="w-[280px] mb-4"
+  >
+    <ion-segment-button value="human">
+      <ion-label>Mensch</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="computer">
+      <ion-label>Computer</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <div class="flex justify-center gap-6">
+    <div class="bg-[#A52A2A] rounded px-2 pb-2 w-[110px]">
+      <div class="flex justify-center text-blue-400 text-2xl">X</div>
+      <div class="flex gap-1 items-center">
+        <input
+          #name1Input
+          [disabled]="!name1Edit"
+          [(ngModel)]="name1"
+          class="p-1 w-full"
+          type="text"
+          [ngClass]="{
+            'bg-yellow-300 text-black': !name1Edit,
+            'bg-white text-black': name1Edit
+          }"
+          (keyup.enter)="onToggleName1()"
+        /><mat-icon
+          *ngIf="!name1Edit"
+          class="text-[18px] text-yellow-300 mt-[6px] cursor-pointer"
+          fontIcon="edit"
+          (click)="onToggleName1()"
+        ></mat-icon>
+        <mat-icon
+          *ngIf="name1Edit"
+          class="text-[18px] text-yellow-300 mt-[6px] cursor-pointer"
+          fontIcon="save"
+          (click)="onToggleName1()"
+        ></mat-icon>
+      </div>
+    </div>
+    <div
+      *ngIf="opponent === 'human'"
+      class="bg-[#A52A2A] rounded px-2 pb-2 w-[110px]"
+    >
+      <div class="flex justify-center text-red-400 text-2xl">O</div>
+      <div class="flex gap-1 items-center">
+        <input
+          #name2Input
+          [disabled]="!name2Edit"
+          [(ngModel)]="name2"
+          class="p-1 w-full"
+          type="text"
+          [ngClass]="{
+            'bg-yellow-300 text-black': !name2Edit,
+            'bg-white text-black': name2Edit
+          }"
+          (keyup.enter)="onToggleName2()"
+        /><mat-icon
+          *ngIf="!name2Edit"
+          class="text-[18px] text-yellow-300 mt-[6px] cursor-pointer"
+          fontIcon="edit"
+          (click)="onToggleName2()"
+        ></mat-icon>
+        <mat-icon
+          *ngIf="name2Edit"
+          class="text-[18px] text-yellow-300 mt-[6px] cursor-pointer"
+          fontIcon="save"
+          (click)="onToggleName2()"
+        ></mat-icon>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="winner" class="text-green-400 mb-5 text-[24px]">
     {{ winner }} wins!
   </div>
-  <div class="board">
-    <div class="row" *ngFor="let row of board; let rowIndex = index">
+  <div class="grid grid-rows-6 gap-1 justify-center">
+    <div
+      class="grid grid-cols-7 gap-1"
+      *ngFor="let row of board; let rowIndex = index"
+    >
       <div
-        class="cell"
+        class="w-[30px] h-[30px] 2xl:w-[50px] 2xl:h-[50px] bg-gray-300 rounded-full cursor-pointer"
         *ngFor="let cell of row; let colIndex = index"
         [ngClass]="cell"
         (click)="dropDisc(colIndex)"
       ></div>
     </div>
   </div>
-  <button (click)="resetBoard()">Reset</button>
+  <div *ngIf="!showDraw && !showWin">
+    {{ currentPlayer === "Red" ? name1 : name2 }} ist am Zug
+  </div>
+  <div class="flex justify-center mt-6">
+    <button
+      *ngIf="!showWin && !showDraw"
+      (click)="resetBoard()"
+      class="bg-yellow-300 rounded py-1 px-4"
+    >
+      Zurücksetzen
+    </button>
+  </div>
 </div>

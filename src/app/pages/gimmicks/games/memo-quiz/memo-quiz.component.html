@@ -2,17 +2,19 @@
   <div class="grid grid-cols-4 gap-4">
     <div
       *ngFor="let card of cards; let cardIndex = index"
-      class="w-40 h-40 card"
+      class="w-16 h-16 sm:h-24 sm:w-24 2xl:w-32 2xl:h-32 card"
       [ngClass]="{
         flipped: cards[cardIndex].flipped || cards[cardIndex].locked
       }"
       (click)="onCardClick(cardIndex)"
     >
-      <div class="card-front w-40 h-40">The front</div>
-      <div class="card-back w-40 h-40">
-        <img [src]="card.src" class="w-40 h-40" />
+      <div class="card-front w-16 h-16 sm:h-24 sm:w-24 2xl:w-32 2xl:h-32">
+        <img class="w-16 h-16 sm:h-24 sm:w-24 2xl:w-32 2xl:h-32" src="assets/gamecard-bg.jpg"/>
+      </div>
+      <div class="card-back w-16 h-16 sm:h-24 sm:w-24 2xl:w-32 2xl:h-32">
+        <img [src]="card.src" class="w-16 h-16 sm:h-24 sm:w-24 2xl:w-32 2xl:h-32" />
       </div>
     </div>
   </div>
-  <button mat-stroked-button (click)="init()">Reset</button>
+  <button mat-stroked-button (click)="init()">Zurücksetzen</button>
 </div>

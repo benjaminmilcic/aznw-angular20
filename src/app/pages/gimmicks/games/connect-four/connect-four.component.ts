@@ -1,23 +1,53 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import {
+  IonLabel,
+  IonSegment,
+  IonSegmentButton,
+} from '@ionic/angular/standalone';
+import { MatIconModule } from '@angular/material/icon';
+import { WinnerDialogComponent } from '../winner-dialog/winner-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-connect-four',
   standalone: true,
-  imports: [CommonModule],
+  imports: [
+    IonSegmentButton,
+    CommonModule,
+    IonLabel,
+    IonSegment,
+    FormsModule,
+    MatIconModule,
+  ],
   templateUrl: './connect-four.component.html',
   styleUrl: './connect-four.component.css',
 })
 export class ConnectFourComponent {
-  title = 'Connect Four';
-
+  title = '4 Gewinnt';
   rows = 6;
   cols = 7;
   board: string[][] = [];
   currentPlayer = 'Red';
   winner: string | null = null;
 
-  constructor() {
+  opponent: 'human' | 'computer' = 'human';
+  name1: string = 'Player 1';
+  name2: string = 'Player 2';
+  tempName2: string;
+  name1Edit = false;
+  name2Edit = false;
+
+  @ViewChild('name2Input') name2Input: ElementRef<HTMLInputElement>;
+  @ViewChild('name1Input') name1Input: ElementRef<HTMLInputElement>;
+
+  showWin: boolean = false;
+  showDraw = false;
+
+  moveCount = 0;
+
+  constructor(private dialog: MatDialog) {
     this.resetBoard();
   }
 
@@ -27,14 +57,25 @@ export class ConnectFourComponent {
     );
     this.currentPlayer = 'Red';
     this.winner = null;
+    this.showWin = false;
+    this.showDraw = false;
+    this.moveCount = 0;
   }
 
   dropDisc(colIndex: number) {
-    if (this.winner || this.currentPlayer === 'Yellow') return;
+    if (
+      this.winner ||
+      this.showDraw ||
+      (this.opponent === 'computer' && this.currentPlayer === 'Yellow')
+    ) {
+      return;
+    }
 
-    if (this.makeMove(colIndex)) {
-      if (this.winner) return;
-
+    let moveMade = this.makeMove(colIndex);
+    if (moveMade && this.winner) {
+      return;
+    }
+    if (this.opponent === 'computer') {
       setTimeout(() => this.makeComputerMove(), 500); // Delay for the computer's move
     }
   }
@@ -43,8 +84,13 @@ export class ConnectFourComponent {
     for (let rowIndex = this.rows - 1; rowIndex >= 0; rowIndex--) {
       if (!this.board[rowIndex][colIndex]) {
         this.board[rowIndex][colIndex] = this.currentPlayer;
-        if (this.checkWin(rowIndex, colIndex)) {
+        this.moveCount++;
+        if (this.checkWin(this.board, rowIndex, colIndex)) {
           this.winner = this.currentPlayer;
+          this.onShowWin();
+        }
+        if (this.moveCount === 42) {
+          this.onShowDraw();
         }
         this.currentPlayer = this.currentPlayer === 'Red' ? 'Yellow' : 'Red';
         return true;
@@ -54,7 +100,7 @@ export class ConnectFourComponent {
   }
 
   makeComputerMove() {
-    if (this.winner) return;
+    if (this.winner || this.showDraw) return;
 
     // AI logic
     const colIndex = this.findBestMove();
@@ -85,9 +131,9 @@ export class ConnectFourComponent {
   canWin(colIndex: number, player: string): boolean {
     for (let rowIndex = this.rows - 1; rowIndex >= 0; rowIndex--) {
       if (!this.board[rowIndex][colIndex]) {
-        this.board[rowIndex][colIndex] = player;
-        const win = this.checkWin(rowIndex, colIndex);
-        this.board[rowIndex][colIndex] = ''; // Undo move
+        let tempBoard = JSON.parse(JSON.stringify(this.board));
+        tempBoard[rowIndex][colIndex] = player;
+        const win = this.checkWin(tempBoard, rowIndex, colIndex);
         if (win) return true;
         break;
       }
@@ -99,7 +145,7 @@ export class ConnectFourComponent {
     return !this.board[0][colIndex];
   }
 
-  checkWin(row: number, col: number): boolean {
+  checkWin(board: string[][], row: number, col: number): boolean {
     const directions = [
       { dr: 0, dc: 1 }, // horizontal
       { dr: 1, dc: 0 }, // vertical
@@ -107,7 +153,7 @@ export class ConnectFourComponent {
       { dr: 1, dc: -1 }, // diagonal left
     ];
 
-    const player = this.board[row][col];
+    const player = board[row][col];
     for (const { dr, dc } of directions) {
       let count = 1;
 
@@ -119,7 +165,7 @@ export class ConnectFourComponent {
           r >= this.rows ||
           c < 0 ||
           c >= this.cols ||
-          this.board[r][c] !== player
+          board[r][c] !== player
         ) {
           break;
         }
@@ -134,7 +180,7 @@ export class ConnectFourComponent {
           r >= this.rows ||
           c < 0 ||
           c >= this.cols ||
-          this.board[r][c] !== player
+          board[r][c] !== player
         ) {
           break;
         }
@@ -147,5 +193,61 @@ export class ConnectFourComponent {
     }
 
     return false;
+  }
+
+  onChangeOpponent() {
+    if (this.opponent === 'computer') {
+      this.tempName2 = this.name2;
+      this.name2 = 'Computer';
+      if (this.currentPlayer === 'Yellow' && !this.showDraw && !this.showWin) {
+        this.makeComputerMove();
+      }
+    } else {
+      this.name2 = this.tempName2;
+    }
+  }
+
+  onToggleName2() {
+    this.name2Edit = !this.name2Edit;
+    if (this.name2Edit) {
+      setTimeout(() => {
+        this.name2Input.nativeElement.focus();
+      }, 1);
+    }
+  }
+
+  onToggleName1() {
+    this.name1Edit = !this.name1Edit;
+    if (this.name1Edit) {
+      setTimeout(() => {
+        this.name1Input.nativeElement.focus();
+      }, 1);
+    }
+  }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(WinnerDialogComponent, {
+      disableClose: true,
+      width: '300px',
+      height: '300px',
+      data: {
+        showWin: this.showWin,
+        winner: this.winner === 'Yellow' ? this.name2 : this.name1,
+      },
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      this.resetBoard();
+    });
+  }
+
+  onShowWin() {
+    this.showWin = true;
+    this.openDialog();
+  }
+
+  onShowDraw() {
+    this.showDraw = true;
+    this.openDialog();
   }
 }

@@ -1,14 +1,77 @@
-<div
-  class="flex flex-col gap-6 justify-center items-center h-[calc(100%-40px)]"
->
-  <div class="flex gap-12">
-    <div class="bg-yellow-600 rounded-sm p-2">
-      <div>X</div>
-      <div><input [(ngModel)]="name1" class="bg-white p-1" type="text" /></div>
+<div class="flex flex-col gap-6 justify-center items-center h-full relative">
+  <div class="-mb-4">Gegner</div>
+  <ion-segment
+    [(ngModel)]="opponent"
+    (ngModelChange)="onChangeOpponent()"
+    mode="ios"
+    class="w-[280px] mb-4"
+  >
+    <ion-segment-button value="human">
+      <ion-label>Mensch</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="computer">
+      <ion-label>Computer</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+  <div class="flex justify-center gap-6">
+    <div class="bg-[#A52A2A] rounded px-2 pb-2 w-[110px]">
+      <div class="flex justify-center text-blue-400 text-2xl">X</div>
+      <div class="flex gap-1 items-center">
+        <input
+          #name1Input
+          [disabled]="!name1Edit"
+          [(ngModel)]="name1"
+          class="p-1 w-full"
+          type="text"
+          [ngClass]="{
+            'bg-yellow-300 text-black': !name1Edit,
+            'bg-white text-black': name1Edit
+          }"
+          (keyup.enter)="onToggleName1()"
+        /><mat-icon
+          *ngIf="!name1Edit"
+          class="text-[18px] text-yellow-300 mt-[6px] cursor-pointer"
+          fontIcon="edit"
+          (click)="onToggleName1()"
+        ></mat-icon>
+        <mat-icon
+          *ngIf="name1Edit"
+          class="text-[18px] text-yellow-300 mt-[6px] cursor-pointer"
+          fontIcon="save"
+          (click)="onToggleName1()"
+        ></mat-icon>
+      </div>
     </div>
-    <div class="bg-yellow-600 rounded-sm p-2">
-      <div>O</div>
-      <div><input [(ngModel)]="name2" class="bg-white p-1" type="text" /></div>
+    <div
+      *ngIf="opponent === 'human'"
+      class="bg-[#A52A2A] rounded px-2 pb-2 w-[110px]"
+    >
+      <div class="flex justify-center text-red-400 text-2xl">O</div>
+      <div class="flex gap-1 items-center">
+        <input
+          #name2Input
+          [disabled]="!name2Edit"
+          [(ngModel)]="name2"
+          class="p-1 w-full"
+          type="text"
+          [ngClass]="{
+            'bg-yellow-300 text-black': !name2Edit,
+            'bg-white text-black': name2Edit
+          }"
+          (keyup.enter)="onToggleName2()"
+        /><mat-icon
+          *ngIf="!name2Edit"
+          class="text-[18px] text-yellow-300 mt-[6px] cursor-pointer"
+          fontIcon="edit"
+          (click)="onToggleName2()"
+        ></mat-icon>
+        <mat-icon
+          *ngIf="name2Edit"
+          class="text-[18px] text-yellow-300 mt-[6px] cursor-pointer"
+          fontIcon="save"
+          (click)="onToggleName2()"
+        ></mat-icon>
+      </div>
     </div>
   </div>
   <div class="grid grid-cols-3 gap-4">
@@ -139,12 +202,14 @@
       </button>
     </div>
   </div>
-  <div *ngIf="!showDraw && !showWin">{{ currentName }} ist am Zug</div>
-  <button (click)="onNewGame()" class="bg-yellow-300 rounded py-1 px-4">
+  <div *ngIf="!showDraw && !showWin">
+    {{ currentPlayer === "X" ? name1 : name2 }} ist am Zug
+  </div>
+  <button
+    *ngIf="!showWin && !showDraw"
+    (click)="onNewGame()"
+    class="bg-yellow-300 rounded py-1 px-4"
+  >
     Neues Spiel
   </button>
-  <div *ngIf="showWin">
-    {{ currentName === name1 ? name2 : name1 }} hat gewonnen
-  </div>
-  <div *ngIf="showDraw">Das Spiel endet unentschieden</div>
 </div>
