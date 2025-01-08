@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import {
   IonLabel,
@@ -9,6 +9,7 @@ import {
 import { MatIconModule } from '@angular/material/icon';
 import { WinnerDialogComponent } from '../winner-dialog/winner-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-connect-four',
@@ -20,11 +21,12 @@ import { MatDialog } from '@angular/material/dialog';
     IonSegment,
     FormsModule,
     MatIconModule,
+    TranslateModule
   ],
   templateUrl: './connect-four.component.html',
   styleUrl: './connect-four.component.css',
 })
-export class ConnectFourComponent {
+export class ConnectFourComponent implements OnInit {
   title = '4 Gewinnt';
   rows = 6;
   cols = 7;
@@ -33,8 +35,10 @@ export class ConnectFourComponent {
   winner: string | null = null;
 
   opponent: 'human' | 'computer' = 'human';
-  name1: string = 'Player 1';
-  name2: string = 'Player 2';
+  name1ForEdit: string = 'Player 1';
+  name2ForEdit: string = 'Player 2';
+  name1: string = this.name1ForEdit;
+  name2: string = this.name2ForEdit;
   tempName2: string;
   name1Edit = false;
   name2Edit = false;
@@ -47,8 +51,20 @@ export class ConnectFourComponent {
 
   moveCount = 0;
 
-  constructor(private dialog: MatDialog) {
+  constructor(
+    private dialog: MatDialog,
+    private translateService: TranslateService
+  ) {
     this.resetBoard();
+  }
+
+  ngOnInit(): void {
+    if (this.translateService.currentLang === 'de') {
+      this.name1ForEdit = 'Spieler 1';
+      this.name2ForEdit = 'Spieler 2';
+      this.name1 = this.name1ForEdit;
+      this.name2 = this.name2ForEdit;
+    }
   }
 
   resetBoard() {
@@ -212,7 +228,11 @@ export class ConnectFourComponent {
     if (this.name2Edit) {
       setTimeout(() => {
         this.name2Input.nativeElement.focus();
-      }, 1);
+      }, 50);
+    } else {
+      setTimeout(() => {
+        this.name2 = this.name2ForEdit;
+      }, 50);
     }
   }
 
@@ -221,7 +241,11 @@ export class ConnectFourComponent {
     if (this.name1Edit) {
       setTimeout(() => {
         this.name1Input.nativeElement.focus();
-      }, 1);
+      }, 50);
+    } else {
+      setTimeout(() => {
+        this.name1 = this.name1ForEdit;
+      }, 50);
     }
   }
 
@@ -249,5 +273,19 @@ export class ConnectFourComponent {
   onShowDraw() {
     this.showDraw = true;
     this.openDialog();
+  }
+
+  onName1Blur() {
+    setTimeout(() => {
+      this.name1Edit = false;
+      this.name1ForEdit = this.name1;
+    }, 200);
+  }
+
+  onName2Blur() {
+    setTimeout(() => {
+      this.name2Edit = false;
+      this.name2ForEdit = this.name2;
+    }, 200);
   }
 }

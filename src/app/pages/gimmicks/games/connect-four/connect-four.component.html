@@ -1,5 +1,5 @@
 <div class="flex flex-col gap-6 justify-center items-center h-full relative">
-  <div class="-mb-4">Gegner</div>
+  <div class="-mb-4">{{ "gimmicks.games.opponent" | translate }}</div>
   <ion-segment
     [(ngModel)]="opponent"
     (ngModelChange)="onChangeOpponent()"
@@ -7,7 +7,7 @@
     class="w-[280px] mb-4"
   >
     <ion-segment-button value="human">
-      <ion-label>Mensch</ion-label>
+      <ion-label>{{ "gimmicks.games.human" | translate }}</ion-label>
     </ion-segment-button>
     <ion-segment-button value="computer">
       <ion-label>Computer</ion-label>
@@ -23,7 +23,7 @@
         <input
           #name1Input
           [disabled]="!name1Edit"
-          [(ngModel)]="name1"
+          [(ngModel)]="name1ForEdit"
           class="p-1 w-full"
           type="text"
           [ngClass]="{
@@ -31,6 +31,7 @@
             'bg-white text-black': name1Edit
           }"
           (keyup.enter)="onToggleName1()"
+          (blur)="onName1Blur()"
         /><mat-icon
           *ngIf="!name1Edit"
           class="text-[18px] text-yellow-300 mt-[6px] cursor-pointer"
@@ -56,7 +57,7 @@
         <input
           #name2Input
           [disabled]="!name2Edit"
-          [(ngModel)]="name2"
+          [(ngModel)]="name2ForEdit"
           class="p-1 w-full"
           type="text"
           [ngClass]="{
@@ -64,6 +65,7 @@
             'bg-white text-black': name2Edit
           }"
           (keyup.enter)="onToggleName2()"
+          (blur)="onName2Blur()"
         /><mat-icon
           *ngIf="!name2Edit"
           class="text-[18px] text-yellow-300 mt-[6px] cursor-pointer"
@@ -101,7 +103,10 @@
       class="w-5 h-5 rounded-full"
       [ngClass]="currentPlayer === 'Red' ? 'bg-[red]' : 'bg-[yellow]'"
     ></div>
-    <div>{{ currentPlayer === "Red" ? name1 : name2 }} ist am Zug</div>
+    <div>
+      {{ currentPlayer === "Red" ? name1 : name2
+      }}{{ "gimmicks.games.turn" | translate }}
+    </div>
   </div>
   <div class="flex justify-center mt-6">
     <button
@@ -109,7 +114,7 @@
       (click)="resetBoard()"
       class="bg-yellow-300 rounded py-1 px-4"
     >
-      Zurücksetzen
+      {{ "gimmicks.games.reset" | translate }}
     </button>
   </div>
 </div>

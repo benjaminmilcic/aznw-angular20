@@ -1,9 +1,19 @@
-<div class="flex justify-center relative h-[calc(100%-40px)]">
-  <div class="w-[80%]">
+<div class="flex flex-col items-center relative h-[calc(100%-40px)]">
+  <div class="text-red-500">
+    {{ "gimmicks.games.notMyApp1" | translate
+    }}<a href="https://codepen.io/Dillo/pen/QWKLYab" target="_blank">{{
+      "gimmicks.games.notMyApp2" | translate
+    }}</a
+    >{{ "gimmicks.games.notMyApp3" | translate }}
+  </div>
+  <div class="w-[80%] h-full">
     <iframe
+      *ngIf="enabled"
       width="100%"
       height="100%"
-      src="/assets/iframe-content/index.html"
+      [src]="trustedUrl"
     ></iframe>
   </div>
 </div>
+<!-- * Diese Puzzle App ist nicht mein eigenes Werk, ich hab sie <a href="https://codepen.io/Dillo/pen/QWKLYab" target="_blank">hier</a> im Internet
+    gefunden. Aber ich mag sie so sehr, dass ich sie hier mit eingefügt habe. -->

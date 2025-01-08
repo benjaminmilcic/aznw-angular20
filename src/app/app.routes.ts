@@ -93,7 +93,7 @@ export const routes: Routes = [
           {
             path: 'jigsaw',
             component: JigsawComponent,
-          },
+          }
         ],
       },
     ],

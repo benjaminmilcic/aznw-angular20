@@ -61,8 +61,8 @@
           <li>{{ "gimmicks.overview.youtubePlayer" | translate }}</li>
           <li>Popup Modal</li>
           <li>{{ "gimmicks.overview.editor" | translate }}</li>
-          <li>Google Firebase Storage</li>
-          <li>PHP API</li>
+          <li>{{ "gimmicks.overview.fileStorage" | translate }}</li>
+          <li>Nest.js API</li>
           <li>Responsive design</li>
         </ul>
       </div>
@@ -95,7 +95,22 @@
       >
         <ul class="text-xs">
           <li>{{ "gimmicks.jokes.auth" | translate }}</li>
+          <li>Nest.js API</li>
           <li>{{ "gimmicks.jokes.stripe" | translate }}</li>
+          <li>Responsive design</li>
+        </ul>
+      </div>
+    </div>
+    <div
+      class="relative group hover:text-gray-100 cursor-pointer flex gap-1 items-center"
+      [routerLink]="['games']"
+    >
+      <img class="w-4 h-4" src="assets/svg/tic-tac-toe-small.svg">
+      <div>{{ "gimmicks.menu.games" | translate }}</div>
+      <div
+        class="absolute bg-gradient-to-b from-blue-200 to-blue-400 text-black rounded p-2 top-8 w-60 hidden group-hover:block z-20 arrow"
+      >
+        <ul class="text-xs">
           <li>Responsive design</li>
         </ul>
       </div>
@@ -211,12 +226,30 @@
         <button
           class="w-7 h-7 rounded-full shadow-lg bg-violet-100 group-hover:text-violet-100 group-hover:bg-black"
         >
-          <i class="fa-solid fa-chart-simple"></i>
+          <i class="fa-solid fa-face-smile"></i>
         </button>
         <div
           class="bg-black text-white text-sm px-2 rounded shadow-lg group-hover:bg-white group-hover:text-black"
         >
           {{ "gimmicks.menu.jokes" | translate }}
+        </div>
+      </div>
+      <div
+        class="flex gap-1 items-center ml-2 mt-2 w-fit z-50 group sixthItemIn"
+        [ngClass]="{ sixthItemOut: fadeOut }"
+        [routerLink]="['games']"
+        (click)="hideSubMenu()"
+      >
+        <button
+          class="w-7 h-7 rounded-full shadow-lg bg-[#f6dbdb] group-hover:text-[#f6dbdb] group-hover:bg-black"
+        >
+          <img class="w-3 h-3 group-hover:hidden" src="assets/svg/tic-tac-toe-black.svg">
+          <img class="w-3 h-3 hidden group-hover:inline-block" src="assets/svg/tic-tac-toe-small.svg">
+        </button>
+        <div
+          class="bg-black text-white text-sm px-2 rounded shadow-lg group-hover:bg-white group-hover:text-black"
+        >
+          {{ "gimmicks.menu.games" | translate }}
         </div>
       </div>
     </ng-container>

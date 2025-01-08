@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-memo-quiz',
   standalone: true,
-  imports: [CommonModule, MatButtonModule],
+  imports: [CommonModule, MatButtonModule, TranslateModule],
   templateUrl: './memo-quiz.component.html',
   styleUrl: './memo-quiz.component.css',
 })
@@ -66,7 +67,7 @@ export class MemoQuizComponent implements OnInit {
   }
 
   onCardClick(cardIndex: number) {
-    if (this.cards[cardIndex].flipped||this.cards[cardIndex].locked) {
+    if (this.cards[cardIndex].flipped || this.cards[cardIndex].locked) {
       return;
     }
     if (!this.checkMatch) {

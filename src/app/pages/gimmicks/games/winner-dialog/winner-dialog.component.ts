@@ -7,6 +7,7 @@ import {
   type FireworksDirective,
   type FireworksOptions,
 } from '@fireworks-js/angular';
+import { TranslateModule } from '@ngx-translate/core';
 
 interface DialogData {
   showWin: boolean;
@@ -16,7 +17,13 @@ interface DialogData {
 @Component({
   selector: 'app-tiktaktoe-dialog',
   standalone: true,
-  imports: [MatDialogModule, MatButtonModule, CommonModule, NgFireworksModule],
+  imports: [
+    MatDialogModule,
+    MatButtonModule,
+    CommonModule,
+    NgFireworksModule,
+    TranslateModule,
+  ],
   templateUrl: './winner-dialog.component.html',
   styleUrl: './winner-dialog.component.css',
 })

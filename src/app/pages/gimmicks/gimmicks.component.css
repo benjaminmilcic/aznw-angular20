@@ -85,6 +85,17 @@
   }
 }
 
+@keyframes slideSixthItemIn {
+  0% {
+    translate: 0px -224px;
+    opacity: 0;
+  }
+  100% {
+    translate: 0px 0px;
+    opacity: 1;
+  }
+}
+
 @keyframes slideOverviewOut {
   0% {
     translate: 0px 0px;
@@ -151,6 +162,17 @@
   }
 }
 
+@keyframes slideSixthItemOut {
+  0% {
+    translate: 0px 0px;
+    opacity: 1;
+  }
+  100% {
+    translate: 0px -224px;
+    opacity: 0;
+  }
+}
+
 
 
 @keyframes slideSubMenuButton {
@@ -195,6 +217,10 @@
   animation: 0.3s ease-out slideFifthItemIn;
 }
 
+.sixthItemIn {
+  animation: 0.3s ease-out slideSixthItemIn;
+}
+
 .overviewOut{
   animation: 0.3s ease-out slideOverviewOut;
 }
@@ -217,6 +243,10 @@
 
 .fifthItemOut{
   animation: 0.3s ease-out slideFifthItemOut;
+}
+
+.sixthItemOut{
+  animation: 0.3s ease-out slideSixthItemOut;
 }
 
 .subMenuButton{

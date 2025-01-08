@@ -1,38 +1,39 @@
 <section class="flex flex-col gap-2 h-[calc(100%-40px)] bg-blue-400">
-  <div class="flex justify-center gap-6 p-4">
+  <div class="flex justify-center flex-wrap gap-6 p-4">
     <button
       color="tiktaktoe"
       mat-raised-button
       [routerLink]="['/gimmicks/games/tiktaktoe']"
       routerLinkActive="router-link-active"
     >
-      TIKTAKTOE
+      TikTakToe
     </button>
     <button
-    color="connect-four"
+      color="connect-four"
       mat-raised-button
       [routerLink]="['/gimmicks/games/connect-four']"
       routerLinkActive="router-link-active"
     >
-      4 Gewinnt
+      {{ "gimmicks.games.connectFour" | translate }}
     </button>
     <button
-    color="memo-quiz"
+      color="memo-quiz"
       mat-raised-button
       [routerLink]="['/gimmicks/games/memo-quiz']"
       routerLinkActive="router-link-active"
     >
-      Memo-Quiz
+      {{ "gimmicks.games.memoQuiz" | translate }}
     </button>
-    <button
-    color="jigsaw"
+    <!-- <button
+      color="jigsaw"
       mat-raised-button
       [routerLink]="['/gimmicks/games/jigsaw']"
       routerLinkActive="router-link-active"
     >
-      Puzzel
-    </button>
-    
+      {{ "gimmicks.games.jigsaw" | translate }}
+    </button> -->
   </div>
-  <div class="w-full h-full items-center"><router-outlet></router-outlet></div>
+  <div class="w-full h-full items-center overflow-auto">
+    <router-outlet></router-outlet>
+  </div>
 </section>

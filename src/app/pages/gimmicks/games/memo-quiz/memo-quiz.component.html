@@ -1,4 +1,4 @@
-<div class="flex flex-col gap-12 justify-center items-center h-full">
+<div class="flex flex-col gap-12 justify-center items-center h-full relative">
   <div class="grid grid-cols-4 gap-4">
     <div
       *ngFor="let card of cards; let cardIndex = index"
@@ -16,5 +16,5 @@
       </div>
     </div>
   </div>
-  <button mat-stroked-button (click)="init()">Zurücksetzen</button>
+  <button class="bg-yellow-300 rounded py-1 px-4" (click)="init()">{{ "gimmicks.games.reset" | translate }}</button>
 </div>

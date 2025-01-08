@@ -69,7 +69,8 @@
       "calendar": "Calendar",
       "guestbook": "Guestbook",
       "charts": "Charts",
-      "jokes": "Jokes"
+      "jokes": "Jokes",
+      "games": "Games"
     },
     "overview": {
       "header1": "So far I have created enterprise applications that can only be accessed with a login and password. That's why you'll find",
@@ -87,7 +88,8 @@
       "fileUpload": "File upload",
       "print": "Printing",
       "imageManipulation": "Image manipulation",
-      "sourceCode":"Source code of this website on GitHub"
+      "sourceCode": "Source code of this website on GitHub",
+      "fileStorage": "File Storage"
     },
     "map": {
       "search": "Search a city...",
@@ -182,15 +184,15 @@
       "mustUploadImage": "You must upload an image",
       "mustEnterName": "You must enter a name",
       "nameExist": "This name already exist",
-      "imageCropper":{
-        "headline":"Update user image",
-        "uploadImage":"Upload new image",
-        "saveImage":"Save cropped image",
-        "reset":"Reset"
+      "imageCropper": {
+        "headline": "Update user image",
+        "uploadImage": "Upload new image",
+        "saveImage": "Save cropped image",
+        "reset": "Reset"
       }
     },
     "jokes": {
-      "auth": "Google Firebase authentication and authorization",
+      "auth": "Authentication and authorization",
       "stripe": "Stripe payment",
       "text1": "I wrote a book with jokes, in pairs of german and croatian language. You can read some of them when you login down here. You can create an account by yourself or just use",
       "text2": "for email and",
@@ -233,6 +235,21 @@
       "paymentFailed": "The payment with PayPal failed.",
       "clickToRotate": "Click on book to rotate",
       "textToSpeech": "The TextToSpeech API used here is a free demo version and only supports 10 minutes of audio per month. After that, the API stops working. But that should be enough for demo purposes."
+    },
+    "games": {
+      "connectFour": "Connect 4",
+      "memoQuiz": "Memo quiz",
+      "jigsaw": "Jigsaw",
+      "opponent": "Opponent",
+      "human": "Human",
+      "turn": "'s turn",
+      "newGame": "New game",
+      "reset": "Reset",
+      "wins": "wins",
+      "draw": "The game ends in a draw",
+      "notMyApp1": "* This puzzle app is not my own work. I found it ",
+      "notMyApp2": "here",
+      "notMyApp3": " on the internet. But I like it so much that I included it."
     }
   },
   "pageNotFound": {

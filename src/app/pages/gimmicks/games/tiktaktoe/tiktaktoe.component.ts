@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
@@ -9,6 +9,7 @@ import {
   IonSegmentButton,
 } from '@ionic/angular/standalone';
 import { WinnerDialogComponent } from '../winner-dialog/winner-dialog.component';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-tiktaktoe',
@@ -20,19 +21,22 @@ import { WinnerDialogComponent } from '../winner-dialog/winner-dialog.component'
     IonLabel,
     IonSegment,
     IonSegmentButton,
+    TranslateModule,
   ],
   templateUrl: './tiktaktoe.component.html',
   styleUrl: './tiktaktoe.component.css',
 })
-export class TiktaktoeComponent {
+export class TiktaktoeComponent implements OnInit {
   board: string[][] = [
     ['', '', ''],
     ['', '', ''],
     ['', '', ''],
   ];
   player: 'X' | 'O' = 'X';
-  name1: string = 'Player 1';
-  name2: string = 'Player 2';
+  name1ForEdit: string = 'Player 1';
+  name2ForEdit: string = 'Player 2';
+  name1: string = this.name1ForEdit;
+  name2: string = this.name2ForEdit;
   tempName2: string;
   name1Edit = false;
   name2Edit = false;
@@ -51,12 +55,24 @@ export class TiktaktoeComponent {
 
   boardDisabled = false;
 
-  constructor(private dialog: MatDialog) {}
+  constructor(
+    private dialog: MatDialog,
+    private translateService: TranslateService
+  ) {}
 
   @ViewChild('name2Input') name2Input: ElementRef<HTMLInputElement>;
   @ViewChild('name1Input') name1Input: ElementRef<HTMLInputElement>;
 
   opponent: 'human' | 'computer' = 'human';
+
+  ngOnInit(): void {
+    if (this.translateService.currentLang === 'de') {
+      this.name1ForEdit = 'Spieler 1';
+      this.name2ForEdit = 'Spieler 2';
+      this.name1 = this.name1ForEdit;
+      this.name2 = this.name2ForEdit;
+    }
+  }
 
   makeMove(x: number, y: number) {
     if (this.board[x][y] !== '') {
@@ -185,7 +201,11 @@ export class TiktaktoeComponent {
     if (this.name2Edit) {
       setTimeout(() => {
         this.name2Input.nativeElement.focus();
-      }, 1);
+      }, 50);
+    } else {
+      setTimeout(() => {
+        this.name2 = this.name2ForEdit;
+      }, 50);
     }
   }
 
@@ -194,7 +214,11 @@ export class TiktaktoeComponent {
     if (this.name1Edit) {
       setTimeout(() => {
         this.name1Input.nativeElement.focus();
-      }, 1);
+      }, 50);
+    } else {
+      setTimeout(() => {
+        this.name1 = this.name1ForEdit;
+      }, 50);
     }
   }
 
@@ -224,5 +248,19 @@ export class TiktaktoeComponent {
     dialogRef.afterClosed().subscribe((result) => {
       this.onNewGame();
     });
+  }
+
+  onName1Blur() {
+    setTimeout(() => {
+      this.name1Edit = false;
+      this.name1ForEdit = this.name1;
+    }, 200);
+  }
+
+  onName2Blur() {
+    setTimeout(() => {
+      this.name2Edit = false;
+      this.name2ForEdit = this.name2;
+    }, 200);
   }
 }

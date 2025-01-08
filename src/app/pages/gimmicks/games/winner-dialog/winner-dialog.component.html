@@ -10,7 +10,9 @@
 
     <div class="flex flex-col justify-center">
       <div class="flex w-full justify-center">{{ data.winner }}</div>
-      <div class="flex w-full justify-center">hat gewonnen</div>
+      <div class="flex w-full justify-center">
+        {{ "gimmicks.games.wins" | translate }}
+      </div>
       <div class="flex w-full justify-center mt-6">
         <img class="w-20 h-auto" src="assets/svg/trophy.svg" />
       </div>
@@ -18,7 +20,7 @@
     }@else {
     <div class="flex flex-col justify-center">
       <div class="flex w-full justify-center text-center">
-        Das Spiel endet unentschieden
+        {{ "gimmicks.games.draw" | translate }}
       </div>
       <div class="flex w-full justify-center mt-6">
         <img class="w-20 h-auto" src="assets/svg/handshake.svg" />
@@ -31,7 +33,7 @@
   <div class="flex w-full justify-center">
     <mat-dialog-actions>
       <button [mat-dialog-close] class="bg-yellow-300 rounded py-1 px-4">
-        Neues Spiel
+        {{ "gimmicks.games.newGame" | translate }}
       </button>
     </mat-dialog-actions>
   </div>

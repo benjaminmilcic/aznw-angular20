@@ -69,7 +69,8 @@
       "calendar": "Kalender",
       "guestbook": "Gästebuch",
       "charts": "Diagramme",
-      "jokes": "Witze"
+      "jokes": "Witze",
+      "games":"Spiele"
     },
     "overview": {
       "header1": "Bisher habe ich Unternehmensanwendungen erstellt, auf die nur mit Login und Passwort zugegriffen werden kann. Deshalb finden Sie",
@@ -87,7 +88,8 @@
       "fileUpload": "Datei Upload",
       "print": "Drucken",
       "imageManipulation": "Bildbearbeitung",
-      "sourceCode": "Quellcode dieser Webseite auf GitHub"
+      "sourceCode": "Quellcode dieser Webseite auf GitHub",
+      "fileStorage": "Dateispeicherung"
     },
     "map": {
       "search": "Stadtsuche...",
@@ -190,7 +192,7 @@
       }
     },
     "jokes": {
-      "auth": "Google Firebase Authentifizierung und Autorisierung",
+      "auth": "Authentifizierung und Autorisierung",
       "stripe": "Stripe Bezahlsystem",
       "text1": "Ich habe ein Buch mit Witzen geschrieben, paarweise in Deutsch und Kroatisch. Einige davon können Sie lesen, wenn Sie sich hier unten anmelden. Sie können selbst einen Account erstellen oder einfach",
       "text2": "als Email und",
@@ -233,6 +235,21 @@
       "paymentFailed": "Die Zahlung mit PayPal ist fehlgeschlagen.",
       "clickToRotate": "Zum Umdrehen aufs Buch klicken",
       "textToSpeech": "Die TextToSpeech API die hier genutzt wird ist eine kostenlose Demo-Version und unterstützt nur 10 Minuten Audio pro Monat. Danach funktioniert die API nicht mehr. Aber für Demo-Zwecke sollte das reichen."
+    },
+    "games":{
+      "connectFour": "4 Gewinnt",
+      "memoQuiz": "Memo-Quiz",
+      "jigsaw": "Puzzel",
+      "opponent": "Gegner",
+      "human": "Mensch",
+      "turn": " ist am Zug",
+      "newGame": "Neues Spiel",
+      "reset": "Zurücksetzen",
+      "wins": "hat gewonnen",
+      "draw": "Das Spiel endet unentschieden",
+      "notMyApp1": "* Diese Puzzle App ist nicht mein eigenes Werk. Ich hab sie ",
+      "notMyApp2": "hier",
+      "notMyApp3": " im Internet gefunden. Aber ich mag sie so sehr, dass ich sie mit eingefügt habe."
     }
   },
   "pageNotFound": {
