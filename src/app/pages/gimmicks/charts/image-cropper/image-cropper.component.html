@@ -10,7 +10,7 @@
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
-<ion-content>
+<ion-content class=" overflow-auto">
   <div *ngIf="imageUrl" class="flex flex-col gap-2 mt-4">
     <div class="flex justify-center gap-8">
       <button
@@ -43,6 +43,7 @@
       </div>
       <div>
         <angular-cropper
+          *ngIf="cropperEnabled"
           #cropper
           [cropperOptions]="config"
           [imageUrl]="imageUrl"

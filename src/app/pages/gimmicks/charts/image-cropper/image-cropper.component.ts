@@ -1,5 +1,11 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import {
+  Component,
+  HostListener,
+  Input,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
 import {
   IonButton,
@@ -32,28 +38,61 @@ import { AngularCropperjsModule, CropperComponent } from 'angular-cropperjs';
     CommonModule,
     MatIcon,
     IonIcon,
-    TranslateModule
+    TranslateModule,
   ],
   templateUrl: './image-cropper.component.html',
   styleUrl: './image-cropper.component.css',
 })
 export class ImageCropperComponent implements OnInit {
   @ViewChild('cropper') public cropper: CropperComponent;
-
   @Input() imageUrl: string;
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.setConfig();
+  }
 
-  config = {
-    viewMode: 1,
-    aspectRatio: 1,
-    guides: false,
-    center: false,
-    minContainerWidth:400,
-    minContainerHeight:400,
-  };
+  config;
+  cropperEnabled = true;
 
   constructor(private modalCtrl: ModalController) {}
 
   ngOnInit(): void {
+    this.setConfig();
+  }
+
+  setConfig() {
+    this.cropperEnabled = false;
+    if (window.innerHeight <= 420) {
+      this.config = {
+        viewMode: 1,
+        aspectRatio: 1,
+        guides: false,
+        center: false,
+        minContainerWidth: 180,
+        minContainerHeight: 180,
+      };
+    } else if (window.innerWidth > 650 && window.innerHeight > 800) {
+      this.config = {
+        viewMode: 1,
+        aspectRatio: 1,
+        guides: false,
+        center: false,
+        minContainerWidth: 400,
+        minContainerHeight: 400,
+      };
+    } else {
+      this.config = {
+        viewMode: 1,
+        aspectRatio: 1,
+        guides: false,
+        center: false,
+        minContainerWidth: 260,
+        minContainerHeight: 260,
+      };
+    }
+    setTimeout(() => {
+      this.cropperEnabled = true;
+    }, 50);
   }
 
   async onFileSelected(event) {
