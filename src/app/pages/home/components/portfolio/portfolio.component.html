@@ -1,7 +1,7 @@
 <section id="portfolio">
   <dialog #vocabularyTrainerDialog class="bg-color5 text-color3 p-4">
     <div class="dialog-close">
-      <a (click)="vocabularyTrainerDialog.close()"><b class="hover:text-color1">X</b></a>
+      <a (click)="vocabularyTrainerDialog.close();homeService.overflowHidden=false"><b class="hover:text-color1">X</b></a>
     </div>
     <div class="flex flex-col place-items-center">
       <div class="text-3xl mb-4">Vocabulary Trainer</div>
@@ -68,7 +68,7 @@
   </dialog>
   <dialog #catchCupDialog class="bg-color4 p-4">
     <div class="dialog-close">
-      <a (click)="catchCupDialog.close()" class="text-color2"><b class="hover:text-color1">X</b></a>
+      <a (click)="catchCupDialog.close();homeService.overflowHidden=false" class="text-color2"><b class="hover:text-color1">X</b></a>
     </div>
     <div class="cc">
       <div class="text-3xl mb-4 text-color2">CatchCups</div>
@@ -112,7 +112,7 @@
   </dialog>
   <dialog #webaroDialog class="bg-color4 p-4">
     <div class="dialog-close">
-      <a (click)="webaroDialog.close()" class="text-color2"><b class="hover:text-color1">X</b></a>
+      <a (click)="webaroDialog.close();homeService.overflowHidden=false" class="text-color2"><b class="hover:text-color1">X</b></a>
     </div>
     <div class="webaro">
       <div class="text-3xl mb-4 text-color2">Webaro</div>
@@ -189,7 +189,7 @@
         </a>
       </div>
       <div class="portfolio-item m-4 border-4 border-color2 rounded-xl animation right-box-animation">
-        <a style="cursor: pointer" (click)="catchCupDialog.showModal()">
+        <a style="cursor: pointer" (click)="catchCupDialog.showModal();homeService.overflowHidden=true">
           <div class="portfolio-image-wrapper">
             <div class="portfolio-link-wrapper rounded-lg">
               <img
@@ -216,7 +216,7 @@
     </div>
     <div class="wrapper2">
       <div class="portfolio-item m-4 border-4 border-color2 rounded-xl animation left-box-animation">
-        <a style="cursor: pointer" (click)="webaroDialog.showModal()">
+        <a style="cursor: pointer" (click)="webaroDialog.showModal();homeService.overflowHidden=true">
           <div class="portfolio-image-wrapper">
             <div class="portfolio-link-wrapper rounded-lg">
               <img
@@ -243,7 +243,7 @@
       <div class="portfolio-item m-4 border-4 border-color2 rounded-xl animation right-box-animation">
         <a
           style="cursor: pointer"
-          (click)="vocabularyTrainerDialog.showModal()"
+          (click)="vocabularyTrainerDialog.showModal();homeService.overflowHidden=true"
         >
           <div class="portfolio-image-wrapper">
             <div class="portfolio-link-wrapper rounded-lg">

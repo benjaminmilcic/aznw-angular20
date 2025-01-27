@@ -1,0 +1,18 @@
+.mat-yellow {
+  background: yellow !important;
+  color: black !important;
+}
+
+.mat-selected-answer {
+  background: blue !important;
+  color: white !important;
+}
+
+.mat-answer:hover {
+  background: blue !important;
+  color: white !important;
+}
+
+.no-hover {
+  pointer-events: none !important;
+}

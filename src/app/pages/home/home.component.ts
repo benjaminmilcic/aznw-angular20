@@ -8,6 +8,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { SidebarComponent } from '../sidebar/sidebar.component';
 import { CommonModule } from '@angular/common';
+import { HomeService } from './home.service';
 
 @Component({
   selector: 'app-home',
@@ -42,5 +43,9 @@ export class HomeComponent {
 
     // Add the observer to each of those elements
     allAnimatedElements.forEach((element) => observer.observe(element));
+  }
+
+  constructor(public homeService:HomeService) {
+    
   }
 }

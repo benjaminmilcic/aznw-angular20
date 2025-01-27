@@ -249,7 +249,27 @@
       "draw": "Das Spiel endet unentschieden",
       "notMyApp1": "* Diese Puzzle App ist nicht mein eigenes Werk. Ich hab sie ",
       "notMyApp2": "hier",
-      "notMyApp3": " im Internet gefunden. Aber ich mag sie so sehr, dass ich sie mit eingefügt habe."
+      "notMyApp3": " im Internet gefunden. Aber ich mag sie so sehr, dass ich sie mit eingefügt habe.",
+      "knowledgeQuiz":"Wissens-Quiz",
+      "evaluation":"Auswertung",
+      "right":"Richtig",
+      "wrong":"Falsch",
+      "total":"Gesamt",
+      "quit":"Beenden",
+      "rightAnswer":"Richtige Antwort!",
+      "continue":"Weiter",
+      "wrongAnswer":"Falsche Antwort!",
+      "rightAnswerIs":"Richtige Antwort ist:",
+      "quizIsOver":"Das Quiz ist vorbei.",
+      "dontFeelLikeDoingQuiz":"Na, du hast wohl keine Lust zu quizzen?",
+      "evaluation100":"Perfekt! Du hast alles richtig beantwortet - besser geht es nicht. Spitzenleistung!",
+      "evaluation80":"Super gemacht! Du hast fast alles richtig - das zeigt, dass du richtig gut dabei bist.",
+      "evaluation60":"Gut gemacht! Eine solide Leistung, aber es gibt noch Raum für Verbesserungen.",
+      "evaluation40":"Du hast schon einiges richtig, aber da geht noch mehr. Übung macht den Meister!",
+      "evaluation20":"Der Anfang ist gemacht, aber es gibt noch viel zu lernen. Bleib dran, das schaffst du!",
+      "evaluation0":"Nicht dein Tag? Kein Problem - jeder fängt mal klein an. Nimm es als Chance, dich zu verbessern!",
+      "repeatQuiz":"Das Quiz wiederholen",
+      "howAnswered":"Von {{all}} Fragen haben Sie <span class='text-green-800'>{{rightAnswers}}</span> richtig und <span class='text-red-800'>{{wrongAnswers}}</span> falsch beantwortet."
     }
   },
   "pageNotFound": {

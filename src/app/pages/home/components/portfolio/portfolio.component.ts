@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
+import { HomeService } from '../../home.service';
 
 @Component({
   selector: 'app-portfolio',
@@ -9,4 +10,6 @@ import { TranslateModule } from '@ngx-translate/core';
   standalone: true,
   imports: [TranslateModule, RouterModule],
 })
-export class PortfolioComponent {}
+export class PortfolioComponent {
+  constructor(public homeService:HomeService){}
+}

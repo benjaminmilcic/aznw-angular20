@@ -249,7 +249,27 @@
       "draw": "The game ends in a draw",
       "notMyApp1": "* This puzzle app is not my own work. I found it ",
       "notMyApp2": "here",
-      "notMyApp3": " on the internet. But I like it so much that I included it."
+      "notMyApp3": " on the internet. But I like it so much that I included it.",
+      "knowledgeQuiz": "Knowledge quiz",
+      "evaluation": "Evaluation",
+      "right": "Right",
+      "wrong": "Wrong",
+      "total": "Total",
+      "quit": "Quit",
+      "rightAnswer": "Correct answer!",
+      "continue": "Continue",
+      "wrongAnswer": "Wrong answer!",
+      "rightAnswerIs": "Correct answer is:",
+      "quizIsOver": "The quiz is over.",
+      "dontFeelLikeDoingQuiz": "Well, you don't feel like doing a quiz?",
+      "evaluation100": "Perfect! You answered everything correctly - it couldn't be better. Top performance!",
+      "evaluation80": "Well done! You got almost everything right - that shows that you're doing really well.",
+      "evaluation60": "Well done! A solid performance, but there is still room for improvement.",
+      "evaluation40": "You've already got a lot right, but there's still more to come. Practice makes perfect!",
+      "evaluation20": "The beginning has been made, but there is still a lot to learn. Keep at it, you can do it!",
+      "evaluation0": "Not your day? No problem - everyone starts small. Take it as an opportunity to improve!",
+      "repeatQuiz": "Repeat the quiz",
+      "howAnswered": "Of {{all}} questions, you answered <span class='text-green-800'>{{rightAnswers}}</span> correctly and <span class='text-red-800'>{{wrongAnswers}}</span> incorrectly."
     }
   },
   "pageNotFound": {

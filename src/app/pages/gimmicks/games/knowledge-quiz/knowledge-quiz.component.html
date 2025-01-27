@@ -1,0 +1,211 @@
+<div class="flex flex-col items-center h-full relative p-4 box-border">
+  <div
+    class="flex flex-col max-w-[600px] min-w-[320px] w-full gap-4 mt-10"
+    [ngClass]="{ hidden: showResult }"
+  >
+    <div class="font-bold text-lg text-center h-[80px]">
+      {{ currentQuestion.question[language] }}
+    </div>
+    <div class="flex gap-4">
+      <div class="flex flex-col w-full gap-4">
+        <button
+          mat-raised-button
+          [color]="selectedAnswer === 0 ? 'selected-answer' : 'answer'"
+          [ngClass]="{ 'no-hover': buttonsDisabled }"
+          style="justify-content: flex-start"
+          (click)="checkAnswer(answers[0], 0)"
+        >
+          <div class="flex gap-2 items-center">
+            <div>a)</div>
+            <div class="text-left">
+              {{ currentQuestion.options[language][answers[0]] }}
+            </div>
+          </div>
+        </button>
+        <button
+          mat-raised-button
+          [color]="selectedAnswer === 1 ? 'selected-answer' : 'answer'"
+          [ngClass]="{ 'no-hover': buttonsDisabled }"
+          style="justify-content: flex-start"
+          (click)="checkAnswer(answers[1], 1)"
+        >
+          <div class="flex gap-2 items-center">
+            <div>b)</div>
+            <div class="text-left">
+              {{ currentQuestion.options[language][answers[1]] }}
+            </div>
+          </div>
+        </button>
+        <button
+          mat-raised-button
+          [color]="selectedAnswer === 2 ? 'selected-answer' : 'answer'"
+          [ngClass]="{ 'no-hover': buttonsDisabled }"
+          style="justify-content: flex-start"
+          (click)="checkAnswer(answers[2], 2)"
+        >
+          <div class="flex gap-2 items-center">
+            <div>c)</div>
+            <div class="text-left">
+              {{ currentQuestion.options[language][answers[2]] }}
+            </div>
+          </div>
+        </button>
+        <button
+          mat-raised-button
+          [color]="selectedAnswer === 3 ? 'selected-answer' : 'answer'"
+          [ngClass]="{ 'no-hover': buttonsDisabled }"
+          style="justify-content: flex-start"
+          (click)="checkAnswer(answers[3], 3)"
+        >
+          <div class="flex gap-2 items-center">
+            <div>d)</div>
+            <div class="text-left">
+              {{ currentQuestion.options[language][answers[3]] }}
+            </div>
+          </div>
+        </button>
+      </div>
+      <div
+        class="flex flex-col w-[300px] h-full bg-yellow-300 text-black border border-yellow-800 p-4 box-border rounded-lg relative"
+      >
+        <div class="text-center mb-4">
+          {{ "gimmicks.games.evaluation" | translate }}
+        </div>
+        <div class="grid grid-cols-2 gap-2">
+          <div class="text-green-800 text-xs sm:text-base">
+            {{ "gimmicks.games.right" | translate }}:
+          </div>
+          <div class="text-green-800 text-xs sm:text-base">
+            {{ rightAnswers }}
+          </div>
+          <div class="text-red-800 text-xs sm:text-base">
+            {{ "gimmicks.games.wrong" | translate }}:
+          </div>
+          <div class="text-red-800 text-xs sm:text-base">
+            {{ wrongAnswers }}
+          </div>
+          <div class="text-xs sm:text-base">
+            {{ "gimmicks.games.total" | translate }}:
+          </div>
+          <div class="text-xs sm:text-base">
+            {{ rightAnswers + wrongAnswers }}/{{ questionsAmount }}
+          </div>
+        </div>
+        <div class="flex w-full absolute bottom-2 left-0">
+          <button
+            mat-stroked-button
+            class="w-full mx-4 box-border"
+            (click)="quitGame()"
+          >
+            {{ "gimmicks.games.quit" | translate }}
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      *ngIf="showRight"
+      class="flex flex-col w-full bg-green-400 text-white border border-green-800 p-4 box-border rounded-lg"
+    >
+      <div class="flex justify-center items-center gap-4">
+        <mat-icon
+          class="text-green-800 font-bold scale-150"
+          fontIcon="check"
+        ></mat-icon>
+        <div>{{ "gimmicks.games.rightAnswer" | translate }}</div>
+      </div>
+      <button
+        (click)="nextQuestion()"
+        mat-stroked-button
+        color="yellow"
+        class="mt-4"
+      >
+        {{ "gimmicks.games.continue" | translate }}
+      </button>
+    </div>
+    <div
+      *ngIf="showWrong"
+      class="flex flex-col w-full bg-red-400 text-white border border-red-800 p-4 box-border rounded-lg"
+    >
+      <div class="flex justify-center items-center gap-4">
+        <mat-icon
+          class="text-red-800 font-bold scale-150"
+          fontIcon="close"
+        ></mat-icon>
+        <div>{{ "gimmicks.games.wrongAnswer" | translate }}</div>
+      </div>
+      <div class="mt-2">{{ "gimmicks.games.rightAnswerIs" | translate }}</div>
+      <div class="text-3xl">
+        {{
+          currentQuestion.options[language][currentQuestion.correctAnswerIndex]
+        }}
+      </div>
+      <button
+        (click)="nextQuestion()"
+        mat-stroked-button
+        color="yellow"
+        class="mt-4"
+      >
+        {{ "gimmicks.games.continue" | translate }}
+      </button>
+    </div>
+  </div>
+  <dialog
+    *ngIf="showResult"
+    class="w-[280px] h-[320px] rounded border border-yellow-800 bg-yellow-300 shadow-2xl mt-10"
+    open="true"
+  >
+    <div class="text-center mb-6">
+      {{ "gimmicks.games.quizIsOver" | translate }}
+    </div>
+    <div class="font-bold text-2xl text-center mb-4">
+      {{ "gimmicks.games.evaluation" | translate }}
+    </div>
+    <div
+      class="mb-6"
+      [innerHTML]="
+        'gimmicks.games.howAnswered'
+          | translate
+            : { all: rightAnswers + wrongAnswers, rightAnswers, wrongAnswers }
+      "
+    ></div>
+    @if (rightAnswers + wrongAnswers===0) {
+    <div>
+      {{ "gimmicks.games.dontFeelLikeDoingQuiz" | translate }}
+    </div>
+    } @else if (rightAnswers*100/(rightAnswers+wrongAnswers)===100) {
+    <div>
+      {{ "gimmicks.games.evaluation100" | translate }}
+    </div>
+
+    }@else if(rightAnswers*100/(rightAnswers+wrongAnswers)>80) {
+
+    <div>
+      {{ "gimmicks.games.evaluation80" | translate }}
+    </div>
+    } @else if(rightAnswers*100/(rightAnswers+wrongAnswers)>60) {
+
+    <div>
+      {{ "gimmicks.games.evaluation60" | translate }}
+    </div>
+    }@else if(rightAnswers*100/(rightAnswers+wrongAnswers)>40) {
+
+    <div>
+      {{ "gimmicks.games.evaluation40" | translate }}
+    </div>
+    }@else if(rightAnswers*100/(rightAnswers+wrongAnswers)>20) {
+
+    <div>
+      {{ "gimmicks.games.evaluation20" | translate }}
+    </div>
+    }@else {
+    <div>
+      {{ "gimmicks.games.evaluation0" | translate }}
+    </div>
+    }
+    <div class="flex w-full absolute bottom-4 left-0">
+      <button mat-stroked-button class="w-full mx-4" (click)="newGame()">
+        {{ "gimmicks.games.repeatQuiz" | translate }}
+      </button>
+    </div>
+  </dialog>
+</div>

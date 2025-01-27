@@ -38,3 +38,8 @@ section:before {
   background: linear-gradient(#2563eb, #a52a2a) !important;
   color: yellow !important;
 }
+
+.mat-knowledge-quiz {
+  background: linear-gradient(#2563eb, #a52a2a) !important;
+  color: yellow !important;
+}
