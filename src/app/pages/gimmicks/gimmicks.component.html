@@ -26,6 +26,7 @@
           <li>{{ "gimmicks.overview.table" | translate }}</li>
           <li>{{ "gimmicks.overview.resizable" | translate }}</li>
           <li>Responsive design</li>
+          <li>{{ "gimmicks.differentLanguages" | translate }}</li>
         </ul>
       </div>
     </div>
@@ -45,6 +46,7 @@
           <li>{{ "gimmicks.overview.scratchCard" | translate }}</li>
           <li>{{ "gimmicks.overview.print" | translate }}</li>
           <li>Responsive design</li>
+          <li>{{ "gimmicks.differentLanguages" | translate }}</li>
         </ul>
       </div>
     </div>
@@ -64,6 +66,7 @@
           <li>{{ "gimmicks.overview.fileStorage" | translate }}</li>
           <li>Nest.js API</li>
           <li>Responsive design</li>
+          <li>{{ "gimmicks.differentLanguages" | translate }}</li>
         </ul>
       </div>
     </div>
@@ -81,6 +84,7 @@
           <li>{{ "gimmicks.overview.imageManipulation" | translate }}</li>
           <li>{{ "gimmicks.overview.fileUpload" | translate }}</li>
           <li>Responsive design</li>
+          <li>{{ "gimmicks.differentLanguages" | translate }}</li>
         </ul>
       </div>
     </div>
@@ -98,6 +102,7 @@
           <li>Nest.js API</li>
           <li>{{ "gimmicks.jokes.stripe" | translate }}</li>
           <li>Responsive design</li>
+          <li>{{ "gimmicks.differentLanguages" | translate }}</li>
         </ul>
       </div>
     </div>
@@ -105,13 +110,14 @@
       class="relative group hover:text-gray-100 cursor-pointer flex gap-1 items-center"
       [routerLink]="['games']"
     >
-      <img class="w-4 h-4" src="assets/svg/tic-tac-toe-small.svg">
+      <img class="w-4 h-4" src="assets/svg/tic-tac-toe-small.svg" />
       <div>{{ "gimmicks.menu.games" | translate }}</div>
       <div
         class="absolute bg-gradient-to-b from-blue-200 to-blue-400 text-black rounded p-2 top-8 w-60 hidden group-hover:block z-20 arrow"
       >
         <ul class="text-xs">
           <li>Responsive design</li>
+          <li>{{ "gimmicks.differentLanguages" | translate }}</li>
         </ul>
       </div>
     </div>
@@ -243,8 +249,14 @@
         <button
           class="w-7 h-7 rounded-full shadow-lg bg-[#f6dbdb] group-hover:text-[#f6dbdb] group-hover:bg-black"
         >
-          <img class="w-3 h-3 group-hover:hidden" src="assets/svg/tic-tac-toe-black.svg">
-          <img class="w-3 h-3 hidden group-hover:inline-block" src="assets/svg/tic-tac-toe-small.svg">
+          <img
+            class="w-3 h-3 group-hover:hidden"
+            src="assets/svg/tic-tac-toe-black.svg"
+          />
+          <img
+            class="w-3 h-3 hidden group-hover:inline-block"
+            src="assets/svg/tic-tac-toe-small.svg"
+          />
         </button>
         <div
           class="bg-black text-white text-sm px-2 rounded shadow-lg group-hover:bg-white group-hover:text-black"
