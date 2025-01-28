@@ -93,7 +93,7 @@ export class MemoQuizComponent implements OnInit {
             this.cardA = null;
             this.cardB = null;
             this.checkMatch = false;
-          }, 3000);
+          }, 2500);
         }
       }
     }

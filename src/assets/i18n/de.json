@@ -34,6 +34,14 @@
     "webaro": {
       "text1": "Für die Firma",
       "text2": ", habe ich an der Weiterentwicklung einer Web-App zur effizienten Planung und Auswertung von Drohnendaten im Agrarbereich gearbeitet. Realisiert mit Angular. Im Auftrag von"
+    },
+    "hippo":{
+      "text1":"Für die Firma",
+      "text2":", entwickelte ich eine Web-App zur effizienten Planung und Auswertung von Spring- und Reit-Turnieren. Realisiert mit Angular. Im Auftrag von"
+    },
+    "solakon":{
+      "text1": "Im Auftrag der Firma",
+      "text2": "habe ich an einer mobilen App gearbeitet, die die Integration von Balkonkraftwerken in das Hausenergienetzwerk ermöglicht. Die App wurde mit Angular und Ionic erstellt."
     }
   },
   "contact": {

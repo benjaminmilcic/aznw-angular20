@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Component, ElementRef } from '@angular/core';
+import { Router, RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { HomeService } from '../../home.service';
 
@@ -11,5 +11,16 @@ import { HomeService } from '../../home.service';
   imports: [TranslateModule, RouterModule],
 })
 export class PortfolioComponent {
-  constructor(public homeService:HomeService){}
+  constructor(public homeService: HomeService, private router: Router) {}
+
+  closeDialog(dialog: HTMLDialogElement) {
+    dialog.close();
+    this.homeService.overflowHidden = false;
+    this.router.navigate(['/'], { fragment: 'portfolio' });
+  }
+  
+  openDialog(dialog: HTMLDialogElement) {
+    dialog.showModal();
+    this.homeService.overflowHidden = true;
+  }
 }

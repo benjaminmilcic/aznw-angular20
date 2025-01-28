@@ -34,6 +34,14 @@
     "webaro": {
       "text1": "For the company",
       "text2": ", I worked on the further development of a web app for the efficient planning and evaluation of drone data in the agricultural sector. Realized with Angular, on behalf of"
+    },
+    "hippo": {
+      "text1": "For the company",
+      "text2": ", I developed a web app for the efficient planning and evaluation of show jumping and riding tournaments. Realized with Angular. On behalf of"
+    },
+    "solakon": {
+      "text1": "On behalf of the company",
+      "text2": "I worked on a mobile app that enables the integration of balcony power plants into the home energy network. The app was created with Angular and Ionic."
     }
   },
   "contact": {

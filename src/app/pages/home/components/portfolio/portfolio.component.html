@@ -1,7 +1,9 @@
 <section id="portfolio">
   <dialog #vocabularyTrainerDialog class="bg-color5 text-color3 p-4">
     <div class="dialog-close">
-      <a (click)="vocabularyTrainerDialog.close();homeService.overflowHidden=false"><b class="hover:text-color1">X</b></a>
+      <a (click)="closeDialog(vocabularyTrainerDialog)"
+        ><b class="hover:text-color1">X</b></a
+      >
     </div>
     <div class="flex flex-col place-items-center">
       <div class="text-3xl mb-4">Vocabulary Trainer</div>
@@ -68,7 +70,9 @@
   </dialog>
   <dialog #catchCupDialog class="bg-color4 p-4">
     <div class="dialog-close">
-      <a (click)="catchCupDialog.close();homeService.overflowHidden=false" class="text-color2"><b class="hover:text-color1">X</b></a>
+      <a (click)="closeDialog(catchCupDialog)" class="text-color2"
+        ><b class="hover:text-color1">X</b></a
+      >
     </div>
     <div class="cc">
       <div class="text-3xl mb-4 text-color2">CatchCups</div>
@@ -112,7 +116,9 @@
   </dialog>
   <dialog #webaroDialog class="bg-color4 p-4">
     <div class="dialog-close">
-      <a (click)="webaroDialog.close();homeService.overflowHidden=false" class="text-color2"><b class="hover:text-color1">X</b></a>
+      <a (click)="closeDialog(webaroDialog)" class="text-color2"
+        ><b class="hover:text-color1">X</b></a
+      >
     </div>
     <div class="webaro">
       <div class="text-3xl mb-4 text-color2">Webaro</div>
@@ -160,10 +166,110 @@
       </div>
     </div>
   </dialog>
+  <dialog #solakonDialog class="bg-color4 p-4">
+    <div class="dialog-close">
+      <a (click)="closeDialog(solakonDialog)" class="text-color2"
+        ><b class="hover:text-color1">X</b></a
+      >
+    </div>
+    <div class="cc">
+      <div class="text-3xl mb-4 text-color2">Solakon</div>
+      <div style="margin-bottom: 10px">
+        <a
+          href="https://www.solakon.de"
+          target="_blank"
+          class="text-color3 hover:opacity-75"
+          >https://www.solakon.de</a
+        >
+      </div>
+      <div class="cc-text" style="margin-bottom: 20px">
+        <p class="text-color1">
+          {{ "portfolio.solakon.text1" | translate }}
+          <a
+            href="https://codext.de/"
+            target="_blank"
+            class="text-color3 hover:opacity-75"
+            >Codext GmbH</a
+          >,
+          {{ "portfolio.solakon.text2" | translate }}
+        </p>
+      </div>
+      <div class="catchcups">
+        <img src="/assets/solakon1.webp" alt="Solakon" />
+        <img src="/assets/solakon2.webp" alt="Solakon" />
+        <img src="/assets/solakon3.webp" alt="Solakon" />
+        <img src="/assets/solakon4.webp" alt="Solakon" />
+      </div>
+      <div class="mt-5 flex justify-center">
+        <a
+          href="https://play.google.com/store/apps/details?id=de.solakon.app"
+          target="_blank"
+          ><img
+            width="144px"
+            src="/assets/google-play-badge.png"
+            alt="Solakon App"
+        /></a>
+      </div>
+    </div>
+  </dialog>
+  <dialog #hippoDialog class="bg-color4 p-4">
+    <div class="dialog-close">
+      <a (click)="closeDialog(hippoDialog)" class="text-color2"
+        ><b class="hover:text-color1">X</b></a
+      >
+    </div>
+    <div class="webaro">
+      <div class="text-3xl mb-4 text-color2">Hippo Data</div>
+      <div class="webaro-text">
+        <p class="mb-8 text-lg text-color1">
+          {{ "portfolio.hippo.text1" | translate }}
+          <a
+            href="https://public.hippodata.net"
+            target="_blank"
+            class="text-color3 hover:opacity-75"
+            >Hippo Data GmbH</a
+          >{{ "portfolio.hippo.text2" | translate }}
+          <a
+            href="https://codext.de"
+            target="_blank"
+            class="text-color3 hover:opacity-75"
+            >Codext GmbH</a
+          >.
+        </p>
+      </div>
+      <div class="flex flex-col place-items-center gap-4">
+        <img
+          src="/assets/hippo2.webp"
+          alt="Hippo Data"
+          class="max-w-[900px]"
+        />
+        <img
+          src="/assets/hippo1.webp"
+          alt="Hippo Data"
+          class="max-w-[900px]"
+        />
+        <img
+          src="/assets/hippo.webp"
+          alt="Hippo Data"
+          class="max-w-[900px]"
+        />
+      </div>
+      <div style="margin-top: 20px">
+        <a
+          href="https://login.hippodata.de"
+          target="_blank"
+          class="text-color3 hover:opacity-75"
+          >https://login.hippodata.de</a
+        >
+      </div>
+    </div>
+  </dialog>
   <div class="content">
     <h3>Portfolio</h3>
     <div class="wrapper1">
-      <div class="portfolio-item m-4 border-4 border-color2 rounded-xl animation left-box-animation">
+      <div
+        class="portfolio-item m-4 border-4 border-color2 rounded-xl animation left-box-animation"
+      >
         <a style="cursor: pointer" [routerLink]="['/gimmicks']">
           <div class="portfolio-image-wrapper">
             <div class="portfolio-link-wrapper rounded-lg">
@@ -188,8 +294,10 @@
           </div>
         </a>
       </div>
-      <div class="portfolio-item m-4 border-4 border-color2 rounded-xl animation right-box-animation">
-        <a style="cursor: pointer" (click)="catchCupDialog.showModal();homeService.overflowHidden=true">
+      <div
+        class="portfolio-item m-4 border-4 border-color2 rounded-xl animation right-box-animation"
+      >
+        <a style="cursor: pointer" (click)="openDialog(catchCupDialog)">
           <div class="portfolio-image-wrapper">
             <div class="portfolio-link-wrapper rounded-lg">
               <img
@@ -215,8 +323,10 @@
       </div>
     </div>
     <div class="wrapper2">
-      <div class="portfolio-item m-4 border-4 border-color2 rounded-xl animation left-box-animation">
-        <a style="cursor: pointer" (click)="webaroDialog.showModal();homeService.overflowHidden=true">
+      <div
+        class="portfolio-item m-4 border-4 border-color2 rounded-xl animation left-box-animation"
+      >
+        <a style="cursor: pointer" (click)="openDialog(webaroDialog)">
           <div class="portfolio-image-wrapper">
             <div class="portfolio-link-wrapper rounded-lg">
               <img
@@ -240,10 +350,12 @@
           </div>
         </a>
       </div>
-      <div class="portfolio-item m-4 border-4 border-color2 rounded-xl animation right-box-animation">
+      <div
+        class="portfolio-item m-4 border-4 border-color2 rounded-xl animation right-box-animation"
+      >
         <a
           style="cursor: pointer"
-          (click)="vocabularyTrainerDialog.showModal();homeService.overflowHidden=true"
+          (click)="openDialog(vocabularyTrainerDialog)"
         >
           <div class="portfolio-image-wrapper">
             <div class="portfolio-link-wrapper rounded-lg">
@@ -263,6 +375,65 @@
             <div class="portfolio-caption-content">
               <div>
                 <p class="portfolio-caption-header">Vocabulary Trainer</p>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="wrapper2">
+      <div
+        class="portfolio-item m-4 border-4 border-color2 rounded-xl animation left-box-animation"
+      >
+        <a style="cursor: pointer" (click)="openDialog(solakonDialog)">
+          <div class="portfolio-image-wrapper">
+            <div class="portfolio-link-wrapper rounded-lg">
+              <img
+                class="portfolio-image"
+                src="assets/solakon.webp"
+                alt="Learn Language App"
+              />
+              <div
+                class="portfolio-overlay"
+                style="background-color: var(--color4)"
+              ></div>
+            </div>
+          </div>
+
+          <div class="portfolio-caption rounded-lg">
+            <div class="portfolio-caption-content">
+              <div>
+                <p class="portfolio-caption-header">Solakon</p>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div
+        class="portfolio-item m-4 border-4 border-color2 rounded-xl animation right-box-animation"
+      >
+        <a
+          style="cursor: pointer"
+          (click)="openDialog(hippoDialog)"
+        >
+          <div class="portfolio-image-wrapper">
+            <div class="portfolio-link-wrapper rounded-lg">
+              <img
+                class="portfolio-image"
+                src="assets/hippo2.webp"
+                alt="Learn Language App"
+              />
+              <div
+                class="portfolio-overlay"
+                style="background-color: var(--color5)"
+              ></div>
+            </div>
+          </div>
+
+          <div class="portfolio-caption rounded-lg">
+            <div class="portfolio-caption-content">
+              <div>
+                <p class="portfolio-caption-header">Hippo Data</p>
               </div>
             </div>
           </div>
