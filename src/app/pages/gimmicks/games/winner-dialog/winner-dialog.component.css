@@ -6,10 +6,10 @@
   position: absolute;
 }
 .background {
-  background-image: url("/assets/hanging-flowers.jpg");
+  background-image: url("/assets/hanging-flowers.png");
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: rgba(255, 255, 255, 0.5);
-  background-blend-mode: lighten;
+  background-color: #fde047;
+  background-blend-mode: hard-light;
   height: 100%;
 }

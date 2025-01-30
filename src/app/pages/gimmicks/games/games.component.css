@@ -19,27 +19,10 @@ section:before {
   background-size: cover;
 }
 
-.mat-tiktaktoe {
-  background: linear-gradient(#a52a2a, #2563eb) !important;
-  color: yellow !important;
+::ng-deep .mat-mdc-menu-item {
+  border-radius: 8px;
 }
 
-.mat-connect-four {
-  background: linear-gradient(#2563eb, yellow) !important;
-  color: #a52a2a !important;
-}
-
-.mat-memo-quiz {
-  background: linear-gradient(yellow, #a52a2a) !important;
-  color: #2563eb !important;
-}
-
-.mat-jigsaw {
-  background: linear-gradient(#2563eb, #a52a2a) !important;
-  color: yellow !important;
-}
-
-.mat-knowledge-quiz {
-  background: linear-gradient(#2563eb, #a52a2a) !important;
-  color: yellow !important;
+.mat-yellow {
+  background-color: #fde047 !important;
 }

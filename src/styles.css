@@ -112,3 +112,8 @@ button.alert-button.alert-button-confirm:hover {
   background-color: var(--color3) !important;
   color: var(--color1) !important;
 }
+
+.winner-dialog {
+  border: 1px solid black;
+  border-radius: 12px;
+}

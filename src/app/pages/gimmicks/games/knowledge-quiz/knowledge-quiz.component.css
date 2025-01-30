@@ -1,6 +1,5 @@
 .mat-yellow {
-  background: yellow !important;
-  color: black !important;
+    background-color: #fde047 !important;
 }
 
 .mat-selected-answer {

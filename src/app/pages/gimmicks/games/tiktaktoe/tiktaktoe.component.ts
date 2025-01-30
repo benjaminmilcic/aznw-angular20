@@ -10,6 +10,7 @@ import {
 } from '@ionic/angular/standalone';
 import { WinnerDialogComponent } from '../winner-dialog/winner-dialog.component';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-tiktaktoe',
@@ -22,6 +23,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
     IonSegment,
     IonSegmentButton,
     TranslateModule,
+    MatButtonModule
   ],
   templateUrl: './tiktaktoe.component.html',
   styleUrl: './tiktaktoe.component.css',
@@ -243,6 +245,7 @@ export class TiktaktoeComponent implements OnInit {
         showWin: this.showWin,
         winner: this.currentPlayer === 'X' ? this.name2 : this.name1,
       },
+      panelClass: 'winner-dialog',
     });
 
     dialogRef.afterClosed().subscribe((result) => {

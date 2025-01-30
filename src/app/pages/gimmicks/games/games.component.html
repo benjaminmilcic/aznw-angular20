@@ -1,45 +1,87 @@
 <section class="flex flex-col gap-2 h-[calc(100%-40px)] bg-blue-400">
   <div class="flex justify-center flex-wrap gap-6 p-4">
-    <button
-      color="tiktaktoe"
-      mat-raised-button
-      [routerLink]="['/gimmicks/games/tiktaktoe']"
-      routerLinkActive="router-link-active"
-    >
-      TikTakToe
-    </button>
-    <button
-      color="connect-four"
-      mat-raised-button
-      [routerLink]="['/gimmicks/games/connect-four']"
-      routerLinkActive="router-link-active"
-    >
-      {{ "gimmicks.games.connectFour" | translate }}
-    </button>
-    <button
-      color="memo-quiz"
-      mat-raised-button
-      [routerLink]="['/gimmicks/games/memo-quiz']"
-      routerLinkActive="router-link-active"
-    >
-      {{ "gimmicks.games.memoQuiz" | translate }}
-    </button>
-    <button
-      color="knowledge-quiz"
-      mat-raised-button
-      [routerLink]="['/gimmicks/games/knowledge-quiz']"
-      routerLinkActive="router-link-active"
-    >
-      {{ "gimmicks.games.knowledgeQuiz" | translate }}
-    </button>
-    <!-- <button
-      color="jigsaw"
-      mat-raised-button
-      [routerLink]="['/gimmicks/games/jigsaw']"
-      routerLinkActive="router-link-active"
-    >
-      {{ "gimmicks.games.jigsaw" | translate }}
-    </button> -->
+    <div class="flex gap-4 items-center">
+      <div>Wähle ein Spiel aus:</div>
+      <button mat-raised-button color="yellow" [matMenuTriggerFor]="selectGame">
+        <div class="flex gap-2 items-center">
+          <div>
+            {{ gameName }}
+          </div>
+          <div class="mb-[4px]">
+            <i class="fa-solid fa-sort-down"></i>
+          </div>
+        </div>
+      </button>
+    </div>
+    <mat-menu #selectGame="matMenu" class="!bg-yellow-300 !px-4">
+      <button
+        mat-menu-item
+        (click)="changeGame('Moorhuhn')"
+        [routerLink]="['/gimmicks/games/moorhuhn']"
+        routerLinkActive="router-link-active"
+      >
+        <div class="flex gap-2 items-center">
+          <img class="w-[20px] h-auto" src="/assets/moorhuhn-icon.png" />
+          <div class="mt-[6px]">Moorhuhn</div>
+        </div>
+      </button>
+      <button
+        mat-menu-item
+        (click)="changeGame('gimmicks.games.memoQuiz')"
+        [routerLink]="['/gimmicks/games/memo-quiz']"
+        routerLinkActive="router-link-active"
+      >
+        <div class="flex gap-2 items-center">
+          <img class="w-[20px] h-auto" src="/assets/memory-game.png" />
+          <div>{{ "gimmicks.games.memoQuiz" | translate }}</div>
+        </div>
+      </button>
+      <button
+        mat-menu-item
+        (click)="changeGame('gimmicks.games.knowledgeQuiz')"
+        [routerLink]="['/gimmicks/games/knowledge-quiz']"
+        routerLinkActive="router-link-active"
+      >
+        <div class="flex gap-2 items-center">
+          <img class="w-[20px] h-auto" src="/assets/quiz.png" />
+          <div>{{ "gimmicks.games.knowledgeQuiz" | translate }}</div>
+        </div>
+      </button>
+      <button
+        mat-menu-item
+        (click)="changeGame('TikTakToe')"
+        [routerLink]="['/gimmicks/games/tiktaktoe']"
+        routerLinkActive="router-link-active"
+      >
+        <div class="flex gap-2 items-center">
+          <img class="w-[20px] h-auto" src="/assets/tic-tac-toe.png" />
+          <div>TikTakToe</div>
+        </div>
+      </button>
+      <button
+        mat-menu-item
+        (click)="changeGame('gimmicks.games.connectFour')"
+        [routerLink]="['/gimmicks/games/connect-four']"
+        routerLinkActive="router-link-active"
+      >
+        <div class="flex gap-2 items-center">
+          <img class="w-[20px] h-auto" src="/assets/connect-four.png" />
+          <div>{{ "gimmicks.games.connectFour" | translate }}</div>
+        </div>
+      </button>
+      <!-- <button
+        mat-menu-item
+        (click)="changeGame('gimmicks.games.jigsaw')"
+        [routerLink]="['/gimmicks/games/jigsaw']"
+        routerLinkActive="router-link-active"
+      >
+      <div class="flex gap-2 items-center">
+          <img class="w-[20px] h-auto" src="/assets/jigsaw.png" />
+          <div>{{ "gimmicks.games.jigsaw" | translate }}</div>
+        </div>
+        
+      </button> -->
+    </mat-menu>
   </div>
   <div class="w-full h-full items-center overflow-auto">
     <router-outlet></router-outlet>

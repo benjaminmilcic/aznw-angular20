@@ -22,3 +22,7 @@ align-items: center;
 .card-back {
 transform: rotateY(180deg);
 }
+
+.mat-yellow {
+  background-color: #fde047 !important;
+}

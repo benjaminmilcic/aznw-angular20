@@ -1,0 +1,79 @@
+<div class="flex flex-col items-center relative">
+  <div
+    class="border border-black relative overflow-hidden moorhuhn-bg"
+    [style.width]="boardX + 'px'"
+    [style.height]="boardY + 'px'"
+    [ngClass]="{'fadenkreuz':gameStarted}"
+    (click)="onShot()"
+  >
+    <dialog
+      #scoreDialog
+      class="bg-yellow-300 border border-yellow-800 rounded-lg shadow-lg cursor-auto"
+    >
+      <div *ngIf="showDialogContent" class="w-full h-full relative">
+        <div class="text-center text-lg mb-2">The game is over.</div>
+        <div class="text-center text-xl mb-4">
+          You scored {{ score }} points!
+        </div>
+        <div class="flex justify-center">
+          <img class="w-[100px] h-auto" src="/assets/moorhuhn.png" />
+        </div>
+        <div class="w-full absolute bottom-0 left-0">
+          <button class="w-full" mat-stroked-button (click)="newGame($event)">
+            New Game
+          </button>
+        </div>
+      </div>
+    </dialog>
+    <div *ngIf="gameStarted" class="text-white font-bold absolute top-4 left-4">{{ time }}</div>
+    <div
+      *ngIf="!gameStarted"
+      class="flex w-full h-full justify-center items-center"
+    >
+      <button color="start-game" mat-raised-button (click)="startGame($event)">Start Game</button>
+    </div>
+
+    <div
+      *ngIf="gameover"
+      class="flex w-full h-full justify-center items-center"
+    >
+      <div class="text-white game-over">Game Over</div>
+    </div>
+    <div
+      *ngFor="let bird of birds"
+      class="absolute"
+      [ngStyle]="{
+        top: bird.y + 'px',
+        right: bird.direction === 0 && bird.x + 'px',
+        left: bird.direction === 1 && bird.x + 'px'
+      }"
+      [ngClass]="{ 'rotate-vice-versa': bird.direction === 1 }"
+      (click)="birdShot(bird)"
+    >
+      <div
+        class="flex justify-center text-white font-bold score"
+        [ngClass]="{
+          'rotate-vice-versa': bird.direction === 1,
+          'shot-right': bird.shot && bird.direction === 0,
+          'shot-left': bird.shot && bird.direction === 1
+        }"
+      >
+        +10
+      </div>
+      <img class="bird" src="/assets/moorhuhn.gif" />
+    </div>
+  </div>
+  <div *ngIf="gameStarted" class="flex justify-between mt-4" [style.width]="boardX + 'px'">
+    <div class="flex gap-2">
+      <div>Score:</div>
+      <div>{{ score }}</div>
+    </div>
+
+    <button *ngIf="!playSound" mat-mini-fab (click)="toggleSound()">
+      <i class="fa-solid fa-volume-xmark text-[20px]"></i>
+    </button>
+    <button *ngIf="playSound" mat-mini-fab (click)="toggleSound()">
+      <i class="fa-solid fa-volume-high text-[20px]"></i>
+    </button>
+  </div>
+</div>

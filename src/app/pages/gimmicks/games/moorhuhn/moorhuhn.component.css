@@ -1,0 +1,98 @@
+.rotate-vice-versa {
+  transform: rotateY(180deg);
+}
+
+.moorhuhn-bg {
+  background-image: url("/assets/moorhuhn-bg.webp");
+}
+
+.fadenkreuz {
+  cursor: url("/assets/fadenkreuz.png") 20 20, auto;
+}
+
+.bird {
+  transition: all 0.2s;
+}
+
+.bird:active {
+  transform: scale(1.5);
+}
+
+.score {
+  display: none;
+}
+
+.shot-left {
+  display: block;
+  margin-right: 30px;
+}
+
+.shot-right {
+  display: block;
+  margin-left: 20px;
+}
+
+.game-over {
+  font-size: 30px;
+  animation-name: game-over;
+  animation-duration: 2s;
+}
+
+@media only screen and (max-width: 600px) {
+  .game-over {
+    animation-name: game-over-small;
+  }
+}
+
+@keyframes game-over {
+  0% {
+    font-size: 20px;
+  }
+  40% {
+    font-size: 80px;
+  }
+  85% {
+    font-size: 80px;
+  }
+  100% {
+    font-size: 30px;
+  }
+}
+
+@keyframes game-over-small {
+  0% {
+    font-size: 20px;
+  }
+  40% {
+    font-size: 55px;
+  }
+  85% {
+    font-size: 55px;
+  }
+  100% {
+    font-size: 30px;
+  }
+}
+
+dialog[open] {
+  animation: fadein 1s ease-in forwards;
+  width: 300px;
+  height: 300px;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+    width: 0px;
+    height: 0px;
+  }
+  100% {
+    opacity: 1;
+    width: 300px;
+    height: 300px;
+  }
+}
+
+.mat-start-game {
+  background-color: #fde047 !important;
+}

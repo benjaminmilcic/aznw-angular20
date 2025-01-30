@@ -23,6 +23,7 @@ interface DialogData {
     CommonModule,
     NgFireworksModule,
     TranslateModule,
+    MatButtonModule
   ],
   templateUrl: './winner-dialog.component.html',
   styleUrl: './winner-dialog.component.css',

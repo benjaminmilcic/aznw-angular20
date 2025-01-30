@@ -5,3 +5,7 @@
 .Yellow {
   background-color: yellow;
 }
+
+.mat-yellow {
+    background-color: #fde047 !important;
+}

@@ -10,6 +10,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { WinnerDialogComponent } from '../winner-dialog/winner-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-connect-four',
@@ -21,7 +22,8 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
     IonSegment,
     FormsModule,
     MatIconModule,
-    TranslateModule
+    TranslateModule,
+    MatButtonModule
   ],
   templateUrl: './connect-four.component.html',
   styleUrl: './connect-four.component.css',
@@ -258,6 +260,7 @@ export class ConnectFourComponent implements OnInit {
         showWin: this.showWin,
         winner: this.winner === 'Yellow' ? this.name2 : this.name1,
       },
+      panelClass: 'winner-dialog',
     });
 
     dialogRef.afterClosed().subscribe((result) => {

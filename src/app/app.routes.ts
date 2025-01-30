@@ -19,6 +19,7 @@ import { GamesComponent } from './pages/gimmicks/games/games.component';
 import { MemoQuizComponent } from './pages/gimmicks/games/memo-quiz/memo-quiz.component';
 import { JigsawComponent } from './pages/gimmicks/games/jigsaw/jigsaw.component';
 import { KnowledgeQuizComponent } from './pages/gimmicks/games/knowledge-quiz/knowledge-quiz.component';
+import { MoorhuhnComponent } from './pages/gimmicks/games/moorhuhn/moorhuhn.component';
 
 export const routes: Routes = [
   {
@@ -76,7 +77,7 @@ export const routes: Routes = [
         children: [
           {
             path: '',
-            redirectTo: '/gimmicks/games/tiktaktoe',
+            redirectTo: '/gimmicks/games/moorhuhn',
             pathMatch: 'full',
           },
           {
@@ -98,6 +99,10 @@ export const routes: Routes = [
           {
             path: 'knowledge-quiz',
             component: KnowledgeQuizComponent,
+          },
+          {
+            path: 'moorhuhn',
+            component: MoorhuhnComponent,
           },
         ],
       },

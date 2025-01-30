@@ -4,35 +4,34 @@
     class="fireworks"
     *ngIf="data.showWin && enabled"
   ></ng-fireworks>
-  <!-- <div class="absolute top-0 left-0"><img class="w-[280px] h-[280px]" src="assets/hanging-flowers.jpg"></div> -->
   <div mat-dialog-title class="flex justify-center">
     @if (data.showWin) {
 
-    <div class="flex flex-col justify-center">
+    <div class="flex flex-col justify-center mt-6">
       <div class="flex w-full justify-center">{{ data.winner }}</div>
       <div class="flex w-full justify-center">
         {{ "gimmicks.games.wins" | translate }}
       </div>
-      <div class="flex w-full justify-center mt-6">
+      <div class="flex w-full justify-center mt-3">
         <img class="w-20 h-auto" src="assets/svg/trophy.svg" />
       </div>
     </div>
     }@else {
-    <div class="flex flex-col justify-center">
+    <div class="flex flex-col justify-center mt-6">
       <div class="flex w-full justify-center text-center">
         {{ "gimmicks.games.draw" | translate }}
       </div>
-      <div class="flex w-full justify-center mt-6">
+      <div class="flex w-full justify-center mt-4">
         <img class="w-20 h-auto" src="assets/svg/handshake.svg" />
       </div>
     </div>
     }
   </div>
 </div>
-<div class="flex w-full absolute bottom-6 left-0">
+<div class="flex w-full absolute bottom-2 left-0">
   <div class="flex w-full justify-center">
     <mat-dialog-actions>
-      <button [mat-dialog-close] class="bg-yellow-300 rounded py-1 px-4">
+      <button [mat-dialog-close] mat-stroked-button>
         {{ "gimmicks.games.newGame" | translate }}
       </button>
     </mat-dialog-actions>

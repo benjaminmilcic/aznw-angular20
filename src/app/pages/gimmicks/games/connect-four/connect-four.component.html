@@ -112,7 +112,7 @@
     <button
       *ngIf="!showWin && !showDraw"
       (click)="resetBoard()"
-      class="bg-yellow-300 rounded py-1 px-4"
+      mat-raised-button color="yellow"
     >
       {{ "gimmicks.games.reset" | translate }}
     </button>
