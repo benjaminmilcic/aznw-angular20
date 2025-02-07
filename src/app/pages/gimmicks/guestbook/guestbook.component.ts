@@ -30,6 +30,7 @@ import * as de from '@angular/common/locales/de';
 import { TranslateModule } from '@ngx-translate/core';
 import { SafeHtmlPipe } from './safe-html.pipe';
 import { environment } from '../../../../environments/environment';
+import { HttpErrorService } from '../../http-error/http-error.service';
 
 @Component({
   selector: 'app-guestbook',
@@ -151,7 +152,8 @@ export class GuestbookComponent implements OnInit, AfterViewInit {
     public sanitizer: DomSanitizer,
     private storage: AngularFireStorage,
     private http: HttpClient,
-    private changeDetectorRef: ChangeDetectorRef
+    private changeDetectorRef: ChangeDetectorRef,
+    private httpErrorService: HttpErrorService
   ) {
     registerLocaleData(de.default);
   }
@@ -202,22 +204,25 @@ export class GuestbookComponent implements OnInit, AfterViewInit {
     //   )
     // );
 
-    const headers = new HttpHeaders().set(
-      'Content-Type',
-      'application/json; charset=utf-8'
-    );
-
-    await lastValueFrom(
-      this.http.post<any>(
-        environment.guestbook.addPostApi,
-        JSON.stringify({
-          name: this.postName,
-          content: this.postContent,
-          date: new Date(),
-        }),
-        { headers: headers }
-      )
-    );
+    try {
+      const headers = new HttpHeaders().set(
+        'Content-Type',
+        'application/json; charset=utf-8'
+      );
+      await lastValueFrom(
+        this.http.post<any>(
+          environment.guestbook.addPostApi,
+          JSON.stringify({
+            name: this.postName,
+            content: this.postContent,
+            date: new Date(),
+          }),
+          { headers: headers }
+        )
+      );
+    } catch (error) {
+      this.httpErrorService.showHttpError(error, 'GuestbookComponent');
+    }
   }
 
   private async loadFromDatabase() {
@@ -227,8 +232,12 @@ export class GuestbookComponent implements OnInit, AfterViewInit {
     //   this.http.get<Post[]>('https://auf-zu-neuen-welten.de/api/posts/get/')
     // );
 
-    this.posts = await lastValueFrom(
-      this.http.get<Post[]>(environment.guestbook.getAllPostsApi)
-    );
+    try {
+      this.posts = await lastValueFrom(
+        this.http.get<Post[]>(environment.guestbook.getAllPostsApi)
+      );
+    } catch (error) {
+      this.httpErrorService.showHttpError(error, 'GuestbookComponent');
+    }
   }
 }

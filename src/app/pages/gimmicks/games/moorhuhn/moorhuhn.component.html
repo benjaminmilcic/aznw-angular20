@@ -3,7 +3,7 @@
     class="border border-black relative overflow-hidden moorhuhn-bg"
     [style.width]="boardX + 'px'"
     [style.height]="boardY + 'px'"
-    [ngClass]="{'fadenkreuz':gameStarted}"
+    [ngClass]="{ fadenkreuz: gameStarted }"
     (click)="onShot()"
   >
     <dialog
@@ -11,26 +11,128 @@
       class="bg-yellow-300 border border-yellow-800 rounded-lg shadow-lg cursor-auto"
     >
       <div *ngIf="showDialogContent" class="w-full h-full relative">
-        <div class="text-center text-lg mb-2">The game is over.</div>
+        <div class="text-center text-lg mb-2">
+          {{ "gimmicks.games.gameIsOver" | translate }}
+        </div>
         <div class="text-center text-xl mb-4">
-          You scored {{ score }} points!
+          {{ "gimmicks.games.scored" | translate : { score } }}
         </div>
         <div class="flex justify-center">
-          <img class="w-[100px] h-auto" src="/assets/moorhuhn.png" />
+          <img class="w-[80px] h-auto" src="/assets/moorhuhn.png" />
         </div>
-        <div class="w-full absolute bottom-0 left-0">
+        <div class="flex justify-center gap-2 items-center mt-4">
+          <div>Name:</div>
+          <input
+            #highscoreName
+            [disabled]="nameInputDisabled"
+            class="rounded p-1"
+            type="text"
+          />
+          <button
+            mat-icon-button
+            [disabled]="nameInputDisabled"
+            (click)="saveHighscore(highscoreName.value)"
+          >
+            <i class="fa-solid fa-floppy-disk"></i>
+          </button>
+        </div>
+        <div *ngIf="showNewGameButton" class="w-full absolute bottom-0 left-0">
           <button class="w-full" mat-stroked-button (click)="newGame($event)">
-            New Game
+            {{ "gimmicks.games.newGame" | translate }}
           </button>
         </div>
       </div>
     </dialog>
-    <div *ngIf="gameStarted" class="text-white font-bold absolute top-4 left-4">{{ time }}</div>
+    <div *ngIf="gameStarted" class="text-white font-bold absolute top-4 left-4">
+      {{ time }}
+    </div>
+    <div *ngIf="!gameStarted && !showHighScore" class="absolute top-4 left-4">
+      <button mat-raised-button color="red" (click)="showHighScore = true">
+        <div class="flex gap-2 items-center">
+          <div>Highscore</div>
+          <div class="mb-[4px]">
+            <i class="fa-solid fa-sort-down"></i>
+          </div>
+        </div>
+      </button>
+    </div>
+    <div
+      *ngIf="!gameStarted && showHighScore"
+      class="w-[268px] h-fit max-h-[calc(100%-32px)] bg-red-300 border border-red-800 rounded-lg absolute top-4 left-4 p-4 box-border z-50 overflow-auto"
+    >
+      <div class="w-full h-fit relative">
+        <div
+          class="absolute right-0 top-0 hover:scale-150"
+          (click)="showHighScore = false"
+        >
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+        <div class="text-center mb-4 font-bold text-yellow-200">Highscore</div>
+        <div *ngIf="highscore.length === 0" class="text-center">
+          {{ "gimmicks.games.noEntriesYet" | translate }}
+        </div>
+        <table class="w-full">
+          <tr *ngFor="let item of highscore; let index = index">
+            <td class="text-right pr-4 box-border w-2">{{ item.rank }}.</td>
+            <td
+              [ngClass]="
+                item.rank === 1 ? 'text-blue-800 font-bold' : 'text-green-800'
+              "
+            >
+              {{ item.name }}
+            </td>
+            <td class="text-red-800 font-semibold">{{ item.score }}</td>
+            <td class="text-gray-600 text-right">
+              {{
+                item.date
+                  | date
+                    : (this.translateService.currentLang === "en"
+                        ? "dd/MM/YY"
+                        : "dd.MM.YY")
+              }}
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
     <div
       *ngIf="!gameStarted"
-      class="flex w-full h-full justify-center items-center"
+      class="flex flex-col w-full h-full justify-end items-center"
     >
-      <button color="start-game" mat-raised-button (click)="startGame($event)">Start Game</button>
+      <mat-button-toggle-group class="mb-10" [(ngModel)]="level">
+        <mat-button-toggle
+          [ngClass]="{
+            '!bg-yellow-300': level === 'easy',
+            '!opacity-20': level !== 'easy'
+          }"
+          value="easy"
+          >{{ "gimmicks.games.easy" | translate }}</mat-button-toggle
+        >
+        <mat-button-toggle
+          [ngClass]="{
+            '!bg-yellow-300': level === 'medium',
+            '!opacity-20': level !== 'medium'
+          }"
+          value="medium"
+          >{{ "gimmicks.games.medium" | translate }}</mat-button-toggle
+        >
+        <mat-button-toggle
+          [ngClass]="{
+            '!bg-yellow-300': level === 'difficult',
+            '!opacity-20': level !== 'difficult'
+          }"
+          value="difficult"
+          >{{ "gimmicks.games.difficult" | translate }}</mat-button-toggle
+        >
+      </mat-button-toggle-group>
+      <button
+        color="start-game"
+        class="mb-4"
+        mat-raised-button
+        (click)="startGame($event)"
+      >
+        {{ "gimmicks.games.startGame" | translate }}
+      </button>
     </div>
 
     <div
@@ -58,14 +160,18 @@
           'shot-left': bird.shot && bird.direction === 1
         }"
       >
-        +10
+        +{{ levelPoints }}
       </div>
       <img class="bird" src="/assets/moorhuhn.gif" />
     </div>
   </div>
-  <div *ngIf="gameStarted" class="flex justify-between mt-4" [style.width]="boardX + 'px'">
+  <div
+    *ngIf="gameStarted"
+    class="flex justify-between mt-4"
+    [style.width]="boardX + 'px'"
+  >
     <div class="flex gap-2">
-      <div>Score:</div>
+      <div>{{ "gimmicks.games.score" | translate }}</div>
       <div>{{ score }}</div>
     </div>
 

@@ -28,8 +28,8 @@ export class AppComponent implements OnInit {
     private chartsHelperService: ChartsHelperService,
     private authService: AuthService
   ) {
-    translate.setDefaultLang('en');
-    translate.use('en');
+    translate.setDefaultLang('de');
+    translate.use('de');
   }
 
   ngOnInit(): void {

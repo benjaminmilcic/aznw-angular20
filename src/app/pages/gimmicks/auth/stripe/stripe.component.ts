@@ -35,6 +35,7 @@ import { IonSpinner } from '@ionic/angular/standalone';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { environment } from '../../../../../environments/environment';
+import { HttpErrorService } from '../../../http-error/http-error.service';
 
 @Component({
   selector: 'app-stripe',
@@ -103,7 +104,8 @@ export class StripeComponent implements OnInit {
     private http: HttpClient,
     private translate: TranslateService,
     private router: Router,
-    private authService: AuthService
+    private authService: AuthService,
+    private httpErrorService: HttpErrorService
   ) {}
 
   // async ngOnInit() {
@@ -115,7 +117,7 @@ export class StripeComponent implements OnInit {
   //     )
   //   );
   //   console.log(clientSecret);
-    
+
   // }
 
   async ngOnInit() {
@@ -200,12 +202,14 @@ export class StripeComponent implements OnInit {
       // );
       // old PHP API or new nest api
       //
+
       const { clientSecret } = await lastValueFrom(
         this.http.post<{ clientSecret: string }>(
           environment.stripe.createApi,
           JSON.stringify({ items, lang: this.translate.currentLang })
         )
       );
+
       this.elementsOptions.clientSecret = clientSecret;
       this.elementsOptions.locale = <StripeElementLocale>(
         this.translate.currentLang
@@ -215,6 +219,7 @@ export class StripeComponent implements OnInit {
       }
       this.viewType = 'payment';
     } catch (error) {
+      this.httpErrorService.showHttpError(error, 'StripeComponent');
       this.viewType = 'couldNotLoad';
     }
   }
@@ -269,7 +274,7 @@ export class StripeComponent implements OnInit {
             environment.stripe.returnUrl +
             '/#/gimmicks/auth/login?lang=' +
             this.translate.currentLang +
-            '&'
+            '&',
         },
         redirect: 'if_required',
       })

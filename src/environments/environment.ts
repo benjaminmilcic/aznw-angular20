@@ -43,6 +43,12 @@ export const environment = {
     login: 'http://localhost:3000/auth/login',
     signup: 'http://localhost:3000/auth/signup',
   },
+  moorhuhn: {
+    moorhuhnApi: 'http://localhost:3000/moorhuhn',
+  },
+  error: {
+    errorMessageApi: 'http://localhost:3000/error2email',
+  },
   production: false,
 };
 

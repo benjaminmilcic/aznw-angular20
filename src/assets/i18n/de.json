@@ -278,7 +278,16 @@
       "evaluation20":"Der Anfang ist gemacht, aber es gibt noch viel zu lernen. Bleib dran, das schaffst du!",
       "evaluation0":"Nicht dein Tag? Kein Problem - jeder fängt mal klein an. Nimm es als Chance, dich zu verbessern!",
       "repeatQuiz":"Das Quiz wiederholen",
-      "howAnswered":"Von {{all}} Fragen haben Sie <span class='text-green-800'>{{rightAnswers}}</span> richtig und <span class='text-red-800'>{{wrongAnswers}}</span> falsch beantwortet."
+      "howAnswered":"Von {{all}} Fragen haben Sie <span class='text-green-800'>{{rightAnswers}}</span> richtig und <span class='text-red-800'>{{wrongAnswers}}</span> falsch beantwortet.",
+      "selectGame":"Wähle ein Spiel aus:",
+      "gameIsOver":"Das Spiel ist vorbei.",
+      "scored":"Sie haben {{score}} Punkte erzielt!",
+      "startGame":"Spiel starten",
+      "score":"Punktzahl:",
+      "easy":"Leicht",
+      "medium":"Mittel",
+      "difficult":"Schwer",
+      "noEntriesYet":"Noch sind keine Einträge vorhanden."
     }
   },
   "pageNotFound": {

@@ -39,7 +39,7 @@ export const appConfig: ApplicationConfig = {
           useFactory: HttpLoaderFactory,
           deps: [HttpBackend],
         },
-        defaultLanguage: 'en',
+        defaultLanguage: 'de',
       })
     ),
     importProvidersFrom(ToastrModule.forRoot()),

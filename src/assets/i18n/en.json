@@ -278,7 +278,16 @@
       "evaluation20": "The beginning has been made, but there is still a lot to learn. Keep at it, you can do it!",
       "evaluation0": "Not your day? No problem - everyone starts small. Take it as an opportunity to improve!",
       "repeatQuiz": "Repeat the quiz",
-      "howAnswered": "Of {{all}} questions, you answered <span class='text-green-800'>{{rightAnswers}}</span> correctly and <span class='text-red-800'>{{wrongAnswers}}</span> incorrectly."
+      "howAnswered": "Of {{all}} questions, you answered <span class='text-green-800'>{{rightAnswers}}</span> correctly and <span class='text-red-800'>{{wrongAnswers}}</span> incorrectly.",
+      "selectGame": "Select a game:",
+      "gameIsOver": "The game is over.",
+      "scored": "You have scored {{score}} points!",
+      "startGame": "Start game",
+      "score": "Score:",
+      "easy": "Easy",
+      "medium": "Medium",
+      "difficult": "Difficult",
+      "noEntriesYet": "There are no entries yet."
     }
   },
   "pageNotFound": {

@@ -48,5 +48,11 @@ export const environment = {
     login: 'https://benjaminmilcic.site:3000/auth/login',
     signup: 'https://benjaminmilcic.site:3000/auth/signup',
   },
+  moorhuhn: {
+    moorhuhnApi: 'https://benjaminmilcic.site:3000/moorhuhn',
+  },
+  error: {
+    errorMessageApi: 'https://benjaminmilcic.site:3000/error2email',
+  },
   production: true,
 };

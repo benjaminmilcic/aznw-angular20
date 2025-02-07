@@ -96,3 +96,12 @@ dialog[open] {
 .mat-start-game {
   background-color: #fde047 !important;
 }
+
+.mat-button-toggle-group {
+  height: 30px;
+  align-items: center;
+}
+
+.mat-red {
+  background: #fca5a5;
+}

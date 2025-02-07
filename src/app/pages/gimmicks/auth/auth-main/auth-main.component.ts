@@ -12,6 +12,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { IonContent, IonPopover } from '@ionic/angular/standalone';
+import { HttpErrorService } from '../../../http-error/http-error.service';
 
 
 @Component({
@@ -44,7 +45,11 @@ export class AuthMainComponent implements OnInit {
   isLoading = false;
   audio = new Audio();
 
-  constructor(private http: HttpClient, private authService: AuthService) {}
+  constructor(
+    private http: HttpClient,
+    private authService: AuthService,
+    private httpErrorService: HttpErrorService
+  ) {}
   async ngOnInit() {
     //old firebase solution, when authentication works via firebase
     // this.jokes = await lastValueFrom(
@@ -79,7 +84,7 @@ export class AuthMainComponent implements OnInit {
           });
         });
       } catch (error) {
-        console.log(error);
+        this.httpErrorService.showHttpError(error, 'AuthMainComponent');
       }
     }
   }
@@ -130,7 +135,10 @@ export class AuthMainComponent implements OnInit {
         this.audio.play();
       },
       (error) => {
-        console.error('Error generating speech:', error);
+        this.httpErrorService.showHttpError(
+          error,
+          'AuthMainComponent (Error generating speech)'
+        );
         this.isLoading = false;
       }
     );

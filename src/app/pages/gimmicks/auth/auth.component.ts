@@ -21,7 +21,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 export class AuthComponent {
   constructor(private translate: TranslateService) {}
 
-  copyToClipboard(text: string, event: PointerEvent) {
+  copyToClipboard(text: string, event: any) {
     navigator.clipboard.writeText(text);
     let div = document.createElement('div');
     div.id = 'copiedDiv';

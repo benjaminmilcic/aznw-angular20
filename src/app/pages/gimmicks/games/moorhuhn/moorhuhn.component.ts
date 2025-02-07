@@ -9,7 +9,13 @@ import {
 } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { Observable, Subscription } from 'rxjs';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { lastValueFrom, Observable, Subscription } from 'rxjs';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { FormsModule } from '@angular/forms';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment } from '../../../../../environments/environment';
+import { HttpErrorService } from '../../../http-error/http-error.service';
 
 interface Bird {
   x: number;
@@ -20,10 +26,24 @@ interface Bird {
   shot: boolean;
 }
 
+interface HighScore {
+  rank: number;
+  name: string;
+  score: number;
+  date: Date;
+}
+
 @Component({
   selector: 'app-moorhuhn',
   standalone: true,
-  imports: [CommonModule, MatButtonModule, MatIconModule],
+  imports: [
+    CommonModule,
+    MatButtonModule,
+    MatIconModule,
+    TranslateModule,
+    MatButtonToggleModule,
+    FormsModule,
+  ],
   templateUrl: './moorhuhn.component.html',
   styleUrl: './moorhuhn.component.css',
 })
@@ -38,19 +58,49 @@ export class MoorhuhnComponent implements OnInit, OnDestroy {
   timeInterval: any;
   gameover = false;
   @ViewChild('scoreDialog') scoreDialog: ElementRef<HTMLDialogElement>;
+  @ViewChild('highscoreName') highscoreName: ElementRef;
   showDialogContent = false;
   boardX: number;
   boardY: number;
   gameStarted = false;
+  level: 'easy' | 'medium' | 'difficult' = 'easy';
+  levelSpeed: number;
+  levelMoveDiff: number;
+  levelPoints: number;
+  highscore: HighScore[] = [];
+  showHighScore = false;
+  nameInputDisabled = false;
+  showNewGameButton = false;
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
     this.sizeBoard();
   }
 
-  ngOnInit(): void {
+  constructor(
+    public translateService: TranslateService,
+    private http: HttpClient,
+    private httpErrorService: HttpErrorService
+  ) {}
+
+  async ngOnInit() {
     this.sizeBoard();
     this.ambientLoop.loop = true;
+    try {
+      const headers = new HttpHeaders().set(
+        'Content-Type',
+        'application/json; charset=utf-8'
+      );
+
+      let data = await lastValueFrom(
+        this.http.get<any>(environment.moorhuhn.moorhuhnApi, {
+          headers: headers,
+        })
+      );
+      this.highscore = JSON.parse(JSON.stringify(data));
+    } catch (error) {
+      this.httpErrorService.showHttpError(error, 'MoorhuhnComponent');
+    }
   }
 
   sizeBoard() {
@@ -76,6 +126,27 @@ export class MoorhuhnComponent implements OnInit, OnDestroy {
 
   startGame(event: Event) {
     event.stopPropagation();
+    this.showHighScore = false;
+    switch (this.level) {
+      case 'difficult':
+        this.levelSpeed = 10;
+        this.levelMoveDiff = 3;
+        this.levelPoints = 20;
+        break;
+      case 'easy':
+        this.levelSpeed = 20;
+        this.levelMoveDiff = 1;
+        this.levelPoints = 10;
+        break;
+      case 'medium':
+        this.levelSpeed = 15;
+        this.levelMoveDiff = 2;
+        this.levelPoints = 15;
+        break;
+
+      default:
+        break;
+    }
     this.gameStarted = true;
     this.playSound = this.tempPlaySound;
     if (this.playSound) {
@@ -94,12 +165,12 @@ export class MoorhuhnComponent implements OnInit, OnDestroy {
       let currentBird = this.birds[this.birds.length - 1];
       currentBird.move = () => {
         currentBird.interval = setInterval(() => {
-          currentBird.x += 1;
+          currentBird.x += this.levelMoveDiff;
           if (currentBird.x > this.boardX) {
             clearInterval(currentBird.interval);
             this.birds = this.birds.filter((item) => item !== currentBird);
           }
-        }, this.getRandomInt(5, 20));
+        }, this.getRandomInt(5, this.levelSpeed));
       };
       currentBird.move();
     });
@@ -148,7 +219,7 @@ export class MoorhuhnComponent implements OnInit, OnDestroy {
     setTimeout(() => {
       clearInterval(bird.interval);
       this.birds = this.birds.filter((item) => item !== bird);
-      this.score += 10;
+      this.score += this.levelPoints;
     }, 200);
   }
 
@@ -162,7 +233,7 @@ export class MoorhuhnComponent implements OnInit, OnDestroy {
   }
 
   onShot() {
-    if (this.playSound) {
+    if (this.playSound && this.gameStarted) {
       let shot = new Audio('/assets/moorhuhn-shot.ogg');
       shot.play();
     }
@@ -170,15 +241,46 @@ export class MoorhuhnComponent implements OnInit, OnDestroy {
 
   showScore() {
     this.gameover = true;
+    this.nameInputDisabled = false;
     this.ambientLoop.pause();
     this.tempPlaySound = this.playSound;
     this.playSound = false;
+    this.showNewGameButton = false;
     setTimeout(() => {
       this.scoreDialog.nativeElement.showModal();
     }, 2500);
     setTimeout(() => {
       this.showDialogContent = true;
     }, 3500);
+    setTimeout(() => {
+      this.highscoreName.nativeElement.focus();
+    }, 3600);
+  }
+
+  async saveHighscore(name: string) {
+    try {
+      const headers = new HttpHeaders().set(
+        'Content-Type',
+        'application/json; charset=utf-8'
+      );
+
+      let data = await lastValueFrom(
+        this.http.post<any>(
+          environment.moorhuhn.moorhuhnApi,
+          JSON.stringify({
+            name: name.trim(),
+            score: this.score,
+            date: new Date(),
+          }),
+          { headers: headers }
+        )
+      );
+      this.highscore = JSON.parse(JSON.stringify(data));
+    } catch (error) {
+      this.httpErrorService.showHttpError(error, 'MoorhuhnComponent');
+    }
+    this.showNewGameButton = true;
+    this.nameInputDisabled = true;
   }
 
   ngOnDestroy(): void {
