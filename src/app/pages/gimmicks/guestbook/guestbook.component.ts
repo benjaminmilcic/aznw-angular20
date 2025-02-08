@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import {
   AfterViewInit,
-  ChangeDetectionStrategy,
   ChangeDetectorRef,
   Component,
   ElementRef,
@@ -14,15 +13,12 @@ import { EditorComponent, EditorModule } from '@tinymce/tinymce-angular';
 import {
   IonFab,
   IonFabButton,
-  IonFabList,
-  IonIcon,
   IonInput,
 } from '@ionic/angular/standalone';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { FormsModule } from '@angular/forms';
 import { DomSanitizer } from '@angular/platform-browser';
-import { finalize, last, lastValueFrom } from 'rxjs';
-import { AngularFireStorage } from '@angular/fire/compat/storage';
+import { lastValueFrom } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Post } from './guestbook.model';
 import { registerLocaleData } from '@angular/common';
@@ -36,15 +32,12 @@ import { HttpErrorService } from '../../http-error/http-error.service';
   selector: 'app-guestbook',
   standalone: true,
   imports: [
-    IonIcon,
-    IonFabList,
     IonFabButton,
     YouTubePlayer,
     CommonModule,
     EditorModule,
     IonFab,
     IonFabButton,
-    IonIcon,
     MatTooltipModule,
     IonInput,
     FormsModule,
@@ -150,16 +143,16 @@ export class GuestbookComponent implements OnInit, AfterViewInit {
 
   constructor(
     public sanitizer: DomSanitizer,
-    private storage: AngularFireStorage,
     private http: HttpClient,
     private changeDetectorRef: ChangeDetectorRef,
-    private httpErrorService: HttpErrorService
+    private httpErrorService: HttpErrorService,
   ) {
     registerLocaleData(de.default);
   }
 
   async ngOnInit() {
     this.loadFromDatabase();
+    
   }
 
   ngAfterViewInit(): void {
