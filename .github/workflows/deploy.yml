@@ -19,12 +19,11 @@ jobs:
           npm run build  # Falls du Angular oder ein anderes Build-Tool nutzt
 
       - name: Deploy via SFTP
-        uses: milanmk/actions-file-deployer@1.0.2
+        uses: appleboy/scp-action@master
         with:
-            remote-protocol: "sftp"
-            remote-host: ${{ secrets.FTP_SERVER }}
-            remote-user: ${{ secrets.FTP_USER }}
-            remote-password: ${{ secrets.FTP_PASSWORD }}
-            remote-path: "~/test/"
-            local-path: "./dist/"
-            port: 22      
+            host: ${{ secrets.SFTP_HOST }}
+            username: ${{ secrets.SFTP_USER }}
+            password: ${{ secrets.SFTP_PASSWORD }}
+            port: 22 
+            source: "./dist/*"
+            target: "~/test/"
