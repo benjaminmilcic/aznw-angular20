@@ -20,7 +20,7 @@ jobs:
 
       - name: Abhängigkeiten installieren und builden
         run: |
-          npm install
+          npm install --force
           npm run build
 
       - name: Dateien per SSH auf den Server übertragen
