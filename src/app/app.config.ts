@@ -16,6 +16,7 @@ import { AuthInterceptorService } from './pages/gimmicks/auth/auth-interceptor.s
 import { provideNgxStripe } from 'ngx-stripe';
 import { LocationStrategy } from '@angular/common';
 import { ParameterHashLocationStrategy } from './ParameterHashLocationStrategy';
+import { NgCircleProgressModule } from 'ng-circle-progress';
 
 
 
@@ -61,5 +62,6 @@ export const appConfig: ApplicationConfig = {
       provide: LocationStrategy,
       useClass: ParameterHashLocationStrategy,
     },
+    importProvidersFrom(NgCircleProgressModule.forRoot({})),
   ],
 };

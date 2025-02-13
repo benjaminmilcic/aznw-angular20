@@ -43,8 +43,29 @@
         </div>
       </div>
     </dialog>
-    <div *ngIf="gameStarted" class="text-white font-bold absolute top-4 left-4">
-      {{ time }}
+    <div *ngIf="gameStarted&&time!==0" class="absolute top-1 left-1">
+      <circle-progress
+        [showUnits]="false"
+        [title]="time.toString()"
+        [titleColor]="'#ffffff'"
+        [clockwise]="false"
+        [percent]="(time * 100) / 60"
+        [maxPercent]="100"
+        [radius]="10"
+        [showSubtitle]="false"
+        [showImage]="false"
+        [showBackground]="false"
+        [outerStrokeWidth]="2"
+        [innerStrokeWidth]="2"
+        [outerStrokeColor]="'#ffffff'"
+        [innerStrokeColor]="'transparent'"
+        [space]="-2"
+        [renderOnClick]="false"
+        [titleFontSize]="'11'"
+        [titleFontWeight]="'600'"
+        [animation]="false"
+        [animateTitle]="false"
+      ></circle-progress>
     </div>
     <div *ngIf="!gameStarted && !showHighScore" class="absolute top-4 left-4">
       <button mat-raised-button color="red" (click)="showHighScore = true">

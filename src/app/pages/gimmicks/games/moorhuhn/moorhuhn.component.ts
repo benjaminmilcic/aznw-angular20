@@ -16,6 +16,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../../../../environments/environment';
 import { HttpErrorService } from '../../../http-error/http-error.service';
+import { NgCircleProgressModule } from 'ng-circle-progress';
 
 interface Bird {
   x: number;
@@ -43,6 +44,7 @@ interface HighScore {
     TranslateModule,
     MatButtonToggleModule,
     FormsModule,
+    NgCircleProgressModule,
   ],
   templateUrl: './moorhuhn.component.html',
   styleUrl: './moorhuhn.component.css',
