@@ -1,0 +1,29 @@
+name: Deploy to Server
+
+on:
+  push:
+    branches:
+      - new  # Passe den Branch an, den du deployen willst
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Repository klonen
+        uses: actions/checkout@v4
+
+      - name: Build (optional)
+        run: |
+          npm install --force
+          npm run build  # Falls du Angular oder ein anderes Build-Tool nutzt
+          
+      - name: Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+        with:
+            server: ${{ secrets.FTP_SERVER }}
+            username: ${{ secrets.FTP_USER }}
+            password: ${{ secrets.FTP_PASSWORD }}
+            local-dir: "./dist/"  # Passe dies an deinen Build-Ordner an
+            server-dir: "~/test/"  # Passe den Zielpfad an
+            port: 22
