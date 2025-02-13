@@ -32,3 +32,5 @@ jobs:
           source: "dist/aznw-routes/browser/*"
           target: "/test"
           strip_components: 3
+          overwrite: true
+          debug: true
