@@ -17,13 +17,14 @@ jobs:
         run: |
           npm install --force
           npm run build  # Falls du Angular oder ein anderes Build-Tool nutzt
-          
-      - name: Deploy via FTP
-        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+
+      - name: Deploy via SFTP
+        uses: milanmk/actions-file-deployer@1.0.2
         with:
-            server: ${{ secrets.FTP_SERVER }}
-            username: ${{ secrets.FTP_USER }}
-            password: ${{ secrets.FTP_PASSWORD }}
-            local-dir: "./dist/"  # Passe dies an deinen Build-Ordner an
-            server-dir: "~/test/"  # Passe den Zielpfad an
-            port: 22
+            remote-protocol: "sftp"
+            remote-host: ${{ secrets.FTP_SERVER }}
+            remote-user: ${{ secrets.FTP_USER }}
+            remote-password: ${{ secrets.FTP_PASSWORD }}
+            remote-path: "~/test/"
+            local-path: "./dist/"
+            port: 22      
