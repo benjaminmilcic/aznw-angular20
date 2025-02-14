@@ -43,7 +43,7 @@
         </div>
       </div>
     </dialog>
-    <div *ngIf="gameStarted&&time!==0" class="absolute top-1 left-1">
+    <div *ngIf="gameStarted && time !== 0" class="absolute top-1 left-1">
       <circle-progress
         [showUnits]="false"
         [title]="time.toString()"
@@ -94,16 +94,21 @@
         </div>
         <table class="w-full">
           <tr *ngFor="let item of highscore; let index = index">
-            <td class="text-right pr-4 box-border w-2">{{ item.rank }}.</td>
+            <td class="text-right pr-4 box-border w-2 align-top">
+              {{ item.rank }}.
+            </td>
             <td
+              class="align-top"
               [ngClass]="
                 item.rank === 1 ? 'text-blue-800 font-bold' : 'text-green-800'
               "
             >
               {{ item.name }}
             </td>
-            <td class="text-red-800 font-semibold">{{ item.score }}</td>
-            <td class="text-gray-600 text-right">
+            <td class="text-red-800 font-semibold align-top">
+              {{ item.score }}
+            </td>
+            <td class="text-gray-600 text-right align-top">
               {{
                 item.date
                   | date
