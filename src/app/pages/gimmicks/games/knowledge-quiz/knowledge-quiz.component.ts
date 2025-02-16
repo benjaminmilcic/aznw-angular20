@@ -4,6 +4,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { GamesService } from '../games.service';
 
 @Component({
   selector: 'app-knowledge-quiz',
@@ -27,9 +28,13 @@ export class KnowledgeQuizComponent implements OnInit {
   selectedAnswer = -1;
   showResult = false;
 
-  constructor(private translateService: TranslateService) {}
+  constructor(
+    private translateService: TranslateService,
+    private gameService: GamesService
+  ) {}
 
   ngOnInit(): void {
+    this.gameService.changeGameName.next('knowledge-quiz');
     this.language = this.translateService.currentLang;
     this.translateService.onLangChange.subscribe(() => {
       this.language = this.translateService.currentLang;

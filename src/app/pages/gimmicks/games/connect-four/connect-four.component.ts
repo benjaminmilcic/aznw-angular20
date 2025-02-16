@@ -11,6 +11,7 @@ import { WinnerDialogComponent } from '../winner-dialog/winner-dialog.component'
 import { MatDialog } from '@angular/material/dialog';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { MatButtonModule } from '@angular/material/button';
+import { GamesService } from '../games.service';
 
 @Component({
   selector: 'app-connect-four',
@@ -55,12 +56,14 @@ export class ConnectFourComponent implements OnInit {
 
   constructor(
     private dialog: MatDialog,
-    private translateService: TranslateService
+    private translateService: TranslateService,
+    private gameServie:GamesService
   ) {
     this.resetBoard();
   }
 
   ngOnInit(): void {
+    this.gameServie.changeGameName.next('connect-four');
     if (this.translateService.currentLang === 'de') {
       this.name1ForEdit = 'Spieler 1';
       this.name2ForEdit = 'Spieler 2';

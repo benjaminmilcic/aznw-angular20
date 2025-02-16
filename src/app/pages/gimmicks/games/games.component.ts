@@ -9,6 +9,7 @@ import {
   RouterOutlet,
 } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { GamesService } from './games.service';
 
 @Component({
   selector: 'app-games',
@@ -28,16 +29,23 @@ export class GamesComponent {
   gameName: string;
   gameIconSrc: string;
 
-  constructor(private translate: TranslateService, private router: Router) {
+  constructor(
+    private translate: TranslateService,
+    private router: Router,
+    private gameService: GamesService
+  ) {
     let urlParts = router.url.split('/');
     let currentGame = urlParts[urlParts.length - 1];
     this.translateGameName(currentGame);
     translate.onLangChange.subscribe(() => {
       this.translateGameName(currentGame);
+    });
+    gameService.changeGameName.subscribe(result => {
+      this.translateGameName(result);
     })
   }
 
-  translateGameName(currentGame:string) {
+  translateGameName(currentGame: string) {
     switch (currentGame) {
       case 'moorhuhn':
         this.gameName = 'Moorhuhn';

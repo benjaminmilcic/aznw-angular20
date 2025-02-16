@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { TranslateModule } from '@ngx-translate/core';
+import { GamesService } from '../games.service';
 
 @Component({
   selector: 'app-memo-quiz',
@@ -43,7 +44,10 @@ export class MemoQuizComponent implements OnInit {
     }
   }
 
+  constructor(private gameService: GamesService){}
+
   ngOnInit(): void {
+    this.gameService.changeGameName.next('memo-quiz');
     this.init();
   }
 

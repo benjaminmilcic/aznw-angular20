@@ -17,6 +17,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../../../../environments/environment';
 import { HttpErrorService } from '../../../http-error/http-error.service';
 import { NgCircleProgressModule } from 'ng-circle-progress';
+import { GamesService } from '../games.service';
 
 interface Bird {
   x: number;
@@ -82,10 +83,12 @@ export class MoorhuhnComponent implements OnInit, OnDestroy {
   constructor(
     public translateService: TranslateService,
     private http: HttpClient,
-    private httpErrorService: HttpErrorService
+    private httpErrorService: HttpErrorService,
+    private gameService: GamesService
   ) {}
 
   async ngOnInit() {
+    this.gameService.changeGameName.next('moorhuhn');
     this.sizeBoard();
     this.ambientLoop.loop = true;
     try {

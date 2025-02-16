@@ -21,6 +21,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { TranslateModule } from '@ngx-translate/core';
+import { GamesService } from '../games.service';
 
 @Component({
   selector: 'app-yahtzee',
@@ -35,7 +36,7 @@ import { TranslateModule } from '@ngx-translate/core';
     MatLabel,
     MatIconModule,
     FormsModule,
-    TranslateModule
+    TranslateModule,
   ],
   templateUrl: './yahtzee.component.html',
   styleUrl: './yahtzee.component.css',
@@ -63,9 +64,13 @@ export class YahtzeeComponent implements OnInit, OnDestroy {
   selectFieldSubscription: Subscription;
   showSelectField: boolean;
 
-  constructor(public yahtzeeService: YahtzeeService) {}
+  constructor(
+    public yahtzeeService: YahtzeeService,
+    private gameService: GamesService
+  ) {}
 
   ngOnInit(): void {
+    this.gameService.changeGameName.next('yahtzee');
     this.newGame();
     this.nextplayerSubscription = this.yahtzeeService.nextplayer.subscribe(
       () => {
@@ -90,9 +95,11 @@ export class YahtzeeComponent implements OnInit, OnDestroy {
         this.showWinners = true;
       }
     );
-    this.selectFieldSubscription = this.yahtzeeService.selectField.subscribe(result => {
-      this.showSelectField = result;
-    })
+    this.selectFieldSubscription = this.yahtzeeService.selectField.subscribe(
+      (result) => {
+        this.showSelectField = result;
+      }
+    );
   }
 
   renameComputers(names: string[]): string[] {

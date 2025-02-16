@@ -11,6 +11,7 @@ import {
 import { WinnerDialogComponent } from '../winner-dialog/winner-dialog.component';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { MatButtonModule } from '@angular/material/button';
+import { GamesService } from '../games.service';
 
 @Component({
   selector: 'app-tiktaktoe',
@@ -59,7 +60,8 @@ export class TiktaktoeComponent implements OnInit {
 
   constructor(
     private dialog: MatDialog,
-    private translateService: TranslateService
+    private translateService: TranslateService,
+    private gameService: GamesService
   ) {}
 
   @ViewChild('name2Input') name2Input: ElementRef<HTMLInputElement>;
@@ -68,6 +70,7 @@ export class TiktaktoeComponent implements OnInit {
   opponent: 'human' | 'computer' = 'human';
 
   ngOnInit(): void {
+    this.gameService.changeGameName.next('tiktaktoe');
     if (this.translateService.currentLang === 'de') {
       this.name1ForEdit = 'Spieler 1';
       this.name2ForEdit = 'Spieler 2';
