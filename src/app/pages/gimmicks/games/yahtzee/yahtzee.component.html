@@ -1,0 +1,116 @@
+<div class="flex flex-col items-center realtive">
+  <div
+    *ngIf="!gameStarted"
+    class="p-4 border border-yellow-800 bg-yellow-300 rounded m-4 max-w-[320px] sm:max-w-[600px]"
+  >
+    <div>{{ "gimmicks.games.welcomeToYahtzee" | translate }}</div>
+    <div>{{ "gimmicks.games.selectPlayers" | translate }}</div>
+    <div
+      *ngFor="
+        let player of yahtzeeService.players;
+        let index = index;
+        trackBy: trackByIndex
+      "
+      class="flex items-center justify-between gap-2 my-4"
+    >
+      @if (player.includes('Computer')) {
+      <div class="flex items-center gap-2">
+        <img class="w-[40px] h-auto" src="/assets/computer-icon.png" />
+        <div class="text-[18px]">{{ player }}</div>
+      </div>
+      }@else {
+
+      <mat-form-field floatLabel="always" subscriptSizing="dynamic">
+        <mat-label>Name</mat-label>
+        <input [(ngModel)]="yahtzeeService.players[index]" matInput />
+      </mat-form-field>
+      }
+      <button mat-mini-fab (click)="deletePlayer(index)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+    <div
+      class="flex gap-4"
+      [ngClass]="{ 'mt-4': yahtzeeService.players.length === 0 }"
+    >
+      <button mat-raised-button (click)="addPlayer()">
+        {{ "gimmicks.games.addPlayer" | translate }}
+      </button>
+      <button mat-raised-button (click)="addComputer()">
+        {{ "gimmicks.games.addComputer" | translate }}
+      </button>
+    </div>
+    <div class="flex gap-1 mt-8">
+      <button
+        [disabled]="yahtzeeService.players.length === 0"
+        mat-raised-button
+        (click)="startGame()"
+        class="w-full"
+      >
+        {{ "gimmicks.games.startGame" | translate }}
+      </button>
+    </div>
+    <div *ngIf="showStartUpError" class="mt-2 text-xs text-red-400">
+      {{ "gimmicks.games.namesNotEmpty" | translate }}
+    </div>
+  </div>
+  <div
+    *ngIf="gameStarted"
+    class="flex flex-col items-center max-w-[320px] sm:max-w-[600px] w-full"
+  >
+    <app-yahtzee-dice *ngIf="!showWinners"></app-yahtzee-dice>
+    <div
+      *ngIf="!showWinners"
+      class="flex items-center mx-4 gap-4 -mt-4 w-[300px] justify-center"
+    >
+      <button
+        mat-raised-button
+        [disabled]="diceRollButtonDisabled"
+        (click)="rollDice()"
+      >
+        {{ "gimmicks.games.roll" | translate }}
+      </button>
+      <div class="flex flex-col text-sm w-full">
+        <div class="text-white">
+          {{
+            yahtzeeService.players[yahtzeeService.playerOnMoveIndex]
+          }}{{ "gimmicks.games.turn2" | translate }}
+        </div>
+        @if
+        (!showSelectField||yahtzeeService.players[yahtzeeService.playerOnMoveIndex].includes('Computer'))
+        {
+
+        <div *ngIf="diceCount !== 0">{{ "gimmicks.games.rollNumber" | translate }}&nbsp;{{ diceCount }}</div>
+        <div *ngIf="diceCount === 0">&nbsp;</div>
+        }@else {
+        <div class="text-red-600">{{ "gimmicks.games.selectFieldToEnter" | translate }}</div>
+        }
+      </div>
+    </div>
+    <div
+      *ngIf="showWinners"
+      class="mx-4 flex flex-col bg-yellow-300 p-2 border border-yellow-800 rounded text-sm"
+    >
+      <div>{{ "gimmicks.games.gameOverHopeHadFun" | translate }}</div>
+      <div>{{ "gimmicks.games.hereResult" | translate }}</div>
+      <div class="mt-1">
+        <table>
+          <tr
+            *ngFor="let rank of winners.ranks; let index = index"
+            [ngClass]="{ 'text-blue-500': rank === 1 }"
+          >
+            <td>{{ rank }}.</td>
+            <td>{{ winners.names[index] }}</td>
+            <td>{{ winners.points[index] }} {{ "gimmicks.games.points" | translate }}</td>
+          </tr>
+        </table>
+      </div>
+      <div class="flex justify-center mt-2">
+        <button mat-stroked-button (click)="newGame()" class="!text-xs">
+          {{ "gimmicks.games.newGame" | translate }}
+        </button>
+      </div>
+    </div>
+    <app-yahtzee-score></app-yahtzee-score>
+  </div>
+</div>

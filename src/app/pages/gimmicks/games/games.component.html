@@ -5,6 +5,9 @@
       <button mat-raised-button color="yellow" [matMenuTriggerFor]="selectGame">
         <div class="flex gap-2 items-center">
           <div>
+            <img class="w-[20px] h-auto" [src]="gameIconSrc" />
+          </div>
+          <div>
             {{ gameName }}
           </div>
           <div class="mb-[4px]">
@@ -23,6 +26,17 @@
         <div class="flex gap-2 items-center">
           <img class="w-[20px] h-auto" src="/assets/moorhuhn-icon.png" />
           <div class="mt-[6px]">Moorhuhn</div>
+        </div>
+      </button>
+      <button
+        mat-menu-item
+        (click)="changeGame('Yahtzee')"
+        [routerLink]="['/gimmicks/games/yahtzee']"
+        routerLinkActive="router-link-active"
+      >
+        <div class="flex gap-2 items-center">
+          <img class="w-[20px] h-auto" src="/assets/yahtzee.png" />
+          <div>{{ "Yahtzee" | translate }}</div>
         </div>
       </button>
       <button

@@ -25,14 +25,23 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   styleUrl: './games.component.css',
 })
 export class GamesComponent {
-  gameName:string;
+  gameName: string;
+  gameIconSrc: string;
 
   constructor(private translate: TranslateService, private router: Router) {
     let urlParts = router.url.split('/');
     let currentGame = urlParts[urlParts.length - 1];
+    this.translateGameName(currentGame);
+    translate.onLangChange.subscribe(() => {
+      this.translateGameName(currentGame);
+    })
+  }
+
+  translateGameName(currentGame:string) {
     switch (currentGame) {
       case 'moorhuhn':
         this.gameName = 'Moorhuhn';
+        this.gameIconSrc = '/assets/moorhuhn-icon.png';
         break;
       case 'knowledge-quiz':
         this.translate
@@ -40,11 +49,13 @@ export class GamesComponent {
           .subscribe((res: string) => {
             this.gameName = res;
           });
+        this.gameIconSrc = '/assets/quiz.png';
         break;
       case 'jigsaw':
         this.translate.get('gimmicks.games.jigsaw').subscribe((res: string) => {
           this.gameName = res;
         });
+        this.gameIconSrc = '/assets/jigsaw.png';
         break;
       case 'memo-quiz':
         this.translate
@@ -52,6 +63,7 @@ export class GamesComponent {
           .subscribe((res: string) => {
             this.gameName = res;
           });
+        this.gameIconSrc = '/assets/memory-game.png';
         break;
       case 'connect-four':
         this.translate
@@ -59,9 +71,15 @@ export class GamesComponent {
           .subscribe((res: string) => {
             this.gameName = res;
           });
+        this.gameIconSrc = '/assets/connect-four.png';
         break;
       case 'tiktaktoe':
         this.gameName = 'TikTakToe';
+        this.gameIconSrc = '/assets/tic-tac-toe.png';
+        break;
+      case 'yahtzee':
+        this.gameName = 'Yahtzee';
+        this.gameIconSrc = '/assets/yahtzee.png';
         break;
 
       default:
@@ -73,5 +91,31 @@ export class GamesComponent {
     this.translate.get(translation).subscribe((res: string) => {
       this.gameName = res;
     });
+    switch (translation) {
+      case 'Moorhuhn':
+        this.gameIconSrc = '/assets/moorhuhn-icon.png';
+        break;
+      case 'gimmicks.games.knowledgeQuiz':
+        this.gameIconSrc = '/assets/quiz.png';
+        break;
+      case 'gimmicks.games.jigsaw':
+        this.gameIconSrc = '/assets/jigsaw.png';
+        break;
+      case 'gimmicks.games.memoQuiz':
+        this.gameIconSrc = '/assets/memory-game.png';
+        break;
+      case 'gimmicks.games.connectFour':
+        this.gameIconSrc = '/assets/connect-four.png';
+        break;
+      case 'TikTakToe':
+        this.gameIconSrc = '/assets/tic-tac-toe.png';
+        break;
+      case 'Yahtzee':
+        this.gameIconSrc = '/assets/yahtzee.png';
+        break;
+
+      default:
+        break;
+    }
   }
 }
