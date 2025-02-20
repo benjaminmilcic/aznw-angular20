@@ -3,20 +3,19 @@
 >
   @if (noMorePlayers&&!nameInputDisabled) {
   <div>
-    Momentan ist ein Spiel im Gange und Sie müssen warten bis ein neues Spiel
-    startet.
+    {{'gimmicks.games.waitForNewGame'|translate}}
   </div>
-  <div class="mb-4">Momentan spielen:</div>
+  <div class="mb-4">{{'gimmicks.games.currentlyPlaying'|translate}}</div>
   <div *ngFor="let player of players" class="text-xl text-blue-400 ml-4">
     {{ player }}
   </div>
   }@else {
   <button mat-stroked-button (click)="back.emit()">
     <div class="flex gap-2 items-center">
-      <mat-icon>keyboard_backspace</mat-icon>Zurück
+      <mat-icon>keyboard_backspace</mat-icon>{{'gimmicks.games.back'|translate}}
     </div>
   </button>
-  <div class="mt-4">Bitte geben Sie ihren Namen ein:</div>
+  <div class="mt-4">{{'gimmicks.games.enterName'|translate}}</div>
   <div class="flex gap-4 items-center mt-2">
     <mat-form-field floatLabel="always" subscriptSizing="dynamic">
       <mat-label>Name</mat-label>
@@ -31,15 +30,15 @@
     </button>
   </div>
   <div class="text-red-500" *ngIf="showNameError">
-    Der Name darf nicht leer sein.
+    {{'gimmicks.games.nameNotEmpty'|translate}}
   </div>
   <div class="text-red-500" *ngIf="nameExist">
-    Dieser Name ist bereits vergeben.
+    {{'gimmicks.games.nameAlreadyTaken'|translate}}
   </div>
-  <div class="mt-4">Folgende Spieler sind angemeldet:</div>
+  <div class="mt-4">{{'gimmicks.games.registeredPlayers'|translate}}</div>
   <div class="flex flex-col gap-4 mt-2">
     <div class="text-xl text-blue-400 ml-4" *ngFor="let player of players">
-      {{ player }} <span *ngIf="player === yahtzeeService.name">(Du)</span>
+      {{ player }} <span *ngIf="player === yahtzeeService.name">{{'gimmicks.games.you'|translate}}</span>
     </div>
   </div>
   <div class="flex justify-center mt-8">
@@ -48,12 +47,12 @@
       [disabled]="startGameDisabled"
       (click)="startGame()"
     >
-      Spiel starten
+      {{'gimmicks.games.startGame'|translate}}
     </button>
   </div>
   <div *ngIf="gameStarted" class="flex gap-4 items-center justify-center mt-4">
     <div><mat-spinner [diameter]="20"></mat-spinner></div>
-    <div>Warten auf andere Spieler...</div>
+    <div>{{'gimmicks.games.waitForOtherPlayers'|translate}}</div>
   </div>
   }
 </div>

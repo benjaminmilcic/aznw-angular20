@@ -315,7 +315,22 @@
       "largeStraight": "Large staright",
       "chance": "Chance",
       "yahtzee": "Yahtzee",
-      "total2": "Total"
+      "total2": "Total",
+      "waitForNewGame": "There is currently a game in progress and you have to wait until a new game starts.",
+      "currentlyPlaying": "Currently playing:",
+      "back": "Back",
+      "enterName": "Please enter your name:",
+      "nameNotEmpty": "The name cannot be empty.",
+      "nameAlreadyTaken": "This name is already taken.",
+      "registeredPlayers": "The following players are registered:",
+      "you": "(You)",
+      "waitForOtherPlayers": "Waiting for other players...",
+      "lokalGame": "Local game",
+      "lokalGameText": " against another player or the computer on the same computer/smartphone",
+      "remoteGame": "Remote Game",
+      "remoteGameText": " against another player on another computer/smartphone",
+      "endGame": "Quit Game",
+      "hasEndGame": " has finished the game"
     }
   },
   "pageNotFound": {

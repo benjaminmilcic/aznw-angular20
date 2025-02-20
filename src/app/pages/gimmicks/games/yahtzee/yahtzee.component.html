@@ -3,29 +3,23 @@
     *ngIf="showDecideRemoteGame"
     class="p-4 border border-yellow-800 bg-yellow-300 rounded m-4 max-w-[320px] sm:max-w-[600px]"
   >
-    <div class="text-xl text-center">
+    <div class="text-2xl text-center">
       {{ "gimmicks.games.welcomeToYahtzee" | translate }}
     </div>
     <!-- <div class="mt-4">Sie haben folgende Auswahlmöglichkeit:</div> -->
-    <div class="mt-4">
+    <div class="mt-4 relative">
       <mat-radio-group [(ngModel)]="gameType">
-        <div>
-          <mat-radio-button value="lokal"
-            ><u>lokales Spiel</u> gegen einen Mitspieler oder den Computer am
-            gleichen Computer/Smartphone</mat-radio-button
+          <mat-radio-button  value="lokal"
+            ><span class="underline text-lg">{{'gimmicks.games.lokalGame'|translate}}</span>{{'gimmicks.games.lokalGameText'|translate}}</mat-radio-button
           >
-        </div>
-        <div>
           <mat-radio-button value="remote"
-            ><u>Remote Spiel</u> gegen einen Mitspieler an einem anderen
-            Computer/Smartphone</mat-radio-button
+            ><span class="underline text-lg">{{'gimmicks.games.remoteGame'|translate}}</span>{{'gimmicks.games.remoteGameText'|translate}}</mat-radio-button
           >
-        </div>
       </mat-radio-group>
     </div>
 
     <div class="flex gap-4 mt-4 justify-center">
-      <button mat-raised-button (click)="gameTypeSelected()">Weiter</button>
+      <button mat-raised-button (click)="gameTypeSelected()">{{'gimmicks.games.continue'|translate}}</button>
     </div>
   </div>
   <app-yahtzee-remote
@@ -38,7 +32,7 @@
   >
     <button mat-stroked-button (click)="backToDecideRemoteGame()">
       <div class="flex gap-2 items-center">
-        <mat-icon>keyboard_backspace</mat-icon>Zurück
+        <mat-icon>keyboard_backspace</mat-icon>{{'gimmicks.games.back'|translate}}
       </div>
     </button>
     <div class="mt-4">{{ "gimmicks.games.selectPlayers" | translate }}</div>
@@ -132,7 +126,7 @@
         color="red"
         (click)="stopGame()"
       >
-        Spiel Beenden
+        {{ "gimmicks.games.endGame" | translate }}
       </button>
     </div>
     <div

@@ -315,7 +315,22 @@
       "largeStraight":"Große Straße",
       "chance":"Chance",
       "yahtzee":"Yahtzee",
-      "total2":"Gesamt"
+      "total2":"Gesamt",
+      "waitForNewGame":"Momentan ist ein Spiel im Gange und Sie müssen warten bis ein neues Spiel startet.",
+      "currentlyPlaying":"Momentan spielen:",
+      "back":"Zurück",
+      "enterName":"Bitte geben Sie ihren Namen ein:",
+      "nameNotEmpty":"Der Name darf nicht leer sein.",
+      "nameAlreadyTaken":"Dieser Name ist bereits vergeben.",
+      "registeredPlayers":"Folgende Spieler sind angemeldet:",
+      "you":"(Du)",
+      "waitForOtherPlayers":"Warten auf andere Spieler...",
+      "lokalGame":"Lokales Spiel",
+      "lokalGameText":" gegen einen Mitspieler oder den Computer am gleichen Computer/Smartphone",
+      "remoteGame":"Remote Spiel",
+      "remoteGameText":" gegen einen Mitspieler an einem anderen Computer/Smartphone",
+      "endGame":"Spiel Beenden",
+      "hasEndGame":" hat das Spiel beendet"
     }
   },
   "pageNotFound": {

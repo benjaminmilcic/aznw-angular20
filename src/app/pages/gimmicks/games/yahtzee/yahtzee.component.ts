@@ -14,7 +14,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { Subscription } from 'rxjs';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { GamesService } from '../games.service';
 import { MatRadioModule } from '@angular/material/radio';
 import { YahtzeeRemoteComponent } from './yahtzee-remote/yahtzee-remote.component';
@@ -68,7 +68,8 @@ export class YahtzeeComponent implements OnInit, OnDestroy {
   constructor(
     public yahtzeeService: YahtzeeService,
     private gameService: GamesService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private translate:TranslateService
   ) {}
 
   ngOnInit(): void {
@@ -112,20 +113,36 @@ export class YahtzeeComponent implements OnInit, OnDestroy {
     this.yahtzeeService.socket.on(
       'gameStopped',
       (data: { index: number; name: string }) => {
-        console.log(
-          this.yahtzeeService.isRemoteGame,
-          data.name,
-          this.yahtzeeService.name
-        );
-        
         if (
           this.yahtzeeService.isRemoteGame &&
           data.name !== this.yahtzeeService.name
         ) {
-          this.toastr.error(data.name + ' hat das Spiel beendet', 'Test', {
-            positionClass: 'toast-bottom-center',
-            timeOut:7000
+          this.translate.get('gimmicks.games.hasEndGame').subscribe(result => {
+            this.toastr.error(data.name + result, 'Info', {
+              positionClass: 'toast-bottom-center',
+              timeOut: 7000,
+            });
+            
           });
+          let nextName: string;
+          if (this.yahtzeeService.playerOnMoveIndex === data.index) {
+            let nextNameIndex = data.index + 1;
+            if (nextNameIndex > this.yahtzeeService.players.length - 1) {
+              nextNameIndex = 0;
+            }
+            nextName = this.yahtzeeService.players[nextNameIndex].name;
+          }
+          this.yahtzeeService.players.splice(data.index, 1);
+          if (this.yahtzeeService.playerOnMoveIndex === data.index) {
+            let newIndex = this.yahtzeeService.players.findIndex(
+              (item) => item.name === nextName
+            );
+            this.yahtzeeService.playerOnMoveIndex = newIndex;
+            if (data.index===0) {
+              this.yahtzeeService.moveCount--;
+            }
+            this.yahtzeeService.nextplayer.next();
+          }
         }
       }
     );
@@ -238,7 +255,12 @@ export class YahtzeeComponent implements OnInit, OnDestroy {
     this.diceRollButtonDisabled = true;
     for (let index = 0; index < 3; index++) {
       this.waitForRemoteDice().then(() => {
-        this.rollDice();
+        if (
+          this.yahtzeeService.players[this.yahtzeeService.playerOnMoveIndex]
+            .isRemote
+        ) {
+          this.rollDice();
+        }
       });
     }
   }
@@ -276,6 +298,8 @@ export class YahtzeeComponent implements OnInit, OnDestroy {
   }
 
   rollDice() {
+    console.log(this.diceCount);
+
     if (this.yahtzeeService.playerOnMoveIndex === 0 && this.diceCount === 0) {
       this.yahtzeeService.moveCount++;
     }

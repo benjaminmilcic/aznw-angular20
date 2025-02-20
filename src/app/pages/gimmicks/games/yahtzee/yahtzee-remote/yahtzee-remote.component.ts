@@ -7,6 +7,7 @@ import { YahtzeeService } from '../yahtzee.service';
 import { FormsModule } from '@angular/forms';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatIconModule } from '@angular/material/icon';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-yahtzee-remote',
@@ -19,6 +20,7 @@ import { MatIconModule } from '@angular/material/icon';
     FormsModule,
     MatProgressSpinnerModule,
     MatIconModule,
+    TranslateModule
   ],
   templateUrl: './yahtzee-remote.component.html',
   styleUrl: './yahtzee-remote.component.css',
