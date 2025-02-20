@@ -18,7 +18,7 @@ import { Subscription } from 'rxjs';
   templateUrl: './yahtzee-dice.component.html',
   styleUrl: './yahtzee-dice.component.css',
 })
-export class YahtzeeDiceComponent implements OnInit, AfterViewInit,OnDestroy {
+export class YahtzeeDiceComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('container') container: ElementRef<HTMLDivElement>;
   diceOne: number;
   diceTwo: number;
@@ -34,184 +34,196 @@ export class YahtzeeDiceComponent implements OnInit, AfterViewInit,OnDestroy {
   dice5: any;
   canCheckDises = false;
   dicesToKeepSubscription: Subscription;
-  rollDiceSubscription:Subscription;
+  rollDiceSubscription: Subscription;
 
   constructor(public yahtzeeService: YahtzeeService) {}
 
   ngOnInit(): void {
-    this.rollDiceSubscription=this.yahtzeeService.rollDice.subscribe((dice) => {
-      if (dice.diceCount === 1) {
-        this.yahtzeeService.dices[0].checked = false;
-        this.yahtzeeService.dices[1].checked = false;
-        this.yahtzeeService.dices[2].checked = false;
-        this.yahtzeeService.dices[3].checked = false;
-        this.yahtzeeService.dices[4].checked = false;
-      }
-      if (!this.yahtzeeService.dices[0].checked) {
-        this.diceOne = dice.dice1;
-      }
-      if (!this.yahtzeeService.dices[1].checked) {
-        this.diceTwo = dice.dice2;
-      }
-      if (!this.yahtzeeService.dices[2].checked) {
-        this.diceThree = dice.dice3;
-      }
-      if (!this.yahtzeeService.dices[3].checked) {
-        this.diceFour = dice.dice4;
-      }
-      if (!this.yahtzeeService.dices[4].checked) {
-        this.diceFive = dice.dice5;
-      }
-      this.canCheckDises = false;
-      if (dice.diceCount === 1) {
-        this.yahtzeeService.dices.forEach((dice) => (dice.checked = false));
-      }
-      this.rollDice();
-      if (dice.diceCount !== 3) {
-        setTimeout(() => {
-          this.canCheckDises = true;
-        }, 1000);
-      } else {
-        setTimeout(() => {
-          let dice1;
-          let dice2;
-          let dice3;
-          let dice4;
-          let dice5;
-          switch (this.diceOne) {
-            case 1:
-              dice1 = 1;
-              break;
-            case 2:
-              dice1 = 5;
-              break;
-            case 3:
-              dice1 = 6;
-              break;
-            case 4:
-              dice1 = 3;
-              break;
-            case 5:
-              dice1 = 4;
-              break;
-            case 6:
-              dice1 = 2;
-              break;
+    this.rollDiceSubscription = this.yahtzeeService.rollDice.subscribe(
+      (dice) => {
+        if (dice.diceCount === 1) {
+          this.yahtzeeService.dices[0].checked = false;
+          this.yahtzeeService.dices[1].checked = false;
+          this.yahtzeeService.dices[2].checked = false;
+          this.yahtzeeService.dices[3].checked = false;
+          this.yahtzeeService.dices[4].checked = false;
+        }
+        if (!this.yahtzeeService.dices[0].checked) {
+          this.diceOne = dice.dice1;
+        }
+        if (!this.yahtzeeService.dices[1].checked) {
+          this.diceTwo = dice.dice2;
+        }
+        if (!this.yahtzeeService.dices[2].checked) {
+          this.diceThree = dice.dice3;
+        }
+        if (!this.yahtzeeService.dices[3].checked) {
+          this.diceFour = dice.dice4;
+        }
+        if (!this.yahtzeeService.dices[4].checked) {
+          this.diceFive = dice.dice5;
+        }
+        this.canCheckDises = false;
+        if (dice.diceCount === 1) {
+          this.yahtzeeService.dices.forEach((dice) => (dice.checked = false));
+        }
+        this.rollDice();
+        if (dice.diceCount !== 3) {
+          setTimeout(() => {
+            this.canCheckDises = true;
+          }, 1000);
+        } else {
+          setTimeout(() => {
+            let dice1;
+            let dice2;
+            let dice3;
+            let dice4;
+            let dice5;
+            switch (this.diceOne) {
+              case 1:
+                dice1 = 1;
+                break;
+              case 2:
+                dice1 = 5;
+                break;
+              case 3:
+                dice1 = 6;
+                break;
+              case 4:
+                dice1 = 3;
+                break;
+              case 5:
+                dice1 = 4;
+                break;
+              case 6:
+                dice1 = 2;
+                break;
 
-            default:
-              break;
-          }
-          switch (this.diceTwo) {
-            case 1:
-              dice2 = 1;
-              break;
-            case 2:
-              dice2 = 5;
-              break;
-            case 3:
-              dice2 = 6;
-              break;
-            case 4:
-              dice2 = 3;
-              break;
-            case 5:
-              dice2 = 4;
-              break;
-            case 6:
-              dice2 = 2;
-              break;
+              default:
+                break;
+            }
+            switch (this.diceTwo) {
+              case 1:
+                dice2 = 1;
+                break;
+              case 2:
+                dice2 = 5;
+                break;
+              case 3:
+                dice2 = 6;
+                break;
+              case 4:
+                dice2 = 3;
+                break;
+              case 5:
+                dice2 = 4;
+                break;
+              case 6:
+                dice2 = 2;
+                break;
 
-            default:
-              break;
-          }
-          switch (this.diceThree) {
-            case 1:
-              dice3 = 1;
-              break;
-            case 2:
-              dice3 = 5;
-              break;
-            case 3:
-              dice3 = 6;
-              break;
-            case 4:
-              dice3 = 3;
-              break;
-            case 5:
-              dice3 = 4;
-              break;
-            case 6:
-              dice3 = 2;
-              break;
+              default:
+                break;
+            }
+            switch (this.diceThree) {
+              case 1:
+                dice3 = 1;
+                break;
+              case 2:
+                dice3 = 5;
+                break;
+              case 3:
+                dice3 = 6;
+                break;
+              case 4:
+                dice3 = 3;
+                break;
+              case 5:
+                dice3 = 4;
+                break;
+              case 6:
+                dice3 = 2;
+                break;
 
-            default:
-              break;
-          }
-          switch (this.diceFour) {
-            case 1:
-              dice4 = 1;
-              break;
-            case 2:
-              dice4 = 5;
-              break;
-            case 3:
-              dice4 = 6;
-              break;
-            case 4:
-              dice4 = 3;
-              break;
-            case 5:
-              dice4 = 4;
-              break;
-            case 6:
-              dice4 = 2;
-              break;
+              default:
+                break;
+            }
+            switch (this.diceFour) {
+              case 1:
+                dice4 = 1;
+                break;
+              case 2:
+                dice4 = 5;
+                break;
+              case 3:
+                dice4 = 6;
+                break;
+              case 4:
+                dice4 = 3;
+                break;
+              case 5:
+                dice4 = 4;
+                break;
+              case 6:
+                dice4 = 2;
+                break;
 
-            default:
-              break;
-          }
-          switch (this.diceFive) {
-            case 1:
-              dice5 = 1;
-              break;
-            case 2:
-              dice5 = 5;
-              break;
-            case 3:
-              dice5 = 6;
-              break;
-            case 4:
-              dice5 = 3;
-              break;
-            case 5:
-              dice5 = 4;
-              break;
-            case 6:
-              dice5 = 2;
-              break;
+              default:
+                break;
+            }
+            switch (this.diceFive) {
+              case 1:
+                dice5 = 1;
+                break;
+              case 2:
+                dice5 = 5;
+                break;
+              case 3:
+                dice5 = 6;
+                break;
+              case 4:
+                dice5 = 3;
+                break;
+              case 5:
+                dice5 = 4;
+                break;
+              case 6:
+                dice5 = 2;
+                break;
 
-            default:
-              break;
-          }
-          this.yahtzeeService.dices.forEach((dice) => (dice.checked = true));
-          this.yahtzeeService.sendFinalDices.next({
-            dice1,
-            dice2,
-            dice3,
-            dice4,
-            dice5,
-            diceCount: dice.diceCount,
-          });
-        }, 1000);
+              default:
+                break;
+            }
+            this.yahtzeeService.dices.forEach((dice) => (dice.checked = true));
+            this.yahtzeeService.sendFinalDices.next({
+              dice1,
+              dice2,
+              dice3,
+              dice4,
+              dice5,
+              diceCount: dice.diceCount,
+            });
+          }, 1000);
+        }
       }
-    });
-    this.dicesToKeepSubscription=this.yahtzeeService.dicesToKeep.subscribe(
+    );
+    this.dicesToKeepSubscription = this.yahtzeeService.dicesToKeep.subscribe(
       (result) => {
         result.forEach((dice, index) => {
           this.yahtzeeService.dices[index].checked = dice;
         });
       }
     );
+    this.yahtzeeService.socket.on('checkedDices', (checkedDices: boolean[]) => {
+      if (
+        this.yahtzeeService.players[this.yahtzeeService.playerOnMoveIndex]
+          .isRemote
+      ) {
+        checkedDices.forEach((checked, index) => {
+          this.yahtzeeService.dices[index].checked = checked;
+        });
+      }
+    });
   }
 
   ngAfterViewInit(): void {
@@ -317,6 +329,15 @@ export class YahtzeeDiceComponent implements OnInit, AfterViewInit,OnDestroy {
   toggleChecked(dice: Dice) {
     if (this.canCheckDises && this.yahtzeeService.dicesClickable) {
       dice.checked = !dice.checked;
+      if (
+        !this.yahtzeeService.players[this.yahtzeeService.playerOnMoveIndex]
+          .isRemote
+      ) {
+        this.yahtzeeService.socket.emit(
+          'checkedDices',
+          this.yahtzeeService.dices.map((dice) => dice.checked)
+        );
+      }
     }
   }
 

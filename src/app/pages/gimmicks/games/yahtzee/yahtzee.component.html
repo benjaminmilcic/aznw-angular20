@@ -1,10 +1,47 @@
 <div class="flex flex-col items-center realtive">
   <div
-    *ngIf="!gameStarted"
+    *ngIf="showDecideRemoteGame"
     class="p-4 border border-yellow-800 bg-yellow-300 rounded m-4 max-w-[320px] sm:max-w-[600px]"
   >
-    <div>{{ "gimmicks.games.welcomeToYahtzee" | translate }}</div>
-    <div>{{ "gimmicks.games.selectPlayers" | translate }}</div>
+    <div class="text-xl text-center">
+      {{ "gimmicks.games.welcomeToYahtzee" | translate }}
+    </div>
+    <!-- <div class="mt-4">Sie haben folgende Auswahlmöglichkeit:</div> -->
+    <div class="mt-4">
+      <mat-radio-group [(ngModel)]="gameType">
+        <div>
+          <mat-radio-button value="lokal"
+            ><u>lokales Spiel</u> gegen einen Mitspieler oder den Computer am
+            gleichen Computer/Smartphone</mat-radio-button
+          >
+        </div>
+        <div>
+          <mat-radio-button value="remote"
+            ><u>Remote Spiel</u> gegen einen Mitspieler an einem anderen
+            Computer/Smartphone</mat-radio-button
+          >
+        </div>
+      </mat-radio-group>
+    </div>
+
+    <div class="flex gap-4 mt-4 justify-center">
+      <button mat-raised-button (click)="gameTypeSelected()">Weiter</button>
+    </div>
+  </div>
+  <app-yahtzee-remote
+    *ngIf="!gameStarted && !showDecideRemoteGame && gameType === 'remote'"
+    (startTheGame)="startRemoteGame()" (back)="backToDecideRemoteGame()"
+  ></app-yahtzee-remote>
+  <div
+    *ngIf="!gameStarted && !showDecideRemoteGame && gameType === 'lokal'"
+    class="p-4 border border-yellow-800 bg-yellow-300 rounded m-4 max-w-[320px] sm:max-w-[600px]"
+  >
+    <button mat-stroked-button (click)="backToDecideRemoteGame()">
+      <div class="flex gap-2 items-center">
+        <mat-icon>keyboard_backspace</mat-icon>Zurück
+      </div>
+    </button>
+    <div class="mt-4">{{ "gimmicks.games.selectPlayers" | translate }}</div>
     <div
       *ngFor="
         let player of yahtzeeService.players;
@@ -13,16 +50,16 @@
       "
       class="flex items-center justify-between gap-2 my-4"
     >
-      @if (player.includes('Computer')) {
+      @if (player.name.includes('Computer')) {
       <div class="flex items-center gap-2">
         <img class="w-[40px] h-auto" src="/assets/computer-icon.png" />
-        <div class="text-[18px]">{{ player }}</div>
+        <div class="text-[18px]">{{ player.name }}</div>
       </div>
       }@else {
 
       <mat-form-field floatLabel="always" subscriptSizing="dynamic">
         <mat-label>Name</mat-label>
-        <input [(ngModel)]="yahtzeeService.players[index]" matInput />
+        <input [(ngModel)]="yahtzeeService.players[index].name" matInput />
       </mat-form-field>
       }
       <button mat-mini-fab (click)="deletePlayer(index)">
@@ -61,7 +98,7 @@
     <app-yahtzee-dice *ngIf="!showWinners"></app-yahtzee-dice>
     <div
       *ngIf="!showWinners"
-      class="flex items-center mx-4 gap-4 -mt-4 w-[300px] justify-center"
+      class="flex items-center mx-4 gap-6 -mt-4 w-[340px] sm:w-[400px] justify-center"
     >
       <button
         mat-raised-button
@@ -72,20 +109,31 @@
       </button>
       <div class="flex flex-col text-sm w-full">
         <div class="text-white">
-          {{
-            yahtzeeService.players[yahtzeeService.playerOnMoveIndex]
+          {{ yahtzeeService.players[yahtzeeService.playerOnMoveIndex].name
           }}{{ "gimmicks.games.turn2" | translate }}
         </div>
         @if
-        (!showSelectField||yahtzeeService.players[yahtzeeService.playerOnMoveIndex].includes('Computer'))
+        (!showSelectField||yahtzeeService.players[yahtzeeService.playerOnMoveIndex].name.includes('Computer'))
         {
 
-        <div *ngIf="diceCount !== 0">{{ "gimmicks.games.rollNumber" | translate }}&nbsp;{{ diceCount }}</div>
+        <div *ngIf="diceCount !== 0">
+          {{ "gimmicks.games.rollNumber" | translate }}&nbsp;{{ diceCount }}
+        </div>
         <div *ngIf="diceCount === 0">&nbsp;</div>
         }@else {
-        <div class="text-red-600">{{ "gimmicks.games.selectFieldToEnter" | translate }}</div>
+        <div class="text-red-600">
+          {{ "gimmicks.games.selectFieldToEnter" | translate }}
+        </div>
         }
       </div>
+      <button
+
+        mat-raised-button
+        color="red"
+        (click)="stopGame()"
+      >
+        Spiel Beenden
+      </button>
     </div>
     <div
       *ngIf="showWinners"
@@ -101,7 +149,10 @@
           >
             <td>{{ rank }}.</td>
             <td>{{ winners.names[index] }}</td>
-            <td>{{ winners.points[index] }} {{ "gimmicks.games.points" | translate }}</td>
+            <td>
+              {{ winners.points[index] }}
+              {{ "gimmicks.games.points" | translate }}
+            </td>
           </tr>
         </table>
       </div>

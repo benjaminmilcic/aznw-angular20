@@ -49,6 +49,9 @@ export const environment = {
   error: {
     errorMessageApi: 'http://localhost:3000/error2email',
   },
+  yahtzeeGame: {
+    webSocketsUrl: 'http://192.168.178.71:3000/yahtzee-game',
+  },
   production: false,
 };
 

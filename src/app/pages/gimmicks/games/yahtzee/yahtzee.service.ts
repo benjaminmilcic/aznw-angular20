@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
-import { Dice, RollDice, ScoreRow, YahtzeeWinner } from './yahtzee.types';
+import { CurrentDice, Dice, RollDice, ScoreRow, YahtzeeWinner } from './yahtzee.types';
+import { io, Socket } from 'socket.io-client';
+import { environment } from '../../../../../environments/environment';
 
 
 
@@ -15,7 +17,7 @@ export class YahtzeeService {
   startGame = new Subject<void>();
   selectField = new Subject<boolean>();
   dicesToKeep = new Subject<boolean[]>();
-  players: string[] = [];
+  players: { name: string; isRemote: boolean }[] = [];
   playerOnMoveIndex: number;
   moveCount: number;
   dice1: number;
@@ -32,6 +34,15 @@ export class YahtzeeService {
     { checked: false, marginLeft: '-50px' },
     { checked: false, marginLeft: '-50px' },
   ];
+  isRemoteGame: boolean;
+  socket: Socket;
+  currentRemoteDice: CurrentDice = null;
+  rowToPutInRemote: number = null;
+  name: string = '';
 
-  constructor() {}
+  constructor() {
+    this.socket = io(environment.yahtzeeGame.webSocketsUrl, {
+      transports: ['websocket'], // Verhindert Polling
+    });
+  }
 }

@@ -1,16 +1,10 @@
 import { CommonModule } from '@angular/common';
-import {
-  Component,
-  ElementRef,
-  OnDestroy,
-  OnInit,
-  ViewChild,
-} from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { YahtzeeScoreComponent } from './yahtzee-score/yahtzee-score.component';
 import { MatButtonModule } from '@angular/material/button';
 import { YahtzeeDiceComponent } from './yahtzee-dice/yahtzee-dice.component';
 import { YahtzeeService } from './yahtzee.service';
-import { YahtzeeWinner } from './yahtzee.types';
+import { CurrentDice, YahtzeeWinner } from './yahtzee.types';
 import {
   MAT_FORM_FIELD_DEFAULT_OPTIONS,
   MatFormFieldModule,
@@ -22,6 +16,9 @@ import { FormsModule } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { TranslateModule } from '@ngx-translate/core';
 import { GamesService } from '../games.service';
+import { MatRadioModule } from '@angular/material/radio';
+import { YahtzeeRemoteComponent } from './yahtzee-remote/yahtzee-remote.component';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-yahtzee',
@@ -37,6 +34,8 @@ import { GamesService } from '../games.service';
     MatIconModule,
     FormsModule,
     TranslateModule,
+    MatRadioModule,
+    YahtzeeRemoteComponent,
   ],
   templateUrl: './yahtzee.component.html',
   styleUrl: './yahtzee.component.css',
@@ -63,10 +62,13 @@ export class YahtzeeComponent implements OnInit, OnDestroy {
   gameOverSubscription: Subscription;
   selectFieldSubscription: Subscription;
   showSelectField: boolean;
+  showDecideRemoteGame: boolean;
+  gameType: 'lokal' | 'remote' = 'lokal';
 
   constructor(
     public yahtzeeService: YahtzeeService,
-    private gameService: GamesService
+    private gameService: GamesService,
+    private toastr: ToastrService
   ) {}
 
   ngOnInit(): void {
@@ -77,12 +79,18 @@ export class YahtzeeComponent implements OnInit, OnDestroy {
         this.diceCount = 0;
         this.diceRollButtonDisabled = false;
         if (
-          this.yahtzeeService.players[
-            this.yahtzeeService.playerOnMoveIndex
-          ].includes('Computer')
+          this.yahtzeeService.players[this.yahtzeeService.playerOnMoveIndex]
+            .isRemote
         ) {
           this.yahtzeeService.dicesClickable = false;
-
+          this.yahtzeeService.currentRemoteDice = null;
+          this.makeRemoteMove();
+        } else if (
+          this.yahtzeeService.players[
+            this.yahtzeeService.playerOnMoveIndex
+          ].name.includes('Computer')
+        ) {
+          this.yahtzeeService.dicesClickable = false;
           this.makeComputerMove();
         } else {
           this.yahtzeeService.dicesClickable = true;
@@ -93,6 +101,7 @@ export class YahtzeeComponent implements OnInit, OnDestroy {
       (result) => {
         this.winners = result;
         this.showWinners = true;
+        this.yahtzeeService.socket.disconnect();
       }
     );
     this.selectFieldSubscription = this.yahtzeeService.selectField.subscribe(
@@ -100,38 +109,109 @@ export class YahtzeeComponent implements OnInit, OnDestroy {
         this.showSelectField = result;
       }
     );
+    this.yahtzeeService.socket.on(
+      'gameStopped',
+      (data: { index: number; name: string }) => {
+        console.log(
+          this.yahtzeeService.isRemoteGame,
+          data.name,
+          this.yahtzeeService.name
+        );
+        
+        if (
+          this.yahtzeeService.isRemoteGame &&
+          data.name !== this.yahtzeeService.name
+        ) {
+          this.toastr.error(data.name + ' hat das Spiel beendet', 'Test', {
+            positionClass: 'toast-bottom-center',
+            timeOut:7000
+          });
+        }
+      }
+    );
   }
 
-  renameComputers(names: string[]): string[] {
-    let count = names.filter((name) => name === 'Computer').length;
+  renameComputers(
+    players: { name: string; isRemote: boolean }[]
+  ): { name: string; isRemote: boolean }[] {
+    let count = players.filter((player) => player.name === 'Computer').length;
     let index = 0;
 
-    return names.map((name) => {
-      if (name === 'Computer' && count > 1) {
+    return players.map((player) => {
+      if (player.name === 'Computer' && count > 1) {
         index++;
-        return `Computer-${index}`;
+        return { name: `Computer-${index}`, isRemote: player.isRemote };
       }
-      return name;
+      return { name: player.name, isRemote: player.isRemote };
     });
   }
 
-  renameToComputer(names: string[]): string[] {
-    return names.map((name) =>
-      name.startsWith('Computer-') ? 'Computer' : name
+  renameToComputer(
+    players: { name: string; isRemote: boolean }[]
+  ): { name: string; isRemote: boolean }[] {
+    return players.map((player) =>
+      player.name.startsWith('Computer-')
+        ? { name: 'Computer', isRemote: player.isRemote }
+        : { name: player.name, isRemote: player.isRemote }
     );
   }
 
-  startGame() {
-    this.yahtzeeService.players = this.yahtzeeService.players.map((item) =>
-      item.trim()
+  startRemoteGame() {
+    this.yahtzeeService.isRemoteGame = true;
+    this.showStartUpError = false;
+    this.gameStarted = true;
+    this.yahtzeeService.playerOnMoveIndex = 0;
+    this.yahtzeeService.moveCount = 0;
+    this.diceCount = 0;
+    this.diceRollButtonDisabled = false;
+    this.showWinners = false;
+    this.yahtzeeService.startGame.next();
+    this.yahtzeeService.dicesClickable = true;
+    this.yahtzeeService.socket.off('currentDice');
+    this.yahtzeeService.socket.on(
+      'currentDice',
+      (currentRemoteDice: CurrentDice) => {
+        this.yahtzeeService.currentRemoteDice = currentRemoteDice;
+      }
     );
+    this.yahtzeeService.socket.off('setRemoteRowToPutIn');
+    this.yahtzeeService.socket.on(
+      'setRemoteRowToPutIn',
+      (rowToPutInRemote: number) => {
+        if (
+          this.yahtzeeService.players[this.yahtzeeService.playerOnMoveIndex]
+            .isRemote
+        ) {
+          this.yahtzeeService.rowToPutInRemote = rowToPutInRemote;
+          console.log(this.yahtzeeService.rowToPutInRemote);
+        } else {
+          this.yahtzeeService.rowToPutInRemote = null;
+        }
+      }
+    );
+    if (
+      this.yahtzeeService.players[this.yahtzeeService.playerOnMoveIndex]
+        .isRemote
+    ) {
+      this.makeRemoteMove();
+    }
+  }
+
+  startGame() {
+    this.yahtzeeService.isRemoteGame = false;
+    this.yahtzeeService.players = this.yahtzeeService.players.map((item) => {
+      return {
+        name: item.name.trim(),
+        isRemote: item.isRemote,
+      };
+    });
     this.yahtzeeService.players = this.renameToComputer(
       this.yahtzeeService.players
     );
     this.yahtzeeService.players = this.renameComputers(
       this.yahtzeeService.players
     );
-    if (this.yahtzeeService.players.includes('')) {
+    if (this.yahtzeeService.players.map((item) => item.name).includes('')) {
       this.showStartUpError = true;
       return;
     }
@@ -147,10 +227,31 @@ export class YahtzeeComponent implements OnInit, OnDestroy {
     if (
       this.yahtzeeService.players[
         this.yahtzeeService.playerOnMoveIndex
-      ].includes('Computer')
+      ].name.includes('Computer')
     ) {
       this.makeComputerMove();
     }
+  }
+
+  makeRemoteMove() {
+    this.yahtzeeService.dicesClickable = false;
+    this.diceRollButtonDisabled = true;
+    for (let index = 0; index < 3; index++) {
+      this.waitForRemoteDice().then(() => {
+        this.rollDice();
+      });
+    }
+  }
+
+  waitForRemoteDice(): Promise<any> {
+    return new Promise((resolve) => {
+      const checkInterval = setInterval(() => {
+        if (this.yahtzeeService.currentRemoteDice !== null) {
+          clearInterval(checkInterval);
+          resolve(this.yahtzeeService.currentRemoteDice);
+        }
+      }, 1);
+    });
   }
 
   async makeComputerMove() {
@@ -185,20 +286,46 @@ export class YahtzeeComponent implements OnInit, OnDestroy {
     if (this.diceCount === 3) {
       this.diceRollButtonDisabled = true;
     }
-    if (!this.yahtzeeService.dices[0].checked) {
-      this.diceOne = Math.floor(Math.random() * 6 + 1);
+    if (
+      this.yahtzeeService.isRemoteGame &&
+      this.yahtzeeService.players[this.yahtzeeService.playerOnMoveIndex]
+        .isRemote
+    ) {
+      this.diceOne = this.yahtzeeService.currentRemoteDice.diceOne;
+      this.diceTwo = this.yahtzeeService.currentRemoteDice.diceTwo;
+      this.diceThree = this.yahtzeeService.currentRemoteDice.diceThree;
+      this.diceFour = this.yahtzeeService.currentRemoteDice.diceFour;
+      this.diceFive = this.yahtzeeService.currentRemoteDice.diceFive;
+      this.yahtzeeService.currentRemoteDice = null;
+    } else {
+      if (!this.yahtzeeService.dices[0].checked) {
+        this.diceOne = Math.floor(Math.random() * 6 + 1);
+      }
+      if (!this.yahtzeeService.dices[1].checked) {
+        this.diceTwo = Math.floor(Math.random() * 6 + 1);
+      }
+      if (!this.yahtzeeService.dices[2].checked) {
+        this.diceThree = Math.floor(Math.random() * 6 + 1);
+      }
+      if (!this.yahtzeeService.dices[3].checked) {
+        this.diceFour = Math.floor(Math.random() * 6 + 1);
+      }
+      if (!this.yahtzeeService.dices[4].checked) {
+        this.diceFive = Math.floor(Math.random() * 6 + 1);
+      }
     }
-    if (!this.yahtzeeService.dices[1].checked) {
-      this.diceTwo = Math.floor(Math.random() * 6 + 1);
-    }
-    if (!this.yahtzeeService.dices[2].checked) {
-      this.diceThree = Math.floor(Math.random() * 6 + 1);
-    }
-    if (!this.yahtzeeService.dices[3].checked) {
-      this.diceFour = Math.floor(Math.random() * 6 + 1);
-    }
-    if (!this.yahtzeeService.dices[4].checked) {
-      this.diceFive = Math.floor(Math.random() * 6 + 1);
+    if (
+      this.yahtzeeService.isRemoteGame &&
+      !this.yahtzeeService.players[this.yahtzeeService.playerOnMoveIndex]
+        .isRemote
+    ) {
+      this.yahtzeeService.socket.emit('currentDice', {
+        diceOne: this.diceOne,
+        diceTwo: this.diceTwo,
+        diceThree: this.diceThree,
+        diceFour: this.diceFour,
+        diceFive: this.diceFive,
+      });
     }
     this.setDicesinService();
     this.yahtzeeService.rollDice.next({
@@ -330,15 +457,17 @@ export class YahtzeeComponent implements OnInit, OnDestroy {
   }
 
   newGame() {
+    this.yahtzeeService.socket.disconnect();
+    this.showDecideRemoteGame = true;
     this.gameStarted = false;
   }
 
   addPlayer() {
-    this.yahtzeeService.players.push('');
+    this.yahtzeeService.players.push({ name: '', isRemote: false });
   }
 
   addComputer() {
-    this.yahtzeeService.players.push('Computer');
+    this.yahtzeeService.players.push({ name: 'Computer', isRemote: false });
   }
 
   deletePlayer(index: number) {
@@ -585,6 +714,28 @@ export class YahtzeeComponent implements OnInit, OnDestroy {
       4 - this.diceCount,
       previousKeep
     );
+  }
+
+  gameTypeSelected() {
+    this.showDecideRemoteGame = false;
+    this.yahtzeeService.players = [];
+  }
+
+  backToDecideRemoteGame() {
+    this.showDecideRemoteGame = true;
+  }
+
+  stopGame() {
+    if (this.yahtzeeService.isRemoteGame) {
+      let index = this.yahtzeeService.players.findIndex(
+        (item) => item.name === this.yahtzeeService.name
+      );
+      this.yahtzeeService.socket.emit('gameStopped', {
+        index,
+        name: this.yahtzeeService.name,
+      });
+    }
+    this.newGame();
   }
 
   ngOnDestroy(): void {

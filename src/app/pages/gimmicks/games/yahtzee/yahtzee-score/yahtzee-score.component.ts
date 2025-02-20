@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, HostListener, Input, OnDestroy, OnInit } from '@angular/core';
 import { YahtzeeService } from '../yahtzee.service';
 import { RollDice, ScoreRow, UserScore } from '../yahtzee.types';
 import { Subscription } from 'rxjs';
@@ -37,88 +37,113 @@ export class YahtzeeScoreComponent implements OnInit, OnDestroy {
   sum: string;
   bonus: string;
   total: string;
-
   sendFinalDicesSubscription: Subscription;
   startGameSunscription: Subscription;
+  screenHeight: number = window.innerHeight;
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event) {
+    this.screenHeight = window.innerHeight;
+  }
 
   constructor(
     public yahtzeeService: YahtzeeService,
     private translate: TranslateService
   ) {}
 
-  ngOnInit(): void {
+  async ngOnInit() {
     this.startGame();
     this.setScoreTranslations();
     this.translate.onLangChange.subscribe(() => {
       this.setScoreTranslations();
-    })
+    });
     this.startGameSunscription = this.yahtzeeService.startGame.subscribe(() => {
       this.startGame();
     });
     this.sendFinalDicesSubscription =
       this.yahtzeeService.sendFinalDices.subscribe((dice) => {
         this.finalDice = dice;
-        let onesPossible = this.setSuggestOnes();
-        let twosPossible = this.setSuggestTwos();
-        let threesPossible = this.setSuggestThrees();
-        let foursPossible = this.setSuggestFours();
-        let fivesPossible = this.setSuggestFives();
-        let sixsPossible = this.setSuggestSixs();
-        let threeInARowsPossible = this.setSuggest3InARow();
-        let fourInARowsPossible = this.setSuggest4InARow();
-        let fullHousePossible = this.setSuggestFullHouse();
-        let smallStraightPossible = this.setSuggestSmallStraight();
-        let largeStraightPossible = this.setSuggestLargeStraight();
-        let chancePossible = this.setSuggestChance();
-        let yathzeePossible = this.setSuggestYahtzee();
-        this.yahtzeeService.selectField.next(true);
         if (
-          this.yahtzeeService.players[
-            this.yahtzeeService.playerOnMoveIndex
-          ].includes('Computer')
+          this.yahtzeeService.players[this.yahtzeeService.playerOnMoveIndex]
+            .isRemote
         ) {
-          this.makeComputerMove(
-            onesPossible,
-            twosPossible,
-            threesPossible,
-            foursPossible,
-            fivesPossible,
-            sixsPossible,
-            threeInARowsPossible,
-            fourInARowsPossible,
-            fullHousePossible,
-            smallStraightPossible,
-            largeStraightPossible,
-            chancePossible,
-            yathzeePossible
-          );
+          this.waitForRemoteRowToPutIn().then(async () => {
+            let onesPossible = this.setSuggestOnes();
+            let twosPossible = this.setSuggestTwos();
+            let threesPossible = this.setSuggestThrees();
+            let foursPossible = this.setSuggestFours();
+            let fivesPossible = this.setSuggestFives();
+            let sixsPossible = this.setSuggestSixs();
+            let threeInARowsPossible = this.setSuggest3InARow();
+            let fourInARowsPossible = this.setSuggest4InARow();
+            let fullHousePossible = this.setSuggestFullHouse();
+            let smallStraightPossible = this.setSuggestSmallStraight();
+            let largeStraightPossible = this.setSuggestLargeStraight();
+            let chancePossible = this.setSuggestChance();
+            let yathzeePossible = this.setSuggestYahtzee();
+
+            await this.setsuggestedNumber(
+              this.yahtzeeService.score[this.yahtzeeService.rowToPutInRemote]
+                .user[this.yahtzeeService.playerOnMoveIndex],
+              this.yahtzeeService.rowToPutInRemote
+            );
+            this.yahtzeeService.rowToPutInRemote = null;
+          });
+        } else {
+          let onesPossible = this.setSuggestOnes();
+          let twosPossible = this.setSuggestTwos();
+          let threesPossible = this.setSuggestThrees();
+          let foursPossible = this.setSuggestFours();
+          let fivesPossible = this.setSuggestFives();
+          let sixsPossible = this.setSuggestSixs();
+          let threeInARowsPossible = this.setSuggest3InARow();
+          let fourInARowsPossible = this.setSuggest4InARow();
+          let fullHousePossible = this.setSuggestFullHouse();
+          let smallStraightPossible = this.setSuggestSmallStraight();
+          let largeStraightPossible = this.setSuggestLargeStraight();
+          let chancePossible = this.setSuggestChance();
+          let yathzeePossible = this.setSuggestYahtzee();
+          this.yahtzeeService.selectField.next(true);
+          if (
+            this.yahtzeeService.players[
+              this.yahtzeeService.playerOnMoveIndex
+            ].name.includes('Computer')
+          ) {
+            this.makeComputerMove(
+              onesPossible,
+              twosPossible,
+              threesPossible,
+              foursPossible,
+              fivesPossible,
+              sixsPossible,
+              threeInARowsPossible,
+              fourInARowsPossible,
+              fullHousePossible,
+              smallStraightPossible,
+              largeStraightPossible,
+              chancePossible,
+              yathzeePossible
+            );
+          }
         }
-        // let nothingToPutIn = [
-        //   onesPossible,
-        //   twosPossible,
-        //   threesPossible,
-        //   foursPossible,
-        //   fivesPossible,
-        //   sixsPossible,
-        //   threeInARowsPossible,
-        //   fourInARowsPossible,
-        //   fullHousePossible,
-        //   smallStraightPossible,
-        //   largeStraightPossible,
-        //   chancePossible,
-        //   yathzeePossible,
-        // ].every((item) => item === false);
-        // if (nothingToPutIn) {
-        //   this.crossesOutRows();
-        // }
       });
   }
 
+  waitForRemoteRowToPutIn(): Promise<any> {
+    return new Promise((resolve) => {
+      const checkInterval = setInterval(() => {
+        if (this.yahtzeeService.rowToPutInRemote !== null) {
+          clearInterval(checkInterval);
+          resolve(this.yahtzeeService.rowToPutInRemote);
+        }
+      }, 1);
+    });
+  }
+
   setScoreTranslations() {
-    this.translate.get('gimmicks.games.ones').subscribe(res => {
+    this.translate.get('gimmicks.games.ones').subscribe((res) => {
       this.ones = res;
       this.yahtzeeService.score[0].name = res;
-
     });
     this.translate.get('gimmicks.games.twos').subscribe((res) => {
       this.twos = res;
@@ -180,7 +205,6 @@ export class YahtzeeScoreComponent implements OnInit, OnDestroy {
       this.total = res;
       this.yahtzeeService.score[15].name = res;
     });
-    
   }
 
   makeComputerMove(
@@ -285,7 +309,10 @@ export class YahtzeeScoreComponent implements OnInit, OnDestroy {
         break;
     }
     this.setsuggestedNumber(
-      this.yahtzeeService.score[row].user[this.yahtzeeService.playerOnMoveIndex]
+      this.yahtzeeService.score[row].user[
+        this.yahtzeeService.playerOnMoveIndex
+      ],
+      row
     );
   }
 
@@ -837,13 +864,19 @@ export class YahtzeeScoreComponent implements OnInit, OnDestroy {
     }
   }
 
-  setsuggestedNumber(userScore: UserScore) {
+  async setsuggestedNumber(userScore: UserScore, rowIndex: number) {
     let temp = userScore.suggestNumber;
     let timeOut;
     if (
+      this.yahtzeeService.players[this.yahtzeeService.playerOnMoveIndex]
+        .isRemote
+    ) {
+      this.setAllSuggestionsToNull();
+      timeOut = 1000;
+    } else if (
       this.yahtzeeService.players[
         this.yahtzeeService.playerOnMoveIndex
-      ].includes('Computer')
+      ].name.includes('Computer')
     ) {
       this.setAllSuggestionsToNull();
       timeOut = 1000;
@@ -852,19 +885,50 @@ export class YahtzeeScoreComponent implements OnInit, OnDestroy {
     }
     userScore.suggestNumber = temp;
     userScore.number = temp;
+
     setTimeout(() => {
       userScore.finished = true;
       this.setAllSuggestionsToNull();
       this.calculateSumAndBonus();
       this.yahtzeeService.selectField.next(false);
       if (
-        this.yahtzeeService.moveCount === 13 &&
-        this.yahtzeeService.playerOnMoveIndex ===
-          this.yahtzeeService.players.length - 1
+        !this.yahtzeeService.players[this.yahtzeeService.playerOnMoveIndex]
+          .isRemote &&
+        this.yahtzeeService.isRemoteGame
       ) {
-        this.gameOver();
+        new Promise((resolve) => {
+          this.yahtzeeService.socket.emit(
+            'setRemoteRowToPutIn',
+            rowIndex,
+            (success: boolean) => {
+              resolve(success);
+            }
+          );
+        }).then((success) => {
+          if (success) {
+            this.yahtzeeService.rowToPutInRemote = null;
+            if (
+              this.yahtzeeService.moveCount === 13 &&
+              this.yahtzeeService.playerOnMoveIndex ===
+                this.yahtzeeService.players.length - 1
+            ) {
+              this.gameOver();
+            } else {
+              this.nextPlayer();
+            }
+          }
+        });
       } else {
-        this.nextPlayer();
+        this.yahtzeeService.rowToPutInRemote = null;
+        if (
+          this.yahtzeeService.moveCount === 13 &&
+          this.yahtzeeService.playerOnMoveIndex ===
+            this.yahtzeeService.players.length - 1
+        ) {
+          this.gameOver();
+        } else {
+          this.nextPlayer();
+        }
       }
     }, timeOut);
   }
@@ -938,11 +1002,12 @@ export class YahtzeeScoreComponent implements OnInit, OnDestroy {
     ) {
       this.yahtzeeService.playerOnMoveIndex = 0;
     }
+
     this.yahtzeeService.nextplayer.next();
   }
 
   gameOver() {
-    let names = this.yahtzeeService.players;
+    let names = this.yahtzeeService.players.map((item) => item.name);
     let points = this.yahtzeeService.score[15].user.map((item) => item.number);
     const sortedData = names
       .map((name, index) => ({ name, point: points[index] }))

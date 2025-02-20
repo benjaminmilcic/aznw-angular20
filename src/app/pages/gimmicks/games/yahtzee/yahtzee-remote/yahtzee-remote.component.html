@@ -1,0 +1,59 @@
+<div
+  class="p-4 border border-yellow-800 bg-yellow-300 rounded m-4 max-w-[320px] sm:max-w-[600px]"
+>
+  @if (noMorePlayers&&!nameInputDisabled) {
+  <div>
+    Momentan ist ein Spiel im Gange und Sie müssen warten bis ein neues Spiel
+    startet.
+  </div>
+  <div class="mb-4">Momentan spielen:</div>
+  <div *ngFor="let player of players" class="text-xl text-blue-400 ml-4">
+    {{ player }}
+  </div>
+  }@else {
+  <button mat-stroked-button (click)="back.emit()">
+    <div class="flex gap-2 items-center">
+      <mat-icon>keyboard_backspace</mat-icon>Zurück
+    </div>
+  </button>
+  <div class="mt-4">Bitte geben Sie ihren Namen ein:</div>
+  <div class="flex gap-4 items-center mt-2">
+    <mat-form-field floatLabel="always" subscriptSizing="dynamic">
+      <mat-label>Name</mat-label>
+      <input [disabled]="nameInputDisabled" matInput [(ngModel)]="yahtzeeService.name" />
+    </mat-form-field>
+    <button
+      mat-raised-button
+      [disabled]="nameInputDisabled"
+      (click)="addName()"
+    >
+      OK
+    </button>
+  </div>
+  <div class="text-red-500" *ngIf="showNameError">
+    Der Name darf nicht leer sein.
+  </div>
+  <div class="text-red-500" *ngIf="nameExist">
+    Dieser Name ist bereits vergeben.
+  </div>
+  <div class="mt-4">Folgende Spieler sind angemeldet:</div>
+  <div class="flex flex-col gap-4 mt-2">
+    <div class="text-xl text-blue-400 ml-4" *ngFor="let player of players">
+      {{ player }} <span *ngIf="player === yahtzeeService.name">(Du)</span>
+    </div>
+  </div>
+  <div class="flex justify-center mt-8">
+    <button
+      mat-raised-button
+      [disabled]="startGameDisabled"
+      (click)="startGame()"
+    >
+      Spiel starten
+    </button>
+  </div>
+  <div *ngIf="gameStarted" class="flex gap-4 items-center justify-center mt-4">
+    <div><mat-spinner [diameter]="20"></mat-spinner></div>
+    <div>Warten auf andere Spieler...</div>
+  </div>
+  }
+</div>

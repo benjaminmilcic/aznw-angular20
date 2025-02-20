@@ -54,5 +54,8 @@ export const environment = {
   error: {
     errorMessageApi: 'https://benjaminmilcic.site:3000/error2email',
   },
+  yahtzeeGame: {
+    webSocketsUrl: 'https://benjaminmilcic.site:3000/yahtzee-game',
+  },
   production: true,
 };

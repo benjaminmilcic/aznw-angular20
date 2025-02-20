@@ -10,7 +10,7 @@
             'text-blue-400': yahtzeeService.playerOnMoveIndex === playerIndex
           }"
         >
-          {{ player }}
+          {{ player.name }}
         </th>
       </tr>
       <tr *ngFor="let row of yahtzeeService.score; let scoreIndex = index">
@@ -26,7 +26,12 @@
           class="text-center !p-0"
         >
           <div
-            class="px-[5px] py-[2px]"
+            [ngStyle]="{
+              'padding-top': screenHeight > 900 ? '8px' : '2px',
+              'padding-bottom': screenHeight > 900 ? '8px' : '2px',
+              'padding-left': screenHeight > 900 ? '10px' : '5px',
+              'padding-right': screenHeight > 900 ? '10px' : '5px'
+            }"
             [ngClass]="{
               'bg-red-400 cursor-pointer hover:bg-red-800':
                 row.user[playerIndex].suggestNumber !== null &&
@@ -34,19 +39,20 @@
             }"
             (click)="
               row.user[playerIndex].suggestNumber !== null
-                ? setsuggestedNumber(row.user[playerIndex])
+                ? setsuggestedNumber(row.user[playerIndex], scoreIndex)
                 : null
             "
           >
             @if (row.user[playerIndex].finished) { @if
             (row.user[playerIndex].number===0&&scoreIndex!==15&&scoreIndex!==6)
-            { X }@else {
+            { X }@else { @if (row.user[playerIndex].number===null) {&nbsp;}@else {
 
             {{ row.user[playerIndex].number }}
-            } }@else { @if (row.user[playerIndex].suggestNumber==0) {X}@else {
+            } } }@else { @if (row.user[playerIndex].suggestNumber==0) {X}@else {
+            @if (row.user[playerIndex].suggestNumber===null) {&nbsp;}@else {
 
             {{ row.user[playerIndex].suggestNumber }}
-            } }
+            } } }
           </div>
         </td>
       </tr>
