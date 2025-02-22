@@ -330,11 +330,21 @@
       "remoteGame": "Remote Game",
       "remoteGameText": " against another player on another computer/smartphone",
       "endGame": "Quit Game",
-      "hasEndGame": " has finished the game"
+      "hasEndGame": " has finished the game",
+      "player1": "Player 1",
+      "player2": "Player 2"
     }
   },
   "pageNotFound": {
     "error": "The requested page was not found!",
     "goToHomepage": "Go to Homepage"
+  },
+  "httpError": {
+    "httpErrorOccurs": "A data transfer error occurred. Please check your internet connection and try again.",
+    "contactMeVia": "If the error persists, please contact me at",
+    "httpErrorOccurs2": "A data transfer error occurred.",
+    "emailWasSendToMe": "An email has been sent to me. I will take care of the error immediately.",
+    "checkInternetConnection": "Please also check your internet connection. This may be the cause.",
+    "errorOccurs": "An error has occurred!"
   }
 }

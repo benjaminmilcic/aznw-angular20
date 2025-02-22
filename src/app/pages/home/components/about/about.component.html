@@ -28,12 +28,21 @@
           <a
             *ngIf="translateService.currentLang == 'de'"
             href="/assets/CV_DE.pdf"
+            target="_blank"
             class="text-color2"
             ><span>{{ "about.downloadCV" | translate }}</span></a
           >
           <a
             *ngIf="translateService.currentLang == 'en'"
             href="/assets/CV_EN.pdf"
+            target="_blank"
+            class="text-color2"
+            ><span>{{ "about.downloadCV" | translate }}</span></a
+          >
+          <a
+            *ngIf="translateService.currentLang == 'hr'"
+            href="/assets/CV_HR.pdf"
+            target="_blank"
             class="text-color2"
             ><span>{{ "about.downloadCV" | translate }}</span></a
           >

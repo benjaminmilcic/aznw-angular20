@@ -1,14 +1,13 @@
 <h2 mat-dialog-title class="bg-blue-600 !text-white !text-sm">
-  Ein Fehler ist aufgetreten!
+ {{'httpError.errorOccurs'|translate}}
 </h2>
 <mat-dialog-content class="!pt-4 !text-sm">
   <div *ngIf="!data.success">
     <p>
-      Es ist ein Datenübertragungsfehler aufgetreten. Bitte überprüfen Sie die
-      Internetverbindung und versuchen Sie es erneut.
+      {{'httpError.httpErrorOccurs'|translate}}
     </p>
     <p>
-      Falls der Fehler weiterhin auftritt, kontaktieren Sie mich bitte unter
+      {{'httpError.contactMeVia'|translate}}
     </p>
     <p>
       <a [href]="'mailto:' + email">{{ email }}</a>
@@ -16,10 +15,10 @@
   </div>
   <div *ngIf="data.success">
     <p>
-      Es ist ein Datenübertragungsfehler aufgetreten.
+      {{'httpError.httpErrorOccurs2'|translate}}
     </p>
-    <p>Eine Email wurde an mich gesendet. Ich werde mich umgehend um den Fehler kümmern.</p>
-    <p>Bitte überprüfen Sie auch Ihre Internetverbindung. Eventuell liegt es daran.</p>
+    <p>{{'httpError.emailWasSendToMe'|translate}}</p>
+    <p>{{'httpError.checkInternetConnection'|translate}}</p>
   </div>
 </mat-dialog-content>
 <mat-dialog-actions>

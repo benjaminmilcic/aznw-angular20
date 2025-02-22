@@ -24,7 +24,7 @@ import { GamesService } from '../games.service';
     FormsModule,
     MatIconModule,
     TranslateModule,
-    MatButtonModule
+    MatButtonModule,
   ],
   templateUrl: './connect-four.component.html',
   styleUrl: './connect-four.component.css',
@@ -57,19 +57,25 @@ export class ConnectFourComponent implements OnInit {
   constructor(
     private dialog: MatDialog,
     private translateService: TranslateService,
-    private gameServie:GamesService
+    private gameServie: GamesService
   ) {
     this.resetBoard();
   }
 
   ngOnInit(): void {
     this.gameServie.changeGameName.next('connect-four');
-    if (this.translateService.currentLang === 'de') {
-      this.name1ForEdit = 'Spieler 1';
-      this.name2ForEdit = 'Spieler 2';
+    this.setInitialPlayerNames();
+  }
+
+  setInitialPlayerNames() {
+    this.translateService.get('gimmicks.games.player1').subscribe((result) => {
+      this.name1ForEdit = result;
       this.name1 = this.name1ForEdit;
+    });
+    this.translateService.get('gimmicks.games.player2').subscribe((result) => {
+      this.name2ForEdit = result;
       this.name2 = this.name2ForEdit;
-    }
+    });
   }
 
   resetBoard() {

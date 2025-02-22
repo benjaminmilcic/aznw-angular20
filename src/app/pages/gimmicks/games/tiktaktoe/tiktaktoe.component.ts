@@ -24,7 +24,7 @@ import { GamesService } from '../games.service';
     IonSegment,
     IonSegmentButton,
     TranslateModule,
-    MatButtonModule
+    MatButtonModule,
   ],
   templateUrl: './tiktaktoe.component.html',
   styleUrl: './tiktaktoe.component.css',
@@ -71,12 +71,18 @@ export class TiktaktoeComponent implements OnInit {
 
   ngOnInit(): void {
     this.gameService.changeGameName.next('tiktaktoe');
-    if (this.translateService.currentLang === 'de') {
-      this.name1ForEdit = 'Spieler 1';
-      this.name2ForEdit = 'Spieler 2';
+    this.setInitialPlayerNames();
+  }
+
+  setInitialPlayerNames() {
+    this.translateService.get('gimmicks.games.player1').subscribe((result) => {
+      this.name1ForEdit = result;
       this.name1 = this.name1ForEdit;
+    });
+    this.translateService.get('gimmicks.games.player2').subscribe((result) => {
+      this.name2ForEdit = result;
       this.name2 = this.name2ForEdit;
-    }
+    });
   }
 
   makeMove(x: number, y: number) {

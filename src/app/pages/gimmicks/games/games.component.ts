@@ -38,6 +38,8 @@ export class GamesComponent {
     let currentGame = urlParts[urlParts.length - 1];
     this.translateGameName(currentGame);
     translate.onLangChange.subscribe(() => {
+      let urlParts = router.url.split('/');
+      let currentGame = urlParts[urlParts.length - 1];
       this.translateGameName(currentGame);
     });
     gameService.changeGameName.subscribe(result => {

@@ -1,7 +1,11 @@
 <a (click)="onToggleSidebar($event)" class="menu-toggle" href="#"
   ><i class="fas fa-bars menu-button"></i
 ></a>
-<nav id="sidebar-wrapper" [ngClass]="{ active: sidebarActivated }" class="overflow-y-auto">
+<nav
+  id="sidebar-wrapper"
+  [ngClass]="{ active: sidebarActivated }"
+  class="overflow-y-auto"
+>
   <ul>
     <li>
       <div class="sidebar-brand">
@@ -10,7 +14,7 @@
             <img src="favicon.ico" />
           </a>
         </div>
-        <div class="sidebar-flag">
+        <!-- <div class="sidebar-flag">
           <img
             *ngIf="language === 'de'"
             (click)="toggleLanguage()"
@@ -25,6 +29,65 @@
             width="24px"
             height="24px"
           />
+        </div> -->
+        <div class="sidebar-flag">
+          <button
+            mat-raised-button
+            color="languageMenu"
+            [matMenuTriggerFor]="languageMenu"
+            class="!p-0"
+          >
+            <div class="flex gap-2 items-center mt-[14px]">
+              <div *ngIf="language === 'de'">
+                <img
+                  src="/assets/svg/Flag_of_Germany.svg"
+                  width="24px"
+                  height="24px"
+                />
+              </div>
+              <div *ngIf="language === 'en'">
+                <img
+                  src="/assets/svg/Flag_of_the_United_Kingdom.svg"
+                  width="24px"
+                  height="24px"
+                />
+              </div>
+              <div *ngIf="language === 'hr'">
+                <img src="/assets/svg/hr.svg" width="24px" height="24px" />
+              </div>
+              <div class="-mt-[20px]">
+                <i class="fa-solid fa-sort-down"></i>
+              </div>
+            </div>
+          </button>
+          <mat-menu #languageMenu="matMenu" class="!bg-color1">
+            <button mat-menu-item (click)="toggleLanguage('de')">
+              <div class="flex gap-2">
+                <img
+                  src="/assets/svg/Flag_of_Germany.svg"
+                  width="24px"
+                  height="24px"
+                />
+                <div>Deutsch</div>
+              </div>
+            </button>
+            <button mat-menu-item (click)="toggleLanguage('en')">
+              <div class="flex gap-2">
+                <img
+                  src="/assets/svg/Flag_of_the_United_Kingdom.svg"
+                  width="24px"
+                  height="24px"
+                />
+                <div>English</div>
+              </div>
+            </button>
+            <!-- <button mat-menu-item (click)="toggleLanguage('hr')">
+              <div class="flex gap-2">
+                <img src="/assets/svg/hr.svg" width="24px" height="24px" />
+                <div>Hrvatski</div>
+              </div>
+            </button> -->
+          </mat-menu>
         </div>
       </div>
     </li>
@@ -45,7 +108,7 @@
       </a>
     </li>
     <li>
-     <a (click)="onClick()" [routerLink]="['/']" fragment="skills">
+      <a (click)="onClick()" [routerLink]="['/']" fragment="skills">
         <div class="sidebar-item">
           <i class="fa-solid fa-screwdriver-wrench"></i>
           <p class="col ms-2">{{ "sidebar.skills" | translate }}</p>
@@ -53,7 +116,7 @@
       </a>
     </li>
     <li>
-       <a (click)="onClick()" [routerLink]="['/']" fragment="portfolio">
+      <a (click)="onClick()" [routerLink]="['/']" fragment="portfolio">
         <div class="sidebar-item">
           <i class="fa-solid fa-toolbox"></i>
           <p>Portfolio</p>

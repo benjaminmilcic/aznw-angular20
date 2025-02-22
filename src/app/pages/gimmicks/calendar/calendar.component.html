@@ -9,11 +9,15 @@
       <div
         class="bg-green-400 rounded-lg flex flex-col place-items-center h-[555px] shadow-lg relative"
         [ngClass]="{
-          'w-[300px]': translateService.currentLang == 'de',
-          'w-[400px]': translateService.currentLang == 'en'
+          'w-[300px]': translateService.currentLang === 'de',
+          'w-[400px]':
+            translateService.currentLang === 'en' ||
+            translateService.currentLang === 'hr'
         }"
       >
-        <div class="flex justify-center w-full rounded-t-lg bg-gradient-to-b from-red-400 to-blue-600 py-4">
+        <div
+          class="flex justify-center w-full rounded-t-lg bg-gradient-to-b from-red-400 to-blue-600 py-4"
+        >
           <img [src]="getSvgOfMonth()" width="192px" />
         </div>
         <div class="mt-2">{{ currentYear }}</div>

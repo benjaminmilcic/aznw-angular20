@@ -345,6 +345,14 @@
             >hier</a
           ><span>&nbsp;</span></ng-container
         >
+        <ng-container *ngIf="translateService.currentLang === 'hr'"
+          ><a
+            [routerLink]="['/gimmicks/']"
+            fragment="header"
+            class="hover:text-blue-600"
+            >ovdje</a
+          ><span>&nbsp;</span></ng-container
+        >
 
         <button
           [routerLink]="['/gimmicks/']"

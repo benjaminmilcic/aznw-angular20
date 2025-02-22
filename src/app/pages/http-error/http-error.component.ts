@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MAT_DIALOG_DATA, MatDialogActions, MatDialogClose, MatDialogContent, MatDialogTitle } from '@angular/material/dialog';
+import { TranslateModule } from '@ngx-translate/core';
 
 interface DialogData {
   success: boolean;
@@ -17,6 +18,7 @@ interface DialogData {
     MatDialogContent,
     MatDialogActions,
     MatDialogClose,
+    TranslateModule
   ],
   templateUrl: './http-error.component.html',
   styleUrl: './http-error.component.css',

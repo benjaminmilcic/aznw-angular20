@@ -3,13 +3,15 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { TranslateSendButtonService } from '../home/components/shared/translate-send-button.service';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.css'],
   standalone: true,
-  imports: [TranslateModule, CommonModule, RouterModule],
+  imports: [TranslateModule, CommonModule, RouterModule, MatMenuModule,MatButtonModule],
 })
 export class SidebarComponent implements OnInit {
   sidebarActivated: boolean = false;
@@ -52,8 +54,8 @@ export class SidebarComponent implements OnInit {
     this.onToggleSidebar(null);
   }
 
-  toggleLanguage() {
-    this.language = this.language === 'en' ? 'de' : 'en';
+  toggleLanguage(language:string) {
+    this.language = language;
     this.translate.use(this.language);
     this.translateSendButtonService.translateSendButton.next();
   }
