@@ -18,3 +18,20 @@ section:before {
   background-position: 50% 0;
   background-size: cover;
 }
+
+.flipbox-active {
+  transform-origin: left;
+  transition: transform 0.45s;
+}
+.flipbox:hover .flipbox-active {
+  transform: perspective(1200px) rotateY(20deg);
+}
+
+.doorknob{
+  transform-origin: left center;
+  transition: transform 0.3s ease;
+}
+
+.flipbox:hover .doorknob {
+  transform: rotate(35deg);
+}

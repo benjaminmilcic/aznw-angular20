@@ -132,6 +132,7 @@ export class TemperatureChartComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
+    this.clickedLabelIndex = null;
     this.ngOnInit();
   }
 

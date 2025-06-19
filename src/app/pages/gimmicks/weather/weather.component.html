@@ -104,7 +104,7 @@
     </div>
 
     <div
-      *ngIf="cityLatitude && cityLongitude"
+      *ngIf="currentWeather"
       class="flex w-full justify-center p-4"
     >
       <div
@@ -151,7 +151,7 @@
         <div
           class="cursor-pointer text-[14px]"
           [ngClass]="{
-            'border-b border-b-amber-500': selectedChart === 'temp'
+            'border-b-2 border-b-amber-500': selectedChart === 'temp'
           }"
           (click)="selectedChart = 'temp'"
         >
@@ -161,7 +161,7 @@
         <div
           class="cursor-pointer text-[14px]"
           [ngClass]="{
-            'border-b border-b-amber-500': selectedChart === 'rain'
+            'border-b-2 border-b-amber-500': selectedChart === 'rain'
           }"
           (click)="selectedChart = 'rain'"
         >
@@ -171,7 +171,7 @@
         <div
           class="cursor-pointer text-[14px]"
           [ngClass]="{
-            'border-b border-b-amber-500': selectedChart === 'wind'
+            'border-b-2 border-b-amber-500': selectedChart === 'wind'
           }"
           (click)="selectedChart = 'wind'"
         >

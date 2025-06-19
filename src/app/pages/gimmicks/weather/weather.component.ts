@@ -313,8 +313,23 @@ export class WeatherComponent implements OnInit, OnDestroy {
             this.hourlyForecast.shift();
           }
         }
+        this.changeDataOfFirstDay();
+        console.log(this.hourlyForecast);
+
         this.displayCurrentWeather();
       });
+  }
+
+  changeDataOfFirstDay() {
+    let currentHour = new Date().getHours();
+    let firstDayHours = this.hourlyForecast[0].hours;
+    let secondDayHours = this.hourlyForecast[1].hours;
+    for (let index = 0; index < currentHour; index++) {
+      firstDayHours.splice(0, 1);
+    }
+    for (let index = 0; index < currentHour; index++) {
+      firstDayHours.push(secondDayHours[index]);
+    }
   }
 
   displayCurrentWeather() {
