@@ -21,6 +21,7 @@ import { JigsawComponent } from './pages/gimmicks/games/jigsaw/jigsaw.component'
 import { KnowledgeQuizComponent } from './pages/gimmicks/games/knowledge-quiz/knowledge-quiz.component';
 import { MoorhuhnComponent } from './pages/gimmicks/games/moorhuhn/moorhuhn.component';
 import { YahtzeeComponent } from './pages/gimmicks/games/yahtzee/yahtzee.component';
+import { WeatherComponent } from './pages/gimmicks/weather/weather.component';
 
 export const routes: Routes = [
   {
@@ -110,6 +111,10 @@ export const routes: Routes = [
             component: YahtzeeComponent,
           },
         ],
+      },
+      {
+        path: 'weather',
+        component: WeatherComponent,
       },
     ],
   },

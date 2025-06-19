@@ -30,7 +30,7 @@
   }
 }
 
-@keyframes slideFirstItemIn {
+@keyframes slideNewItemIn {
   0% {
     translate: 0px -44px;
     opacity: 0;
@@ -41,7 +41,7 @@
   }
 }
 
-@keyframes slideSecondItemIn {
+@keyframes slideFirstItemIn {
   0% {
     translate: 0px -80px;
     opacity: 0;
@@ -52,7 +52,7 @@
   }
 }
 
-@keyframes slideThirdItemIn {
+@keyframes slideSecondItemIn {
   0% {
     translate: 0px -116px;
     opacity: 0;
@@ -63,7 +63,7 @@
   }
 }
 
-@keyframes slideFourthItemIn {
+@keyframes slideThirdItemIn {
   0% {
     translate: 0px -152px;
     opacity: 0;
@@ -74,7 +74,7 @@
   }
 }
 
-@keyframes slideFifthItemIn {
+@keyframes slideFourthItemIn {
   0% {
     translate: 0px -188px;
     opacity: 0;
@@ -85,9 +85,20 @@
   }
 }
 
-@keyframes slideSixthItemIn {
+@keyframes slideFifthItemIn {
   0% {
     translate: 0px -224px;
+    opacity: 0;
+  }
+  100% {
+    translate: 0px 0px;
+    opacity: 1;
+  }
+}
+
+@keyframes slideSixthItemIn {
+  0% {
+    translate: 0px -260px;
     opacity: 0;
   }
   100% {
@@ -107,7 +118,7 @@
   }
 }
 
-@keyframes slideFirstItemOut {
+@keyframes slideNewItemOut {
   0% {
     translate: 0px 0px;
     opacity: 1;
@@ -118,7 +129,7 @@
   }
 }
 
-@keyframes slideSecondItemOut {
+@keyframes slideFirstItemOut {
   0% {
     translate: 0px 0px;
     opacity: 1;
@@ -129,7 +140,7 @@
   }
 }
 
-@keyframes slideThirdItemOut {
+@keyframes slideSecondItemOut {
   0% {
     translate: 0px 0px;
     opacity: 1;
@@ -140,7 +151,7 @@
   }
 }
 
-@keyframes slideFourthItemOut {
+@keyframes slideThirdItemOut {
   0% {
     translate: 0px 0px;
     opacity: 1;
@@ -151,7 +162,7 @@
   }
 }
 
-@keyframes slideFifthItemOut {
+@keyframes slideFourthItemOut {
   0% {
     translate: 0px 0px;
     opacity: 1;
@@ -162,13 +173,24 @@
   }
 }
 
-@keyframes slideSixthItemOut {
+@keyframes slideFifthItemOut {
   0% {
     translate: 0px 0px;
     opacity: 1;
   }
   100% {
     translate: 0px -224px;
+    opacity: 0;
+  }
+}
+
+@keyframes slideSixthItemOut {
+  0% {
+    translate: 0px 0px;
+    opacity: 1;
+  }
+  100% {
+    translate: 0px -260px;
     opacity: 0;
   }
 }
@@ -197,6 +219,10 @@
   animation: 0.3s ease-out slideOverviewIn;
 }
 
+.newItemIn {
+  animation: 0.3s ease-out slideNewItemIn;
+}
+
 .firstItemIn {
   animation: 0.3s ease-out slideFirstItemIn;
 }
@@ -223,6 +249,10 @@
 
 .overviewOut{
   animation: 0.3s ease-out slideOverviewOut;
+}
+
+.newItemOut{
+  animation: 0.3s ease-out slideNewItemOut;
 }
 
 .firstItemOut{

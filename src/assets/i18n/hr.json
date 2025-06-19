@@ -79,7 +79,8 @@
       "guestbook": "Knjiga gostiju",
       "charts": "Grafikoni",
       "jokes": "Šale",
-      "games": "Igre"
+      "games": "Igre",
+      "weather": "Vrijeme"
     },
     "overview": {
       "header1": "Do sada sam izradio poslovne aplikacije koje su dostupne samo uz prijavu i lozinku. Zato ćete pronaći",
@@ -333,6 +334,23 @@
       "hasEndGame": " je završio igru",
       "player1": "Igrač 1",
       "player2": "Igrač 2"
+    },
+    "weather": {
+      "useLocation": "Koristi lokaciju",
+      "enterCity": "Unesi grad",
+      "getLocation": "Dohvati lokaciju",
+      "selectCountry": "Odaberi državu",
+      "worldWide": "Cijeli svijet",
+      "searchCountry": "Pretraži državu",
+      "precipitation": "Oborine",
+      "humidity": "Vlažnost",
+      "wind": "Vjetar",
+      "weather": "Vrijeme",
+      "temperature": "Temperatura",
+      "errorOnPosition": "Pogreška pri preuzimanju pozicije",
+      "geoLocationNotSupported": "Ovaj preglednik ne podržava geolokaciju.",
+      "errorOnAddress": "Pogreška pri preuzimanju adrese.",
+      "errorOnSearch": "Pogreška prilikom pretraživanja. Grad nije pronađen ili nema podataka o vremenu za ovaj grad."
     }
   },
   "pageNotFound": {

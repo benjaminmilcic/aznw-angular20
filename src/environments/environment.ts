@@ -52,6 +52,11 @@ export const environment = {
   yahtzeeGame: {
     webSocketsUrl: 'http://192.168.178.71:3000/yahtzee-game',
   },
+  geoLocation: {
+    reverseGeoCodeApi: 'http://localhost:3000/geolocation/reverse-geocode',
+    geoCodeApi: 'http://localhost:3000/geolocation/geocode',
+    citiesApi: 'http://localhost:3000/geolocation/cities',
+  },
   production: false,
 };
 

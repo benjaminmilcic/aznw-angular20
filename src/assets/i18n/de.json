@@ -79,7 +79,8 @@
       "guestbook": "Gästebuch",
       "charts": "Diagramme",
       "jokes": "Witze",
-      "games":"Spiele"
+      "games":"Spiele",
+      "weather":"Wetter"
     },
     "overview": {
       "header1": "Bisher habe ich Unternehmensanwendungen erstellt, auf die nur mit Login und Passwort zugegriffen werden kann. Deshalb finden Sie",
@@ -333,6 +334,23 @@
       "hasEndGame": " hat das Spiel beendet",
       "player1": "Spieler 1",
       "player2": "Spieler 2"
+    },
+    "weather":{
+      "useLocation":"Nutze Standort",
+      "enterCity":"Stadt eingeben",
+      "getLocation":"Standort abrufen",
+      "selectCountry":"Land auswählen",
+      "worldWide":"Weltweit",
+      "searchCountry":"Land suchen",
+      "precipitation":"Niederschlag",
+      "humidity":"Luftfeuchte",
+      "wind":"Wind",
+      "weather":"Wetter",
+      "temperature":"Temperatur",
+      "errorOnPosition":"Fehler beim Abrufen der Position",
+      "geoLocationNotSupported":"Geolocation wird von diesem Browser nicht unterstützt.",
+      "errorOnAddress":"Fehler beim Abrufen der Adresse.",
+      "errorOnSearch":"Fehler beim Suchen. Stadt nicht gefunden oder keine Wetterdaten für diese Stadt."
     }
   },
   "pageNotFound": {

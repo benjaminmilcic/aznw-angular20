@@ -1,0 +1,246 @@
+<section class="flex justify-center min-h-[calc(100%-40px)] bg-blue-400">
+  <div class="flex flex-col w-full max-w-full sm:max-w-[600px] my-4 relative bg-white rounded">
+    <div class="m-4 flex">
+      <ion-segment [(ngModel)]="selectedWay" mode="ios" class="w-full">
+        <ion-segment-button value="location">
+          <ion-label>
+            <div class="flex gap-2 items-center">
+              <mat-icon>location_on</mat-icon>
+              <div>{{ "gimmicks.weather.useLocation" | translate }}</div>
+            </div>
+          </ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="search">
+          <ion-label>
+            <div class="flex gap-2 items-center">
+              <mat-icon>travel_explore</mat-icon>
+              <div>{{ "gimmicks.weather.enterCity" | translate }}</div>
+            </div>
+          </ion-label>
+        </ion-segment-button>
+      </ion-segment>
+    </div>
+    <div *ngIf="selectedWay === 'location'" class="p-4">
+      <button mat-raised-button (click)="getLocation()">
+        {{ "gimmicks.weather.getLocation" | translate }}
+      </button>
+    </div>
+    <div
+      *ngIf="selectedWay === 'search'"
+      class="flex gap-4 items-center p-4 flex-wrap"
+    >
+      <mat-form-field
+        appearance="outline"
+        subscriptSizing="dynamic"
+        class="w-[230px]"
+      >
+        <mat-label>{{
+          "gimmicks.weather.selectCountry" | translate
+        }}</mat-label>
+        <mat-select [(value)]="selectedCountry">
+          <mat-select-trigger>
+            <div class="flex gap-1 items-center">
+              <img
+                *ngIf="selectedCountry !== 'any'"
+                [src]="'assets/flags/' + selectedCountry + '.svg'"
+                class="w-[20px] h-auto"
+              />
+              <span>
+                {{ getMatTriggerSelect() }}
+              </span>
+            </div>
+          </mat-select-trigger>
+          <mat-option>
+            <ngx-mat-select-search
+              [formControl]="countryFilterCtrl"
+              [placeholderLabel]="'gimmicks.weather.searchCountry' | translate"
+            ></ngx-mat-select-search>
+          </mat-option>
+          <mat-option
+            *ngFor="let country of filteredCountries"
+            [value]="country.code"
+            ><div class="flex gap-1">
+              <img
+                *ngIf="country.code !== 'any'"
+                [src]="'assets/flags/' + country.code + '.svg'"
+                class="w-[20px] h-auto"
+              />
+              <div>{{ country.name }}</div>
+            </div>
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field
+        appearance="outline"
+        subscriptSizing="dynamic"
+        class="w-[230px]"
+      >
+        <mat-label>{{ "gimmicks.weather.enterCity" | translate }}</mat-label>
+        <input
+          type="text"
+          matInput
+          [formControl]="cityCtrl"
+          [matAutocomplete]="auto"
+        />
+
+        <mat-autocomplete
+          #auto="matAutocomplete"
+          [displayWith]="displayCity"
+        >
+          <mat-option *ngFor="let city of filteredCities" [value]="city">
+            {{ city.display_name }}
+          </mat-option>
+        </mat-autocomplete>
+
+        <mat-progress-spinner
+          *ngIf="isLoading"
+          matSuffix
+          mode="indeterminate"
+          diameter="20"
+        >
+        </mat-progress-spinner>
+      </mat-form-field>
+      <button mat-raised-button (click)="searchCity()">OK</button>
+    </div>
+
+    <div
+      *ngIf="cityLatitude && cityLongitude"
+      class="flex w-full justify-center p-4"
+    >
+      <div
+        class="flex p-2 rounded bg-green-100 border border-green-300 w-full justify-between"
+      >
+        <p *ngIf="address" class="text-blue-600 pr-4">
+          <strong>{{ address }}</strong>
+        </p>
+        <p class="pr-4"><strong>Latitude:</strong> {{ cityLatitude }}</p>
+        <p><strong>Longitude:</strong> {{ cityLongitude }}</p>
+      </div>
+    </div>
+    <div
+      *ngIf="showDisplay"
+      class="flex items-center justify-between p-4 w-full flex-wrap"
+    >
+      <div class="flex gap-2 items-center">
+        <img [src]="displayedIcon" class="w-[48px] h-[48px]" />
+        <div class="flex gap-2 items-center">
+          <div class="text-bold text-[48px]">
+            {{ displayedTemp.toFixed(0) }}
+          </div>
+          <div>°C</div>
+        </div>
+        <div class="text-[12px]">
+          <div class="whitespace-nowrap">
+            {{ "gimmicks.weather.precipitation" | translate }}:
+            {{ displayedPrecipitation_probability }}%
+          </div>
+          <div class="whitespace-nowrap">
+            {{ "gimmicks.weather.humidity" | translate }}: {{ displayedHumidity.toFixed(0) }}%
+          </div>
+          <div class="whitespace-nowrap">{{ "gimmicks.weather.wind" | translate }}: {{ displayedWind }} km/h</div>
+        </div>
+      </div>
+      <div class="flex flex-col items-end">
+        <div class="text-[18px] font-semibold whitespace-nowrap">{{ "gimmicks.weather.weather" | translate }}</div>
+        <div class="text-[14px] whitespace-nowrap">{{ displayedTime }}</div>
+        <div class="text-[14px] whitespace-nowrap">{{ displayedWeather }}</div>
+      </div>
+    </div>
+    <div *ngIf="hourlyForecast" class="flex flex-col p-4 w-full">
+      <div class="flex gap-2 w-full mb-2">
+        <div
+          class="cursor-pointer text-[14px]"
+          [ngClass]="{
+            'border-b border-b-amber-500': selectedChart === 'temp'
+          }"
+          (click)="selectedChart = 'temp'"
+        >
+        {{ "gimmicks.weather.temperature" | translate }}
+        </div>
+        <div class="text-gray-300">|</div>
+        <div
+          class="cursor-pointer text-[14px]"
+          [ngClass]="{
+            'border-b border-b-amber-500': selectedChart === 'rain'
+          }"
+          (click)="selectedChart = 'rain'"
+        >
+        {{ "gimmicks.weather.precipitation" | translate }}
+        </div>
+        <div class="text-gray-300">|</div>
+        <div
+          class="cursor-pointer text-[14px]"
+          [ngClass]="{
+            'border-b border-b-amber-500': selectedChart === 'wind'
+          }"
+          (click)="selectedChart = 'wind'"
+        >
+        {{ "gimmicks.weather.wind" | translate }}
+        </div>
+      </div>
+      <app-temperature-chart
+        *ngIf="hourlyForecast && selectedChart === 'temp' && showChart"
+        [hourlyForecast]="hourlyForecast"
+        [dayIndex]="dailyForcastIndex"
+        (hourClicked)="displayHourlyWeather($event)"
+      ></app-temperature-chart>
+      <app-rain-chart
+        *ngIf="hourlyForecast && selectedChart === 'rain' && showChart"
+        [hourlyForecast]="hourlyForecast"
+        [dayIndex]="dailyForcastIndex"
+      ></app-rain-chart>
+      <div
+        *ngIf="hourlyForecast && selectedChart === 'wind'"
+        class="flex justify-between w-full sm:h-[150px]"
+      >
+        <ng-container
+          *ngFor="
+            let hour of hourlyForecast[dailyForcastIndex].hours;
+            let i = index
+          "
+        >
+          <div
+            *ngIf="i % 3 === 0"
+            class="flex flex-col h-full items-center justify-between pt-4 px-1"
+          >
+            <div class="text-[12px] text-center">
+              {{ hour.wind.toFixed(0) }} km/h
+            </div>
+            <div>
+              <mat-icon
+                class="text-gray-500"
+                [style.transform]="'rotate(' + hour.wind_direction + 'deg)'"
+                >arrow_downward_alt</mat-icon
+              >
+            </div>
+            <div class="text-[12px] text-gray-500">
+              <span *ngIf="hour.hour.toString().length === 1">0</span
+              >{{ hour.hour }}:00
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+    <div *ngIf="dailyForecast" class="p-4 w-full flex justify-center">
+      <div class="flex justify-between w-full overflow-auto">
+        <div
+          *ngFor="let day of dailyForecast.time; let i = index"
+          class="flex flex-col items-center rounded px-2 py-1 cursor-pointer"
+          [ngClass]="{ 'bg-gray-200': dailyForecast.active[i] }"
+          (click)="displayDailyWeather(i)"
+        >
+          <div>{{ dailyForecast.weekday[i] }}</div>
+          <img [src]="dailyForecast.icon[i]" class="w-[36px] h-[36px]" />
+          <div class="flex justify-between gap-1 text-[14px]">
+            <div>{{ dailyForecast.temperature_2m_max[i].toFixed(0) }}°</div>
+            <div class="text-gray-500">
+              {{ dailyForecast.temperature_2m_min[i].toFixed(0) }}°
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p *ngIf="error" class="p-4 text-red-500" [innerHTML]="error"></p>
+  </div>
+</section>

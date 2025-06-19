@@ -1,6 +1,6 @@
 <div id="header">
   <div
-    *ngIf="innerWidth >= 870"
+    *ngIf="innerWidth >= 900"
     class="bg-blue-800 text-gray-300 px-8 flex flex-wrap gap-6 h-10 place-items-center"
   >
     <div
@@ -9,6 +9,27 @@
     >
       <i class="fa-solid fa-eye"></i>
       <div>{{ "gimmicks.menu.overview" | translate }}</div>
+    </div>
+    <div
+      class="relative group hover:text-gray-100 cursor-pointer flex gap-1 items-center"
+      [routerLink]="['weather']"
+    >
+      <i class="fa-solid fa-cloud text-amber-100"></i>
+      <div>{{ "gimmicks.menu.weather" | translate }}</div>
+      <div
+        class="absolute bg-gradient-to-b from-blue-200 to-blue-400 text-black rounded p-2 top-8 w-60 hidden group-hover:block z-20 arrow"
+      >
+        <ul class="text-xs">
+          <li>Nest.js API</li>
+            <li>OpenStreetMap API</li>
+            <li>Geonames API</li>
+            <li>OpenMeteo API</li>
+            <li>GeoLocation</li>
+            <li>Chart.js</li>
+            <li>Responsive design</li>
+            <li>{{ "gimmicks.differentLanguages" | translate }}</li>
+        </ul>
+      </div>
     </div>
     <div
       class="relative group hover:text-gray-100 cursor-pointer flex gap-1 items-center"
@@ -124,30 +145,30 @@
       </div>
     </div>
   </div>
-  <div *ngIf="innerWidth < 870" class="bg-blue-800 h-10 flex flex-col">
+  <div *ngIf="innerWidth < 900" class="bg-blue-800 h-10 flex flex-col">
     <button
       *ngIf="fadeOut"
-      class="bg-red-600 rounded-md w-8 min-h-8 text-white mt-1 ml-2 shadow-lg"
+      class="bg-red-600 rounded-md w-8 min-h-8 text-white mt-1 ml-2 shadow-lg cursor-pointer"
       (click)="showSubMenu = true; fadeOut = false"
     >
       <i class="fa-solid fa-chevron-right subMenuButton"></i>
     </button>
     <button
       *ngIf="!fadeOut"
-      class="bg-red-600 rounded-md w-8 min-h-8 text-white mt-1 ml-2 shadow-lg"
+      class="bg-red-600 rounded-md w-8 min-h-8 text-white mt-1 ml-2 shadow-lg cursor-pointer"
       (click)="hideSubMenu()"
     >
       <i class="fa-solid fa-chevron-down subMenuButton2"></i>
     </button>
     <ng-container *ngIf="showSubMenu">
       <div
-        class="flex gap-1 items-center ml-2 mt-2 w-fit z-50 group overviewIn"
+        class="flex gap-1 items-center ml-2 mt-2 w-fit z-50 group overviewIn cursor-pointer"
         [ngClass]="{ overviewOut: fadeOut }"
         [routerLink]="['/gimmicks']"
         (click)="hideSubMenu()"
       >
         <button
-          class="w-7 h-7 rounded-full shadow-lg group-hover:text-white group-hover:bg-black"
+          class="w-7 h-7 rounded-full shadow-lg group-hover:text-white group-hover:bg-black cursor-pointer"
         >
           <i class="fa-solid fa-eye"></i>
         </button>
@@ -158,13 +179,30 @@
         </div>
       </div>
       <div
-        class="flex gap-1 items-center ml-2 mt-2 w-fit z-50 group firstItemIn"
+        class="flex gap-1 items-center ml-2 mt-2 w-fit z-50 group newItemIn cursor-pointer"
+        [ngClass]="{ newItemOut: fadeOut }"
+        [routerLink]="['weather']"
+        (click)="hideSubMenu()"
+      >
+        <button
+          class="w-7 h-7 rounded-full shadow-lg bg-amber-100 group-hover:text-amber-100 group-hover:bg-black cursor-pointer"
+        >
+          <i class="fa-solid fa-cloud"></i>
+        </button>
+        <div
+          class="bg-black text-white text-sm px-2 rounded shadow-lg group-hover:bg-white group-hover:text-black"
+        >
+          {{ "gimmicks.menu.weather" | translate }}
+        </div>
+      </div>
+      <div
+        class="flex gap-1 items-center ml-2 mt-2 w-fit z-50 group firstItemIn cursor-pointer"
         [ngClass]="{ firstItemOut: fadeOut }"
         [routerLink]="['map']"
         (click)="hideSubMenu()"
       >
         <button
-          class="w-7 h-7 rounded-full shadow-lg bg-yellow-100 group-hover:text-yellow-100 group-hover:bg-black"
+          class="w-7 h-7 rounded-full shadow-lg bg-yellow-100 group-hover:text-yellow-100 group-hover:bg-black cursor-pointer"
         >
           <i class="fa-solid fa-map"></i>
         </button>
@@ -175,13 +213,13 @@
         </div>
       </div>
       <div
-        class="flex gap-1 items-center ml-2 mt-2 w-fit z-50 group secondItemIn"
+        class="flex gap-1 items-center ml-2 mt-2 w-fit z-50 group secondItemIn cursor-pointer"
         [ngClass]="{ secondItemOut: fadeOut }"
         [routerLink]="['calendar']"
         (click)="hideSubMenu()"
       >
         <button
-          class="w-7 h-7 rounded-full shadow-lg bg-red-100 group-hover:text-red-100 group-hover:bg-black"
+          class="w-7 h-7 rounded-full shadow-lg bg-red-100 group-hover:text-red-100 group-hover:bg-black cursor-pointer"
         >
           <i class="fa-solid fa-calendar"></i>
         </button>
@@ -192,13 +230,13 @@
         </div>
       </div>
       <div
-        class="flex gap-1 items-center ml-2 mt-2 w-fit z-50 group thirdItemIn"
+        class="flex gap-1 items-center ml-2 mt-2 w-fit z-50 group thirdItemIn cursor-pointer"
         [ngClass]="{ thirdItemOut: fadeOut }"
         [routerLink]="['guestbook']"
         (click)="hideSubMenu()"
       >
         <button
-          class="w-7 h-7 rounded-full shadow-lg bg-green-100 group-hover:text-green-100 group-hover:bg-black"
+          class="w-7 h-7 rounded-full shadow-lg bg-green-100 group-hover:text-green-100 group-hover:bg-black cursor-pointer"
         >
           <i class="fa-solid fa-book"></i>
         </button>
@@ -209,13 +247,13 @@
         </div>
       </div>
       <div
-        class="flex gap-1 items-center ml-2 mt-2 w-fit z-50 group fourthItemIn"
+        class="flex gap-1 items-center ml-2 mt-2 w-fit z-50 group fourthItemIn cursor-pointer"
         [ngClass]="{ fourthItemOut: fadeOut }"
         [routerLink]="['charts']"
         (click)="hideSubMenu()"
       >
         <button
-          class="w-7 h-7 rounded-full shadow-lg bg-orange-100 group-hover:text-orange-100 group-hover:bg-black"
+          class="w-7 h-7 rounded-full shadow-lg bg-orange-100 group-hover:text-orange-100 group-hover:bg-black cursor-pointer"
         >
           <i class="fa-solid fa-chart-simple"></i>
         </button>
@@ -226,13 +264,13 @@
         </div>
       </div>
       <div
-        class="flex gap-1 items-center ml-2 mt-2 w-fit z-50 group fifthItemIn"
+        class="flex gap-1 items-center ml-2 mt-2 w-fit z-50 group fifthItemIn cursor-pointer"
         [ngClass]="{ fourthItemOut: fadeOut }"
         [routerLink]="['/gimmicks/auth/login']"
         (click)="hideSubMenu()"
       >
         <button
-          class="w-7 h-7 rounded-full shadow-lg bg-violet-100 group-hover:text-violet-100 group-hover:bg-black"
+          class="w-7 h-7 rounded-full shadow-lg bg-violet-100 group-hover:text-violet-100 group-hover:bg-black cursor-pointer"
         >
           <i class="fa-solid fa-face-smile"></i>
         </button>
@@ -243,13 +281,13 @@
         </div>
       </div>
       <div
-        class="flex gap-1 items-center ml-2 mt-2 w-fit z-50 group sixthItemIn"
+        class="flex gap-1 items-center ml-2 mt-2 w-fit z-50 group sixthItemIn cursor-pointer"
         [ngClass]="{ sixthItemOut: fadeOut }"
         [routerLink]="['games']"
         (click)="hideSubMenu()"
       >
         <button
-          class="w-7 h-7 rounded-full shadow-lg bg-[#f6dbdb] group-hover:text-[#f6dbdb] group-hover:bg-black"
+          class="w-7 h-7 rounded-full shadow-lg bg-[#f6dbdb] group-hover:text-[#f6dbdb] group-hover:bg-black cursor-pointer"
         >
           <img
             class="w-3 h-3 group-hover:hidden"

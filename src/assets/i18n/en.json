@@ -79,7 +79,8 @@
       "guestbook": "Guestbook",
       "charts": "Charts",
       "jokes": "Jokes",
-      "games": "Games"
+      "games": "Games",
+      "weather": "Weather"
     },
     "overview": {
       "header1": "So far I have created enterprise applications that can only be accessed with a login and password. That's why you'll find",
@@ -333,6 +334,23 @@
       "hasEndGame": " has finished the game",
       "player1": "Player 1",
       "player2": "Player 2"
+    },
+    "weather": {
+      "useLocation": "Use location",
+      "enterCity": "Enter city",
+      "getLocation": "Get location",
+      "selectCountry": "Select country",
+      "worldWide": "Worldwide",
+      "searchCountry": "Search country",
+      "precipitation": "Precipitation",
+      "humidity": "Humidity",
+      "wind": "Wind",
+      "weather": "Weather",
+      "temperature": "Temperature",
+      "errorOnPosition": "Error retrieving position",
+      "geoLocationNotSupported": "Geolocation is not supported by this browser.",
+      "errorOnAddress": "Error retrieving address.",
+      "errorOnSearch": "Error while searching. City not found or no weather data for this city."
     }
   },
   "pageNotFound": {
