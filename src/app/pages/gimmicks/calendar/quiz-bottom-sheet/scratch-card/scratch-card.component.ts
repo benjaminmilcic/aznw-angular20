@@ -87,18 +87,10 @@ export class ScratchCardComponent implements AfterViewInit, OnChanges {
   fillScratchCard() {
     this.context.globalCompositeOperation = 'source-over';
     const grad = this.context.createLinearGradient(0, 0, 0, 50);
-    grad.addColorStop(0, '#f87171');
-    grad.addColorStop(1, '#2563eb');
+    grad.addColorStop(0, '#fecaca');
+    grad.addColorStop(1, '#60a5fa');
     this.context.fillStyle = grad;
     this.context.fillRect(0, 0, 250, 50);
-    this.context.fillStyle = 'white';
-    this.context.font = 'bold 16px serif';
-    this.context.fillText(
-      this.translate.instant('gimmicks.calendar.answer'),
-      20,
-      30,
-      650
-    );
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -110,7 +102,7 @@ export class ScratchCardComponent implements AfterViewInit, OnChanges {
   scratch(x: number, y: number) {
     this.context.globalCompositeOperation = 'destination-out';
     this.context.beginPath();
-    this.context.arc(x, y, 5, 0, 2 * Math.PI);
+    this.context.arc(x, y, 7, 0, 2 * Math.PI);
     this.context.fill();
   }
 }

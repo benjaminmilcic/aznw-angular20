@@ -1,10 +1,15 @@
 <div>
   <div class="flex justify-center my-4">
-    <div class="font-bold text-lg">{{ "gimmicks.calendar.which" | translate }}&nbsp;</div>
-    <div class="font-bold text-lg" >{{ holiday.date | date : undefined : undefined : "de" }} ?</div>
+    <div class="font-bold text-lg">
+      {{ "gimmicks.calendar.which" | translate }}&nbsp;
+    </div>
+    <div class="font-bold text-lg">
+      {{ holiday.date | date : undefined : undefined : "de" }} ?
+    </div>
   </div>
-  <div class="flex justify-center mt-4 mb-12">
+  <div class="flex flex-col items-center justify-center mt-4 mb-12">
     <app-scratch-card [word]="getScratchWord()"></app-scratch-card>
+    <div>{{ "gimmicks.calendar.answer" | translate }}</div>
   </div>
   <div class="flex justify-center mb-10">
     <button

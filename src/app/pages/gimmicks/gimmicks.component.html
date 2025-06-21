@@ -148,14 +148,14 @@
   <div *ngIf="innerWidth < 900" class="bg-blue-800 h-10 flex flex-col">
     <button
       *ngIf="fadeOut"
-      class="bg-red-600 rounded-md w-8 min-h-8 text-white mt-1 ml-2 shadow-lg cursor-pointer"
+      class="bg-red-400 rounded-md w-8 min-h-8 text-white mt-1 ml-2 shadow-lg cursor-pointer"
       (click)="showSubMenu = true; fadeOut = false"
     >
       <i class="fa-solid fa-chevron-right subMenuButton"></i>
     </button>
     <button
       *ngIf="!fadeOut"
-      class="bg-red-600 rounded-md w-8 min-h-8 text-white mt-1 ml-2 shadow-lg cursor-pointer"
+      class="bg-red-400 rounded-md w-8 min-h-8 text-white mt-1 ml-2 shadow-lg cursor-pointer"
       (click)="hideSubMenu()"
     >
       <i class="fa-solid fa-chevron-down subMenuButton2"></i>

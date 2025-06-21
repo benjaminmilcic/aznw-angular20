@@ -7,7 +7,7 @@
     </div>
     <div class="flex justify-center lg:h-[555px] order-2">
       <div
-        class="bg-green-400 rounded-lg flex flex-col place-items-center h-[555px] shadow-lg relative"
+        class="bg-green-200 rounded-lg flex flex-col place-items-center h-[555px] shadow-lg relative"
         [ngClass]="{
           'w-[300px]': translateService.currentLang === 'de',
           'w-[400px]':
@@ -16,7 +16,7 @@
         }"
       >
         <div
-          class="flex justify-center w-full rounded-t-lg bg-gradient-to-b from-red-400 to-blue-600 py-4"
+          class="flex justify-center w-full rounded-t-lg bg-gradient-to-b from-red-200 to-blue-400 py-4"
         >
           <img [src]="getSvgOfMonth()" width="192px" />
         </div>
@@ -63,7 +63,7 @@
           <div *ngFor="let item of getEmptyDiv()"></div>
           <div
             *ngFor="let day of getDaysOfMonthArray(currentMonth); let i = index"
-            class="flex justify-center place-items-center w-6 h-6 cursor-pointer rounded-full hover:bg-red-500 day box-border"
+            class="flex justify-center place-items-center w-6 h-6 cursor-pointer rounded-full hover:bg-red-300 day box-border"
             [ngClass]="{
               border: isDateToday(currentYear, currentMonth, i + 1),
               'text-blue-500': dateIsHoliday(currentYear, currentMonth, i + 1)
@@ -89,15 +89,15 @@
       </div>
     </div>
     <div class="flex flex-col place-items-center order-3 md:order-4">
-      <div class="text-sm">{{ "gimmicks.calendar.workdays" | translate }}</div>
+      <div class="text-sm font-semibold">{{ "gimmicks.calendar.workdays" | translate }}</div>
       <div
         class="w-[200px] bg-gray-200 relative mt-2 rounded-xl border border-gray-400 bar-shadow"
       >
         <div
-          class="h-4 bg-green-400 rounded-xl"
+          class="h-4 bg-green-200 rounded-xl"
           [style.width]="getWorkingDaysOfMonthPercentage()"
         ></div>
-        <div class="absolute top-0 text-center text-xs w-full">
+        <div class="absolute top-0 text-center text-xs w-full font-semibold">
           {{ getWorkingDaysOfMonth() }} / {{ getDaysOfMonth(currentMonth) }}
         </div>
       </div>

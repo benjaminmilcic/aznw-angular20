@@ -1,5 +1,7 @@
 <section class="flex justify-center min-h-[calc(100%-40px)] bg-blue-400">
-  <div class="flex flex-col w-full max-w-full sm:max-w-[600px] my-4 relative bg-white rounded">
+  <div
+    class="flex flex-col w-full max-w-full sm:max-w-[600px] my-4 relative bg-white rounded"
+  >
     <div class="m-4 flex">
       <ion-segment [(ngModel)]="selectedWay" mode="ios" class="w-full">
         <ion-segment-button value="location">
@@ -83,10 +85,7 @@
           [matAutocomplete]="auto"
         />
 
-        <mat-autocomplete
-          #auto="matAutocomplete"
-          [displayWith]="displayCity"
-        >
+        <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayCity">
           <mat-option *ngFor="let city of filteredCities" [value]="city">
             {{ city.display_name }}
           </mat-option>
@@ -104,9 +103,12 @@
     </div>
 
     <div
-      *ngIf="currentWeather"
-      class="flex w-full justify-center p-4"
+      *ngIf="!currentWeather"
+      class="flex h-full justify-center items-center m-8 box-border"
     >
+      <img src="assets/weather-bg.jpg" class=" w-full max-w-[500px] box-border opacity-80"/>
+    </div>
+    <div *ngIf="currentWeather" class="flex w-full justify-center p-4">
       <div
         class="flex p-2 rounded bg-green-100 border border-green-300 w-full justify-between"
       >
@@ -135,13 +137,18 @@
             {{ displayedPrecipitation_probability }}%
           </div>
           <div class="whitespace-nowrap">
-            {{ "gimmicks.weather.humidity" | translate }}: {{ displayedHumidity.toFixed(0) }}%
+            {{ "gimmicks.weather.humidity" | translate }}:
+            {{ displayedHumidity.toFixed(0) }}%
           </div>
-          <div class="whitespace-nowrap">{{ "gimmicks.weather.wind" | translate }}: {{ displayedWind }} km/h</div>
+          <div class="whitespace-nowrap">
+            {{ "gimmicks.weather.wind" | translate }}: {{ displayedWind }} km/h
+          </div>
         </div>
       </div>
       <div class="flex flex-col items-end">
-        <div class="text-[18px] font-semibold whitespace-nowrap">{{ "gimmicks.weather.weather" | translate }}</div>
+        <div class="text-[18px] font-semibold whitespace-nowrap">
+          {{ "gimmicks.weather.weather" | translate }}
+        </div>
         <div class="text-[14px] whitespace-nowrap">{{ displayedTime }}</div>
         <div class="text-[14px] whitespace-nowrap">{{ displayedWeather }}</div>
       </div>
@@ -155,7 +162,7 @@
           }"
           (click)="selectedChart = 'temp'"
         >
-        {{ "gimmicks.weather.temperature" | translate }}
+          {{ "gimmicks.weather.temperature" | translate }}
         </div>
         <div class="text-gray-300">|</div>
         <div
@@ -165,7 +172,7 @@
           }"
           (click)="selectedChart = 'rain'"
         >
-        {{ "gimmicks.weather.precipitation" | translate }}
+          {{ "gimmicks.weather.precipitation" | translate }}
         </div>
         <div class="text-gray-300">|</div>
         <div
@@ -175,7 +182,7 @@
           }"
           (click)="selectedChart = 'wind'"
         >
-        {{ "gimmicks.weather.wind" | translate }}
+          {{ "gimmicks.weather.wind" | translate }}
         </div>
       </div>
       <app-temperature-chart

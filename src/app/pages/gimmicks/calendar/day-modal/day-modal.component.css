@@ -1,7 +1,3 @@
 ion-content {
-  --background: rgb(220, 252, 231);
-}
-
-ion-input {
-  --highlight-color-focused: black !important;
+  --background: #fce7f3;
 }

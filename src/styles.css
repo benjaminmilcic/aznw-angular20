@@ -8,12 +8,12 @@
   --color3: #39395f;
   --color4: #73a24e;
   --color5: #a9c25d;
-  --gimmicks-color1:#1c6391;
-  --gimmicks-color2:#1b529e;
-  --gimmicks-color3:#edc516;
-  --gimmicks-color4:#f2f052;
-  --gimmicks-color5:#e82749;
-  --gimmicks-color6:#529f8e;
+  --gimmicks-color1: #1c6391;
+  --gimmicks-color2: #1b529e;
+  --gimmicks-color3: #edc516;
+  --gimmicks-color4: #f2f052;
+  --gimmicks-color5: #e82749;
+  --gimmicks-color6: #529f8e;
 }
 
 body,
@@ -116,4 +116,23 @@ button.alert-button.alert-button-confirm:hover {
 .winner-dialog {
   border: 1px solid black;
   border-radius: 12px;
+}
+
+.rounded-modal {
+  --border-radius: 16px;
+  overflow: hidden;
+}
+
+.custom-bottom-sheet {
+  background-color: #fce7f3 !important;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  padding: 0 !important;
+  box-shadow: 0px -4px 20px rgba(0, 0, 0, 0.2) !important;
+}
+
+.custom-bottom-sheet .mat-bottom-sheet-container {
+  background-color: transparent !important;
+  padding: 0 !important;
+  box-shadow: none !important;
 }

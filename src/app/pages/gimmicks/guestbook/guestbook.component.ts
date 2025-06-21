@@ -13,8 +13,7 @@ import { EditorComponent, EditorModule } from '@tinymce/tinymce-angular';
 import {
   IonFab,
   IonFabButton,
-  IonInput,
-} from '@ionic/angular/standalone';
+  IonInput} from '@ionic/angular/standalone';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { FormsModule } from '@angular/forms';
 import { DomSanitizer } from '@angular/platform-browser';

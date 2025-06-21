@@ -5,7 +5,7 @@ section {
 }
 
 section:before {
-  content: ' ';
+  content: " ";
   display: block;
   position: absolute;
   left: 0;
@@ -20,27 +20,24 @@ section:before {
 }
 
 dialog {
-  border-color: transparent;
-  border-radius: 5px;
-  box-shadow: 0 0 15px 4px #c5c1c1;
-  height: 650px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.5); /* passend zu bg-blue-300 */
+  border: none;
+  outline: none;
+  height: fit-content;
   max-width: 600px;
   z-index: 999;
 }
 
 @media screen and (max-width: 630px) {
   dialog {
-    max-width:100%;
+    max-width: 100%;
   }
 
   dialog editor {
     width: 100%;
   }
 }
-
-
-
-
 
 dialog::backdrop {
   background: rgba(0, 0, 0, 0.6);
@@ -59,9 +56,14 @@ dialog::backdrop {
 
 hr {
   border: 0;
-  clear:both;
-  display:block;
-  width: 100%;               
-  background-color:lightgray;
+  clear: both;
+  display: block;
+  width: 100%;
+  background-color: lightgray;
   height: 1px;
+}
+
+ion-input {
+  --highlight-color-focused: white !important;
+  --border-color: white !important;
 }

@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, OnDestroy, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { isHoliday, getHolidays } from 'feiertagejs';
+import { isHoliday } from 'feiertagejs';
 import { DayModalComponent } from './day-modal/day-modal.component';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { ModalController } from '@ionic/angular/standalone';
@@ -64,6 +64,7 @@ export class CalendarComponent implements OnInit, OnDestroy {
       disableClose: false,
       data: { year: this.currentYear },
       hasBackdrop: false,
+      panelClass: 'custom-bottom-sheet',
     });
   }
 
@@ -86,6 +87,7 @@ export class CalendarComponent implements OnInit, OnDestroy {
     this.showBackDrop = true;
     const modal = await this.modalCtrl.create({
       component: DayModalComponent,
+      cssClass: 'rounded-modal',
       backdropDismiss: false,
       componentProps: {
         day,
