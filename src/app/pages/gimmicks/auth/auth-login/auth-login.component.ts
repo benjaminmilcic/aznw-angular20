@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
 import { AuthResponseData } from '../auth.model';
 import { Router } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { environment } from '../../../../../environments/environment';
 
 @Component({
   selector: 'app-auth',
@@ -110,7 +111,7 @@ export class AuthLoginComponent implements OnInit {
         console.log(error);
         let errorMessage = this.translate.instant(
           'gimmicks.jokes.unknownError'
-        );;
+        );
         if (
           (<string>error.error.error.message).includes(
             'Too many failed login attempts. Try again in 5 minutes.'
@@ -131,5 +132,9 @@ export class AuthLoginComponent implements OnInit {
       }
     );
     form.reset();
+  }
+
+  onGoogleLogin() {
+    window.location.href = environment.googleLogin.loginApi;
   }
 }

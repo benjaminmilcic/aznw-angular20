@@ -57,6 +57,9 @@ export const environment = {
     geoCodeApi: 'http://localhost:3000/geolocation/geocode',
     citiesApi: 'http://localhost:3000/geolocation/cities',
   },
+  googleLogin: {
+    loginApi:'http://localhost:3000/auth/google'
+  },
   production: false,
 };
 

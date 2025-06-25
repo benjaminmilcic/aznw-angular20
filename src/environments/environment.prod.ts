@@ -63,5 +63,8 @@ export const environment = {
     geoCodeApi: 'https://benjaminmilcic.site:3000/geolocation/geocode',
     citiesApi: 'https://benjaminmilcic.site:3000/geolocation/cities',
   },
+  googleLogin: {
+    loginApi: 'https://benjaminmilcic.site:3000/auth/google',
+  },
   production: true,
 };

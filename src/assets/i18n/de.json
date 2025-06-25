@@ -244,7 +244,8 @@
       "tryAgain": "Erneut versuchen",
       "paymentFailed": "Die Zahlung mit PayPal ist fehlgeschlagen.",
       "clickToRotate": "Zum Umdrehen aufs Buch klicken",
-      "textToSpeech": "Die TextToSpeech API die hier genutzt wird ist eine kostenlose Demo-Version und unterstützt nur 10 Minuten Audio pro Monat. Danach funktioniert die API nicht mehr. Aber für Demo-Zwecke sollte das reichen."
+      "textToSpeech": "Die TextToSpeech API die hier genutzt wird ist eine kostenlose Demo-Version und unterstützt nur 10 Minuten Audio pro Monat. Danach funktioniert die API nicht mehr. Aber für Demo-Zwecke sollte das reichen.",
+      "loginWithGoogle":"Mit Google anmelden"
     },
     "games":{
       "connectFour": "4 Gewinnt",

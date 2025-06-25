@@ -123,7 +123,7 @@ export class StripeComponent implements OnInit {
   async ngOnInit() {
     const url = window.location.toString();
     let clientSecret;
-    if (url.includes('?')) {
+    if (url.includes('?payment_intent')) {
       let queryParams = url.split('?');
       let params = queryParams[2].split('&');
       let language = queryParams[1].split('=').pop();

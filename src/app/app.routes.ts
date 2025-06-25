@@ -22,6 +22,7 @@ import { KnowledgeQuizComponent } from './pages/gimmicks/games/knowledge-quiz/kn
 import { MoorhuhnComponent } from './pages/gimmicks/games/moorhuhn/moorhuhn.component';
 import { YahtzeeComponent } from './pages/gimmicks/games/yahtzee/yahtzee.component';
 import { WeatherComponent } from './pages/gimmicks/weather/weather.component';
+import { GoogleRedirectComponent } from './pages/gimmicks/auth/google-redirect.component';
 
 export const routes: Routes = [
   {
@@ -70,6 +71,10 @@ export const routes: Routes = [
             path: 'main',
             canActivate: [AuthMainGuard],
             component: AuthMainComponent,
+          },
+          {
+            path: 'google-redirect',
+            component: GoogleRedirectComponent,
           },
         ],
       },

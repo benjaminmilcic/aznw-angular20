@@ -17,14 +17,11 @@ export class AuthService {
 
   signup(email: string, password: string) {
     return this.http
-      .post<AuthResponseData>(
-        environment.auth.signup,
-        {
-          email: email,
-          password: password,
-          returnSecureToken: true,
-        }
-      )
+      .post<AuthResponseData>(environment.auth.signup, {
+        email: email,
+        password: password,
+        returnSecureToken: true,
+      })
       .pipe(
         tap((resData) => {
           this.handleAuthentication(
@@ -111,5 +108,13 @@ export class AuthService {
     localStorage.setItem('authUserData', JSON.stringify(authUser));
   }
 
-  
+  setUserFromToken(token: string) {
+    try {
+      const payload = JSON.parse(atob(token.split('.')[1]));
+      this.handleAuthentication(payload.email, payload.sub,token,3600);
+    } catch (err) {
+      console.error('Invalid token payload');
+      this.authUser.next(null);
+    }
+  }
 }

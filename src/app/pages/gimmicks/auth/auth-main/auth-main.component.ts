@@ -14,7 +14,6 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { IonContent, IonPopover } from '@ionic/angular/standalone';
 import { HttpErrorService } from '../../../http-error/http-error.service';
 
-
 @Component({
   selector: 'app-main',
   standalone: true,
@@ -85,6 +84,15 @@ export class AuthMainComponent implements OnInit {
         });
       } catch (error) {
         this.httpErrorService.showHttpError(error, 'AuthMainComponent');
+      }
+    }
+    const url = window.location.toString();
+    if (url.includes('?from=googleLogin')) {
+      const element = document.getElementById('jokes-box');
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 1000);
       }
     }
   }
